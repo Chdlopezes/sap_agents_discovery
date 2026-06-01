@@ -25,22 +25,23 @@ Localiza la fila del Identifier `J652` en estas hojas del XLSX y anota las URLs:
 
 > **REGLA BASE (no negociable): la URL del Initial Setup se resuelve EN VIVO desde la sección _Resources_ de la `Detail Page`.** El XLSX (2 hojas) **no** contiene esa URL ni los pasos de activación: solo aporta la `Detail Page` como punto de partida. Toda afirmación técnica del análisis (prerequisitos, business catalogs/roles, pasos, dificultad) debe provenir de una página oficial SAP **abierta en vivo**, nunca del XLSX.
 
-Antes de escribir cualquier sección del análisis, obtén la fuente principal siguiendo este orden:
+Antes de escribir cualquier sección del análisis, obtén la(s) fuente(s) así:
 
 1. **Abre la `Detail Page` del XLSX y lista los enlaces de su sección _Resources_.** En este entorno:
    `python scripts/fetch_sap_page.py "<Detail Page>" --links`
-   En la sección `## Links` del output, busca la línea con el texto **exacto** `Initial Setup - SAP Help Portal` y toma su URL. Esa es tu **fuente principal**. Ábrela:
-   `python scripts/fetch_sap_page.py "<URL Initial Setup>"`
-   Cita literalmente lo que leas (prerequisitos, business catalogs, roles, apps, pasos).
+   En la sección `## Links` del output identifica **ambos** enlaces (los que existan), con su texto exacto:
+   - **`Initial Setup - SAP Help Portal`**
+   - **`AI Feature - SAP Help Portal`**
 
-2. **Si _Resources_ NO tiene un enlace "Initial Setup - SAP Help Portal":** usa como sustituto el enlace **`AI Feature - SAP Help Portal`** de la misma sección _Resources_ (describe la capacidad y suele listar prerequisitos accionables y modo de uso). Ábrelo y trátalo como fuente principal. *(Esta vía fue validada y produce buenos resultados; úsala siempre que falte el Initial Setup.)*
+2. **Abre y explora TODOS los que existan: los dos son fuentes FUNDAMENTALES (no uno sustituto del otro).**
+   `python scripts/fetch_sap_page.py "<URL>"` para cada uno, y cita literalmente lo que leas.
+   - **Initial Setup**: aporta sobre todo el procedimiento administrativo de activación (Configure Trust, Identity Provisioning, CSP, asignación de roles/catalogs, intelligent scenarios, habilitar la feature, etc.).
+   - **AI Feature**: describe la capacidad y con frecuencia contiene prerequisitos accionables, business catalogs/roles, apps Fiori y modo de uso **igual de relevantes para la activación**.
+   **Combina la información de ambas páginas** en las secciones 1 y 2 del análisis (prerequisitos, pasos, restricciones), y lista las dos URLs en "Fuentes oficiales consultadas". Si solo existe uno de los dos enlaces, ese es tu fuente principal.
 
-3. **Si la página resuelta no carga** (muro de login "Don't have a SAP ID?", o "We couldn't find the version you were looking for", o contenido < ~200 caracteres), **reintenta antes de rendirte**:
-   a. la MISMA URL variando el parámetro `?version=` (quítalo, o prueba una versión vigente);
-   b. el enlace `AI Feature - SAP Help Portal` de _Resources_ como fuente complementaria.
-   Si tras estos reintentos sigue sin cargar, **decláralo honestamente** en el encabezado y en la sección 2 ("el enlace aparece en _Resources_ pero no fue posible acceder tras reintentos") y aplica el bloque canónico de "No se registran pasos" (ver 3.5). **Nunca fabriques** pasos ni prerequisitos para rellenar.
+3. **Si alguna de esas páginas no carga** (muro de login "Don't have a SAP ID?", "We couldn't find the version you were looking for", o contenido < ~200 caracteres), **reintenta antes de descartarla**: prueba la MISMA URL variando el parámetro `?version=` (quítalo o usa una versión vigente). Si una carga y la otra no, fundaméntate en la que sí cargó. Si **ninguna** de las dos carga tras reintentos, **decláralo honestamente** en el encabezado y en la sección 2 ("el enlace aparece en _Resources_ pero no fue posible acceder tras reintentos") y aplica el bloque canónico de "No se registran pasos" (ver 3.5). **Nunca fabriques** pasos ni prerequisitos para rellenar.
 
-4. **Si _Resources_ no trae "Initial Setup" ni "AI Feature":** sigue cualquier otro enlace de _Resources_ a `help.sap.com` claramente pertinente (Setup Guide, Configuration Guide, página del módulo/app). Si ninguno aplica, usa la `Detail Page` como única fuente y declara en la sección 2 el bloque canónico (ver 3.5, Caso 3).
+4. **Si _Resources_ no trae ni "Initial Setup" ni "AI Feature":** sigue cualquier otro enlace de _Resources_ a `help.sap.com` claramente pertinente (Setup Guide, Configuration Guide, página del módulo/app). Si ninguno aplica, usa la `Detail Page` como única fuente y declara en la sección 2 el bloque canónico (ver 3.5, Caso 3).
 
 5. **Valida antes de escribir:** no escribas ninguna sección hasta haber abierto al menos una URL oficial **en vivo**. El XLSX **no basta** (no contiene la fuente). Si todo el fetching falla, pide al usuario que pegue el contenido.
 
@@ -48,15 +49,16 @@ Toda URL que uses debe ser **publicada por SAP** en un dominio oficial. Si una U
 
 ## 3.2 Fuentes permitidas (orden de prioridad)
 
-### Fuente principal (cuando existe)
+### Fuentes principales (cuando existen) — explóralas TODAS
 
-1. **La página de Initial Setup** resuelta en vivo desde la sección *Resources* de la `Detail Page` (paso 1 de 3.1.1; URL de SAP Help Portal). **Es la fuente principal del análisis.** La mayor parte del contenido — sobre todo prerequisitos técnicos, pasos de activación y dificultad — debe basarse en esta URL.
+1. **La página de Initial Setup** resuelta en vivo desde la sección *Resources* de la `Detail Page` (paso 1 de 3.1.1; URL de SAP Help Portal). Aporta sobre todo prerequisitos técnicos, pasos de activación y dificultad.
+2. **La página de AI Feature** (`AI Feature - SAP Help Portal` de *Resources*). **Fuente fundamental, NO secundaria:** si el enlace existe, ábrela **siempre** y extrae la información relevante a la activación que contenga (prerequisitos, business catalogs/roles, apps Fiori, modo de uso), combinándola con la del Initial Setup. Si no existe Initial Setup, ésta pasa a ser la fuente principal.
+
+> **Cuando existan ambas, el análisis debe fundamentarse en las dos.**
 
 ### Fuentes complementarias (siempre permitidas, oficiales de SAP)
 
-Puedes usarlas para **complementar** la fuente principal cuando ésta omita un campo, o como **fuente sustituta** cuando no hay enlace de Initial Setup en *Resources*:
-
-2. **El enlace `AI Feature - SAP Help Portal`** de la sección *Resources* de la `Detail Page`. Es el **sustituto principal** del Initial Setup cuando éste no existe en *Resources* (paso 2 de 3.1.1): describe la capacidad y suele listar prerequisitos accionables, business roles y modo de uso.
+Puedes usarlas para **complementar** las fuentes principales cuando éstas omitan un campo:
 3. **La `Detail Page`** del ID (URL de SAP Discovery Center). Fuente natural para Overview, beneficios, valor de negocio, disponibilidad (GA / wave), `Commercial Type`, `Product`, `Package`.
 4. **La sección `Pricing Details`** de la `Detail Page` (solo Premium). Fuente para licenciamiento, AI Units, paquete comercial.
 5. **Otras páginas del SAP Help Portal** directamente relacionadas con este caso de uso (la página de la app Fiori involucrada, la página del módulo funcional, la página de Joule Integration, la página de IAM apps, etc.). Usa **solo** páginas que la fuente principal o la Detail Page enlacen, o cuyo tema sea inequívocamente el de este ID.
@@ -131,6 +133,7 @@ Produce un único archivo Markdown con exactamente las siguientes secciones, en 
 **Fuentes oficiales consultadas:**
 - Detail Page (SAP Discovery Center): <URL exacta del campo Detail Page del XLSX>
 - Initial Setup (SAP Help Portal): <URL resuelta en vivo desde *Resources* (paso 1 de 3.1.1), o "No existe en la fuente oficial" si no hay enlace accesible>
+- AI Feature (SAP Help Portal): <URL del enlace "AI Feature - SAP Help Portal" de *Resources* si existe — fuente fundamental, ábrela siempre; "No existe en la fuente oficial" si no hay enlace>
 - Pricing Details (SAP Discovery Center): <URL Detail Page + "#pricing", solo si Commercial Type = Premium; "No aplica" en caso contrario>
 - Fuentes complementarias oficiales SAP (si aplican): <una línea por cada URL adicional usada — SAP Help Portal, SAP Road Map Explorer, SAP AI Foundation Catalog, página oficial del producto. Si no usaste fuentes complementarias, omite esta línea o pon "Ninguna">
 
@@ -171,7 +174,7 @@ Una sub-sección por cada categoría. Para cada una, registra **solo** lo que ap
 
 ## 4.3 Sección 2 — Pasos de activación / configuración estándar
 
-Lista únicamente los pasos que **la fuente viva describe textualmente** (la página de Initial Setup —o su sustituto "AI Feature - SAP Help Portal"— que abriste según 3.1.1). El XLSX **no contiene pasos**: no inventes ni infieras; si la fuente viva no describe pasos, aplica el bloque canónico de 3.5.
+Lista únicamente los pasos que **las fuentes vivas describen textualmente** (las páginas de Initial Setup **y/o** AI Feature que abriste según 3.1.1; cuando existan ambas, combina sus pasos/prerequisitos). El XLSX **no contiene pasos**: no inventes ni infieras; si ninguna fuente viva describe pasos, aplica el bloque canónico de 3.5.
 
 **Si la fuente oficial no describe pasos de activación**, escribe el bloque exacto siguiente y NO incluyas tabla:
 
@@ -222,6 +225,7 @@ Incluye **todas** las URLs oficiales de SAP que usaste, no solo las del XLSX:
 ```markdown
 - SAP Discovery Center — Detail Page: <URL>
 - SAP Help Portal — Initial Setup: <URL o "No existe en la fuente oficial">
+- SAP Help Portal — AI Feature: <URL o "No existe en la fuente oficial">
 - SAP Discovery Center — Pricing Details: <URL o "No aplica">
 - <Una línea por cada fuente complementaria oficial SAP que hayas usado, con dominio claramente identificable (help.sap.com, discovery-center.cloud.sap, roadmap.sap.com, sap.com).>
 ```
@@ -256,7 +260,7 @@ Antes de escribir el archivo `.md`, autorevisa el análisis y descarta cualquier
 ## 5.1 Sobre la fuente
 
 - ¿Resolví la URL del Initial Setup **en vivo** desde la sección *Resources* de la `Detail Page` (paso 1 de 3.1.1)? → Si solo usé el XLSX y nunca abrí ninguna URL en vivo, **el análisis no se puede guardar**. Vuelve al paso 1.
-- ¿Si no había "Initial Setup" en *Resources*, usé el enlace **"AI Feature - SAP Help Portal"** como sustituto (paso 2), y reintenté variantes/versión antes de declarar algo inaccesible (paso 3)? → Si no, hazlo.
+- ¿Abrí **TAMBIÉN** la página **"AI Feature - SAP Help Portal"** cuando existía en *Resources* (no solo como sustituto del Initial Setup) y combiné su información de activación? ¿Reintenté variantes/versión antes de declarar algo inaccesible (paso 3)? → Si no, hazlo.
 - ¿Cada afirmación técnica del análisis (nombre de business catalog, business role, IAM app, app Fiori, scope item, condition type, horas) está respaldada por algo que leí literalmente en la URL abierta? → Si una afirmación no está respaldada, elimínala o reemplázala por la frase canónica correspondiente.
 - ¿Las URLs listadas en "Fuentes oficiales consultadas" y "Referencias oficiales" son las que efectivamente abrí (no solo las que estaban en el XLSX)? → Si no, corrige.
 

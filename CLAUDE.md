@@ -53,9 +53,10 @@ executions/compiled/analyses_compiled.md   ← corpus RAG
    reforzarlas para mejorar la calidad).
 7. **Stage 4 — fuente en vivo, no el XLSX**: cada análisis se fundamenta en la
    página oficial abierta **en vivo**, resolviendo la URL desde la sección
-   *Resources* de la `Detail Page` (`Initial Setup - SAP Help Portal`; si no
-   existe, `AI Feature - SAP Help Portal`). El XLSX (2 hojas) **no** contiene
-   datos de Initial Setup; solo aporta la `Detail Page` como punto de partida.
+   *Resources* de la `Detail Page`. **Abre y combina AMBAS páginas cuando
+   existan** — `Initial Setup - SAP Help Portal` **y** `AI Feature - SAP Help
+   Portal` son fuentes fundamentales (no una sustituto de la otra). El XLSX
+   (2 hojas) **no** contiene datos de Initial Setup; solo aporta la `Detail Page`.
    Si la página no carga tras reintentos (versión/login), decláralo
    honestamente y usa el bloque canónico "No se registran pasos"; **no fabriques**.
    Detalle en [`docs/AGENT_GUIDE.md`](docs/AGENT_GUIDE.md) Stage 4b.
@@ -93,7 +94,7 @@ state/                   id_slug_map.json, compiled_state.json
 | Mergear lotes                          | Script        | `python scripts/merge_enriched_batches.py`    |
 | Mapa id→slug                           | Script        | `python scripts/build_id_slug_map.py`         |
 | Renderizar prompts                     | Script        | `python scripts/render_pending_prompts.py`    |
-| Resolver fuente del análisis (en vivo) | **Agente**    | `python scripts/fetch_sap_page.py "<Detail Page>" --links` → tomar el enlace **`Initial Setup - SAP Help Portal`** de *Resources*; si no existe, el **`AI Feature - SAP Help Portal`**. El XLSX no contiene esa URL. |
+| Resolver fuente del análisis (en vivo) | **Agente**    | `python scripts/fetch_sap_page.py "<Detail Page>" --links` → abrir y combinar **ambos** enlaces de *Resources* cuando existan: **`Initial Setup - SAP Help Portal`** y **`AI Feature - SAP Help Portal`** (los dos son fundamentales). El XLSX no contiene esas URLs. |
 | Escribir cada análisis                 | **Agente**    | `Write` un `.md` por caso siguiendo el prompt, **fundamentado en la fuente viva** (no en el XLSX) |
 | Compilar corpus RAG                    | Script        | `python scripts/compile_analyses.py`          |
 

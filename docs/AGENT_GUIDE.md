@@ -228,17 +228,19 @@ Para cada `executions/prompts/<id>_<slug>_analysis.prompt.md` sin su
    validado:
    - Abre la `Detail Page` y lista sus enlaces de *Resources*:
      `python scripts/fetch_sap_page.py "<Detail Page>" --links`
-   - En la sección `## Links`, toma la URL de la línea con texto exacto
-     **`Initial Setup - SAP Help Portal`** → ésa es la fuente principal.
-     Ábrela: `python scripts/fetch_sap_page.py "<URL>"`.
-   - **Si no existe "Initial Setup"** en *Resources*, usa el enlace
-     **`AI Feature - SAP Help Portal`** de *Resources* como sustituto (describe
-     la capacidad y sus prerequisitos). *(Vía validada — da buenos resultados.)*
-   - **Si la página no carga** (login, "We couldn't find the version", < ~200
-     chars): reintenta variando `?version=` y/o usa la página `AI Feature`. Si
-     aun así no carga, decláralo honestamente ("no fue posible acceder tras
-     reintentos") y aplica el bloque canónico "No se registran pasos". **No
-     fabriques** pasos.
+   - En la sección `## Links` identifica **ambos** enlaces (los que existan):
+     **`Initial Setup - SAP Help Portal`** y **`AI Feature - SAP Help Portal`**.
+   - **Abre y explora TODOS los que existan** (`fetch_sap_page.py "<URL>"`): los
+     dos son **fuentes fundamentales**, no uno sustituto del otro. El *Initial
+     Setup* aporta el procedimiento administrativo; el *AI Feature* describe la
+     capacidad y suele traer prerequisitos/business catalogs/roles/apps igual de
+     relevantes para la activación. **Combina la información de ambas.** Si solo
+     existe uno, ése es la fuente principal.
+   - **Si alguna página no carga** (login, "We couldn't find the version", < ~200
+     chars): reintenta variando `?version=`. Si una carga y la otra no, usa la que
+     cargó. Si **ninguna** carga tras reintentos, decláralo honestamente ("no fue
+     posible acceder tras reintentos") y aplica el bloque canónico "No se
+     registran pasos". **No fabriques** pasos.
    - El `Overview`/`Beneficios`/`Business Value` del XLSX (provienen de la
      Detail Page) sí sirven para el "Resumen del caso"; el `Pricing Details`
      se confirma en la Detail Page (#pricing) si es Premium.
