@@ -236,19 +236,41 @@ Para cada `executions/prompts/<id>_<slug>_analysis.prompt.md` sin su
 `executions/analyses/<id>_<slug>_analysis.md` correspondiente:
 
 1. **Lee el prompt** (`Read`).
-2. **Lee el contexto del caso** desde el enriched XLSX
-   (`processed/AI_Features_Data_Enriched.xlsx`) — usa `Overview`,
-   `Beneficios`, `Business Value`, `Prerequisitos`, `Procedimiento`,
-   `Dificultad estimada`, `Link` y el `Pricing Details` (si es Premium).
-3. **Escribe** el análisis siguiendo la estructura estándar usada en este
-   repositorio (ya hay 113 ejemplos en `executions/analyses/`):
+2. **Resuelve la fuente EN VIVO** (no confíes en la hoja Initial Setup del
+   XLSX: su `Link`/`Prerequisitos`/`Procedimiento` vienen de un enriquecimiento
+   que falló en muchas filas). Procedimiento validado:
+   - Abre la `Detail Page` y lista sus enlaces de *Resources*:
+     `python scripts/fetch_sap_page.py "<Detail Page>" --links`
+   - En la sección `## Links`, toma la URL de la línea con texto exacto
+     **`Initial Setup - SAP Help Portal`** → ésa es la fuente principal.
+     Ábrela: `python scripts/fetch_sap_page.py "<URL>"`.
+   - **Si no existe "Initial Setup"** en *Resources*, usa el enlace
+     **`AI Feature - SAP Help Portal`** de *Resources* como sustituto (describe
+     la capacidad y sus prerequisitos). *(Vía validada — da buenos resultados.)*
+   - **Si la página no carga** (login, "We couldn't find the version", < ~200
+     chars): reintenta variando `?version=` y/o usa la página `AI Feature`. Si
+     aun así no carga, decláralo honestamente ("no fue posible acceder tras
+     reintentos") y aplica el bloque canónico "No se registran pasos". **No
+     fabriques** pasos.
+   - El `Overview`/`Beneficios`/`Business Value` del XLSX (provienen de la
+     Detail Page) sí sirven para el "Resumen del caso"; el `Pricing Details`
+     se confirma en la Detail Page (#pricing) si es Premium.
+3. **Escribe** el análisis siguiendo **exactamente** la estructura de la
+   **Sección 4 del prompt renderizado** (encabezado con "Fuentes oficiales
+   consultadas", secciones 1–4, Referencias oficiales y Resumen ejecutivo de
+   esfuerzo). En "Fuentes oficiales consultadas" / "Referencias" lista **todas
+   las URLs que realmente abriste** (Detail Page + Initial Setup o su sustituto
+   "AI Feature - SAP Help Portal" + Pricing si Premium). Esquema:
 
    ```markdown
    # Análisis caso de uso JNNN — Name
 
-   > Análisis basado en información públicamente documentada por SAP …
+   > Análisis construido únicamente a partir de las fuentes oficiales de SAP
+   > abiertas en vivo. Campos sin dato: "No aplica" / "No existe en la fuente
+   > oficial" / "No documentado en la fuente oficial". Sin conocimiento general
+   > ni inferencia desde otros casos.
 
-   **Resumen del caso:** <overview del XLSX>
+   **Resumen del caso:** <Overview de la fuente abierta / del XLSX>
 
    ---
 
@@ -277,9 +299,12 @@ Para cada `executions/prompts/<id>_<slug>_analysis.prompt.md` sin su
    | Bloque | Horas |
    ```
 
-4. **Usa `[verificar en SAP Help]`** en cualquier dato que el enriquecido
-   no confirme explícitamente. No inventes IDs de scope item, IAM apps,
-   ni horas si no tienes base.
+4. **Para cualquier dato que la fuente viva no confirme, usa la frase
+   canónica** que corresponda — `"No aplica"`, `"No existe en la fuente
+   oficial"` o `"No documentado en la fuente oficial"` (ver sección 3.4 del
+   prompt). **Nunca** uses `[verificar en SAP Help]`, "típicamente",
+   "generalmente" ni inventes IDs de scope item, IAM apps, business roles ni
+   horas sin base en la fuente abierta.
 
 5. **Guarda** con `Write`. El nombre debe ser exactamente
    `<id_lower>_<slug>_analysis.md`.

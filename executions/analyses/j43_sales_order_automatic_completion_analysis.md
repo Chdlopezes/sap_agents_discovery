@@ -1,36 +1,36 @@
 # Análisis caso de uso J43 — Sales Order Automatic Completion
 
-> Basado en información públicamente documentada por SAP. Valores marcados como **[verificar en SAP Help]** requieren validación oficial.
+> Análisis construido **únicamente** a partir de las fuentes oficiales de SAP asociadas al AI Feature/Agent J43 en `processed/AI_Features_Data_Enriched.xlsx`. Los campos para los que SAP no publica información aparecen literalmente como "No aplica", "No existe en la fuente oficial" o "No documentado en la fuente oficial". **No se ha completado ningún dato con conocimiento general ni con inferencia desde casos similares.**
 
-**Resumen del caso:** Mediante datos históricos y machine learning, la función recomienda valores para completar campos vacíos en órdenes de venta incompletas. SAP indica: *La página indica una reducción del 25% en esfuerzo manual para completar órdenes de venta, ayudando a acelerar el ciclo comercial y reducir errores.*
+**Fuentes oficiales consultadas:**
+- Detail Page (SAP Discovery Center): https://discovery-center.cloud.sap/ai-feature/39a49e49-3ab6-46f5-889d-2035d9378cab/
+- Initial Setup (SAP Help Portal): https://help.sap.com/docs/SAP_S4HANA_CLOUD/ee9ee0ca4c3942068ea584d2f929b5b1/4ee364ca1af446929d4e2c4fc2f709b9.html?locale=en-US&version=2408.00
+- Pricing Details (SAP Discovery Center): No aplica
+
+**Resumen del caso:** Mediante datos históricos y machine learning, la función recomienda valores para completar campos vacíos en órdenes de venta incompletas.
 
 ---
 
 ## 1. Prerequisitos para la activación
 
-### 1.1 Productos / componentes SAP requeridos
-- **SAP S/4HANA Cloud Public Edition** con Joule habilitado.
-- Componente **SD – Sales** operativo.
+### 1.1 Producto / componente SAP requerido
+- **SAP S/4HANA Cloud Public Edition**.
 
 ### 1.2 Licenciamiento / entitlement / paquete
-- Suscripción S/4HANA Cloud Public Edition.
-- Entitlement Joule (**Base**) **[verificar]**.
+- Capability **Base**.
+- No aplica un paquete Premium.
 
 ### 1.3 Scope item relacionado
-- Scope items de Sales Order Management — **[verificar IDs]**.
+- No documentado en la fuente oficial.
 
-### 1.4 Aplicaciones / apps Fiori / servicios requeridos
-- Apps Fiori *Manage Sales Orders*, *Create Sales Orders*.
-- Joule habilitado en el Launchpad.
+### 1.4 Aplicaciones / apps Fiori / servicios / componentes técnicos
+- Según la fuente oficial abierta: Your analytics specialist can train the model in the Intelligent Scenario Management app. Manual training allows you to set training filters and deactivate prediction for certain fields. For detailed instructions, see Tips on Training the Machine Learning Model. As of SAP S/4HANA Cloud 2408, the system enables auto training when scope item 73P is activated. You can also enable or disable auto training in the Intelligent Scenario Management app. With auto training, the system trains the model periodically based on business data from the past year, and the prediction is active for all six fields. To access the Monitor Recommendations for Sales Document Completion app, business users need to have the following business catalog assigned: Sales - Sales Document Autocompletion Monitoring (SAP_SD_BC_SDAC_MONITOR_PC) Intelligent Scenario Management
 
 ### 1.5 Datos maestros / transaccionales previos
-- Customers, materials, pricing, plants, sales areas configurados.
-- Datos históricos suficientes para que las recomendaciones tengan calidad.
+- No documentado en la fuente oficial.
 
 ### 1.6 Restricciones funcionales / técnicas / idioma
-- **Idioma**: inglés primariamente **[verificar]**.
-- Solo S/4HANA Cloud **Public** Edition.
-- Usuario con autorizaciones SD.
+- Disponible para SAP S/4HANA Cloud **Public Edition**.
 
 ---
 
@@ -38,13 +38,10 @@
 
 | # | Actividad estándar | Objeto de configuración | Tipo de configuración | Consultor requerido | Tiempo estimado (h, Medium) |
 |---|---|---|---|---|---|
-| 1 | Confirmar entitlement de Joule | Subaccount BTP + entitlement | General | Consultor BTP | 2 |
-| 2 | Verificar configuración SD (sales areas, document types, pricing) | Configuración SD | General | Consultor SD | 3 |
-| 3 | Asignar business roles SD a usuarios | Business Role / Business Catalog | Particular (por usuario) | Consultor Seguridad | 3 |
-| 4 | Habilitar capability Joule para Sales Order Completion | Joule capability scope | General | Consultor Funcional SD + Joule | 2 |
-| 5 | Pruebas iniciales: crear sales orders con datos parciales y validar recomendaciones | Configuración funcional SD | General | Consultor SD | 3 |
+| 1 | Set Up Your SAP S/4HANA Cloud | Configuración de SAP S/4HANA Cloud Public Edition | General | Consultor Funcional SAP S/4HANA | 3 |
+| 2 | Activate the scope item 73P. | Configuración de SAP S/4HANA Cloud Public Edition | General | Consultor Funcional SAP S/4HANA | 3 |
 
-**Esfuerzo total estimado (activación): ~13 horas.**
+**Esfuerzo total estimado (activación / configuración): ~6 horas.**
 
 ---
 
@@ -52,9 +49,9 @@
 
 | # | Actividad | Consultor requerido | Tiempo estimado (h, Medium) |
 |---|---|---|---|
-| 1 | Prueba unitaria con escenarios reales | Consultor SD | 4 |
-| 2 | Documentación para el cliente | Consultor SD | 4 |
-| 3 | Transferencia de conocimiento | Consultor SD | 3 |
+| 1 | Prueba unitaria del caso de uso con datos reales en entorno de Quality | Consultor Funcional SAP S/4HANA | 4 |
+| 2 | Documentación de la activación para el cliente (manual de usuario + manual de configuración) | Consultor Funcional SAP S/4HANA | 4 |
+| 3 | Transferencia de conocimiento al equipo del cliente | Consultor Funcional SAP S/4HANA | 3 |
 
 **Esfuerzo total estimado (validación + entrega): ~11 horas.**
 
@@ -62,9 +59,16 @@
 
 ## 4. Consideraciones especiales
 
-- Recomendaciones mejoran con volumen / calidad de datos históricos.
-- Usuario sigue confirmando antes de guardar.
-- Respeta autorizaciones.
+- Aplica a SAP S/4HANA Cloud **Public Edition**.
+- Disponibilidad indicada por SAP: **Generally Available**.
+
+---
+
+## Referencias oficiales
+
+- SAP Discovery Center — Detail Page: https://discovery-center.cloud.sap/ai-feature/39a49e49-3ab6-46f5-889d-2035d9378cab/
+- SAP Help Portal — Initial Setup: https://help.sap.com/docs/SAP_S4HANA_CLOUD/ee9ee0ca4c3942068ea584d2f929b5b1/4ee364ca1af446929d4e2c4fc2f709b9.html?locale=en-US&version=2408.00
+- SAP Discovery Center — Pricing Details: No aplica
 
 ---
 
@@ -72,6 +76,6 @@
 
 | Bloque | Horas |
 |---|---|
-| Activación / configuración | 13 |
+| Activación / configuración | 6 |
 | Validación + documentación + KT | 11 |
-| **Total** | **24** |
+| **Total** | **17** |

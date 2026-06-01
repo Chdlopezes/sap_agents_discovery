@@ -1,50 +1,42 @@
-# Análisis caso de uso J112 — Process Analyzer, Text to Insight
+# Análisis caso de uso J112 — Process Analyzer‚ Text to Insight
 
-> Análisis basado en información públicamente documentada por SAP (SAP Help Portal, SAP Discovery Center). Los valores marcados como **[verificar en SAP Help]** deben validarse contra la documentación oficial vigente.
+> Análisis construido **únicamente** a partir de las fuentes oficiales de SAP asociadas al AI Feature/Agent J112 en `processed/AI_Features_Data_Enriched.xlsx`. Los campos para los que SAP no publica información aparecen literalmente como "No aplica", "No existe en la fuente oficial" o "No documentado en la fuente oficial". **No se ha completado ningún dato con conocimiento general ni con inferencia desde casos similares.**
 
-**Resumen del caso:** Capacidad de **SAP Signavio Process Intelligence** que permite consultar datos de procesos mediante lenguaje natural y obtener insights inmediatos. Posicionada como una forma de reducir el tiempo para descubrir insights clave de procesos y ampliar el acceso organizacional al process mining.
+**Fuentes oficiales consultadas:**
+- Detail Page (SAP Discovery Center): https://discovery-center.cloud.sap/ai-feature/a6dde1d9-6da4-443f-874a-e6eb183e2bd5/
+- Initial Setup (SAP Help Portal): No accesible (el enlace aparece en *Resources* pero no fue posible acceder a su contenido tras reintentos).
+- Pricing Details (SAP Discovery Center): No aplica
+
+**Resumen del caso:** Process Analyzer, Text to Insight permite consultar datos de procesos mediante lenguaje natural y obtener insights inmediatos dentro de SAP Signavio Process Intelligence.
 
 ---
 
 ## 1. Prerequisitos para la activación
 
-### 1.1 Productos / componentes SAP requeridos
-- **SAP Signavio Process Intelligence** (suscripción activa).
-- Datos de proceso cargados (event logs) en Process Intelligence.
+### 1.1 Producto / componente SAP requerido
+- **SAP Signavio solutions**.
 
 ### 1.2 Licenciamiento / entitlement / paquete
-- Suscripción vigente a **SAP Signavio solutions**.
-- Capability **Base** **[verificar en AI Foundation Catalog vigente]**.
+- Capability **Base**.
+- No aplica un paquete Premium.
 
 ### 1.3 Scope item relacionado
-- No aplica scope item.
+- No aplica (el producto base no utiliza scope items de SAP S/4HANA).
 
-### 1.4 Aplicaciones / apps Fiori / servicios requeridos
-- **SAP Signavio Process Intelligence — Process Analyzer**.
+### 1.4 Aplicaciones / apps Fiori / servicios / componentes técnicos
+- No documentado en la fuente oficial.
 
 ### 1.5 Datos maestros / transaccionales previos
-- Event logs y modelos de proceso cargados y consistentes en Process Intelligence.
-- Buenas prácticas de naming en variantes / actividades para mejorar la calidad de las preguntas.
+- No documentado en la fuente oficial.
 
 ### 1.6 Restricciones funcionales / técnicas / idioma
-- **Idioma**: consultas soportadas según el modelo subyacente **[verificar matriz vigente]**.
-- **Roles**: Process Analyst con permisos sobre los process logs a consultar.
-
-> **Setup oficial SAP**: la página https://help.sap.com/docs/signavio-process-transformation-suite/sap-signavio-process-transformation-suite-administration-guide/activate-embedded-ai-capabilities?version=1.0 documenta la activación de capacidades de IA embebidas en SAP Signavio Process Transformation Suite.
+- No documentado en la fuente oficial.
 
 ---
 
 ## 2. Pasos de activación / configuración estándar
 
-| # | Actividad estándar | Objeto de configuración | Tipo de configuración | Consultor requerido | Tiempo estimado (h, Medium) |
-|---|---|---|---|---|---|
-| 1 | Confirmar entitlement de SAP Signavio Process Intelligence | Workspace Signavio + entitlement | General | Consultor SAP Signavio | 2 |
-| 2 | Activar las capacidades de IA embebidas en la administración de Process Transformation Suite | Configuración Embedded AI | General | Consultor SAP Signavio | 2 |
-| 3 | Verificar que los event logs y modelos de proceso estén cargados y consistentes | Process Intelligence — Datos | Particular (por proceso) | Consultor SAP Signavio | 3 |
-| 4 | Asignar a los usuarios objetivo los roles Signavio con acceso a Process Analyzer | Roles SAP Signavio | Particular (por usuario / grupo) | Consultor Seguridad Signavio | 2 |
-| 5 | Pruebas iniciales con un Process Analyst piloto (preguntas representativas) | Configuración funcional Signavio | General | Consultor SAP Signavio | 3 |
-
-**Esfuerzo total estimado (activación estándar, sin necesidades adicionales): ~12 horas.**
+> **No se registran pasos de activación.** Tras consultar el Initial Setup y la sección *Resources* de la Detail Page (incl. el enlace 'AI Feature' cuando existe), no fue posible acceder a una página oficial SAP que describa un procedimiento de activación para este caso. No se han fabricado pasos.
 
 ---
 
@@ -52,28 +44,25 @@
 
 | # | Actividad | Consultor requerido | Tiempo estimado (h, Medium) |
 |---|---|---|---|
-| 1 | Prueba unitaria con consultas reales del cliente (varios procesos / niveles de detalle) | Consultor SAP Signavio | 4 |
-| 2 | Documentación de la activación para el cliente (manual de usuario + buenas prácticas de prompting) | Consultor SAP Signavio | 4 |
-| 3 | Transferencia de conocimiento al equipo del cliente (sesión funcional + Q&A) | Consultor SAP Signavio | 3 |
+| 1 | Prueba unitaria del caso de uso con datos reales en entorno de Quality | Consultor SAP Signavio (producto base) | 4 |
+| 2 | Documentación de la activación para el cliente (manual de usuario + manual de configuración) | Consultor SAP Signavio (producto base) | 4 |
+| 3 | Transferencia de conocimiento al equipo del cliente | Consultor SAP Signavio (producto base) | 3 |
 
 **Esfuerzo total estimado (validación + entrega): ~11 horas.**
 
 ---
 
-## 4. Consideraciones especiales (según guía SAP)
+## 4. Consideraciones especiales
 
-- La calidad de los insights depende **directamente de la calidad de los event logs** y de la nomenclatura de actividades.
-- Definir **buenas prácticas de prompting** para que la organización aproveche la capability de manera consistente.
-- Sujeto a las condiciones de servicio vigentes de SAP Signavio **[verificar]**.
-- Antes de la activación, revisar el **SAP Road Map Explorer** y release notes vigentes.
-- Este caso de uso **no incluye desarrollos custom**; cualquier extensión queda fuera del alcance estándar.
+- Disponibilidad indicada por SAP: **Generally Available**.
 
 ---
 
 ## Referencias oficiales
 
 - SAP Discovery Center — Detail Page: https://discovery-center.cloud.sap/ai-feature/a6dde1d9-6da4-443f-874a-e6eb183e2bd5/
-- SAP Help Portal — Activate Embedded AI Capabilities: https://help.sap.com/docs/signavio-process-transformation-suite/sap-signavio-process-transformation-suite-administration-guide/activate-embedded-ai-capabilities?version=1.0
+- SAP Help Portal — Initial Setup: No accesible tras reintentos
+- SAP Discovery Center — Pricing Details: No aplica
 
 ---
 
@@ -81,6 +70,6 @@
 
 | Bloque | Horas |
 |---|---|
-| Activación / configuración | 12 |
+| Activación / configuración | No aplica (sin pasos oficialmente documentados) |
 | Validación + documentación + KT | 11 |
-| **Total** | **23** |
+| **Total** | **11** |

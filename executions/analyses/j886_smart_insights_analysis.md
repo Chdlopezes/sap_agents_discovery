@@ -1,35 +1,36 @@
 # Análisis caso de uso J886 — Smart Insights
 
-> Análisis basado en información públicamente documentada por SAP (SAP Help Portal, SAP Discovery Center). Los valores marcados como **[verificar en SAP Help]** deben validarse contra la documentación oficial vigente.
+> Análisis construido **únicamente** a partir de las fuentes oficiales de SAP asociadas al AI Feature/Agent J886 en `processed/AI_Features_Data_Enriched.xlsx`. Los campos para los que SAP no publica información aparecen literalmente como "No aplica", "No existe en la fuente oficial" o "No documentado en la fuente oficial". **No se ha completado ningún dato con conocimiento general ni con inferencia desde casos similares.**
 
-**Resumen del caso:** Capacidad de **SAP Analytics Cloud (SAC)** que analiza desviaciones y puntos de datos dentro del modelo subyacente para entregar explicaciones en texto y visualizaciones asociadas. El valor se centra en acelerar el análisis de causas y desviaciones.
+**Fuentes oficiales consultadas:**
+- Detail Page (SAP Discovery Center): https://discovery-center.cloud.sap/ai-feature/9ff17406-6da6-4066-bbb7-2edb8d898dbd/
+- Initial Setup (SAP Help Portal): https://help.sap.com/docs/SAP_ANALYTICS_CLOUD/00f68c2e08b941f081002fd3691d86a7/c9eb30cc1e5b4c439cb871bf9612d2ac.html
+- Pricing Details (SAP Discovery Center): No aplica
+
+**Resumen del caso:** Analiza desviaciones y puntos de datos dentro del modelo subyacente de SAP Analytics Cloud para entregar explicaciones en texto y visualizaciones asociadas.
 
 ---
 
 ## 1. Prerequisitos para la activación
 
-### 1.1 Productos / componentes SAP requeridos
-- **SAP Analytics Cloud** (suscripción activa).
+### 1.1 Producto / componente SAP requerido
+- **SAP Analytics Cloud**.
 
 ### 1.2 Licenciamiento / entitlement / paquete
-- Suscripción vigente a **SAP Analytics Cloud**.
-- Capability **Base** — incluida con SAC **[verificar en AI Foundation Catalog vigente]**.
+- Capability **Base**.
+- No aplica un paquete Premium.
 
 ### 1.3 Scope item relacionado
-- No aplica scope item.
+- No aplica (el producto base no utiliza scope items de SAP S/4HANA).
 
-### 1.4 Aplicaciones / apps Fiori / servicios requeridos
-- **SAP Analytics Cloud** con historias / modelos publicados sobre los que se aplican los insights.
+### 1.4 Aplicaciones / apps Fiori / servicios / componentes técnicos
+- Según la fuente oficial abierta: Searching Your Data Using Just Ask
 
 ### 1.5 Datos maestros / transaccionales previos
-- Modelo SAC con métricas y dimensiones suficientes para producir explicaciones significativas.
-- Datos consistentes y agregados al nivel de granularidad esperado.
+- No documentado en la fuente oficial.
 
 ### 1.6 Restricciones funcionales / técnicas / idioma
-- **Idioma**: explicaciones según el modelo subyacente **[verificar matriz vigente]**.
-- **Roles**: usuario SAC con permisos para consumir / analizar las historias.
-
-> **Setup oficial SAP**: la documentación https://help.sap.com/docs/SAP_ANALYTICS_CLOUD/00f68c2e08b941f081002fd3691d86a7/8b9038ca44f547bf8e69b04e5c55eb37.html describe las capacidades inteligentes de SAC.
+- No documentado en la fuente oficial.
 
 ---
 
@@ -37,12 +38,11 @@
 
 | # | Actividad estándar | Objeto de configuración | Tipo de configuración | Consultor requerido | Tiempo estimado (h, Medium) |
 |---|---|---|---|---|---|
-| 1 | Confirmar entitlement de SAP Analytics Cloud en el tenant del cliente | Tenant SAC | General | Consultor SAP Analytics Cloud | 2 |
-| 2 | Verificar la calidad y granularidad de los modelos donde se aplicarán Smart Insights | Modelos SAC | Particular (por modelo) | Consultor SAP Analytics Cloud | 3 |
-| 3 | Asignar a los usuarios objetivo los roles SAC con acceso a las historias | Roles SAC | Particular (por usuario / grupo) | Consultor Seguridad SAC | 2 |
-| 4 | Pruebas iniciales con un usuario piloto (Smart Insights sobre desviaciones representativas) | Configuración funcional SAC | General | Consultor SAP Analytics Cloud | 2 |
+| 1 | Add Smart Insights Charts and Text to Your Story | Configuración de SAP Analytics Cloud | General | Consultor SAP Analytics Cloud | 3 |
+| 2 | Add Dynamic Text to Stories | Configuración de SAP Analytics Cloud | General | Consultor SAP Analytics Cloud | 3 |
+| 3 | Add Variance to Charts (Classic) | Configuración de SAP Analytics Cloud | General | Consultor SAP Analytics Cloud | 3 |
 
-**Esfuerzo total estimado (activación estándar, sin necesidades adicionales): ~9 horas.**
+**Esfuerzo total estimado (activación / configuración): ~9 horas.**
 
 ---
 
@@ -50,28 +50,25 @@
 
 | # | Actividad | Consultor requerido | Tiempo estimado (h, Medium) |
 |---|---|---|---|
-| 1 | Prueba unitaria con datos reales del cliente (explicaciones sobre escenarios representativos) | Consultor SAP Analytics Cloud | 4 |
-| 2 | Documentación de la activación para el cliente (manual de usuario) | Consultor SAP Analytics Cloud | 4 |
-| 3 | Transferencia de conocimiento al equipo del cliente (sesión funcional + Q&A) | Consultor SAP Analytics Cloud | 3 |
+| 1 | Prueba unitaria del caso de uso con datos reales en entorno de Quality | Consultor SAP Analytics Cloud | 4 |
+| 2 | Documentación de la activación para el cliente (manual de usuario + manual de configuración) | Consultor SAP Analytics Cloud | 4 |
+| 3 | Transferencia de conocimiento al equipo del cliente | Consultor SAP Analytics Cloud | 3 |
 
 **Esfuerzo total estimado (validación + entrega): ~11 horas.**
 
 ---
 
-## 4. Consideraciones especiales (según guía SAP)
+## 4. Consideraciones especiales
 
-- Las explicaciones son **descriptivas**: el usuario sigue siendo responsable de validar las causas reales con conocimiento del negocio.
-- La calidad depende **directamente de la calidad de los modelos** y de la consistencia de la data.
-- Sujeto a las condiciones de servicio vigentes de SAP Analytics Cloud **[verificar]**.
-- Antes de la activación, revisar el **SAP Road Map Explorer** y release notes vigentes.
-- Este caso de uso **no incluye desarrollos custom**; cualquier extensión queda fuera del alcance estándar.
+- Disponibilidad indicada por SAP: **Generally Available**.
 
 ---
 
 ## Referencias oficiales
 
 - SAP Discovery Center — Detail Page: https://discovery-center.cloud.sap/ai-feature/9ff17406-6da6-4066-bbb7-2edb8d898dbd/
-- SAP Help Portal — Smart Features in SAC: https://help.sap.com/docs/SAP_ANALYTICS_CLOUD/00f68c2e08b941f081002fd3691d86a7/8b9038ca44f547bf8e69b04e5c55eb37.html
+- SAP Help Portal — Initial Setup: https://help.sap.com/docs/SAP_ANALYTICS_CLOUD/00f68c2e08b941f081002fd3691d86a7/c9eb30cc1e5b4c439cb871bf9612d2ac.html
+- SAP Discovery Center — Pricing Details: No aplica
 
 ---
 

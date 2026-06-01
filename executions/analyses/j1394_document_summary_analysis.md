@@ -1,36 +1,36 @@
 # Análisis caso de uso J1394 — Document Summary
 
-> Análisis basado en información públicamente documentada por SAP (SAP Help Portal, SAP Discovery Center). Los valores marcados como **[verificar en SAP Help]** deben validarse contra la documentación oficial vigente.
+> Análisis construido **únicamente** a partir de las fuentes oficiales de SAP asociadas al AI Feature/Agent J1394 en `processed/AI_Features_Data_Enriched.xlsx`. Los campos para los que SAP no publica información aparecen literalmente como "No aplica", "No existe en la fuente oficial" o "No documentado en la fuente oficial". **No se ha completado ningún dato con conocimiento general ni con inferencia desde casos similares.**
 
-**Resumen del caso:** Capacidad de **SAP Cloud ALM** que permite resumir documentación mediante IA dentro de la aplicación *Documents*. SAP no publica un KPI cuantitativo específico en la página consultada; el valor se centra en reducir el tiempo de lectura manual.
+**Fuentes oficiales consultadas:**
+- Detail Page (SAP Discovery Center): https://discovery-center.cloud.sap/ai-feature/111df0da-5177-4769-88ea-6a200ecae091/
+- Initial Setup (SAP Help Portal): https://help.sap.com/docs/cloud-alm/applicationhelp/documents?locale=en-US
+- Pricing Details (SAP Discovery Center): No aplica
+
+**Resumen del caso:** Permite resumir documentación de SAP Cloud ALM mediante capacidades de IA dentro de la aplicación de documentos.
 
 ---
 
 ## 1. Prerequisitos para la activación
 
-### 1.1 Productos / componentes SAP requeridos
-- **SAP Cloud ALM** (suscripción activa).
-- Aplicación **Documents** habilitada dentro del tenant SAP Cloud ALM.
+### 1.1 Producto / componente SAP requerido
+- **SAP Cloud ALM**.
 
 ### 1.2 Licenciamiento / entitlement / paquete
-- Suscripción vigente a **SAP Cloud ALM**.
-- Capability **Base** **[verificar en AI Foundation Catalog vigente]**.
+- Capability **Base**.
+- No aplica un paquete Premium.
 
 ### 1.3 Scope item relacionado
-- No aplica scope item.
+- No aplica (el producto base no utiliza scope items de SAP S/4HANA).
 
-### 1.4 Aplicaciones / apps Fiori / servicios requeridos
-- **SAP Cloud ALM — Documents**.
+### 1.4 Aplicaciones / apps Fiori / servicios / componentes técnicos
+- Según la fuente oficial abierta: Before you can use the AI-generated summary, you need to fulfill the following prerequisites. You have activated the AI feature. To do so: Log on to SAP for Me. For more information about access to SAP for Me, see Access and Authorizations. To activate a feature, select Request Activation next to the feature name. A pop-up titled Tenants appears. In the Tenants pop-up, select create a support case. An information pop-up appears.
 
 ### 1.5 Datos maestros / transaccionales previos
-- Documentos cargados en SAP Cloud ALM con contenido suficiente para que un resumen sea significativo.
+- No documentado en la fuente oficial.
 
 ### 1.6 Restricciones funcionales / técnicas / idioma
-- **Idioma**: capability publicada por SAP Cloud ALM **[verificar idiomas soportados vigentes]**.
-- **Roles**: el usuario debe tener acceso al documento que va a resumir.
-- **Tamaño / formato**: posibles límites sobre tamaño o tipo de documento **[verificar]**.
-
-> **Setup oficial SAP**: la página https://help.sap.com/docs/cloud-alm/applicationhelp/documents indica que SAP Cloud ALM usa capacidades de IA para generar el resumen de contenido de documentos. El uso se realiza directamente desde la aplicación *Documents*.
+- No documentado en la fuente oficial.
 
 ---
 
@@ -38,11 +38,14 @@
 
 | # | Actividad estándar | Objeto de configuración | Tipo de configuración | Consultor requerido | Tiempo estimado (h, Medium) |
 |---|---|---|---|---|---|
-| 1 | Confirmar entitlement de SAP Cloud ALM con capacidades de IA | Tenant SAP Cloud ALM | General | Consultor SAP Cloud ALM | 2 |
-| 2 | Asignar a los usuarios objetivo el rol de acceso a la app *Documents* | Roles SAP Cloud ALM | Particular (por usuario / grupo) | Consultor Seguridad SAP Cloud ALM | 2 |
-| 3 | Pruebas iniciales con un usuario piloto (resumir documentos representativos en *Documents*) | Configuración funcional SAP Cloud ALM | General | Consultor SAP Cloud ALM | 2 |
+| 1 | Set Up Tricentis Test Automation for SAP | Configuración de SAP Cloud ALM | General | Consultor SAP Cloud ALM | 3 |
+| 2 | Open this video in a new window | Configuración de SAP Cloud ALM | General | Consultor SAP Cloud ALM | 3 |
+| 3 | Assign and unassign tags to documents on the object page. | Configuración de SAP Cloud ALM | Particular (por usuario / rol) | Consultor SAP Cloud ALM | 3 |
+| 4 | Select a document that contains content. | Configuración de SAP Cloud ALM | General | Consultor SAP Cloud ALM | 3 |
+| 5 | Review the AI-generated summary and make manual changes if needed. | Configuración de SAP Cloud ALM | General | Consultor SAP Cloud ALM | 3 |
+| 6 | Select Apply to save the summary or Regenerate to create a new summary. | Configuración de SAP Cloud ALM | General | Consultor SAP Cloud ALM | 3 |
 
-**Esfuerzo total estimado (activación estándar, sin necesidades adicionales): ~6 horas.**
+**Esfuerzo total estimado (activación / configuración): ~18 horas.**
 
 ---
 
@@ -50,28 +53,25 @@
 
 | # | Actividad | Consultor requerido | Tiempo estimado (h, Medium) |
 |---|---|---|---|
-| 1 | Prueba unitaria con documentos reales del cliente (resumir documentos de varios tipos / longitudes) | Consultor SAP Cloud ALM | 4 |
-| 2 | Documentación de la activación para el cliente (manual de usuario) | Consultor SAP Cloud ALM | 4 |
-| 3 | Transferencia de conocimiento al equipo del cliente (sesión funcional + Q&A) | Consultor SAP Cloud ALM | 3 |
+| 1 | Prueba unitaria del caso de uso con datos reales en entorno de Quality | Consultor SAP Cloud ALM | 4 |
+| 2 | Documentación de la activación para el cliente (manual de usuario + manual de configuración) | Consultor SAP Cloud ALM | 4 |
+| 3 | Transferencia de conocimiento al equipo del cliente | Consultor SAP Cloud ALM | 3 |
 
 **Esfuerzo total estimado (validación + entrega): ~11 horas.**
 
 ---
 
-## 4. Consideraciones especiales (según guía SAP)
+## 4. Consideraciones especiales
 
-- El resumen es **descriptivo**: el usuario debe validar que captura los puntos clave antes de tomar decisiones.
-- Útil principalmente en **handovers de proyecto y onboarding**: comunicar a los usuarios el alcance esperado.
-- Sujeto a las condiciones de servicio vigentes de SAP Cloud ALM **[verificar]**.
-- Antes de la activación, revisar el **SAP Road Map Explorer** y release notes vigentes.
-- Este caso de uso **no incluye desarrollos custom**; cualquier extensión queda fuera del alcance estándar.
+- Disponibilidad indicada por SAP: **Generally Available**.
 
 ---
 
 ## Referencias oficiales
 
 - SAP Discovery Center — Detail Page: https://discovery-center.cloud.sap/ai-feature/111df0da-5177-4769-88ea-6a200ecae091/
-- SAP Help Portal — Documents in SAP Cloud ALM: https://help.sap.com/docs/cloud-alm/applicationhelp/documents
+- SAP Help Portal — Initial Setup: https://help.sap.com/docs/cloud-alm/applicationhelp/documents?locale=en-US
+- SAP Discovery Center — Pricing Details: No aplica
 
 ---
 
@@ -79,6 +79,6 @@
 
 | Bloque | Horas |
 |---|---|
-| Activación / configuración | 6 |
+| Activación / configuración | 18 |
 | Validación + documentación + KT | 11 |
-| **Total** | **17** |
+| **Total** | **29** |

@@ -1,39 +1,36 @@
-# Análisis caso de uso J848 — Supplier Delivery Date Prediction (SAP S/4HANA on-premise)
+# Análisis caso de uso J848 — Supplier Delivery Date Prediction
 
-> Basado en información públicamente documentada por SAP. Valores marcados como **[verificar en SAP Help]** requieren validación oficial.
+> Análisis construido **únicamente** a partir de las fuentes oficiales de SAP asociadas al AI Feature/Agent J848 en `processed/AI_Features_Data_Enriched.xlsx`. Los campos para los que SAP no publica información aparecen literalmente como "No aplica", "No existe en la fuente oficial" o "No documentado en la fuente oficial". **No se ha completado ningún dato con conocimiento general ni con inferencia desde casos similares.**
 
-> **Nota**: Variante para SAP S/4HANA on-premise. Ver J811 (Private).
+**Fuentes oficiales consultadas:**
+- Detail Page (SAP Discovery Center): https://discovery-center.cloud.sap/ai-feature/e0dd79ff-4ed9-4d79-9461-2be67e664a3c/
+- Initial Setup (SAP Help Portal): https://help.sap.com/docs/SAP_S4HANA_ON-PREMISE/8308e6d301d54584a33cd04a9861bc52/436151b128614f0e84024015136043d3.html
+- Pricing Details (SAP Discovery Center): No aplica
 
-**Resumen del caso:** Predice fechas de entrega para posiciones de pedidos de compra con base en datos históricos y múltiples parámetros del proceso de aprovisionamiento. SAP indica: *Incrementa la confiabilidad del abastecimiento, mejora la planeación de materiales y ayuda a reducir impactos por entregas tardías o incertidumbre en fechas de recepción.*
+**Resumen del caso:** Predice fechas de entrega para posiciones de pedidos de compra con base en datos históricos y múltiples parámetros del proceso de aprovisionamiento.
 
 ---
 
 ## 1. Prerequisitos para la activación
 
-### 1.1 Productos / componentes SAP requeridos
-- **SAP S/4HANA on-premise** en release con soporte de la capability ML / Predictive **[verificar]**.
-- Componente **MM-PUR – Purchasing** operativo.
-- Servicio predictivo (puede requerir BTP / SAP AI Core) **[verificar arquitectura vigente]**.
+### 1.1 Producto / componente SAP requerido
+- **SAP S/4HANA**.
 
 ### 1.2 Licenciamiento / entitlement / paquete
-- Licencia S/4HANA on-premise vigente.
-- Entitlement servicio predictivo (Premium) **[verificar]**.
+- Capability **Base**.
+- No aplica un paquete Premium.
 
 ### 1.3 Scope item relacionado
-- Best practice / scope item de Purchase Order Management — **[verificar referencia equivalente para on-premise]**.
+- No documentado en la fuente oficial.
 
-### 1.4 Aplicaciones / apps Fiori / servicios requeridos
-- Apps Fiori *Manage Purchase Orders*.
-- Conectividad on-prem ↔ BTP / AI Core si aplica.
+### 1.4 Aplicaciones / apps Fiori / servicios / componentes técnicos
+- Según la fuente oficial abierta: Intelligent Scenario Lifecycle Management What is an Intelligent Scenario Intelligent Scenarios in ISLM Intelligent Scenario Lifecycle Management Intelligent Scenario Lifecycle Management is a standardized framework to build and manage AI use cases, enabling seamless integration with Generative AI Hub, SAP BTP AI services, and SAP HANA ML. It standardizes the integration and consumption of intelligent scenarios within SAP S/4HANA for both embedded and side-by-side scenarios. An intelligent scenario is an ABAP representation of a business-specific use case.
 
 ### 1.5 Datos maestros / transaccionales previos
-- Suppliers, materials, plants, POs históricos.
-- Volumen / calidad de histórico suficiente.
+- No documentado en la fuente oficial.
 
 ### 1.6 Restricciones funcionales / técnicas / idioma
-- **Idioma**: inglés primariamente **[verificar]**.
-- Aplica a **on-premise**.
-- Calidad predicción condicionada por histórico.
+- No documentado en la fuente oficial.
 
 ---
 
@@ -41,13 +38,9 @@
 
 | # | Actividad estándar | Objeto de configuración | Tipo de configuración | Consultor requerido | Tiempo estimado (h, Medium) |
 |---|---|---|---|---|---|
-| 1 | Provisionar servicio predictivo en BTP / AI Core | Subaccount BTP + entitlement | General | Consultor BTP | 4 |
-| 2 | Configurar Cloud Connector / destinations on-prem ↔ BTP | Cloud Connector / Destinations | General | Consultor Basis / Integración | 6 |
-| 3 | Configurar integración MM-PUR con servicio predictivo | Integración funcional / OData | General | Consultor MM + Integración | 6 |
-| 4 | Asignar roles MM-PUR a usuarios | Roles / Authorizations | Particular (por usuario) | Consultor Seguridad | 3 |
-| 5 | Pruebas iniciales (comparar predicción vs realidad) | Configuración funcional MM | General | Consultor MM | 4 |
+| 1 | Activate Features | Configuración de SAP S/4HANA | General | Consultor Funcional SAP S/4HANA | 3 |
 
-**Esfuerzo total estimado (activación): ~23 horas.**
+**Esfuerzo total estimado (activación / configuración): ~3 horas.**
 
 ---
 
@@ -55,19 +48,25 @@
 
 | # | Actividad | Consultor requerido | Tiempo estimado (h, Medium) |
 |---|---|---|---|
-| 1 | Prueba unitaria con escenarios reales (varios suppliers) | Consultor MM | 5 |
-| 2 | Documentación para el cliente | Consultor MM | 4 |
-| 3 | Transferencia de conocimiento | Consultor MM | 3 |
+| 1 | Prueba unitaria del caso de uso con datos reales en entorno de Quality | Consultor Funcional SAP S/4HANA | 4 |
+| 2 | Documentación de la activación para el cliente (manual de usuario + manual de configuración) | Consultor Funcional SAP S/4HANA | 4 |
+| 3 | Transferencia de conocimiento al equipo del cliente | Consultor Funcional SAP S/4HANA | 3 |
 
-**Esfuerzo total estimado (validación + entrega): ~12 horas.**
+**Esfuerzo total estimado (validación + entrega): ~11 horas.**
 
 ---
 
 ## 4. Consideraciones especiales
 
-- **on-premise**: validar firewall / Cloud Connector / latencia / volumen de datos enviados.
-- Periodicidad de reentrenamiento del modelo.
-- Usuario sigue decidiendo el ajuste funcional.
+- Disponibilidad indicada por SAP: **Generally Available**.
+
+---
+
+## Referencias oficiales
+
+- SAP Discovery Center — Detail Page: https://discovery-center.cloud.sap/ai-feature/e0dd79ff-4ed9-4d79-9461-2be67e664a3c/
+- SAP Help Portal — Initial Setup: https://help.sap.com/docs/SAP_S4HANA_ON-PREMISE/8308e6d301d54584a33cd04a9861bc52/436151b128614f0e84024015136043d3.html
+- SAP Discovery Center — Pricing Details: No aplica
 
 ---
 
@@ -75,6 +74,6 @@
 
 | Bloque | Horas |
 |---|---|
-| Activación / configuración | 23 |
-| Validación + documentación + KT | 12 |
-| **Total** | **35** |
+| Activación / configuración | 3 |
+| Validación + documentación + KT | 11 |
+| **Total** | **14** |

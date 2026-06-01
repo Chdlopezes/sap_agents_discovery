@@ -1,49 +1,43 @@
 # Análisis caso de uso J777 — Retrieval of Equipment Information in Service Management
 
-> Basado en información públicamente documentada por SAP. Valores marcados como **[verificar en SAP Help]** requieren validación oficial.
+> Análisis construido **únicamente** a partir de las fuentes oficiales de SAP asociadas al AI Feature/Agent J777 en `processed/AI_Features_Data_Enriched.xlsx`. Los campos para los que SAP no publica información aparecen literalmente como "No aplica", "No existe en la fuente oficial" o "No documentado en la fuente oficial". **No se ha completado ningún dato con conocimiento general ni con inferencia desde casos similares.**
 
-**Resumen del caso:** Los service managers pueden acceder rápidamente a detalles completos del equipo instalado en sitios de cliente, incluyendo garantía, historial de transacciones de servicio y recomendaciones o resúmenes asistidos por IA. SAP indica: *Aporta valor al mejorar supervisión de calendarios de servicio, reducir potenciales tiempos de inactividad y ayudar a mantener el equipo del cliente operando con mayor confiabilidad.*
+**Fuentes oficiales consultadas:**
+- Detail Page (SAP Discovery Center): https://discovery-center.cloud.sap/ai-feature/3de36a16-73ca-4df6-94d2-ccd0dc806192/
+- Initial Setup (SAP Help Portal): No accesible (el enlace aparece en *Resources* pero no fue posible acceder a su contenido tras reintentos).
+- Pricing Details (SAP Discovery Center): https://discovery-center.cloud.sap/ai-feature/3de36a16-73ca-4df6-94d2-ccd0dc806192/#pricing
+
+**Resumen del caso:** Los service managers pueden acceder rápidamente a detalles completos del equipo instalado en sitios de cliente, incluyendo garantía, historial de transacciones de servicio y recomendaciones o resúmenes asistidos por IA.
 
 ---
 
 ## 1. Prerequisitos para la activación
 
-### 1.1 Productos / componentes SAP requeridos
-- **SAP S/4HANA Cloud Private Edition** con Joule habilitado.
-- Componente **CS / Service Management** (Equipment, Service Orders, Notifications, History).
+### 1.1 Producto / componente SAP requerido
+- **SAP S/4HANA Cloud Private Edition**.
 
 ### 1.2 Licenciamiento / entitlement / paquete
-- Suscripción S/4HANA Cloud Private Edition.
-- Entitlement Joule **[verificar]**.
+- Capability **Premium**.
+- Paquete comercial: **Joule Premium for Supply Chain Management**.
+- Pricing (sección *Pricing Details* de la Detail Page): Pricing Details muestra consumo asociado a AI Units, con cantidad incluida indicada como 0 AI Units; las solicitudes adicionales estarían sujetas al consumo/estimación correspondiente de AI Units. No se muestra un precio unitario fijo en la información visible.
 
 ### 1.3 Scope item relacionado
-- Scope items de Service Management - Equipment & Service History — **[verificar IDs]**.
+- No documentado en la fuente oficial.
 
-### 1.4 Aplicaciones / apps Fiori / servicios requeridos
-- Apps Fiori de Service Equipment / Service Order Cockpit.
-- Joule habilitado en el Launchpad.
+### 1.4 Aplicaciones / apps Fiori / servicios / componentes técnicos
+- No documentado en la fuente oficial.
 
 ### 1.5 Datos maestros / transaccionales previos
-- Maestros de equipment, customers, technicians, service history.
+- No documentado en la fuente oficial.
 
 ### 1.6 Restricciones funcionales / técnicas / idioma
-- **Idioma**: inglés primariamente **[verificar]**.
-- Solo S/4HANA Cloud **Private** Edition.
-- Usuario con autorizaciones Service.
+- Disponible para SAP S/4HANA Cloud **Private Edition**.
 
 ---
 
 ## 2. Pasos de activación / configuración estándar
 
-| # | Actividad estándar | Objeto de configuración | Tipo de configuración | Consultor requerido | Tiempo estimado (h, Medium) |
-|---|---|---|---|---|---|
-| 1 | Confirmar entitlement de Joule | Subaccount BTP + entitlement | General | Consultor BTP | 2 |
-| 2 | Verificar configuración de Service Management (equipment categories, history) | Configuración Service | General | Consultor Service | 3 |
-| 3 | Asignar business roles Service Manager a usuarios | Business Role / Authorizations | Particular (por usuario) | Consultor Seguridad | 3 |
-| 4 | Habilitar capability Joule para Equipment 360° | Joule capability scope | General | Consultor Funcional Service + Joule | 2 |
-| 5 | Pruebas iniciales: consultas sobre equipos y service history | Configuración funcional Service | General | Consultor Service | 3 |
-
-**Esfuerzo total estimado (activación): ~13 horas.**
+> **No se registran pasos de activación.** Tras consultar el Initial Setup y la sección *Resources* de la Detail Page (incl. el enlace 'AI Feature' cuando existe), no fue posible acceder a una página oficial SAP que describa un procedimiento de activación para este caso. No se han fabricado pasos.
 
 ---
 
@@ -51,9 +45,9 @@
 
 | # | Actividad | Consultor requerido | Tiempo estimado (h, Medium) |
 |---|---|---|---|
-| 1 | Prueba unitaria con escenarios reales (equipos típicos del cliente) | Consultor Service | 4 |
-| 2 | Documentación para el cliente | Consultor Service | 4 |
-| 3 | Transferencia de conocimiento | Consultor Service | 3 |
+| 1 | Prueba unitaria del caso de uso con datos reales en entorno de Quality | Consultor Funcional SAP S/4HANA (producto base) | 4 |
+| 2 | Documentación de la activación para el cliente (manual de usuario + manual de configuración) | Consultor Funcional SAP S/4HANA (producto base) | 4 |
+| 3 | Transferencia de conocimiento al equipo del cliente | Consultor Funcional SAP S/4HANA (producto base) | 3 |
 
 **Esfuerzo total estimado (validación + entrega): ~11 horas.**
 
@@ -61,8 +55,17 @@
 
 ## 4. Consideraciones especiales
 
-- Vista 360° depende de la calidad/completitud del service history.
-- Joule consulta; acciones se ejecutan en apps Service.
+- Caso **Premium**: el consumo se factura según el modelo de AI Units / paquete descrito en *Pricing Details* (ver sección 1.2).
+- Restringido a SAP S/4HANA Cloud **Private Edition**.
+- Disponibilidad indicada por SAP: **Generally Available**.
+
+---
+
+## Referencias oficiales
+
+- SAP Discovery Center — Detail Page: https://discovery-center.cloud.sap/ai-feature/3de36a16-73ca-4df6-94d2-ccd0dc806192/
+- SAP Help Portal — Initial Setup: No accesible tras reintentos
+- SAP Discovery Center — Pricing Details: https://discovery-center.cloud.sap/ai-feature/3de36a16-73ca-4df6-94d2-ccd0dc806192/#pricing
 
 ---
 
@@ -70,6 +73,6 @@
 
 | Bloque | Horas |
 |---|---|
-| Activación / configuración | 13 |
+| Activación / configuración | No aplica (sin pasos oficialmente documentados) |
 | Validación + documentación + KT | 11 |
-| **Total** | **24** |
+| **Total** | **11** |

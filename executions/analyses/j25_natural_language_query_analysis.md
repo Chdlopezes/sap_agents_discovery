@@ -1,35 +1,36 @@
 # Análisis caso de uso J25 — Natural Language Query
 
-> Análisis basado en información públicamente documentada por SAP (SAP Discovery Center). Los valores marcados como **[verificar en SAP Help]** deben validarse contra la documentación oficial vigente.
+> Análisis construido **únicamente** a partir de las fuentes oficiales de SAP asociadas al AI Feature/Agent J25 en `processed/AI_Features_Data_Enriched.xlsx`. Los campos para los que SAP no publica información aparecen literalmente como "No aplica", "No existe en la fuente oficial" o "No documentado en la fuente oficial". **No se ha completado ningún dato con conocimiento general ni con inferencia desde casos similares.**
 
-**Resumen del caso:** Función de IA generativa de **SAP Analytics Cloud (SAC)** que democratiza la analítica permitiendo solicitar datos mediante lenguaje natural. SAP indica una reducción del **80% del tiempo** para acceder a información relevante.
+**Fuentes oficiales consultadas:**
+- Detail Page (SAP Discovery Center): https://discovery-center.cloud.sap/ai-feature/6a655660-1f00-4b22-a6e4-b79167b527ec/
+- Initial Setup (SAP Help Portal): https://help.sap.com/docs/SAP_ANALYTICS_CLOUD/00f68c2e08b941f081002fd3691d86a7/61a8150e7e7944c4848c79d0ec032bd2.html?locale=en-US
+- Pricing Details (SAP Discovery Center): No aplica
+
+**Resumen del caso:** Natural Language Query es una función de IA generativa de SAP Analytics Cloud diseñada para democratizar la analítica, permitiendo solicitar datos mediante lenguaje natural.
 
 ---
 
 ## 1. Prerequisitos para la activación
 
-### 1.1 Productos / componentes SAP requeridos
-- **SAP Analytics Cloud** (suscripción activa).
+### 1.1 Producto / componente SAP requerido
+- **SAP Analytics Cloud**.
 
 ### 1.2 Licenciamiento / entitlement / paquete
-- Suscripción vigente a **SAP Analytics Cloud**.
-- Capability **Base** — incluida con SAC sin necesidad de paquete Premium adicional **[verificar en AI Foundation Catalog vigente]**.
+- Capability **Base**.
+- No aplica un paquete Premium.
 
 ### 1.3 Scope item relacionado
-- No aplica scope item.
+- No aplica (el producto base no utiliza scope items de SAP S/4HANA).
 
-### 1.4 Aplicaciones / apps Fiori / servicios requeridos
-- **SAP Analytics Cloud** con historias / modelos publicados sobre los que se quiera consultar.
+### 1.4 Aplicaciones / apps Fiori / servicios / componentes técnicos
+- Según la fuente oficial abierta: Searching Your Data Using Just Ask Exploring Your Data with Just Ask Use configuration settings to prepare and maintain Just Ask for your system users. A Just Ask administrator can control the following: There are two access points for Just Ask:
 
 ### 1.5 Datos maestros / transaccionales previos
-- Modelos / datasets de SAC publicados con métricas, dimensiones y jerarquías correctamente configuradas.
-- Nombres / descripciones consistentes en el modelo para que la consulta en lenguaje natural funcione correctamente.
+- No documentado en la fuente oficial.
 
 ### 1.6 Restricciones funcionales / técnicas / idioma
-- **Idioma**: la consulta en lenguaje natural está disponible principalmente en **inglés** **[verificar matriz vigente]**.
-- **Roles**: el usuario debe tener permisos de visualización sobre los modelos / historias consultadas.
-
-> **Nota**: SAP Discovery Center indica que no existe enlace de Initial Setup específico en la sección Resources. Aplican los prerequisitos generales de SAP Analytics Cloud.
+- No documentado en la fuente oficial.
 
 ---
 
@@ -37,12 +38,14 @@
 
 | # | Actividad estándar | Objeto de configuración | Tipo de configuración | Consultor requerido | Tiempo estimado (h, Medium) |
 |---|---|---|---|---|---|
-| 1 | Confirmar entitlement de SAP Analytics Cloud en el tenant del cliente | Tenant SAC | General | Consultor SAP Analytics Cloud | 2 |
-| 2 | Verificar la calidad / nomenclatura de los modelos donde se usará la consulta en lenguaje natural | Modelos SAC | Particular (por modelo) | Consultor SAP Analytics Cloud | 3 |
-| 3 | Asignar a los usuarios objetivo los roles SAC con permisos sobre los modelos / historias | Roles SAC | Particular (por usuario / grupo) | Consultor Seguridad SAC | 2 |
-| 4 | Pruebas iniciales con un usuario piloto (consultas representativas en lenguaje natural) | Configuración funcional SAC | General | Consultor SAP Analytics Cloud | 3 |
+| 1 | Create Sample Question entries to help end users to search their data. | Configuración de SAP Analytics Cloud | Particular (por usuario / rol) | Consultor SAP Analytics Cloud | 4 |
+| 2 | Select the Edit Description icon above the search field. You can use this free text field to provide any general information about the system for your end users. | Configuración de SAP Analytics Cloud | Particular (por usuario / rol) | Consultor SAP Analytics Cloud | 4 |
+| 3 | Select + Create label to create a new label entry. | Configuración de SAP Analytics Cloud | General | Consultor SAP Analytics Cloud | 4 |
+| 4 | Add models to Just Ask | Configuración de SAP Analytics Cloud | General | Consultor SAP Analytics Cloud | 4 |
+| 5 | Select  Sync model under Model Synchronization to complete any pending indexing for the model. | Configuración de SAP Analytics Cloud | General | Consultor SAP Analytics Cloud | 4 |
+| 6 | Select the Settings tab to specify settings that can improve the accuracy of results returned when users query the model. | Configuración de SAP Analytics Cloud | Particular (por usuario / rol) | Consultor SAP Analytics Cloud | 4 |
 
-**Esfuerzo total estimado (activación estándar, sin necesidades adicionales): ~10 horas.**
+**Esfuerzo total estimado (activación / configuración): ~24 horas.**
 
 ---
 
@@ -50,28 +53,25 @@
 
 | # | Actividad | Consultor requerido | Tiempo estimado (h, Medium) |
 |---|---|---|---|
-| 1 | Prueba unitaria con consultas reales del cliente (varios dominios / niveles de complejidad) | Consultor SAP Analytics Cloud | 4 |
-| 2 | Documentación de la activación para el cliente (manual de usuario + buenas prácticas de prompting) | Consultor SAP Analytics Cloud | 4 |
-| 3 | Transferencia de conocimiento al equipo del cliente (sesión funcional + Q&A) | Consultor SAP Analytics Cloud | 3 |
+| 1 | Prueba unitaria del caso de uso con datos reales en entorno de Quality | Consultor SAP Analytics Cloud | 4 |
+| 2 | Documentación de la activación para el cliente (manual de usuario + manual de configuración) | Consultor SAP Analytics Cloud | 4 |
+| 3 | Transferencia de conocimiento al equipo del cliente | Consultor SAP Analytics Cloud | 3 |
 
 **Esfuerzo total estimado (validación + entrega): ~11 horas.**
 
 ---
 
-## 4. Consideraciones especiales (según guía SAP)
+## 4. Consideraciones especiales
 
-- La calidad de las respuestas depende directamente de la **calidad de los modelos**: nomenclatura clara, jerarquías y métricas bien definidas.
-- Joule / SAC respetan las autorizaciones del usuario: **no eleva privilegios**.
-- Definir **buenas prácticas de prompting** y publicar ejemplos al inicio para acelerar adopción.
-- Sujeto a las condiciones de servicio vigentes de SAP Analytics Cloud **[verificar]**.
-- Antes de la activación, revisar el **SAP Road Map Explorer** y release notes vigentes para confirmar idiomas y funcionalidades disponibles.
-- Este caso de uso **no incluye desarrollos custom**; cualquier extensión queda fuera del alcance estándar.
+- Disponibilidad indicada por SAP: **Generally Available**.
 
 ---
 
 ## Referencias oficiales
 
 - SAP Discovery Center — Detail Page: https://discovery-center.cloud.sap/ai-feature/6a655660-1f00-4b22-a6e4-b79167b527ec/
+- SAP Help Portal — Initial Setup: https://help.sap.com/docs/SAP_ANALYTICS_CLOUD/00f68c2e08b941f081002fd3691d86a7/61a8150e7e7944c4848c79d0ec032bd2.html?locale=en-US
+- SAP Discovery Center — Pricing Details: No aplica
 
 ---
 
@@ -79,6 +79,6 @@
 
 | Bloque | Horas |
 |---|---|
-| Activación / configuración | 10 |
+| Activación / configuración | 24 |
 | Validación + documentación + KT | 11 |
-| **Total** | **21** |
+| **Total** | **35** |

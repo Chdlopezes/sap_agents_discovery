@@ -1,31 +1,36 @@
-# Análisis caso de uso J329 — Semantic Generation (SAP Datasphere)
+# Análisis caso de uso J329 — Semantic Generation
 
-> Basado en información públicamente documentada por SAP. Valores marcados como **[verificar en SAP Help]** requieren validación oficial.
+> Análisis construido **únicamente** a partir de las fuentes oficiales de SAP asociadas al AI Feature/Agent J329 en `processed/AI_Features_Data_Enriched.xlsx`. Los campos para los que SAP no publica información aparecen literalmente como "No aplica", "No existe en la fuente oficial" o "No documentado en la fuente oficial". **No se ha completado ningún dato con conocimiento general ni con inferencia desde casos similares.**
 
-**Resumen del caso:** Ayuda a analistas de datos a generar semántica de negocio para fuentes no SAP, evitando reconstruir manualmente definiciones semánticas. El onboarding semántico toma tablas, contenido y semántica asociada como monedas, unidades, medidas, hechos, dimensiones y asociaciones. SAP indica: *Menor esfuerzo para crear modelos semánticos en SAP Datasphere, mayor velocidad para preparar datos no SAP para consumo analítico y mejor reutilización de información enriquecida semánticamente.*
+**Fuentes oficiales consultadas:**
+- Detail Page (SAP Discovery Center): https://discovery-center.cloud.sap/ai-feature/d22ae902-3e3d-4c78-9f8e-a656ecd2686d/
+- Initial Setup (SAP Help Portal): https://help.sap.com/docs/SAP_DATASPHERE/9f804b8efa8043539289f42f372c4862/1b3fe45f38df4db1a9cda97a5a7bcdaf.html
+- Pricing Details (SAP Discovery Center): https://discovery-center.cloud.sap/ai-feature/d22ae902-3e3d-4c78-9f8e-a656ecd2686d/#pricing
+
+**Resumen del caso:** Ayuda a analistas de datos a generar semántica de negocio para fuentes no SAP, evitando reconstruir manualmente definiciones semánticas. El onboarding semántico toma tablas, contenido y semántica asociada como monedas, unidades, medidas, hechos, dimensiones y asociaciones.
 
 ---
 
 ## 1. Prerequisitos para la activación
 
-### 1.1 Productos / componentes SAP requeridos
-- **SAP Datasphere** con capability AI.
+### 1.1 Producto / componente SAP requerido
+- **SAP Datasphere**.
 
 ### 1.2 Licenciamiento / entitlement / paquete
-- Suscripción Datasphere + capability AI **[verificar]**.
+- Capability **Premium**.
+- Pricing (sección *Pricing Details* de la Detail Page): Requiere AI Units para usar la oferta de IA en el servicio cloud subyacente. El método de activación indicado es “Activate with AI Units”. Precio bajo solicitud; duración de contrato disponible bajo solicitud. Incluye prerrequisito.
 
 ### 1.3 Scope item relacionado
-- N/A.
+- No aplica (el producto base no utiliza scope items de SAP S/4HANA).
 
-### 1.4 Aplicaciones / apps Fiori / servicios requeridos
-- Datasphere Workspace (Data Builder / Business Builder).
+### 1.4 Aplicaciones / apps Fiori / servicios / componentes técnicos
+- Según la fuente oficial abierta: You must complete the following Joule configuration procedures before activating Joule in SAP Datasphere.
 
 ### 1.5 Datos maestros / transaccionales previos
-- Fuentes no-SAP conectadas (database, file, etc.).
+- No documentado en la fuente oficial.
 
 ### 1.6 Restricciones funcionales / técnicas / idioma
-- **Idioma**: inglés primariamente **[verificar]**.
-- Rol Modeler.
+- No documentado en la fuente oficial.
 
 ---
 
@@ -33,13 +38,14 @@
 
 | # | Actividad estándar | Objeto de configuración | Tipo de configuración | Consultor requerido | Tiempo estimado (h, Medium) |
 |---|---|---|---|---|---|
-| 1 | Confirmar suscripción Datasphere + AI | Tenant Datasphere | General | Consultor Datasphere | 2 |
-| 2 | Configurar conexiones a fuentes no-SAP | Conexiones Datasphere | Particular (por fuente) | Consultor Datasphere | 5 |
-| 3 | Asignar rol Modeler | Roles | Particular (por usuario) | Consultor Seguridad | 2 |
-| 4 | Habilitar Semantic Generation | Datasphere admin | General | Consultor Datasphere | 2 |
-| 5 | Pruebas iniciales (generar semantics sobre tablas/views) | Configuración Datasphere | General | Consultor Datasphere | 4 |
+| 1 | Create Your SAP Datasphere Service Instance in SAP BTP | Configuración de SAP Datasphere | General | Consultor SAP Datasphere | 3 |
+| 2 | Configure the Size of Your SAP Datasphere Tenant | Configuración de SAP Datasphere | General | Consultor SAP Datasphere | 3 |
+| 3 | Review and Manage Links to SAP Analytics Cloud and SAP Business Data Cloud Tenants | Configuración de SAP Datasphere | General | Consultor SAP Datasphere | 3 |
+| 4 | Enable SAP HANA for SQL Data Warehousing on Your SAP Datasphere Tenant | Configuración de SAP Datasphere | General | Consultor SAP Datasphere | 3 |
+| 5 | Enable the SAP HANA Cloud Script Server on Your SAP Datasphere Tenant | Configuración de SAP Datasphere | General | Consultor SAP Datasphere | 3 |
+| 6 | Enable SAP Business AI for SAP Datasphere | Configuración de SAP Datasphere | General | Consultor SAP Datasphere | 3 |
 
-**Esfuerzo total estimado (activación): ~15 horas.**
+**Esfuerzo total estimado (activación / configuración): ~18 horas.**
 
 ---
 
@@ -47,17 +53,26 @@
 
 | # | Actividad | Consultor requerido | Tiempo estimado (h, Medium) |
 |---|---|---|---|
-| 1 | Prueba unitaria con datasets reales no-SAP | Consultor Datasphere | 5 |
-| 2 | Documentación para el cliente | Consultor Datasphere | 4 |
-| 3 | Transferencia de conocimiento | Consultor Datasphere | 3 |
+| 1 | Prueba unitaria del caso de uso con datos reales en entorno de Quality | Consultor SAP Datasphere | 4 |
+| 2 | Documentación de la activación para el cliente (manual de usuario + manual de configuración) | Consultor SAP Datasphere | 4 |
+| 3 | Transferencia de conocimiento al equipo del cliente | Consultor SAP Datasphere | 3 |
 
-**Esfuerzo total estimado (validación + entrega): ~12 horas.**
+**Esfuerzo total estimado (validación + entrega): ~11 horas.**
 
 ---
 
 ## 4. Consideraciones especiales
 
-- Semántica generada es propuesta; modeler revisa y refina.
+- Caso **Premium**: el consumo se factura según el modelo de AI Units / paquete descrito en *Pricing Details* (ver sección 1.2).
+- Disponibilidad indicada por SAP: **Generally Available**.
+
+---
+
+## Referencias oficiales
+
+- SAP Discovery Center — Detail Page: https://discovery-center.cloud.sap/ai-feature/d22ae902-3e3d-4c78-9f8e-a656ecd2686d/
+- SAP Help Portal — Initial Setup: https://help.sap.com/docs/SAP_DATASPHERE/9f804b8efa8043539289f42f372c4862/1b3fe45f38df4db1a9cda97a5a7bcdaf.html
+- SAP Discovery Center — Pricing Details: https://discovery-center.cloud.sap/ai-feature/d22ae902-3e3d-4c78-9f8e-a656ecd2686d/#pricing
 
 ---
 
@@ -65,6 +80,6 @@
 
 | Bloque | Horas |
 |---|---|
-| Activación / configuración | 15 |
-| Validación + documentación + KT | 12 |
-| **Total** | **27** |
+| Activación / configuración | 18 |
+| Validación + documentación + KT | 11 |
+| **Total** | **29** |

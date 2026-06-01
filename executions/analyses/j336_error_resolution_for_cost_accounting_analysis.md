@@ -1,6 +1,12 @@
 # Análisis caso de uso J336 — Error Resolution for Cost Accounting
 
-> Basado en información públicamente documentada por SAP. Valores marcados como **[verificar en SAP Help]** requieren validación oficial.
+> Análisis construido **únicamente** a partir de las fuentes oficiales de SAP asociadas al AI Feature/Agent J336 en `processed/AI_Features_Data_Enriched.xlsx`. Los campos para los que SAP no publica información aparecen literalmente como "No aplica", "No existe en la fuente oficial" o "No documentado en la fuente oficial". **No se ha completado ningún dato con conocimiento general ni con inferencia desde casos similares.**
+
+**Fuentes oficiales consultadas:**
+- Detail Page (SAP Discovery Center): https://discovery-center.cloud.sap/ai-feature/56d1e4d0-5c07-4aa8-b226-64c8dd99750d/
+- Initial Setup (SAP Help Portal): No existe enlace 'Initial Setup' en *Resources*; se usó como sustituto el enlace **AI Feature - SAP Help Portal**.
+- AI Feature (SAP Help Portal): https://help.sap.com/docs/SAP_S4HANA_CLOUD/ee9ee0ca4c3942068ea584d2f929b5b1/518ff9f0566e41dabf853463823accc4.html?locale=en-US&version=2602.00
+- Pricing Details (SAP Discovery Center): No aplica
 
 **Resumen del caso:** Ayuda a los contadores de costos a identificar y resolver errores relacionados con contabilidad de costos, ofreciendo orientación asistida para atender incidencias del proceso.
 
@@ -8,29 +14,24 @@
 
 ## 1. Prerequisitos para la activación
 
-### 1.1 Productos / componentes SAP requeridos
-- **SAP S/4HANA Cloud Public Edition** con Joule habilitado.
-- Componente **CO – Controlling / Cost Accounting** operativo.
+### 1.1 Producto / componente SAP requerido
+- **SAP S/4HANA Cloud Public Edition**.
 
 ### 1.2 Licenciamiento / entitlement / paquete
-- Suscripción a S/4HANA Public Edition con CO.
-- Entitlement de Joule sobre S/4HANA Public (capability **Base** según AI Foundation Catalog) **[verificar]**.
+- Capability **Base**.
+- No aplica un paquete Premium.
 
 ### 1.3 Scope item relacionado
-- Scope items base de Overhead Cost Accounting / Cost Allocation — **[verificar IDs en SAP Signavio Process Navigator]**.
+- No documentado en la fuente oficial.
 
-### 1.4 Aplicaciones / apps Fiori / servicios requeridos
-- Apps Fiori de CO donde se generan los mensajes de error (asignaciones, distribuciones, settlements).
-- Joule habilitado en el Launchpad.
+### 1.4 Aplicaciones / apps Fiori / servicios / componentes técnicos
+- No documentado en la fuente oficial.
 
 ### 1.5 Datos maestros / transaccionales previos
-- Maestros CO (cost centers, internal orders, cost elements, allocation cycles) configurados.
-- Documentos / postings que producen los errores a explicar.
+- No documentado en la fuente oficial.
 
 ### 1.6 Restricciones funcionales / técnicas / idioma
-- **Idioma**: inglés primariamente **[verificar matriz de idiomas]**.
-- Solo S/4HANA Cloud **Public** Edition.
-- Usuario con autorizaciones CO sobre los objetos afectados.
+- Disponible para SAP S/4HANA Cloud **Public Edition**.
 
 ---
 
@@ -38,13 +39,9 @@
 
 | # | Actividad estándar | Objeto de configuración | Tipo de configuración | Consultor requerido | Tiempo estimado (h, Medium) |
 |---|---|---|---|---|---|
-| 1 | Confirmar entitlement de Joule | Subaccount BTP + entitlement | General | Consultor BTP | 2 |
-| 2 | Verificar configuración funcional CO (cycles, settlements, distributions) | Configuración CO | General | Consultor CO | 3 |
-| 3 | Asignar business roles CO con catálogos de Joule a usuarios | Business Role / Business Catalog | Particular (por usuario) | Consultor Seguridad | 3 |
-| 4 | Habilitar la capability de Joule para Cost Accounting Errors | Joule capability scope | General | Consultor Funcional CO + Joule | 2 |
-| 5 | Pruebas iniciales: provocar/replicar errores típicos y validar explicaciones de Joule | Configuración funcional CO | General | Consultor CO | 3 |
+| 1 | Set Up Your SAP S/4HANA Cloud Public Edition | Configuración de SAP S/4HANA Cloud Public Edition | General | Consultor Funcional SAP S/4HANA | 3 |
 
-**Esfuerzo total estimado (activación): ~13 horas.**
+**Esfuerzo total estimado (activación / configuración): ~3 horas.**
 
 ---
 
@@ -52,9 +49,9 @@
 
 | # | Actividad | Consultor requerido | Tiempo estimado (h, Medium) |
 |---|---|---|---|
-| 1 | Prueba unitaria con escenarios reales de error (allocations, settlements, derivations) | Consultor CO | 4 |
-| 2 | Documentación para el cliente | Consultor CO | 4 |
-| 3 | Transferencia de conocimiento | Consultor CO | 3 |
+| 1 | Prueba unitaria del caso de uso con datos reales en entorno de Quality | Consultor Funcional SAP S/4HANA | 4 |
+| 2 | Documentación de la activación para el cliente (manual de usuario + manual de configuración) | Consultor Funcional SAP S/4HANA | 4 |
+| 3 | Transferencia de conocimiento al equipo del cliente | Consultor Funcional SAP S/4HANA | 3 |
 
 **Esfuerzo total estimado (validación + entrega): ~11 horas.**
 
@@ -62,10 +59,16 @@
 
 ## 4. Consideraciones especiales
 
-- Joule **explica errores y propone acciones**; la corrección final la decide el usuario en su app destino.
-- Respeta autorizaciones; no eleva privilegios.
-- Cobertura de tipos de error puede ampliarse en releases sucesivos — revisar **Road Map Explorer**.
-- Sin desarrollos custom dentro del alcance estándar.
+- Aplica a SAP S/4HANA Cloud **Public Edition**.
+- Disponibilidad indicada por SAP: **Generally Available**.
+
+---
+
+## Referencias oficiales
+
+- SAP Discovery Center — Detail Page: https://discovery-center.cloud.sap/ai-feature/56d1e4d0-5c07-4aa8-b226-64c8dd99750d/
+- SAP Help Portal — AI Feature (sustituto de Initial Setup): https://help.sap.com/docs/SAP_S4HANA_CLOUD/ee9ee0ca4c3942068ea584d2f929b5b1/518ff9f0566e41dabf853463823accc4.html?locale=en-US&version=2602.00
+- SAP Discovery Center — Pricing Details: No aplica
 
 ---
 
@@ -73,6 +76,6 @@
 
 | Bloque | Horas |
 |---|---|
-| Activación / configuración | 13 |
+| Activación / configuración | 3 |
 | Validación + documentación + KT | 11 |
-| **Total** | **24** |
+| **Total** | **14** |

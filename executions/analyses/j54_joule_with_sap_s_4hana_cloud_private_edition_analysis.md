@@ -1,39 +1,36 @@
 # Análisis caso de uso J54 — Joule with SAP S/4HANA Cloud Private Edition
 
-> Basado en información públicamente documentada por SAP. Valores marcados como **[verificar en SAP Help]** requieren validación oficial.
+> Análisis construido **únicamente** a partir de las fuentes oficiales de SAP asociadas al AI Feature/Agent J54 en `processed/AI_Features_Data_Enriched.xlsx`. Los campos para los que SAP no publica información aparecen literalmente como "No aplica", "No existe en la fuente oficial" o "No documentado en la fuente oficial". **No se ha completado ningún dato con conocimiento general ni con inferencia desde casos similares.**
 
-> **Nota**: Caso "paraguas" que habilita Joule como copilot sobre S/4HANA Cloud Private Edition. Es prerequisito de muchas otras capabilities Joule sobre Private.
+**Fuentes oficiales consultadas:**
+- Detail Page (SAP Discovery Center): https://discovery-center.cloud.sap/ai-feature/98ee8608-82bb-49c3-b4ca-805bd6594314/
+- Initial Setup (SAP Help Portal): https://help.sap.com/docs/joule/integrating-joule-with-sap/integration-with-sap-s-4hana-cloud-private-edition?locale=en-US&version=CLOUD
+- Pricing Details (SAP Discovery Center): No aplica
 
-**Resumen del caso:** Permite usar lenguaje natural para expresar requerimientos de negocio y acceder a capacidades informativas, navegacionales y transaccionales en SAP S/4HANA Cloud Private Edition. SAP indica: *No se identificó una métrica cuantitativa explícita en la página de detalle consultada; el valor se centra en productividad, navegación y ejecución de tareas en SAP S/4HANA Cloud Private Edition.*
+**Resumen del caso:** Permite usar lenguaje natural para expresar requerimientos de negocio y acceder a capacidades informativas, navegacionales y transaccionales en SAP S/4HANA Cloud Private Edition.
 
 ---
 
 ## 1. Prerequisitos para la activación
 
-### 1.1 Productos / componentes SAP requeridos
-- **SAP S/4HANA Cloud Private Edition** en release con soporte de Joule **[verificar release mínima vigente]**.
-- **SAP Business Technology Platform (BTP)** con tenant en región soportada.
+### 1.1 Producto / componente SAP requerido
+- **SAP S/4HANA Cloud Private Edition**.
 
 ### 1.2 Licenciamiento / entitlement / paquete
-- Suscripción S/4HANA Cloud Private Edition vigente.
-- Entitlement de Joule activado en BTP (capability Base; Premium con addon).
+- Capability **Base**.
+- No aplica un paquete Premium.
 
 ### 1.3 Scope item relacionado
-- Scope item de habilitación de Joule sobre S/4HANA Private — **[verificar]**.
+- No documentado en la fuente oficial.
 
-### 1.4 Aplicaciones / apps Fiori / servicios requeridos
-- Launchpad con panel de Joule visible.
-- Communication arrangement S/4HANA Private ↔ servicio de Joule en BTP (escenario **SAP_COM_xxxx** — **[verificar]**).
-- Identity provider (IAS / corporate IdP) configurado.
+### 1.4 Aplicaciones / apps Fiori / servicios / componentes técnicos
+- Según la fuente oficial abierta: You have carried out the steps described in Initial Setup. You have referred to the Security related information for Joule. You have fulfilled the necessary prerequisites as mentioned in Prerequisites. You have integrated the SAP S/4HANA Cloud Private Edition with Identity Authentication as Joule leverages the IAS setup of the SAP product for user login. You have created a service instance and generated a service key for SAP Build Work Zone, standard edition (foundation plan). For more information, see Create SAP Build Work Zone Application and Instance.
 
 ### 1.5 Datos maestros / transaccionales previos
-- SSO operativo entre S/4HANA Private y BTP.
-- Business roles y catálogos asignados a usuarios.
+- No documentado en la fuente oficial.
 
 ### 1.6 Restricciones funcionales / técnicas / idioma
-- **Idioma**: inglés primariamente **[verificar matriz]**.
-- Disponibilidad regional sujeta a tenant.
-- Joule respeta autorizaciones del usuario.
+- Disponible para SAP S/4HANA Cloud **Private Edition**.
 
 ---
 
@@ -41,14 +38,14 @@
 
 | # | Actividad estándar | Objeto de configuración | Tipo de configuración | Consultor requerido | Tiempo estimado (h, Medium) |
 |---|---|---|---|---|---|
-| 1 | Provisionar entitlement Joule en BTP | Subaccount BTP + entitlement | General | Consultor BTP | 3 |
-| 2 | Configurar identity propagation IAS / IdP ↔ S/4HANA Private | Trust / SSO | General | Consultor Basis / Seguridad | 4 |
-| 3 | Activar communication scenario de Joule | Communication Arrangement | General | Consultor Integración | 3 |
-| 4 | Habilitar el panel Joule en el launchpad | Launchpad configuration | Particular (por spaces & pages) | Consultor S/4HANA Private | 4 |
-| 5 | Asignar business roles con catálogos Joule | Business Role / Business Catalog | Particular (por usuario / grupo) | Consultor Seguridad | 4 |
-| 6 | Pruebas iniciales end-to-end | Configuración base | General | Consultor Funcional | 4 |
+| 1 | Configure Trust to the Identity Authentication Tenant | Configuración de SAP S/4HANA Cloud Private Edition | General | Consultor Funcional SAP S/4HANA | 4 |
+| 2 | Configure Trusted Domain in SAP BTP | Configuración de SAP S/4HANA Cloud Private Edition | General | Consultor Funcional SAP S/4HANA | 4 |
+| 3 | Configure User Attributes for Joule from the Identity Directory | Configuración de SAP S/4HANA Cloud Private Edition | Particular (por usuario / rol) | Consultor Funcional SAP S/4HANA | 4 |
+| 4 | Configure Trusted Domains in Identity Authentication | Configuración de SAP S/4HANA Cloud Private Edition | General | Consultor Funcional SAP S/4HANA | 4 |
+| 5 | Set Up SAP S/4HANA Cloud Private Edition as a Content Provider | Configuración de SAP S/4HANA Cloud Private Edition | General | Consultor Funcional SAP S/4HANA | 4 |
+| 6 | Run the Joule Booster | Configuración de SAP S/4HANA Cloud Private Edition | General | Consultor Funcional SAP S/4HANA | 4 |
 
-**Esfuerzo total estimado (activación): ~22 horas.**
+**Esfuerzo total estimado (activación / configuración): ~24 horas.**
 
 ---
 
@@ -56,19 +53,26 @@
 
 | # | Actividad | Consultor requerido | Tiempo estimado (h, Medium) |
 |---|---|---|---|
-| 1 | Prueba unitaria con prompts representativos por área | Consultor Funcional + key user | 6 |
-| 2 | Documentación para el cliente | Consultor Funcional | 5 |
-| 3 | Transferencia de conocimiento | Consultor Funcional | 4 |
+| 1 | Prueba unitaria del caso de uso con datos reales en entorno de Quality | Consultor Funcional SAP S/4HANA | 4 |
+| 2 | Documentación de la activación para el cliente (manual de usuario + manual de configuración) | Consultor Funcional SAP S/4HANA | 4 |
+| 3 | Transferencia de conocimiento al equipo del cliente | Consultor Funcional SAP S/4HANA | 3 |
 
-**Esfuerzo total estimado (validación + entrega): ~15 horas.**
+**Esfuerzo total estimado (validación + entrega): ~11 horas.**
 
 ---
 
 ## 4. Consideraciones especiales
 
-- **Habilitador transversal** Private: una vez activo, demás capabilities Joule sobre Private requieren típicamente solo enablement adicional.
-- En Private aplican consideraciones de upgrade compatibility con la versión del stack ABAP del cliente.
-- Trazabilidad / fair-use / cuotas — revisar políticas vigentes.
+- Restringido a SAP S/4HANA Cloud **Private Edition**.
+- Disponibilidad indicada por SAP: **Generally Available**.
+
+---
+
+## Referencias oficiales
+
+- SAP Discovery Center — Detail Page: https://discovery-center.cloud.sap/ai-feature/98ee8608-82bb-49c3-b4ca-805bd6594314/
+- SAP Help Portal — Initial Setup: https://help.sap.com/docs/joule/integrating-joule-with-sap/integration-with-sap-s-4hana-cloud-private-edition?locale=en-US&version=CLOUD
+- SAP Discovery Center — Pricing Details: No aplica
 
 ---
 
@@ -76,6 +80,6 @@
 
 | Bloque | Horas |
 |---|---|
-| Activación / configuración | 22 |
-| Validación + documentación + KT | 15 |
-| **Total** | **37** |
+| Activación / configuración | 24 |
+| Validación + documentación + KT | 11 |
+| **Total** | **35** |

@@ -1,34 +1,36 @@
-# Análisis caso de uso J115 — Generation of SAP Mobile Applications (SAP Build Code)
+# Análisis caso de uso J115 — Generation of SAP Mobile Applications
 
-> Basado en información públicamente documentada por SAP. Valores marcados como **[verificar en SAP Help]** requieren validación oficial.
+> Análisis construido **únicamente** a partir de las fuentes oficiales de SAP asociadas al AI Feature/Agent J115 en `processed/AI_Features_Data_Enriched.xlsx`. Los campos para los que SAP no publica información aparecen literalmente como "No aplica", "No existe en la fuente oficial" o "No documentado en la fuente oficial". **No se ha completado ningún dato con conocimiento general ni con inferencia desde casos similares.**
 
-**Resumen del caso:** Joule aporta capacidades de IA para desarrollo móvil en SAP Build Code. Puede generar componentes a partir de lenguaje natural, incluyendo código, modelos de datos, servicios, lógica de negocio, datos de ejemplo y pruebas unitarias. SAP indica: *SAP indica una reducción de 30% en costos de desarrollo de aplicaciones. El valor está en acelerar el desarrollo móvil y reducir esfuerzo manual en componentes técnicos repetitivos.*
+**Fuentes oficiales consultadas:**
+- Detail Page (SAP Discovery Center): https://discovery-center.cloud.sap/ai-feature/9cd6bb5e-4178-44c2-b5b3-325c561273e4/
+- Initial Setup (SAP Help Portal): https://help.sap.com/docs/build_code/d0d8f5bfc3d640478854e6f4e7c7584a/07698d7c31284e4db370acdf017cfd14.html
+- Pricing Details (SAP Discovery Center): No aplica
+
+**Resumen del caso:** Joule aporta capacidades de IA para desarrollo móvil en SAP Build Code. Puede generar componentes a partir de lenguaje natural, incluyendo código, modelos de datos, servicios, lógica de negocio, datos de ejemplo y pruebas unitarias.
 
 ---
 
 ## 1. Prerequisitos para la activación
 
-### 1.1 Productos / componentes SAP requeridos
-- **SAP Build Code** con Joule.
-- **SAP Mobile Services / Mobile Development Kit (MDK)** disponible **[verificar packaging vigente]**.
+### 1.1 Producto / componente SAP requerido
+- **SAP Build Code**.
 
 ### 1.2 Licenciamiento / entitlement / paquete
-- Entitlement SAP Build Code + Joule (Premium) **[verificar]**.
-- Entitlement Mobile Services / MDK si requerido.
+- Capability **Base**.
+- No aplica un paquete Premium.
 
 ### 1.3 Scope item relacionado
-- N/A.
+- No aplica (el producto base no utiliza scope items de SAP S/4HANA).
 
-### 1.4 Aplicaciones / apps Fiori / servicios requeridos
-- IDE Build Code / Business Application Studio.
-- Mobile Services Cockpit (para despliegue / runtime).
+### 1.4 Aplicaciones / apps Fiori / servicios / componentes técnicos
+- Según la fuente oficial abierta: You have created a global account in the SAP BTP cockpit. See Getting a Global Account. The correct way to subscribe to SAP Build Code is using the booster and not the manual setup. If you already have a subscription to one or more of the services included in SAP Build Code and you would like to upgrade to the SAP Build Code plan, see Changing Service Plans. Access your global account in the SAP BTP cockpit and choose Boosters from the navigation pane. This booster is relevant for the standard service plan. If you are working in the trial plan, you need to run a different booster. Make sure to select the booster relevant to the plan in which you want to work.
 
 ### 1.5 Datos maestros / transaccionales previos
-- Backends OData / RAP configurados.
+- No documentado en la fuente oficial.
 
 ### 1.6 Restricciones funcionales / técnicas / idioma
-- **Idioma**: prompts en inglés primariamente **[verificar]**.
-- Usuario Mobile Developer.
+- No documentado en la fuente oficial.
 
 ---
 
@@ -36,13 +38,10 @@
 
 | # | Actividad estándar | Objeto de configuración | Tipo de configuración | Consultor requerido | Tiempo estimado (h, Medium) |
 |---|---|---|---|---|---|
-| 1 | Aprovisionar entitlement Build Code + Joule + Mobile Services | Subaccount BTP + entitlement | General | Consultor BTP | 3 |
-| 2 | Configurar Mobile Services (app registration, push) | Mobile Services Cockpit | General | Consultor Mobile | 5 |
-| 3 | Asignar rol Mobile Developer | Roles | Particular (por usuario) | Consultor Seguridad | 2 |
-| 4 | Habilitar Mobile App Generation | Configuración Build Code | General | Consultor Mobile / Dev | 2 |
-| 5 | Pruebas iniciales: generar app móvil de muestra y desplegar | Configuración Build Code | General | Desarrollador Mobile Sr | 5 |
+| 1 | Subscribe to SAP Build Code | Configuración de SAP Build Code | General | Consultor SAP Build / Desarrollo | 4 |
+| 2 | Open the booster to see the overview, components, and additional resources. | Configuración de SAP Build Code | General | Consultor SAP Build / Desarrollo | 4 |
 
-**Esfuerzo total estimado (activación): ~17 horas.**
+**Esfuerzo total estimado (activación / configuración): ~8 horas.**
 
 ---
 
@@ -50,17 +49,25 @@
 
 | # | Actividad | Consultor requerido | Tiempo estimado (h, Medium) |
 |---|---|---|---|
-| 1 | Prueba unitaria en device real (iOS/Android) | Desarrollador Mobile Sr | 6 |
-| 2 | Documentación + buenas prácticas | Desarrollador Mobile Sr | 4 |
-| 3 | Transferencia de conocimiento | Desarrollador Mobile Sr | 3 |
+| 1 | Prueba unitaria del caso de uso con datos reales en entorno de Quality | Consultor SAP Build / Desarrollo | 4 |
+| 2 | Documentación de la activación para el cliente (manual de usuario + manual de configuración) | Consultor SAP Build / Desarrollo | 4 |
+| 3 | Transferencia de conocimiento al equipo del cliente | Consultor SAP Build / Desarrollo | 3 |
 
-**Esfuerzo total estimado (validación + entrega): ~13 horas.**
+**Esfuerzo total estimado (validación + entrega): ~11 horas.**
 
 ---
 
 ## 4. Consideraciones especiales
 
-- Considerar offline-first, security (MDM), distribución (stores corporativas).
+- Disponibilidad indicada por SAP: **Generally Available**.
+
+---
+
+## Referencias oficiales
+
+- SAP Discovery Center — Detail Page: https://discovery-center.cloud.sap/ai-feature/9cd6bb5e-4178-44c2-b5b3-325c561273e4/
+- SAP Help Portal — Initial Setup: https://help.sap.com/docs/build_code/d0d8f5bfc3d640478854e6f4e7c7584a/07698d7c31284e4db370acdf017cfd14.html
+- SAP Discovery Center — Pricing Details: No aplica
 
 ---
 
@@ -68,6 +75,6 @@
 
 | Bloque | Horas |
 |---|---|
-| Activación / configuración | 17 |
-| Validación + documentación + KT | 13 |
-| **Total** | **30** |
+| Activación / configuración | 8 |
+| Validación + documentación + KT | 11 |
+| **Total** | **19** |

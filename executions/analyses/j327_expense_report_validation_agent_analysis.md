@@ -1,37 +1,37 @@
 # Análisis caso de uso J327 — Expense Report Validation Agent
 
-> Basado en información públicamente documentada por SAP. Valores marcados como **[verificar en SAP Help]** requieren validación oficial.
+> Análisis construido **únicamente** a partir de las fuentes oficiales de SAP asociadas al AI Feature/Agent J327 en `processed/AI_Features_Data_Enriched.xlsx`. Los campos para los que SAP no publica información aparecen literalmente como "No aplica", "No existe en la fuente oficial" o "No documentado en la fuente oficial". **No se ha completado ningún dato con conocimiento general ni con inferencia desde casos similares.**
 
-> **Aviso**: agente nuevo; puntos de setup pueden no estar plenamente documentados públicamente — marco con **[verificar]** los críticos.
+**Fuentes oficiales consultadas:**
+- Detail Page (SAP Discovery Center): https://discovery-center.cloud.sap/ai-feature/ba618aac-87c8-485d-8d3c-3338f6a8658a/
+- Initial Setup (SAP Help Portal): No existe enlace 'Initial Setup' en *Resources*; se usó como sustituto el enlace **AI Feature - SAP Help Portal**.
+- AI Feature (SAP Help Portal): https://help.sap.com/docs/COMPLETE/70b4acb7cfef4c0da0deef8e7ee653cc/302b5f2b75684754beb35a168eee9e30.html
+- Pricing Details (SAP Discovery Center): No aplica
 
-**Resumen del caso:** Agente para ayudar a viajeros de negocio a completar y enviar reportes de gastos, simplificando el proceso de entendimiento y preparación de la información requerida. SAP indica: *Reducción estimada del 30% en el tiempo dedicado a preparar y enviar reportes de gastos.*
+**Resumen del caso:** Agente para ayudar a viajeros de negocio a completar y enviar reportes de gastos, simplificando el proceso de entendimiento y preparación de la información requerida.
 
 ---
 
 ## 1. Prerequisitos para la activación
 
-### 1.1 Productos / componentes SAP requeridos
-- **Joule** habilitado en BTP (capability Agentic).
-- Integración con **SAP Concur Expense** (u otro Travel & Expense del cliente) **[verificar conector]**.
+### 1.1 Producto / componente SAP requerido
+- **No documentado en la fuente oficial**.
 
 ### 1.2 Licenciamiento / entitlement / paquete
-- Entitlement Joule Premium + Agentic capability **[verificar]**.
-- Suscripción Concur Expense (si aplica).
+- Capability **Base**.
+- No aplica un paquete Premium.
 
 ### 1.3 Scope item relacionado
-- N/A.
+- No aplica (el producto base no utiliza scope items de SAP S/4HANA).
 
-### 1.4 Aplicaciones / apps Fiori / servicios requeridos
-- Joule Launchpad accesible por employees.
-- Destination a Concur (API keys / OAuth).
+### 1.4 Aplicaciones / apps Fiori / servicios / componentes técnicos
+- No documentado en la fuente oficial.
 
 ### 1.5 Datos maestros / transaccionales previos
-- Políticas de expense (límites, categorías, country specifics).
-- Reglas de validación corporativas.
+- No documentado en la fuente oficial.
 
 ### 1.6 Restricciones funcionales / técnicas / idioma
-- **Idioma**: inglés primariamente **[verificar]**.
-- Disponibilidad regional sujeta al tenant Joule y al proveedor.
+- No documentado en la fuente oficial.
 
 ---
 
@@ -39,13 +39,9 @@
 
 | # | Actividad estándar | Objeto de configuración | Tipo de configuración | Consultor requerido | Tiempo estimado (h, Medium) |
 |---|---|---|---|---|---|
-| 1 | Aprovisionar entitlement Joule + Agentic | Subaccount BTP + entitlement | General | Consultor BTP | 3 |
-| 2 | Configurar destination a Concur Expense | Destinations BTP | General | Consultor BTP / Integración | 5 |
-| 3 | Configurar políticas de validación específicas del cliente | Reglas de validación | Particular (por política / categoría) | Consultor Funcional T&E | 5 |
-| 4 | Asignar acceso al agente a employees | Roles / Agent assignment | Particular (por grupo) | Consultor Seguridad | 3 |
-| 5 | Pruebas iniciales con expense reports reales | Configuración funcional T&E | General | Consultor Funcional T&E | 4 |
+| 1 | Complete Mobile App | Configuración de la solución | General | Consultor SAP BTP | 3 |
 
-**Esfuerzo total estimado (activación): ~20 horas.**
+**Esfuerzo total estimado (activación / configuración): ~3 horas.**
 
 ---
 
@@ -53,18 +49,25 @@
 
 | # | Actividad | Consultor requerido | Tiempo estimado (h, Medium) |
 |---|---|---|---|
-| 1 | Prueba unitaria con escenarios reales (categorías y excepciones) | Consultor Funcional T&E | 5 |
-| 2 | Documentación para el cliente | Consultor Funcional T&E | 4 |
-| 3 | Transferencia de conocimiento | Consultor Funcional T&E | 3 |
+| 1 | Prueba unitaria del caso de uso con datos reales en entorno de Quality | Consultor SAP BTP | 4 |
+| 2 | Documentación de la activación para el cliente (manual de usuario + manual de configuración) | Consultor SAP BTP | 4 |
+| 3 | Transferencia de conocimiento al equipo del cliente | Consultor SAP BTP | 3 |
 
-**Esfuerzo total estimado (validación + entrega): ~12 horas.**
+**Esfuerzo total estimado (validación + entrega): ~11 horas.**
 
 ---
 
 ## 4. Consideraciones especiales
 
-- El agente **sugiere/ayuda**; la aprobación final sigue al workflow definido.
-- Privacidad: revisar tratamiento de datos personales/financieros.
+- Disponibilidad indicada por SAP: **Early Adopter Care (EAC)**.
+
+---
+
+## Referencias oficiales
+
+- SAP Discovery Center — Detail Page: https://discovery-center.cloud.sap/ai-feature/ba618aac-87c8-485d-8d3c-3338f6a8658a/
+- SAP Help Portal — AI Feature (sustituto de Initial Setup): https://help.sap.com/docs/COMPLETE/70b4acb7cfef4c0da0deef8e7ee653cc/302b5f2b75684754beb35a168eee9e30.html
+- SAP Discovery Center — Pricing Details: No aplica
 
 ---
 
@@ -72,6 +75,6 @@
 
 | Bloque | Horas |
 |---|---|
-| Activación / configuración | 20 |
-| Validación + documentación + KT | 12 |
-| **Total** | **32** |
+| Activación / configuración | 3 |
+| Validación + documentación + KT | 11 |
+| **Total** | **14** |

@@ -1,36 +1,36 @@
 # Análisis caso de uso J671 — Performance Preparation Agent
 
-> Basado en información públicamente documentada por SAP. Valores marcados como **[verificar en SAP Help]** requieren validación oficial.
+> Análisis construido **únicamente** a partir de las fuentes oficiales de SAP asociadas al AI Feature/Agent J671 en `processed/AI_Features_Data_Enriched.xlsx`. Los campos para los que SAP no publica información aparecen literalmente como "No aplica", "No existe en la fuente oficial" o "No documentado en la fuente oficial". **No se ha completado ningún dato con conocimiento general ni con inferencia desde casos similares.**
 
-> **Aviso**: agente nuevo; pasos exactos pueden requerir validación posterior.
+**Fuentes oficiales consultadas:**
+- Detail Page (SAP Discovery Center): https://discovery-center.cloud.sap/ai-feature/761a2305-b0a2-4262-b9a3-abd4945ad314/
+- Initial Setup (SAP Help Portal): https://help.sap.com/docs/successfactors-platform/setting-up-and-using-joule-in-sap-successfactors/configuring
+- Pricing Details (SAP Discovery Center): No aplica
 
-**Resumen del caso:** El Performance Preparation Agent automatiza la recopilación de datos, genera talking points personalizados para managers y sugiere próximos pasos accionables para reuniones one-on-one. SAP indica: *70% de reducción en el tiempo del manager dedicado a preparar reuniones de desempeño o one-on-one.*
+**Resumen del caso:** El Performance Preparation Agent automatiza la recopilación de datos, genera talking points personalizados para managers y sugiere próximos pasos accionables para reuniones one-on-one.
 
 ---
 
 ## 1. Prerequisitos para la activación
 
-### 1.1 Productos / componentes SAP requeridos
-- **Joule** habilitado en BTP (capability Agentic).
-- Integración con **SAP SuccessFactors** (Employee Central + Performance & Goals) o equivalente HR **[verificar conector]**.
+### 1.1 Producto / componente SAP requerido
+- **No documentado en la fuente oficial**.
 
 ### 1.2 Licenciamiento / entitlement / paquete
-- Entitlement Joule Premium + Agentic capability **[verificar]**.
-- Licencia SuccessFactors módulos aplicables.
+- Capability **Base**.
+- No aplica un paquete Premium.
 
 ### 1.3 Scope item relacionado
-- N/A.
+- No aplica (el producto base no utiliza scope items de SAP S/4HANA).
 
-### 1.4 Aplicaciones / apps Fiori / servicios requeridos
-- Joule Launchpad accesible para managers.
-- Destination a SuccessFactors.
+### 1.4 Aplicaciones / apps Fiori / servicios / componentes técnicos
+- Según la fuente oficial abierta: You need to make configurations before using the Performance Preparation Agent. You've enabled Joule in SAP SuccessFactors. You have the Administrator Permissions   Manage AI Capabilities  AI Services Administration permission. The Performance Preparation Agent is currently available for trial on a promotional basis. This means you can activate and evaluate the agent without purchasing an additional AI license (SKU). When enabling the agent, you’ll be prompted to review and accept the applicable Terms and Conditions. Once accepted, the agent can be used throughout the promotion period.
 
 ### 1.5 Datos maestros / transaccionales previos
-- Datos employees (objectives, performance reviews, feedback histórico).
+- No documentado en la fuente oficial.
 
 ### 1.6 Restricciones funcionales / técnicas / idioma
-- **Idioma**: inglés primariamente **[verificar]**.
-- Cumplimiento data privacy (GDPR / equivalentes).
+- No documentado en la fuente oficial.
 
 ---
 
@@ -38,13 +38,9 @@
 
 | # | Actividad estándar | Objeto de configuración | Tipo de configuración | Consultor requerido | Tiempo estimado (h, Medium) |
 |---|---|---|---|---|---|
-| 1 | Aprovisionar entitlement Joule + Agentic | Subaccount BTP + entitlement | General | Consultor BTP | 3 |
-| 2 | Configurar destination a SuccessFactors | Destinations / OAuth | General | Consultor BTP / Integración | 5 |
-| 3 | Configurar scope de datos visibles al manager (data privacy) | Reglas de visibilidad | Particular (por país / política) | Consultor HR + Compliance | 6 |
-| 4 | Asignar acceso al agente a managers | Roles / Agent assignment | Particular (por usuario) | Consultor Seguridad | 3 |
-| 5 | Pruebas iniciales (preparación de 1:1 con datos reales) | Configuración base | General | Consultor HR | 4 |
+| 1 | Grant users the User Permissions  AI Access  Performance & Goals Agent permission. | Configuración de la solución | Particular (por usuario / rol) | Consultor SAP BTP | 3 |
 
-**Esfuerzo total estimado (activación): ~21 horas.**
+**Esfuerzo total estimado (activación / configuración): ~3 horas.**
 
 ---
 
@@ -52,18 +48,25 @@
 
 | # | Actividad | Consultor requerido | Tiempo estimado (h, Medium) |
 |---|---|---|---|
-| 1 | Prueba unitaria con escenarios reales | Consultor HR | 5 |
-| 2 | Documentación para el cliente | Consultor HR | 4 |
-| 3 | Transferencia de conocimiento | Consultor HR | 3 |
+| 1 | Prueba unitaria del caso de uso con datos reales en entorno de Quality | Consultor SAP BTP | 4 |
+| 2 | Documentación de la activación para el cliente (manual de usuario + manual de configuración) | Consultor SAP BTP | 4 |
+| 3 | Transferencia de conocimiento al equipo del cliente | Consultor SAP BTP | 3 |
 
-**Esfuerzo total estimado (validación + entrega): ~12 horas.**
+**Esfuerzo total estimado (validación + entrega): ~11 horas.**
 
 ---
 
 ## 4. Consideraciones especiales
 
-- **Privacidad de datos** crítica: revisar políticas locales y obtener aprobación legal/HR antes del rollout.
-- El agente **prepara** insights; la conversación 1:1 sigue siendo responsabilidad del manager.
+- Disponibilidad indicada por SAP: **Generally Available**.
+
+---
+
+## Referencias oficiales
+
+- SAP Discovery Center — Detail Page: https://discovery-center.cloud.sap/ai-feature/761a2305-b0a2-4262-b9a3-abd4945ad314/
+- SAP Help Portal — Initial Setup: https://help.sap.com/docs/successfactors-platform/setting-up-and-using-joule-in-sap-successfactors/configuring
+- SAP Discovery Center — Pricing Details: No aplica
 
 ---
 
@@ -71,6 +74,6 @@
 
 | Bloque | Horas |
 |---|---|
-| Activación / configuración | 21 |
-| Validación + documentación + KT | 12 |
-| **Total** | **33** |
+| Activación / configuración | 3 |
+| Validación + documentación + KT | 11 |
+| **Total** | **14** |

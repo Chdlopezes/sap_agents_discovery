@@ -1,31 +1,36 @@
-# Análisis caso de uso J639 — Process Editing (SAP Build Process Automation)
+# Análisis caso de uso J639 — Process Editing
 
-> Basado en información públicamente documentada por SAP. Valores marcados como **[verificar en SAP Help]** requieren validación oficial.
+> Análisis construido **únicamente** a partir de las fuentes oficiales de SAP asociadas al AI Feature/Agent J639 en `processed/AI_Features_Data_Enriched.xlsx`. Los campos para los que SAP no publica información aparecen literalmente como "No aplica", "No existe en la fuente oficial" o "No documentado en la fuente oficial". **No se ha completado ningún dato con conocimiento general ni con inferencia desde casos similares.**
 
-**Resumen del caso:** Process Editing ayuda a desarrolladores durante el diseño e implementación de automatizaciones, permitiendo editar artefactos de proceso mediante instrucciones en lenguaje natural. SAP indica: *La capacidad se asocia con reducción del esfuerzo de automatización low-code, mayor productividad de desarrolladores y mejor velocidad de entrega de nuevas aplicaciones o procesos.*
+**Fuentes oficiales consultadas:**
+- Detail Page (SAP Discovery Center): https://discovery-center.cloud.sap/ai-feature/143f1e51-609a-45d9-ab96-bf286e044a03/
+- Initial Setup (SAP Help Portal): https://help.sap.com/docs/build-process-automation/sap-build-process-automation/generative-ai?locale=en-US
+- Pricing Details (SAP Discovery Center): No aplica
+
+**Resumen del caso:** Process Editing ayuda a desarrolladores durante el diseño e implementación de automatizaciones, permitiendo editar artefactos de proceso mediante instrucciones en lenguaje natural.
 
 ---
 
 ## 1. Prerequisitos para la activación
 
-### 1.1 Productos / componentes SAP requeridos
-- **SAP Build Process Automation (SBPA)** con capability AI.
+### 1.1 Producto / componente SAP requerido
+- **SAP Build Process Automation**.
 
 ### 1.2 Licenciamiento / entitlement / paquete
-- Entitlement SBPA + AI **[verificar]**.
+- Capability **Base**.
+- No aplica un paquete Premium.
 
 ### 1.3 Scope item relacionado
-- N/A.
+- No aplica (el producto base no utiliza scope items de SAP S/4HANA).
 
-### 1.4 Aplicaciones / apps Fiori / servicios requeridos
-- Workspace SBPA (Process Editor).
+### 1.4 Aplicaciones / apps Fiori / servicios / componentes técnicos
+- Según la fuente oficial abierta: You can use generative AI in SAP Build Process Automation to generate a business process, decisions, forms, and script tasks. To use the generative AI features you need to enable generative AI at tenant level and agree to the terms and conditions. When you have enabled generative AI, after approximately 5 minutes, the Generate function is available in the Overview screen for the project and in the process editor. To enable generative AI for your tenant, choose Control Tower  Tenant Configuration  Generative AI. Use the toggle to enable generative AI and accept the AI Usage Terms and Conditions.
 
 ### 1.5 Datos maestros / transaccionales previos
-- Procesos existentes a editar.
+- No documentado en la fuente oficial.
 
 ### 1.6 Restricciones funcionales / técnicas / idioma
-- **Idioma**: prompts en inglés primariamente **[verificar]**.
-- Rol Process Designer.
+- No documentado en la fuente oficial.
 
 ---
 
@@ -33,12 +38,11 @@
 
 | # | Actividad estándar | Objeto de configuración | Tipo de configuración | Consultor requerido | Tiempo estimado (h, Medium) |
 |---|---|---|---|---|---|
-| 1 | Aprovisionar entitlement SBPA + AI | Subaccount BTP + entitlement | General | Consultor BTP | 3 |
-| 2 | Asignar rol Process Designer | Roles SBPA | Particular (por usuario) | Consultor Seguridad | 2 |
-| 3 | Habilitar Process Editing | Configuración SBPA | General | Consultor SBPA | 2 |
-| 4 | Pruebas iniciales (editar proceso con prompts) | Configuración SBPA | General | Consultor SBPA | 3 |
+| 1 | Create a Business Process Project | Configuración de SAP Build Process Automation | General | Consultor SAP Build Process Automation | 3 |
+| 2 | Configure Agents | Configuración de SAP Build Process Automation | General | Consultor SAP Build Process Automation | 3 |
+| 3 | Enable the use of generative AI features. | Configuración de SAP Build Process Automation | General | Consultor SAP Build Process Automation | 3 |
 
-**Esfuerzo total estimado (activación): ~10 horas.**
+**Esfuerzo total estimado (activación / configuración): ~9 horas.**
 
 ---
 
@@ -46,17 +50,25 @@
 
 | # | Actividad | Consultor requerido | Tiempo estimado (h, Medium) |
 |---|---|---|---|
-| 1 | Prueba unitaria con procesos reales | Consultor SBPA | 4 |
-| 2 | Documentación para el cliente | Consultor SBPA | 3 |
-| 3 | Transferencia de conocimiento | Consultor SBPA | 3 |
+| 1 | Prueba unitaria del caso de uso con datos reales en entorno de Quality | Consultor SAP Build Process Automation | 4 |
+| 2 | Documentación de la activación para el cliente (manual de usuario + manual de configuración) | Consultor SAP Build Process Automation | 4 |
+| 3 | Transferencia de conocimiento al equipo del cliente | Consultor SAP Build Process Automation | 3 |
 
-**Esfuerzo total estimado (validación + entrega): ~10 horas.**
+**Esfuerzo total estimado (validación + entrega): ~11 horas.**
 
 ---
 
 ## 4. Consideraciones especiales
 
-- Edición asistida; revisión humana antes de publicar.
+- Disponibilidad indicada por SAP: **Generally Available**.
+
+---
+
+## Referencias oficiales
+
+- SAP Discovery Center — Detail Page: https://discovery-center.cloud.sap/ai-feature/143f1e51-609a-45d9-ab96-bf286e044a03/
+- SAP Help Portal — Initial Setup: https://help.sap.com/docs/build-process-automation/sap-build-process-automation/generative-ai?locale=en-US
+- SAP Discovery Center — Pricing Details: No aplica
 
 ---
 
@@ -64,6 +76,6 @@
 
 | Bloque | Horas |
 |---|---|
-| Activación / configuración | 10 |
-| Validación + documentación + KT | 10 |
+| Activación / configuración | 9 |
+| Validación + documentación + KT | 11 |
 | **Total** | **20** |

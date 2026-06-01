@@ -1,37 +1,36 @@
 # Análisis caso de uso J1104 — Processing of Payment Advices with SAP Document AI
 
-> Basado en información públicamente documentada por SAP. Valores marcados como **[verificar en SAP Help]** requieren validación oficial.
+> Análisis construido **únicamente** a partir de las fuentes oficiales de SAP asociadas al AI Feature/Agent J1104 en `processed/AI_Features_Data_Enriched.xlsx`. Los campos para los que SAP no publica información aparecen literalmente como "No aplica", "No existe en la fuente oficial" o "No documentado en la fuente oficial". **No se ha completado ningún dato con conocimiento general ni con inferencia desde casos similares.**
 
-**Resumen del caso:** Processing of Payment Advices with SAP Document AI automatiza el procesamiento multilingüe de avisos de pago mediante extracción y lectura asistida por IA. SAP indica: *La capacidad busca reducir tiempos de procesamiento documental, disminuir correcciones manuales y mejorar la eficiencia del equipo de cuentas por cobrar.*
+**Fuentes oficiales consultadas:**
+- Detail Page (SAP Discovery Center): https://discovery-center.cloud.sap/ai-feature/988b6b7c-ac4f-4c5f-be46-0366c7dc5a2e/
+- Initial Setup (SAP Help Portal): https://help.sap.com/docs/SAP_S4HANA_CLOUD/a630d57fc5004c6383e7a81efee7a8bb/11193ef55baa4904a5b25bd639e51a0f.html
+- Pricing Details (SAP Discovery Center): https://discovery-center.cloud.sap/ai-feature/988b6b7c-ac4f-4c5f-be46-0366c7dc5a2e/#pricing
+
+**Resumen del caso:** Processing of Payment Advices with SAP Document AI automatiza el procesamiento multilingüe de avisos de pago mediante extracción y lectura asistida por IA.
 
 ---
 
 ## 1. Prerequisitos para la activación
 
-### 1.1 Productos / componentes SAP requeridos
-- **SAP S/4HANA Cloud Public Edition** con Joule habilitado.
-- **SAP Document AI** (servicio en BTP).
-- Componente **FI-AR – Accounts Receivable** operativo.
+### 1.1 Producto / componente SAP requerido
+- **SAP S/4HANA Cloud Public Edition**.
 
 ### 1.2 Licenciamiento / entitlement / paquete
-- Suscripción S/4HANA Cloud Public Edition con FI.
-- Entitlement de **SAP Document AI** (capability Premium) **[verificar]**.
+- Capability **Premium**.
+- Pricing (sección *Pricing Details* de la Detail Page): AI Units requeridos. En Pricing Details se indica activación mediante “Activate with AI Units”; precio disponible bajo solicitud; duración contractual disponible bajo solicitud; tiene prerrequisito. Al estar basado en SAP Document AI, pueden aplicar requisitos comerciales asociados a Document AI según la configuración requerida.
 
 ### 1.3 Scope item relacionado
-- Scope items de Accounts Receivable - Incoming Payments / Payment Advice — **[verificar IDs]**.
+- No documentado en la fuente oficial.
 
-### 1.4 Aplicaciones / apps Fiori / servicios requeridos
-- Apps Fiori *Manage Payment Advices*, *Post Incoming Payments*.
-- Communication arrangement S/4HANA ↔ Document AI.
+### 1.4 Aplicaciones / apps Fiori / servicios / componentes técnicos
+- Según la fuente oficial abierta: Manage Document AI Schema Registration Subscriptions For the set-up, for every SAP S/4HANA Cloud Public Edition tenant, one central tenant of SAP Document AI, Embedded Edition, can be integrated through scope item 7TC. For every SAP S/4HANA Cloud Public Edition tenant, a separate SAP Document AI tenant must be integrated. The integration includes one communication scenario for the UI integration for SAP Document AI FIORI applications into the SAP S/4HANA Cloud Public Edition launchpad and one communication scenario for the inbound and outbound API integration through technical user communication. To access this generative AI feature within SAP S/4HANA Cloud Public Edition, an additional entitlement and authorization may be required.
 
 ### 1.5 Datos maestros / transaccionales previos
-- Maestros de clientes con configuración de payment advice.
-- Open items en AR pendientes de clearing.
+- No documentado en la fuente oficial.
 
 ### 1.6 Restricciones funcionales / técnicas / idioma
-- **Idioma**: idiomas soportados por Document AI según matriz vigente **[verificar]**.
-- Solo S/4HANA Cloud **Public** Edition.
-- Formato del payment advice (PDF / email parseable) soportado.
+- Disponible para SAP S/4HANA Cloud **Public Edition**.
 
 ---
 
@@ -39,13 +38,10 @@
 
 | # | Actividad estándar | Objeto de configuración | Tipo de configuración | Consultor requerido | Tiempo estimado (h, Medium) |
 |---|---|---|---|---|---|
-| 1 | Provisionar SAP Document AI en BTP | Subaccount BTP + entitlement | General | Consultor BTP | 3 |
-| 2 | Configurar communication scenario con Document AI | Communication Arrangement | General | Consultor Integración | 4 |
-| 3 | Configurar mapping de payment advice extraído al documento de clearing AR | Mapping Document AI ↔ Payment Advice | Particular (por layout/cliente) | Consultor FI + Integración | 6 |
-| 4 | Asignar business roles AR con catálogos de payment advice a usuarios | Business Role / Business Catalog | Particular (por usuario) | Consultor Seguridad | 3 |
-| 5 | Pruebas iniciales: cargar payment advices reales y validar matching + clearing | Configuración funcional FI-AR | General | Consultor FI | 4 |
+| 1 | Install Additional Software | Configuración de SAP S/4HANA Cloud Public Edition | General | Consultor Funcional SAP S/4HANA | 3 |
+| 2 | Create Sales Orders - AI-Assisted Extraction | Configuración de SAP S/4HANA Cloud Public Edition | General | Consultor Funcional SAP S/4HANA | 3 |
 
-**Esfuerzo total estimado (activación): ~20 horas.**
+**Esfuerzo total estimado (activación / configuración): ~6 horas.**
 
 ---
 
@@ -53,19 +49,27 @@
 
 | # | Actividad | Consultor requerido | Tiempo estimado (h, Medium) |
 |---|---|---|---|
-| 1 | Prueba unitaria con muestra real de payment advices (varios layouts) | Consultor FI | 6 |
-| 2 | Documentación para el cliente | Consultor FI | 4 |
-| 3 | Transferencia de conocimiento | Consultor FI | 3 |
+| 1 | Prueba unitaria del caso de uso con datos reales en entorno de Quality | Consultor Funcional SAP S/4HANA | 4 |
+| 2 | Documentación de la activación para el cliente (manual de usuario + manual de configuración) | Consultor Funcional SAP S/4HANA | 4 |
+| 3 | Transferencia de conocimiento al equipo del cliente | Consultor Funcional SAP S/4HANA | 3 |
 
-**Esfuerzo total estimado (validación + entrega): ~13 horas.**
+**Esfuerzo total estimado (validación + entrega): ~11 horas.**
 
 ---
 
 ## 4. Consideraciones especiales
 
-- **Calidad de matching** depende del payment advice y del estado de los open items.
-- Volumen sujeto a cuotas de Document AI.
-- El usuario sigue validando casos no automáticos antes del clearing.
+- Caso **Premium**: el consumo se factura según el modelo de AI Units / paquete descrito en *Pricing Details* (ver sección 1.2).
+- Aplica a SAP S/4HANA Cloud **Public Edition**.
+- Disponibilidad indicada por SAP: **Generally Available**.
+
+---
+
+## Referencias oficiales
+
+- SAP Discovery Center — Detail Page: https://discovery-center.cloud.sap/ai-feature/988b6b7c-ac4f-4c5f-be46-0366c7dc5a2e/
+- SAP Help Portal — Initial Setup: https://help.sap.com/docs/SAP_S4HANA_CLOUD/a630d57fc5004c6383e7a81efee7a8bb/11193ef55baa4904a5b25bd639e51a0f.html
+- SAP Discovery Center — Pricing Details: https://discovery-center.cloud.sap/ai-feature/988b6b7c-ac4f-4c5f-be46-0366c7dc5a2e/#pricing
 
 ---
 
@@ -73,6 +77,6 @@
 
 | Bloque | Horas |
 |---|---|
-| Activación / configuración | 20 |
-| Validación + documentación + KT | 13 |
-| **Total** | **33** |
+| Activación / configuración | 6 |
+| Validación + documentación + KT | 11 |
+| **Total** | **17** |

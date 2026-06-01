@@ -1,37 +1,36 @@
 # Análisis caso de uso J669 — Insights Description Generator
 
-> Análisis basado en información públicamente documentada por SAP (SAP Discovery Center). Los valores marcados como **[verificar en SAP Help]** deben validarse contra la documentación oficial vigente.
+> Análisis construido **únicamente** a partir de las fuentes oficiales de SAP asociadas al AI Feature/Agent J669 en `processed/AI_Features_Data_Enriched.xlsx`. Los campos para los que SAP no publica información aparecen literalmente como "No aplica", "No existe en la fuente oficial" o "No documentado en la fuente oficial". **No se ha completado ningún dato con conocimiento general ni con inferencia desde casos similares.**
 
-**Resumen del caso:** Capacidad de **SAP Signavio Process Transformation Manager** que ayuda a crear descripciones claras, consistentes y amigables para usuarios de negocio al capturar y colaborar sobre insights de SAP Signavio Process Intelligence. El valor se centra en acelerar el paso de insight a acción.
+**Fuentes oficiales consultadas:**
+- Detail Page (SAP Discovery Center): https://discovery-center.cloud.sap/ai-feature/0614d66c-4e6d-42bc-b45b-135ba035d843/
+- Initial Setup (SAP Help Portal): https://help.sap.com/docs/signavio-process-transformation-manager/user-guide/creating-insights?locale=en-US
+- Pricing Details (SAP Discovery Center): No aplica
+
+**Resumen del caso:** Capacidad de SAP Signavio Process Transformation Manager que ayuda a crear descripciones claras, consistentes y amigables para usuarios de negocio al capturar y colaborar sobre insights de SAP Signavio Process Intelligence.
 
 ---
 
 ## 1. Prerequisitos para la activación
 
-### 1.1 Productos / componentes SAP requeridos
-- **SAP Signavio Process Transformation Manager** (suscripción activa).
-- **SAP Signavio Process Intelligence** con datos cargados (los insights se generan desde allí).
+### 1.1 Producto / componente SAP requerido
+- **SAP Signavio Process Transformation Manager**.
 
 ### 1.2 Licenciamiento / entitlement / paquete
-- Suscripción vigente a **SAP Signavio solutions**.
-- Capability **Base** **[verificar en AI Foundation Catalog vigente]**.
+- Capability **Base**.
+- No aplica un paquete Premium.
 
 ### 1.3 Scope item relacionado
-- No aplica scope item.
+- No aplica (el producto base no utiliza scope items de SAP S/4HANA).
 
-### 1.4 Aplicaciones / apps Fiori / servicios requeridos
-- **SAP Signavio Process Transformation Manager** con módulo de insights / iniciativas.
-- **SAP Signavio Process Intelligence** conectado al Transformation Manager.
+### 1.4 Aplicaciones / apps Fiori / servicios / componentes técnicos
+- Según la fuente oficial abierta: Access to this feature depends on your license. For more information, see User Administration, Authentication, and Authorization in the Security Guide for SAP Signavio Process Transformation Manager.
 
 ### 1.5 Datos maestros / transaccionales previos
-- Insights generados o registrados en Process Intelligence / Transformation Manager.
-- Modelos / procesos donde se vinculan los insights cargados.
+- No documentado en la fuente oficial.
 
 ### 1.6 Restricciones funcionales / técnicas / idioma
-- **Idioma**: capability publicada por SAP Signavio **[verificar idiomas soportados vigentes]**.
-- **Roles**: Process Analyst / Transformation Lead con permisos sobre los insights.
-
-> **Nota**: el enlace de Initial Setup aparece en Resources pero no fue posible acceder a su contenido exacto desde la herramienta; aplican los prerequisitos generales de SAP Signavio.
+- No documentado en la fuente oficial.
 
 ---
 
@@ -39,12 +38,9 @@
 
 | # | Actividad estándar | Objeto de configuración | Tipo de configuración | Consultor requerido | Tiempo estimado (h, Medium) |
 |---|---|---|---|---|---|
-| 1 | Confirmar entitlement de SAP Signavio Process Transformation Manager | Workspace Signavio + entitlement | General | Consultor SAP Signavio | 2 |
-| 2 | Validar conectividad / integración Transformation Manager ↔ Process Intelligence | Integración Signavio | General | Consultor SAP Signavio | 3 |
-| 3 | Asignar a los usuarios objetivo los roles Signavio con acceso a la capability | Roles SAP Signavio | Particular (por usuario / grupo) | Consultor Seguridad Signavio | 2 |
-| 4 | Pruebas iniciales con un Process Analyst piloto (generar descripciones para insights representativos) | Configuración funcional Signavio | General | Consultor SAP Signavio | 3 |
+| 1 | Select the links below to learn more about each topic. | Configuración de SAP Signavio Process Transformation Manager | General | Consultor SAP Signavio | 3 |
 
-**Esfuerzo total estimado (activación estándar, sin necesidades adicionales): ~10 horas.**
+**Esfuerzo total estimado (activación / configuración): ~3 horas.**
 
 ---
 
@@ -52,27 +48,25 @@
 
 | # | Actividad | Consultor requerido | Tiempo estimado (h, Medium) |
 |---|---|---|---|
-| 1 | Prueba unitaria con insights reales del cliente (descripciones sobre varios dominios) | Consultor SAP Signavio | 4 |
-| 2 | Documentación de la activación para el cliente (manual de usuario) | Consultor SAP Signavio | 4 |
-| 3 | Transferencia de conocimiento al equipo del cliente (sesión funcional + Q&A) | Consultor SAP Signavio | 3 |
+| 1 | Prueba unitaria del caso de uso con datos reales en entorno de Quality | Consultor SAP Signavio | 4 |
+| 2 | Documentación de la activación para el cliente (manual de usuario + manual de configuración) | Consultor SAP Signavio | 4 |
+| 3 | Transferencia de conocimiento al equipo del cliente | Consultor SAP Signavio | 3 |
 
 **Esfuerzo total estimado (validación + entrega): ~11 horas.**
 
 ---
 
-## 4. Consideraciones especiales (según guía SAP)
+## 4. Consideraciones especiales
 
-- Las descripciones generadas son un **borrador**: el responsable funcional debe revisar antes de compartirlas con stakeholders.
-- La capability acelera la **comunicación de insights**; el análisis del insight sigue siendo responsabilidad del Process Analyst.
-- Sujeto a las condiciones de servicio vigentes de SAP Signavio **[verificar]**.
-- Antes de la activación, revisar el **SAP Road Map Explorer** y release notes vigentes.
-- Este caso de uso **no incluye desarrollos custom**; cualquier extensión queda fuera del alcance estándar.
+- Disponibilidad indicada por SAP: **Generally Available**.
 
 ---
 
 ## Referencias oficiales
 
 - SAP Discovery Center — Detail Page: https://discovery-center.cloud.sap/ai-feature/0614d66c-4e6d-42bc-b45b-135ba035d843/
+- SAP Help Portal — Initial Setup: https://help.sap.com/docs/signavio-process-transformation-manager/user-guide/creating-insights?locale=en-US
+- SAP Discovery Center — Pricing Details: No aplica
 
 ---
 
@@ -80,6 +74,6 @@
 
 | Bloque | Horas |
 |---|---|
-| Activación / configuración | 10 |
+| Activación / configuración | 3 |
 | Validación + documentación + KT | 11 |
-| **Total** | **21** |
+| **Total** | **14** |

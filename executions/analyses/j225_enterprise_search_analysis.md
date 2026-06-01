@@ -1,40 +1,37 @@
 # Análisis caso de uso J225 — Enterprise Search
 
-> Análisis basado en información públicamente documentada por SAP (SAP Discovery Center, SAP Help Portal). Los valores marcados como **[verificar en SAP Help]** deben validarse contra la documentación oficial vigente.
+> Análisis construido **únicamente** a partir de las fuentes oficiales de SAP asociadas al AI Feature/Agent J225 en `processed/AI_Features_Data_Enriched.xlsx`. Los campos para los que SAP no publica información aparecen literalmente como "No aplica", "No existe en la fuente oficial" o "No documentado en la fuente oficial". **No se ha completado ningún dato con conocimiento general ni con inferencia desde casos similares.**
 
-**Resumen del caso:** Búsqueda empresarial asistida por IA en **SAP S/4HANA Cloud Public Edition** que permite encontrar objetos de negocio mediante lenguaje natural desde el SAP Fiori Launchpad. SAP indica un ahorro estimado del **50% en el tiempo de búsqueda** de objetos de negocio.
+**Fuentes oficiales consultadas:**
+- Detail Page (SAP Discovery Center): https://discovery-center.cloud.sap/ai-feature/ce1359ae-1f44-48ce-b9d8-6d2e73b23402/
+- Initial Setup (SAP Help Portal): No existe enlace 'Initial Setup' en *Resources*; se usó como sustituto el enlace **AI Feature - SAP Help Portal**.
+- AI Feature (SAP Help Portal): https://help.sap.com/docs/SAP_S4HANA_CLOUD/a630d57fc5004c6383e7a81efee7a8bb/e69295d106654923be99d4ff4e22d751.html?version=2508.500
+- Pricing Details (SAP Discovery Center): No aplica
+
+**Resumen del caso:** Búsqueda empresarial asistida por IA para SAP S/4HANA Cloud Public Edition que ayuda a los usuarios a encontrar datos relevantes de objetos de negocio mediante lenguaje natural desde SAP Fiori Launchpad.
 
 ---
 
 ## 1. Prerequisitos para la activación
 
-### 1.1 Productos / componentes SAP requeridos
-- **SAP S/4HANA Cloud Public Edition** con Joule habilitado.
-- **Enterprise Search** habilitado en S/4HANA Cloud Public Edition (índices de búsqueda activos).
-- SAP Fiori Launchpad disponible para los usuarios objetivo.
+### 1.1 Producto / componente SAP requerido
+- **SAP S/4HANA Cloud Public Edition**.
 
 ### 1.2 Licenciamiento / entitlement / paquete
-- Suscripción vigente a **SAP S/4HANA Cloud Public Edition**.
-- Capability **Base** — incluida con el entitlement estándar de Joule sobre S/4HANA Public **[verificar en AI Foundation Catalog vigente]**.
+- Capability **Base**.
+- No aplica un paquete Premium.
 
 ### 1.3 Scope item relacionado
-- No se identifica un scope item específico; aplica al motor transversal de Enterprise Search del producto base **[verificar en SAP Signavio Process Navigator]**.
+- No documentado en la fuente oficial.
 
-### 1.4 Aplicaciones / apps Fiori / servicios requeridos
-- Caja de búsqueda del **SAP Fiori Launchpad** activa para el usuario.
-- Apps Fiori de los objetos de negocio que se desea buscar (los resultados navegan a las apps correspondientes).
-- **Joule** habilitado en el Launchpad del usuario final.
+### 1.4 Aplicaciones / apps Fiori / servicios / componentes técnicos
+- Según la fuente oficial abierta: In the SAP Fiori launchpad, you can use the Enterprise Search feature to access business data efficiently. Depending on your business role, you see a list of business objects in the SAP Fiori launchpad search dropdown. This AI-assisted feature allows you to use natural language for searching business data. You can enter your search queries in natural language in the SAP Fiori launchpad search bar to find the information you need. To enable natural language search on the business objects, you must select the checkbox Enable AI Natural Language Search from the user profile settings [Goto User Profile  Settings  Search]. On selecting the checkbox, you can view the list of business objects that are configured for natural language search. To access this generative AI feature within SAP S/4HANA Cloud Public Edition, an additional entitlement and authorization may be required. Please consult your SAP account executive for more information.
 
 ### 1.5 Datos maestros / transaccionales previos
-- Objetos de negocio (Business Partners, Materiales, Sales Orders, etc.) cargados y consistentes.
-- Índices de Enterprise Search refrescados y operativos para los objetos a consultar.
+- No documentado en la fuente oficial.
 
 ### 1.6 Restricciones funcionales / técnicas / idioma
-- **Idioma**: interacciones de búsqueda en lenguaje natural soportadas principalmente en **inglés** **[verificar matriz vigente]**.
-- **Edición**: aplica únicamente a **SAP S/4HANA Cloud Public Edition**.
-- **Roles**: el usuario sólo verá resultados sobre objetos para los que tiene autorización.
-
-> **Nota**: SAP no publica un Initial Setup específico para este caso en Discovery Center; aplican los prerequisitos generales de Joule + Enterprise Search sobre S/4HANA Cloud Public Edition.
+- Disponible para SAP S/4HANA Cloud **Public Edition**.
 
 ---
 
@@ -42,13 +39,10 @@
 
 | # | Actividad estándar | Objeto de configuración | Tipo de configuración | Consultor requerido | Tiempo estimado (h, Medium) |
 |---|---|---|---|---|---|
-| 1 | Confirmar entitlement de Joule sobre S/4HANA Public Edition | Subaccount BTP + entitlement Joule | General | Consultor BTP | 2 |
-| 2 | Verificar que **Enterprise Search** esté habilitado y los índices estén operativos | Configuración de Enterprise Search | General | Consultor Funcional S/4HANA + Basis Cloud | 3 |
-| 3 | Asignar a los usuarios objetivo los business roles con autorización sobre los objetos a buscar | Business Role / Business Catalog | Particular (por usuario / grupo) | Consultor Seguridad S/4HANA | 3 |
-| 4 | Habilitar el botón / capability de Joule en el Launchpad de los usuarios | Joule capability scope | General | Consultor Funcional S/4HANA | 2 |
-| 5 | Pruebas iniciales en Quality con un usuario piloto (consultas en lenguaje natural sobre objetos comunes) | Configuración funcional / Launchpad | General | Consultor Funcional S/4HANA | 2 |
+| 1 | Install Additional Software | Configuración de SAP S/4HANA Cloud Public Edition | General | Consultor Funcional SAP S/4HANA | 3 |
+| 2 | Open this video in a new window | Configuración de SAP S/4HANA Cloud Public Edition | General | Consultor Funcional SAP S/4HANA | 3 |
 
-**Esfuerzo total estimado (activación estándar, sin necesidades adicionales): ~12 horas.**
+**Esfuerzo total estimado (activación / configuración): ~6 horas.**
 
 ---
 
@@ -56,27 +50,26 @@
 
 | # | Actividad | Consultor requerido | Tiempo estimado (h, Medium) |
 |---|---|---|---|
-| 1 | Prueba unitaria con datos reales (búsquedas representativas sobre objetos clave del cliente) | Consultor Funcional S/4HANA | 4 |
-| 2 | Documentación de la activación para el cliente (manual de usuario + manual breve de operación) | Consultor Funcional S/4HANA | 4 |
-| 3 | Transferencia de conocimiento al equipo del cliente (sesión funcional + Q&A) | Consultor Funcional S/4HANA | 3 |
+| 1 | Prueba unitaria del caso de uso con datos reales en entorno de Quality | Consultor Funcional SAP S/4HANA | 4 |
+| 2 | Documentación de la activación para el cliente (manual de usuario + manual de configuración) | Consultor Funcional SAP S/4HANA | 4 |
+| 3 | Transferencia de conocimiento al equipo del cliente | Consultor Funcional SAP S/4HANA | 3 |
 
 **Esfuerzo total estimado (validación + entrega): ~11 horas.**
 
 ---
 
-## 4. Consideraciones especiales (según guía SAP)
+## 4. Consideraciones especiales
 
-- Joule respeta las autorizaciones del usuario: **no eleva privilegios**. Los resultados se filtran según el perfil de seguridad.
-- La calidad de la búsqueda depende del **estado de los índices de Enterprise Search**; si están desactualizados, los resultados serán incompletos.
-- Sujeto a la **fair-use policy** de Joule **[verificar políticas vigentes]**.
-- Antes de la activación, revisar el **SAP Road Map Explorer** y release notes vigentes para confirmar idiomas y objetos soportados.
-- Este caso de uso **no incluye desarrollos custom**; cualquier extensión queda fuera del alcance estándar.
+- Aplica a SAP S/4HANA Cloud **Public Edition**.
+- Disponibilidad indicada por SAP: **Generally Available**.
 
 ---
 
 ## Referencias oficiales
 
 - SAP Discovery Center — Detail Page: https://discovery-center.cloud.sap/ai-feature/ce1359ae-1f44-48ce-b9d8-6d2e73b23402/
+- SAP Help Portal — AI Feature (sustituto de Initial Setup): https://help.sap.com/docs/SAP_S4HANA_CLOUD/a630d57fc5004c6383e7a81efee7a8bb/e69295d106654923be99d4ff4e22d751.html?version=2508.500
+- SAP Discovery Center — Pricing Details: No aplica
 
 ---
 
@@ -84,6 +77,6 @@
 
 | Bloque | Horas |
 |---|---|
-| Activación / configuración | 12 |
+| Activación / configuración | 6 |
 | Validación + documentación + KT | 11 |
-| **Total** | **23** |
+| **Total** | **17** |

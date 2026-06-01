@@ -1,38 +1,38 @@
 # Análisis caso de uso J966 — Fixed Asset Key Figures Explanation
 
-> Análisis basado en información públicamente documentada por SAP (SAP Discovery Center). Los valores marcados como **[verificar en SAP Help]** deben validarse contra la documentación oficial vigente.
+> Análisis construido **únicamente** a partir de las fuentes oficiales de SAP asociadas al AI Feature/Agent J966 en `processed/AI_Features_Data_Enriched.xlsx`. Los campos para los que SAP no publica información aparecen literalmente como "No aplica", "No existe en la fuente oficial" o "No documentado en la fuente oficial". **No se ha completado ningún dato con conocimiento general ni con inferencia desde casos similares.**
 
-**Resumen del caso:** Ayuda a contadores de activos a entender key figures de activos fijos mediante explicaciones generadas en lenguaje natural, sobre **SAP S/4HANA Cloud Private Edition**. SAP no publica un KPI cuantitativo específico en la página consultada.
+**Fuentes oficiales consultadas:**
+- Detail Page (SAP Discovery Center): https://discovery-center.cloud.sap/ai-feature/780e16a7-74cf-4118-b200-c13484d2f9b5/
+- Initial Setup (SAP Help Portal — Asset Accounting FI-AA, AI feature setup): https://help.sap.com/docs/SAP_S4HANA_ON-PREMISE_UPA/8f80c477fd7649a6b5bbdf479e7e1044/4b0a79f041d840729345fb41571b0a97.html?version=2025.1_UPA
+- Pricing Details (SAP Discovery Center): No aplica
+
+**Resumen del caso:** Ayuda a los contadores de activos a entender los key figures de activos fijos mediante explicaciones generadas en lenguaje natural, en SAP S/4HANA Cloud Private Edition.
 
 ---
 
 ## 1. Prerequisitos para la activación
 
-### 1.1 Productos / componentes SAP requeridos
-- **SAP S/4HANA Cloud Private Edition** con Joule habilitado.
-- Componente **Asset Accounting (FI-AA)** operativo.
+### 1.1 Producto / componente SAP requerido
+- **SAP S/4HANA Cloud Private Edition** — componente **Asset Accounting (FI-AA)**.
 
 ### 1.2 Licenciamiento / entitlement / paquete
-- Suscripción vigente a **SAP S/4HANA Cloud Private Edition**.
-- Capability **Base** — incluida con el entitlement estándar de Joule **[verificar en AI Foundation Catalog vigente]**.
+- Capability **Base**.
+- La fuente advierte que, para acceder a esta feature de IA generativa, **puede requerirse un entitlement y autorización adicionales** (consultar al account executive).
 
 ### 1.3 Scope item relacionado
-- Scope items de **Asset Accounting** en S/4HANA Cloud Private Edition — **[verificar IDs en SAP Signavio Process Navigator]**.
+- No documentado en la fuente oficial.
 
-### 1.4 Aplicaciones / apps Fiori / servicios requeridos
-- App Fiori **Manage Fixed Assets** habilitada para los usuarios objetivo (cuando aplique en Private Edition).
-- **Joule** habilitado en el SAP Fiori Launchpad del usuario.
+### 1.4 Aplicaciones / apps Fiori / servicios / componentes técnicos
+- Según el Initial Setup oficial, para usar la feature se debe tener asignado el business role **SAP_BR_AA_ACCOUNTANT**.
+- La activación del **intelligent scenario** se realiza mediante la app Fiori **Intelligent Scenario Management (App ID: F4470)** (o por el proceso auto-turnkey).
+- Los usuarios requieren además las autorizaciones específicas que la fuente lista para acceder a la feature.
 
 ### 1.5 Datos maestros / transaccionales previos
-- Catálogo de activos fijos cargado y consistente.
-- Áreas de valoración, claves de depreciación y movimientos de valor cargados.
+- Datos maestros de activos fijos (FI-AA) existentes.
 
 ### 1.6 Restricciones funcionales / técnicas / idioma
-- **Edición**: aplica únicamente a **SAP S/4HANA Cloud Private Edition** (distinguir de J288, que aplica a Public Edition).
-- **Idioma**: interacciones de Joule soportadas principalmente en **inglés** **[verificar matriz vigente]**.
-- **Roles**: el usuario debe tener autorización sobre el activo fijo cuyas key figures pretende explicar.
-
-> **Nota**: SAP no publica un Initial Setup específico para este caso en Discovery Center; aplican los prerequisitos generales de Joule + Asset Accounting sobre Private Edition.
+- Disponible para **SAP S/4HANA Cloud Private Edition**; el acceso a la feature de IA generativa puede requerir entitlement/autorización adicionales.
 
 ---
 
@@ -40,13 +40,11 @@
 
 | # | Actividad estándar | Objeto de configuración | Tipo de configuración | Consultor requerido | Tiempo estimado (h, Medium) |
 |---|---|---|---|---|---|
-| 1 | Confirmar entitlement de Joule sobre S/4HANA Private Edition | Subaccount BTP + entitlement Joule | General | Consultor BTP | 2 |
-| 2 | Verificar configuración de Asset Accounting (claves, áreas, movimientos) | Configuración FI-AA | General | Consultor Funcional Asset Accounting | 3 |
-| 3 | Asignar a los usuarios los business roles de Asset Accountant con la capability habilitada | Business Role / Business Catalog | Particular (por usuario / grupo) | Consultor Seguridad S/4HANA | 3 |
-| 4 | Habilitar la capability de Joule para explicación de key figures | Joule capability scope | General | Consultor Funcional Asset Accounting | 2 |
-| 5 | Pruebas iniciales en Quality (explicaciones sobre key figures representativas) | Configuración funcional FI-AA | General | Consultor Funcional Asset Accounting | 3 |
+| 1 | Confirmar el entitlement y la autorización adicionales para la feature de IA generativa (consultar al account executive) | Entitlement / autorización | General | Consultor Funcional SAP S/4HANA (FI-AA) | 3 |
+| 2 | Activar el intelligent scenario (esperar el proceso auto-turnkey o activarlo manualmente con la app **Intelligent Scenario Management — F4470**) | Intelligent Scenario (ISLM) | General | Consultor Funcional SAP S/4HANA (FI-AA) | 4 |
+| 3 | Asignar el business role **SAP_BR_AA_ACCOUNTANT** y las autorizaciones requeridas a los usuarios objetivo | Business Role / Autorizaciones | Particular (por usuario / rol) | Consultor Seguridad SAP S/4HANA | 3 |
 
-**Esfuerzo total estimado (activación estándar, sin necesidades adicionales): ~13 horas.**
+**Esfuerzo total estimado (activación / configuración): ~10 horas.**
 
 ---
 
@@ -54,28 +52,27 @@
 
 | # | Actividad | Consultor requerido | Tiempo estimado (h, Medium) |
 |---|---|---|---|
-| 1 | Prueba unitaria con datos reales del cliente (explicaciones sobre key figures de activos representativos) | Consultor Funcional Asset Accounting | 4 |
-| 2 | Documentación de la activación para el cliente (manual de usuario + manual de configuración) | Consultor Funcional Asset Accounting | 4 |
-| 3 | Transferencia de conocimiento al equipo del cliente (sesión funcional + Q&A) | Consultor Funcional Asset Accounting | 3 |
+| 1 | Prueba unitaria del caso de uso con datos reales en entorno de Quality (pedir explicación de key figures de activos fijos) | Consultor Funcional SAP S/4HANA (FI-AA) | 4 |
+| 2 | Documentación de la activación para el cliente (manual de usuario + manual de configuración) | Consultor Funcional SAP S/4HANA (FI-AA) | 4 |
+| 3 | Transferencia de conocimiento al equipo del cliente | Consultor Funcional SAP S/4HANA (FI-AA) | 3 |
 
 **Esfuerzo total estimado (validación + entrega): ~11 horas.**
 
 ---
 
-## 4. Consideraciones especiales (según guía SAP)
+## 4. Consideraciones especiales
 
-- **Solo Private Edition**: confirmar que el cliente está en el sabor correcto.
-- Las explicaciones son **descriptivas**: el usuario sigue siendo responsable de la interpretación contable y de la decisión.
-- Joule respeta las autorizaciones del usuario: **no eleva privilegios**.
-- Sujeto a la **fair-use policy** de Joule **[verificar políticas vigentes]**.
-- Antes de la activación, revisar el **SAP Road Map Explorer** y release notes vigentes para confirmar funcionalidades disponibles vs. planificadas.
-- Este caso de uso **no incluye desarrollos custom**; cualquier extensión queda fuera del alcance estándar.
+- Una vez activado el intelligent scenario, la feature de IA queda disponible para los usuarios con la autorización adecuada.
+- La feature puede requerir entitlement y autorización adicionales (consultar al account executive).
+- Disponibilidad indicada por SAP: **Generally Available**.
 
 ---
 
 ## Referencias oficiales
 
 - SAP Discovery Center — Detail Page: https://discovery-center.cloud.sap/ai-feature/780e16a7-74cf-4118-b200-c13484d2f9b5/
+- SAP Help Portal — Initial Setup (Asset Accounting FI-AA — AI feature): https://help.sap.com/docs/SAP_S4HANA_ON-PREMISE_UPA/8f80c477fd7649a6b5bbdf479e7e1044/4b0a79f041d840729345fb41571b0a97.html?version=2025.1_UPA
+- SAP Discovery Center — Pricing Details: No aplica
 
 ---
 
@@ -83,6 +80,6 @@
 
 | Bloque | Horas |
 |---|---|
-| Activación / configuración | 13 |
+| Activación / configuración | 10 |
 | Validación + documentación + KT | 11 |
-| **Total** | **24** |
+| **Total** | **21** |

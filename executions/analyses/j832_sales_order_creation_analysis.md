@@ -1,37 +1,36 @@
-# Análisis caso de uso J832 — Sales Order Creation (S/4HANA Cloud Private Edition)
+# Análisis caso de uso J832 — Sales Order Creation
 
-> Basado en información públicamente documentada por SAP. Valores marcados como **[verificar en SAP Help]** requieren validación oficial.
+> Análisis construido **únicamente** a partir de las fuentes oficiales de SAP asociadas al AI Feature/Agent J832 en `processed/AI_Features_Data_Enriched.xlsx`. Los campos para los que SAP no publica información aparecen literalmente como "No aplica", "No existe en la fuente oficial" o "No documentado en la fuente oficial". **No se ha completado ningún dato con conocimiento general ni con inferencia desde casos similares.**
 
-> **Nota**: Variante Private del caso. Ver J831 (Public) y J846 (S/4HANA on-prem).
+**Fuentes oficiales consultadas:**
+- Detail Page (SAP Discovery Center): https://discovery-center.cloud.sap/ai-feature/836b7ca4-0177-4757-8152-51846c586f1e/
+- Initial Setup (SAP Help Portal): https://help.sap.com/docs/SAP_S4HANA_ON-PREMISE/7b24a64d9d0941bda1afa753263d9e39/2dcf49a616b842b096e0a3cad4dac458.html
+- Pricing Details (SAP Discovery Center): No aplica
 
-**Resumen del caso:** La capacidad permite crear pedidos de venta a partir de datos no estructurados, como archivos PDF o imágenes de órdenes de compra. El sistema extrae la información del archivo, propone valores para la solicitud de pedido y permite convertirla posteriormente en un pedido de venta. SAP indica: *La página destaca una reducción del 25% en el costo de creación de pedidos de venta.*
+**Resumen del caso:** La capacidad permite crear pedidos de venta a partir de datos no estructurados, como archivos PDF o imágenes de órdenes de compra. El sistema extrae la información del archivo, propone valores para la solicitud de pedido y permite convertirla posteriormente en un pedido de venta.
 
 ---
 
 ## 1. Prerequisitos para la activación
 
-### 1.1 Productos / componentes SAP requeridos
-- **SAP S/4HANA Cloud Private Edition** con Joule habilitado.
-- Componente **SD – Sales** operativo.
+### 1.1 Producto / componente SAP requerido
+- **SAP S/4HANA Cloud Private Edition**.
 
 ### 1.2 Licenciamiento / entitlement / paquete
-- Suscripción S/4HANA Cloud Private Edition.
-- Entitlement Joule (**Base**) **[verificar]**.
+- Capability **Base**.
+- No aplica un paquete Premium.
 
 ### 1.3 Scope item relacionado
-- Scope items de Sales Order Management — **[verificar IDs]**.
+- No documentado en la fuente oficial.
 
-### 1.4 Aplicaciones / apps Fiori / servicios requeridos
-- Apps Fiori *Create Sales Orders*, *Manage Sales Orders*.
-- Joule habilitado en el Launchpad.
+### 1.4 Aplicaciones / apps Fiori / servicios / componentes técnicos
+- Según la fuente oficial abierta: After the file is uploaded, the system creates a sales order request (containing the uploaded file as an attachment) and starts data extraction. You need to wait some time to view the extraction result. You can retry if data extraction fails. If request data is incomplete, you must edit it on the object page. If needed, you can open the purchase order file in an embedded pane or in a new window to verify purchasing details.
 
 ### 1.5 Datos maestros / transaccionales previos
-- Customers, materials, pricing, sales areas configurados.
+- No documentado en la fuente oficial.
 
 ### 1.6 Restricciones funcionales / técnicas / idioma
-- **Idioma**: inglés primariamente **[verificar]**.
-- Solo S/4HANA Cloud **Private** Edition.
-- Usuario con autorizaciones SD.
+- Disponible para SAP S/4HANA Cloud **Private Edition**.
 
 ---
 
@@ -39,13 +38,11 @@
 
 | # | Actividad estándar | Objeto de configuración | Tipo de configuración | Consultor requerido | Tiempo estimado (h, Medium) |
 |---|---|---|---|---|---|
-| 1 | Confirmar entitlement de Joule | Subaccount BTP + entitlement | General | Consultor BTP | 2 |
-| 2 | Verificar configuración SD | Configuración SD | General | Consultor SD | 3 |
-| 3 | Asignar business roles SD a usuarios | Business Role / Authorizations | Particular (por usuario) | Consultor Seguridad | 3 |
-| 4 | Habilitar capability Joule para SO Creation | Joule capability scope | General | Consultor Funcional SD + Joule | 2 |
-| 5 | Pruebas iniciales | Configuración funcional SD | General | Consultor SD | 3 |
+| 1 | Create Sales Orders - VA01 | Configuración de SAP S/4HANA Cloud Private Edition | General | Consultor Funcional SAP S/4HANA | 3 |
+| 2 | Create Sales Orders - Automatic Extraction | Configuración de SAP S/4HANA Cloud Private Edition | General | Consultor Funcional SAP S/4HANA | 3 |
+| 3 | Create sales orders | Configuración de SAP S/4HANA Cloud Private Edition | General | Consultor Funcional SAP S/4HANA | 3 |
 
-**Esfuerzo total estimado (activación): ~13 horas.**
+**Esfuerzo total estimado (activación / configuración): ~9 horas.**
 
 ---
 
@@ -53,9 +50,9 @@
 
 | # | Actividad | Consultor requerido | Tiempo estimado (h, Medium) |
 |---|---|---|---|
-| 1 | Prueba unitaria con escenarios reales | Consultor SD | 4 |
-| 2 | Documentación para el cliente | Consultor SD | 4 |
-| 3 | Transferencia de conocimiento | Consultor SD | 3 |
+| 1 | Prueba unitaria del caso de uso con datos reales en entorno de Quality | Consultor Funcional SAP S/4HANA | 4 |
+| 2 | Documentación de la activación para el cliente (manual de usuario + manual de configuración) | Consultor Funcional SAP S/4HANA | 4 |
+| 3 | Transferencia de conocimiento al equipo del cliente | Consultor Funcional SAP S/4HANA | 3 |
 
 **Esfuerzo total estimado (validación + entrega): ~11 horas.**
 
@@ -63,8 +60,16 @@
 
 ## 4. Consideraciones especiales
 
-- Usuario confirma antes de guardar.
-- En Private aplican consideraciones de upgrade compatibility.
+- Restringido a SAP S/4HANA Cloud **Private Edition**.
+- Disponibilidad indicada por SAP: **Generally Available**.
+
+---
+
+## Referencias oficiales
+
+- SAP Discovery Center — Detail Page: https://discovery-center.cloud.sap/ai-feature/836b7ca4-0177-4757-8152-51846c586f1e/
+- SAP Help Portal — Initial Setup: https://help.sap.com/docs/SAP_S4HANA_ON-PREMISE/7b24a64d9d0941bda1afa753263d9e39/2dcf49a616b842b096e0a3cad4dac458.html
+- SAP Discovery Center — Pricing Details: No aplica
 
 ---
 
@@ -72,6 +77,6 @@
 
 | Bloque | Horas |
 |---|---|
-| Activación / configuración | 13 |
+| Activación / configuración | 9 |
 | Validación + documentación + KT | 11 |
-| **Total** | **24** |
+| **Total** | **20** |

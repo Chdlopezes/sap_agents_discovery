@@ -1,33 +1,36 @@
-# Análisis caso de uso J243 — API traffic prediction (SAP Integration Suite)
+# Análisis caso de uso J243 — API traffic prediction
 
-> Basado en información públicamente documentada por SAP. Valores marcados como **[verificar en SAP Help]** requieren validación oficial.
+> Análisis construido **únicamente** a partir de las fuentes oficiales de SAP asociadas al AI Feature/Agent J243 en `processed/AI_Features_Data_Enriched.xlsx`. Los campos para los que SAP no publica información aparecen literalmente como "No aplica", "No existe en la fuente oficial" o "No documentado en la fuente oficial". **No se ha completado ningún dato con conocimiento general ni con inferencia desde casos similares.**
 
-**Resumen del caso:** Funcionalidad de SAP Integration Suite que identifica tendencias en llamadas API y predice volúmenes futuros de tráfico para apoyar decisiones sobre capacidad, carga y estrategia API. SAP indica: *Mejora la planificación de recursos, la gestión de carga del sistema y la toma de decisiones sobre estrategia API. No se encontró un KPI cuantitativo específico en la página consultada.*
+**Fuentes oficiales consultadas:**
+- Detail Page (SAP Discovery Center): https://discovery-center.cloud.sap/ai-feature/f74d29df-40d1-498f-905d-90b7af685799/
+- Initial Setup (SAP Help Portal): https://help.sap.com/docs/integration-suite/sap-integration-suite/enabling-anomaly-detection?locale=en-US&state=PRODUCTION&version=CLOUD
+- Pricing Details (SAP Discovery Center): No aplica
+
+**Resumen del caso:** Funcionalidad de SAP Integration Suite que identifica tendencias en llamadas API y predice volúmenes futuros de tráfico para apoyar decisiones sobre capacidad, carga y estrategia API.
 
 ---
 
 ## 1. Prerequisitos para la activación
 
-### 1.1 Productos / componentes SAP requeridos
-- **SAP Integration Suite** (capability API Management).
+### 1.1 Producto / componente SAP requerido
+- **SAP Integration Suite**.
 
 ### 1.2 Licenciamiento / entitlement / paquete
-- Suscripción Integration Suite con plan que incluya API Management.
-- Capability AI activada **[verificar AI Foundation Catalog]**.
+- Capability **Base**.
+- No aplica un paquete Premium.
 
 ### 1.3 Scope item relacionado
-- N/A (capability de la plataforma).
+- No aplica (el producto base no utiliza scope items de SAP S/4HANA).
 
-### 1.4 Aplicaciones / apps Fiori / servicios requeridos
-- Subaccount BTP con Integration Suite habilitado.
-- API Management con proxies productivos y métricas habilitadas.
+### 1.4 Aplicaciones / apps Fiori / servicios / componentes técnicos
+- Según la fuente oficial abierta: Subscribing to Notification Alerts The role collection APIPortal.Administrator must be assigned to you. The role collection APIManagement.SelfService.Administrator must be assigned to you to enable intelligent recommendations. Availability of this feature depends upon the SAP Integration Suite service plan that you use. For more information about different service plans and their supported feature set, see SAP Note 2903776. Subscribing to Notification Alerts
 
 ### 1.5 Datos maestros / transaccionales previos
-- Histórico de tráfico de APIs por proxy / API Product (idealmente varias semanas).
+- No documentado en la fuente oficial.
 
 ### 1.6 Restricciones funcionales / técnicas / idioma
-- **Idioma**: UI en inglés primariamente **[verificar]**.
-- Calidad de predicción depende del histórico.
+- No documentado en la fuente oficial.
 
 ---
 
@@ -35,13 +38,9 @@
 
 | # | Actividad estándar | Objeto de configuración | Tipo de configuración | Consultor requerido | Tiempo estimado (h, Medium) |
 |---|---|---|---|---|---|
-| 1 | Confirmar entitlement Integration Suite + capability AI | Subaccount BTP + entitlement | General | Consultor BTP | 2 |
-| 2 | Habilitar capability AI en API Management | API Management settings | General | Consultor Integración | 3 |
-| 3 | Asignar roles API Admin / Analyst a usuarios | Roles | Particular (por usuario) | Consultor Seguridad | 2 |
-| 4 | Validar histórico mínimo de tráfico para activación útil | Configuración API Management | General | Consultor Integración | 2 |
-| 5 | Pruebas iniciales (revisar predicciones contra histórico) | Configuración AI | General | Consultor Integración | 3 |
+| 1 | Activate anomaly detection, intelligent recommendations, and API call prediction to enhance monitoring and forecasting capabilities for API calls. | Configuración de SAP Integration Suite | General | Consultor SAP Integration Suite | 3 |
 
-**Esfuerzo total estimado (activación): ~12 horas.**
+**Esfuerzo total estimado (activación / configuración): ~3 horas.**
 
 ---
 
@@ -49,18 +48,25 @@
 
 | # | Actividad | Consultor requerido | Tiempo estimado (h, Medium) |
 |---|---|---|---|
-| 1 | Prueba unitaria con APIs reales del cliente | Consultor Integración | 4 |
-| 2 | Documentación para el cliente | Consultor Integración | 3 |
-| 3 | Transferencia de conocimiento | Consultor Integración | 3 |
+| 1 | Prueba unitaria del caso de uso con datos reales en entorno de Quality | Consultor SAP Integration Suite | 4 |
+| 2 | Documentación de la activación para el cliente (manual de usuario + manual de configuración) | Consultor SAP Integration Suite | 4 |
+| 3 | Transferencia de conocimiento al equipo del cliente | Consultor SAP Integration Suite | 3 |
 
-**Esfuerzo total estimado (validación + entrega): ~10 horas.**
+**Esfuerzo total estimado (validación + entrega): ~11 horas.**
 
 ---
 
 ## 4. Consideraciones especiales
 
-- Útil para capacity planning y SLA management.
-- Calidad mejora con volumen/estabilidad del tráfico.
+- Disponibilidad indicada por SAP: **Generally Available**.
+
+---
+
+## Referencias oficiales
+
+- SAP Discovery Center — Detail Page: https://discovery-center.cloud.sap/ai-feature/f74d29df-40d1-498f-905d-90b7af685799/
+- SAP Help Portal — Initial Setup: https://help.sap.com/docs/integration-suite/sap-integration-suite/enabling-anomaly-detection?locale=en-US&state=PRODUCTION&version=CLOUD
+- SAP Discovery Center — Pricing Details: No aplica
 
 ---
 
@@ -68,6 +74,6 @@
 
 | Bloque | Horas |
 |---|---|
-| Activación / configuración | 12 |
-| Validación + documentación + KT | 10 |
-| **Total** | **22** |
+| Activación / configuración | 3 |
+| Validación + documentación + KT | 11 |
+| **Total** | **14** |

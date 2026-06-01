@@ -1,52 +1,42 @@
-# Análisis caso de uso J792 — SAP Joule for Developers, ABAP AI capabilities (S/4HANA Cloud Public Edition)
+# Análisis caso de uso J792 — SAP Joule for Developers‚ ABAP AI capabilities
 
-> Basado en información públicamente documentada por SAP. Valores marcados como **[verificar en SAP Help]** requieren validación oficial.
+> Análisis construido **únicamente** a partir de las fuentes oficiales de SAP asociadas al AI Feature/Agent J792 en `processed/AI_Features_Data_Enriched.xlsx`. Los campos para los que SAP no publica información aparecen literalmente como "No aplica", "No existe en la fuente oficial" o "No documentado en la fuente oficial". **No se ha completado ningún dato con conocimiento general ni con inferencia desde casos similares.**
 
-> **Nota**: Existen casos paralelos para Private Edition (J1195) y para SAP BTP ABAP Environment (J162). Este análisis cubre la variante S/4HANA Cloud Public Edition.
+**Fuentes oficiales consultadas:**
+- Detail Page (SAP Discovery Center): https://discovery-center.cloud.sap/ai-feature/3c06a28b-576b-47ba-a2be-de0588391d6a/
+- Initial Setup (SAP Help Portal): https://help.sap.com/docs/abap-ai/generative-ai-in-abap-cloud/start
+- Pricing Details (SAP Discovery Center): No aplica
 
-**Resumen del caso:** Joule for Developers con capacidades ABAP AI apoya a desarrolladores en SAP S/4HANA Cloud Public Edition para acelerar tareas de desarrollo ABAP mediante asistencia de IA. SAP indica: *La página indica una reducción del 20% en tiempo y esfuerzo para escribir código ABAP/JAVA y beneficios asociados a mayor eficiencia en desarrollo.*
+**Resumen del caso:** Joule for Developers con capacidades ABAP AI apoya a desarrolladores en SAP S/4HANA Cloud Public Edition para acelerar tareas de desarrollo ABAP mediante asistencia de IA.
 
 ---
 
 ## 1. Prerequisitos para la activación
 
-### 1.1 Productos / componentes SAP requeridos
-- **SAP S/4HANA Cloud Public Edition** con la **Developer Extensibility (cloud ABAP)** habilitada.
-- **ADT (ABAP Development Tools) for Eclipse** actualizado a la versión que soporte Joule for Developers **[verificar versión mínima]**.
-- Joule habilitado en el tenant.
+### 1.1 Producto / componente SAP requerido
+- **SAP S/4HANA Cloud Public Edition**.
 
 ### 1.2 Licenciamiento / entitlement / paquete
-- Suscripción S/4HANA Cloud Public Edition.
-- Entitlement de Joule para Developers (capability **Premium** según AI Foundation Catalog) **[verificar]**.
+- Capability **Base**.
+- No aplica un paquete Premium.
 
 ### 1.3 Scope item relacionado
-- N/A (es capability transversal de desarrollo).
+- No documentado en la fuente oficial.
 
-### 1.4 Aplicaciones / apps Fiori / servicios requeridos
-- ADT for Eclipse con la extensión Joule for Developers instalada.
-- Communication arrangement / conectividad entre ADT y el tenant.
+### 1.4 Aplicaciones / apps Fiori / servicios / componentes técnicos
+- Según la fuente oficial abierta: Getting Started (Administrators) Getting Started (Administrators) Learn more how you can get SAP Joule for Developers, ABAP AI capabilities and which business roles are required.
 
 ### 1.5 Datos maestros / transaccionales previos
-- Developer Extensibility configurada y proyectos ABAP existentes (paquetes, transports).
+- No documentado en la fuente oficial.
 
 ### 1.6 Restricciones funcionales / técnicas / idioma
-- **Idioma**: prompts en inglés primariamente **[verificar]**.
-- Solo aplica al modelo de desarrollo **cloud ABAP** (RAP / ABAP for Cloud Development); no aplica a custom code on-stack clásico.
-- Usuario debe contar con rol de desarrollador (Developer Role).
+- Disponible para SAP S/4HANA Cloud **Public Edition**.
 
 ---
 
 ## 2. Pasos de activación / configuración estándar
 
-| # | Actividad estándar | Objeto de configuración | Tipo de configuración | Consultor requerido | Tiempo estimado (h, Medium) |
-|---|---|---|---|---|---|
-| 1 | Confirmar entitlement de Joule for Developers | Subaccount BTP + entitlement | General | Consultor BTP | 2 |
-| 2 | Habilitar / verificar Developer Extensibility en S/4HANA Public | Configuración Developer Extensibility | General | Consultor S/4HANA Public | 4 |
-| 3 | Instalar/actualizar la extensión Joule en ADT for Eclipse | Setup ADT | Particular (por puesto de desarrollador) | Desarrollador ABAP | 2 |
-| 4 | Asignar Developer Role + autorizaciones a los desarrolladores | Business Role / Authorizations | Particular (por usuario) | Consultor Seguridad | 3 |
-| 5 | Pruebas iniciales: generar clase / behavior / test con prompts representativos | Configuración Developer | General | Desarrollador ABAP Sr | 4 |
-
-**Esfuerzo total estimado (activación): ~15 horas.**
+> **No se registran pasos de activación.** La fuente oficial SAP abierta describe el uso de la capability pero no detalla un procedimiento de activación administrativo explícito. El caso de uso puede venir habilitado por defecto al cumplirse los prerequisitos del producto base.
 
 ---
 
@@ -54,20 +44,26 @@
 
 | # | Actividad | Consultor requerido | Tiempo estimado (h, Medium) |
 |---|---|---|---|
-| 1 | Prueba unitaria con casos representativos (generación de clases, RAP, unit tests) | Desarrollador ABAP Sr | 5 |
-| 2 | Documentación para el equipo del cliente (guía de uso + buenas prácticas) | Desarrollador ABAP Sr | 4 |
-| 3 | Transferencia de conocimiento al equipo de desarrollo | Desarrollador ABAP Sr | 3 |
+| 1 | Prueba unitaria del caso de uso con datos reales en entorno de Quality | Consultor Funcional SAP S/4HANA | 4 |
+| 2 | Documentación de la activación para el cliente (manual de usuario + manual de configuración) | Consultor Funcional SAP S/4HANA | 4 |
+| 3 | Transferencia de conocimiento al equipo del cliente | Consultor Funcional SAP S/4HANA | 3 |
 
-**Esfuerzo total estimado (validación + entrega): ~12 horas.**
+**Esfuerzo total estimado (validación + entrega): ~11 horas.**
 
 ---
 
 ## 4. Consideraciones especiales
 
-- Joule for Developers **acelera** pero no sustituye la revisión humana del código generado.
-- Buenas prácticas: code review obligatorio, ABAP unit tests, naming guidelines.
-- Cobertura de capabilities (RAP, CDS, classes, tests) puede ampliarse por wave — revisar **Road Map Explorer**.
-- Sujeto a fair-use / cuotas de Joule **[verificar]**.
+- Aplica a SAP S/4HANA Cloud **Public Edition**.
+- Disponibilidad indicada por SAP: **Generally Available**.
+
+---
+
+## Referencias oficiales
+
+- SAP Discovery Center — Detail Page: https://discovery-center.cloud.sap/ai-feature/3c06a28b-576b-47ba-a2be-de0588391d6a/
+- SAP Help Portal — Initial Setup: https://help.sap.com/docs/abap-ai/generative-ai-in-abap-cloud/start
+- SAP Discovery Center — Pricing Details: No aplica
 
 ---
 
@@ -75,6 +71,6 @@
 
 | Bloque | Horas |
 |---|---|
-| Activación / configuración | 15 |
-| Validación + documentación + KT | 12 |
-| **Total** | **27** |
+| Activación / configuración | No aplica (sin pasos oficialmente documentados) |
+| Validación + documentación + KT | 11 |
+| **Total** | **11** |

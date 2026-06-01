@@ -48,7 +48,16 @@ executions/compiled/analyses_compiled.md   ← corpus RAG
 5. **Lotes pequeños**: Stage 1 trabaja en lotes de **10 IDs** por defecto.
    Esto limita el uso de tokens y crea checkpoints frecuentes en disco.
 6. **Nunca modifiques** `prompt/PROMPT_USO_IA_ESFUERZO.md` ni
-   `prompt/prompt_enriquecimiento_ia_csv.md` para evadir las reglas.
+   `prompt/prompt_enriquecimiento_ia_csv.md` para evadir las reglas (sí puedes
+   reforzarlas para mejorar la calidad).
+7. **Stage 4 — fuente en vivo, no el XLSX**: cada análisis se fundamenta en la
+   página oficial abierta **en vivo**, resolviendo la URL desde la sección
+   *Resources* de la `Detail Page` (`Initial Setup - SAP Help Portal`; si no
+   existe, `AI Feature - SAP Help Portal`). La hoja Initial Setup del XLSX
+   (`Link`/`Prerequisitos`/`Procedimiento`) **no es fuente** (enriquecimiento
+   poco fiable). Si la página no carga tras reintentos (versión/login), decláralo
+   honestamente y usa el bloque canónico "No se registran pasos"; **no fabriques**.
+   Detalle en [`docs/AGENT_GUIDE.md`](docs/AGENT_GUIDE.md) Stage 4b.
 
 ## Convenciones de nombres
 
@@ -83,7 +92,8 @@ state/                   id_slug_map.json, compiled_state.json
 | Mergear lotes                          | Script        | `python scripts/merge_enriched_batches.py`    |
 | Mapa id→slug                           | Script        | `python scripts/build_id_slug_map.py`         |
 | Renderizar prompts                     | Script        | `python scripts/render_pending_prompts.py`    |
-| Escribir cada análisis                 | **Agente**    | `Write` un `.md` por caso siguiendo el prompt |
+| Resolver fuente del análisis (en vivo) | **Agente**    | `python scripts/fetch_sap_page.py "<Detail Page>" --links` → tomar el enlace **`Initial Setup - SAP Help Portal`** de *Resources*; si no existe, el **`AI Feature - SAP Help Portal`**. NO uses el `Link` del XLSX (poco fiable). |
+| Escribir cada análisis                 | **Agente**    | `Write` un `.md` por caso siguiendo el prompt, **fundamentado en la fuente viva** (no en el XLSX) |
 | Compilar corpus RAG                    | Script        | `python scripts/compile_analyses.py`          |
 
 ## Dependencias

@@ -1,36 +1,36 @@
 # Análisis caso de uso J762 — Joule and Microsoft 365 Copilot
 
-> Basado en información públicamente documentada por SAP. Valores marcados como **[verificar en SAP Help / Microsoft Learn]** requieren validación oficial.
+> Análisis construido **únicamente** a partir de las fuentes oficiales de SAP asociadas al AI Feature/Agent J762 en `processed/AI_Features_Data_Enriched.xlsx`. Los campos para los que SAP no publica información aparecen literalmente como "No aplica", "No existe en la fuente oficial" o "No documentado en la fuente oficial". **No se ha completado ningún dato con conocimiento general ni con inferencia desde casos similares.**
 
-**Resumen del caso:** Integra de forma bidireccional Joule y Microsoft 365 Copilot para que el usuario trabaje desde el entorno donde ya está: SAP o Microsoft 365. Permite consultar datos y tareas de SAP desde Copilot y aprovechar información/flujos de Microsoft 365 desde Joule. SAP indica: *No se identificó una métrica cuantitativa explícita de Business Value en la página de detalle consultada; el valor descrito se concentra en productividad, continuidad de trabajo y reducción de fricción entre SAP y Microsoft 365.*
+**Fuentes oficiales consultadas:**
+- Detail Page (SAP Discovery Center): https://discovery-center.cloud.sap/ai-feature/4dfa3fea-c5d2-40e3-959d-317b07b6b64e/
+- Initial Setup (SAP Help Portal): https://help.sap.com/docs/joule/integrating-joule-with-sap/integrating-joule-with-microsoft-365-copilot?locale=en-US
+- Pricing Details (SAP Discovery Center): No aplica
+
+**Resumen del caso:** Integra de forma bidireccional Joule y Microsoft 365 Copilot para que el usuario trabaje desde el entorno donde ya está: SAP o Microsoft 365. Permite consultar datos y tareas de SAP desde Copilot y aprovechar información/flujos de Microsoft 365 desde Joule.
 
 ---
 
 ## 1. Prerequisitos para la activación
 
-### 1.1 Productos / componentes SAP requeridos
-- **SAP Joule** habilitado en BTP.
-- **Microsoft 365 Copilot** activo en el tenant Microsoft del cliente.
-- **SAP–Microsoft Joule/Copilot integration** (plugin / connector) **[verificar nombre y vehículo de distribución vigente]**.
+### 1.1 Producto / componente SAP requerido
+- **Joule**.
 
 ### 1.2 Licenciamiento / entitlement / paquete
-- Entitlement Joule + capability de integración con Copilot **[verificar]**.
-- Licencia Microsoft 365 Copilot por usuario.
+- Capability **Base**.
+- No aplica un paquete Premium.
 
 ### 1.3 Scope item relacionado
-- N/A.
+- No aplica (el producto base no utiliza scope items de SAP S/4HANA).
 
-### 1.4 Aplicaciones / apps Fiori / servicios requeridos
-- SAP Joule endpoint.
-- Microsoft 365 (Teams, Outlook, etc.) con Copilot habilitado.
+### 1.4 Aplicaciones / apps Fiori / servicios / componentes técnicos
+- Según la fuente oficial abierta: You have at least one SAP business tenant (Such as SAP S/4HANA Private Cloud, SAP SuccessFactors) integrated with Joule. You have set up trust between Entra and SAP Cloud Identity Services – Identity Authentication, registering Entra as the Corporate IdP based on OIDC. For more information, see Configuring SAP Cloud Identity Services and Microsoft Entra ID for Joule. You have a Microsoft M365 Copilot license and have rolled out M365 Copilot to the intended user base. For more information, see Getting Started with Microsoft 365 Copilot. Joule maintains a 1:1 relationship with a Microsoft Entra ID tenant. Hence, a single Entra ID tenant cannot be used for configuring multiple Joule environments. In which case, your development and production tenants cannot use the same Microsoft Entra ID tenant. Therefore, to establish a testing environment for the Microsoft 365 Copilot integration, it is recommended to utilize a dedicated M365 tenant for testing purposes. Note down your Microsoft M365 Tenant Id corresponding to your productive Microsoft M365 Copilot/Teams deployment. You'll need to provide this during the Joule landscape setup.
 
 ### 1.5 Datos maestros / transaccionales previos
-- Mapeo de identidades SAP ↔ Microsoft (typically vía Entra ID / IAS trust).
+- No documentado en la fuente oficial.
 
 ### 1.6 Restricciones funcionales / técnicas / idioma
-- **Idioma**: matrices Joule y Copilot vigentes **[verificar]**.
-- Disponibilidad regional.
-- Cumplimiento corporativo (data residency, DLP).
+- No documentado en la fuente oficial.
 
 ---
 
@@ -38,13 +38,10 @@
 
 | # | Actividad estándar | Objeto de configuración | Tipo de configuración | Consultor requerido | Tiempo estimado (h, Medium) |
 |---|---|---|---|---|---|
-| 1 | Aprovisionar entitlement Joule + capability Copilot integration | Subaccount BTP + entitlement | General | Consultor BTP | 3 |
-| 2 | Configurar trust / SSO entre IAS / Entra ID | Identity federation | General | Consultor Seguridad | 5 |
-| 3 | Instalar plugin/connector en M365 Copilot | M365 admin center | General | Admin M365 | 4 |
-| 4 | Asignar permisos del plugin a usuarios | Roles / Permissions | Particular (por usuario / grupo) | Admin M365 + Seguridad SAP | 3 |
-| 5 | Pruebas iniciales bi-direccionales (consultar SAP desde Copilot y M365 desde Joule) | Configuración base | General | Consultor Funcional + Admin M365 | 4 |
+| 1 | Set Up Document Grounding | Configuración de Joule | General | Consultor SAP BTP + Funcional | 3 |
+| 2 | Install the SAP Joule app via the Microsoft 365 Admin Center. | Configuración de Joule | General | Consultor SAP BTP + Funcional | 3 |
 
-**Esfuerzo total estimado (activación): ~19 horas.**
+**Esfuerzo total estimado (activación / configuración): ~6 horas.**
 
 ---
 
@@ -52,19 +49,25 @@
 
 | # | Actividad | Consultor requerido | Tiempo estimado (h, Medium) |
 |---|---|---|---|
-| 1 | Prueba unitaria con escenarios reales | Consultor Funcional | 5 |
-| 2 | Documentación para el cliente | Consultor Funcional | 4 |
-| 3 | Transferencia de conocimiento | Consultor Funcional | 3 |
+| 1 | Prueba unitaria del caso de uso con datos reales en entorno de Quality | Consultor SAP BTP + Funcional | 4 |
+| 2 | Documentación de la activación para el cliente (manual de usuario + manual de configuración) | Consultor SAP BTP + Funcional | 4 |
+| 3 | Transferencia de conocimiento al equipo del cliente | Consultor SAP BTP + Funcional | 3 |
 
-**Esfuerzo total estimado (validación + entrega): ~12 horas.**
+**Esfuerzo total estimado (validación + entrega): ~11 horas.**
 
 ---
 
 ## 4. Consideraciones especiales
 
-- **Multi-vendor**: coordinar con admin Microsoft del cliente.
-- **Cumplimiento**: revisar DLP, data residency, retention en ambos lados.
-- **Costos**: M365 Copilot tiene licencia per-user separada.
+- Disponibilidad indicada por SAP: **Generally Available**.
+
+---
+
+## Referencias oficiales
+
+- SAP Discovery Center — Detail Page: https://discovery-center.cloud.sap/ai-feature/4dfa3fea-c5d2-40e3-959d-317b07b6b64e/
+- SAP Help Portal — Initial Setup: https://help.sap.com/docs/joule/integrating-joule-with-sap/integrating-joule-with-microsoft-365-copilot?locale=en-US
+- SAP Discovery Center — Pricing Details: No aplica
 
 ---
 
@@ -72,6 +75,6 @@
 
 | Bloque | Horas |
 |---|---|
-| Activación / configuración | 19 |
-| Validación + documentación + KT | 12 |
-| **Total** | **31** |
+| Activación / configuración | 6 |
+| Validación + documentación + KT | 11 |
+| **Total** | **17** |

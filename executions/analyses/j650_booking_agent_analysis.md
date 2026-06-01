@@ -1,51 +1,42 @@
 # Análisis caso de uso J650 — Booking Agent
 
-> Basado en información públicamente documentada por SAP. Valores marcados como **[verificar en SAP Help]** requieren validación oficial.
+> Análisis construido **únicamente** a partir de las fuentes oficiales de SAP asociadas al AI Feature/Agent J650 en `processed/AI_Features_Data_Enriched.xlsx`. Los campos para los que SAP no publica información aparecen literalmente como "No aplica", "No existe en la fuente oficial" o "No documentado en la fuente oficial". **No se ha completado ningún dato con conocimiento general ni con inferencia desde casos similares.**
 
-> **Aviso**: agente nuevo; la disponibilidad GA, el packaging y los pasos exactos de setup pueden no estar todavía completamente documentados públicamente. Marco con **[verificar en SAP Help]** los puntos clave.
+**Fuentes oficiales consultadas:**
+- Detail Page (SAP Discovery Center): https://discovery-center.cloud.sap/ai-feature/47844870-d3f6-4ffd-abdf-945d6bc20ae7/
+- Initial Setup (SAP Help Portal): https://help.sap.com/docs/CONCUR_TRAVEL/f71981185ec74d0ea824394ce06fd26c/56c42ceab8804c288ffe7be4792eed4a.html
+- Pricing Details (SAP Discovery Center): No aplica
 
-**Resumen del caso:** Agente de Joule en Concur Travel que entrega recomendaciones personalizadas de vuelos y hoteles analizando preferencias del viajero, políticas de viaje de la empresa y restricciones de presupuesto. SAP indica: *Mejora la eficiencia del proceso de booking y el cumplimiento de políticas corporativas. No se encontró un KPI cuantitativo específico en la página consultada.*
+**Resumen del caso:** Agente de Joule en Concur Travel que entrega recomendaciones personalizadas de vuelos y hoteles analizando preferencias del viajero, políticas de viaje de la empresa y restricciones de presupuesto.
 
 ---
 
 ## 1. Prerequisitos para la activación
 
-### 1.1 Productos / componentes SAP requeridos
-- **Joule** habilitado en BTP (capability Agentic).
-- Integración con sistema de **Travel Management / SAP Concur** o equivalente **[verificar agente disponible/conector]**.
-- Email / Calendar provider del usuario (Microsoft 365 / Google) si forma parte del flujo **[verificar]**.
+### 1.1 Producto / componente SAP requerido
+- **No documentado en la fuente oficial**.
 
 ### 1.2 Licenciamiento / entitlement / paquete
-- Entitlement Joule Premium con capabilities Agentic **[verificar AI Foundation Catalog vigente]**.
-- Suscripción a Concur u otro Travel Management (si aplica).
+- Capability **Base**.
+- No aplica un paquete Premium.
 
 ### 1.3 Scope item relacionado
-- N/A.
+- No aplica (el producto base no utiliza scope items de SAP S/4HANA).
 
-### 1.4 Aplicaciones / apps Fiori / servicios requeridos
-- Joule Launchpad / endpoint accesible por usuarios target.
-- Destinations / API keys a Concur / proveedor de viaje.
+### 1.4 Aplicaciones / apps Fiori / servicios / componentes técnicos
+- Según la fuente oficial abierta: End users and administrators must work with their IT teams to enable Joule Base.
 
 ### 1.5 Datos maestros / transaccionales previos
-- Perfil de viajero, políticas de viaje, métodos de pago corporativos.
+- No documentado en la fuente oficial.
 
 ### 1.6 Restricciones funcionales / técnicas / idioma
-- **Idioma**: inglés primariamente **[verificar]**.
-- Disponibilidad regional sujeta al tenant Joule y al proveedor de Travel.
+- No documentado en la fuente oficial.
 
 ---
 
 ## 2. Pasos de activación / configuración estándar
 
-| # | Actividad estándar | Objeto de configuración | Tipo de configuración | Consultor requerido | Tiempo estimado (h, Medium) |
-|---|---|---|---|---|---|
-| 1 | Aprovisionar entitlement Joule + Agentic capability | Subaccount BTP + entitlement | General | Consultor BTP | 3 |
-| 2 | Configurar destination a Concur / proveedor Travel | Destinations BTP | General | Consultor BTP / Integración | 5 |
-| 3 | Asignar acceso al Booking Agent a usuarios objetivo | Roles / Agent assignment | Particular (por usuario / grupo) | Consultor Seguridad | 3 |
-| 4 | Validar políticas de viaje y catálogo de proveedores | Configuración funcional Travel | General | Consultor Funcional Travel | 4 |
-| 5 | Pruebas iniciales con escenarios reales | Configuración base | General | Consultor Funcional Travel | 4 |
-
-**Esfuerzo total estimado (activación): ~19 horas.**
+> **No se registran pasos de activación.** La fuente oficial SAP abierta describe el uso de la capability pero no detalla un procedimiento de activación administrativo explícito. El caso de uso puede venir habilitado por defecto al cumplirse los prerequisitos del producto base.
 
 ---
 
@@ -53,19 +44,25 @@
 
 | # | Actividad | Consultor requerido | Tiempo estimado (h, Medium) |
 |---|---|---|---|
-| 1 | Prueba unitaria con escenarios típicos | Consultor Funcional Travel | 5 |
-| 2 | Documentación para el cliente | Consultor Funcional Travel | 4 |
-| 3 | Transferencia de conocimiento | Consultor Funcional Travel | 3 |
+| 1 | Prueba unitaria del caso de uso con datos reales en entorno de Quality | Consultor SAP BTP | 4 |
+| 2 | Documentación de la activación para el cliente (manual de usuario + manual de configuración) | Consultor SAP BTP | 4 |
+| 3 | Transferencia de conocimiento al equipo del cliente | Consultor SAP BTP | 3 |
 
-**Esfuerzo total estimado (validación + entrega): ~12 horas.**
+**Esfuerzo total estimado (validación + entrega): ~11 horas.**
 
 ---
 
 ## 4. Consideraciones especiales
 
-- **Cumplimiento**: el agente debe respetar políticas de viaje y aprobaciones del cliente.
-- **Datos personales**: revisar tratamiento de PII en interacciones.
-- Disponibilidad/funcionalidades pueden cambiar — revisar **Road Map Explorer**.
+- Disponibilidad indicada por SAP: **Generally Available**.
+
+---
+
+## Referencias oficiales
+
+- SAP Discovery Center — Detail Page: https://discovery-center.cloud.sap/ai-feature/47844870-d3f6-4ffd-abdf-945d6bc20ae7/
+- SAP Help Portal — Initial Setup: https://help.sap.com/docs/CONCUR_TRAVEL/f71981185ec74d0ea824394ce06fd26c/56c42ceab8804c288ffe7be4792eed4a.html
+- SAP Discovery Center — Pricing Details: No aplica
 
 ---
 
@@ -73,6 +70,6 @@
 
 | Bloque | Horas |
 |---|---|
-| Activación / configuración | 19 |
-| Validación + documentación + KT | 12 |
-| **Total** | **31** |
+| Activación / configuración | No aplica (sin pasos oficialmente documentados) |
+| Validación + documentación + KT | 11 |
+| **Total** | **11** |

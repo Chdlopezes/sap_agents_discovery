@@ -1,35 +1,36 @@
 # Análisis caso de uso J1047 — Sales Order Status Check
 
-> Basado en información públicamente documentada por SAP. Valores marcados como **[verificar en SAP Help]** requieren validación oficial.
+> Análisis construido **únicamente** a partir de las fuentes oficiales de SAP asociadas al AI Feature/Agent J1047 en `processed/AI_Features_Data_Enriched.xlsx`. Los campos para los que SAP no publica información aparecen literalmente como "No aplica", "No existe en la fuente oficial" o "No documentado en la fuente oficial". **No se ha completado ningún dato con conocimiento general ni con inferencia desde casos similares.**
 
-**Resumen del caso:** Joule permite a los representantes de ventas comprobar si el cumplimiento de un pedido está en curso y detectar problemas que bloquean su finalización. La experiencia se orienta a consultar estado, causas y posibles acciones desde un flujo conversacional. SAP indica: *Aporta valor al reducir el tiempo de análisis manual del estado de pedidos y al facilitar acciones tempranas sobre problemas que podrían retrasar el cumplimiento.*
+**Fuentes oficiales consultadas:**
+- Detail Page (SAP Discovery Center): https://discovery-center.cloud.sap/ai-feature/8e12da05-b0e4-490f-9cf4-0cc2a9482f71/
+- Initial Setup (SAP Help Portal — Integrating Joule with SAP S/4HANA Cloud Public Edition): https://help.sap.com/docs/joule/integrating-joule-with-sap/integration-with-sap-s-4hana-cloud-public-edition
+- Pricing Details (SAP Discovery Center): No aplica
+
+**Resumen del caso:** Joule permite a los representantes de ventas comprobar si el cumplimiento de un pedido está en curso y detectar problemas que bloquean su finalización, consultando estado, causas y posibles acciones desde un flujo conversacional en SAP S/4HANA Cloud Public Edition.
 
 ---
 
 ## 1. Prerequisitos para la activación
 
-### 1.1 Productos / componentes SAP requeridos
-- **SAP S/4HANA Cloud Public Edition** con Joule habilitado.
-- Componente **SD – Sales** operativo (incluyendo Delivery & Billing).
+### 1.1 Producto / componente SAP requerido
+- **SAP S/4HANA Cloud Public Edition** con Joule.
 
 ### 1.2 Licenciamiento / entitlement / paquete
-- Suscripción S/4HANA Cloud Public Edition.
-- Entitlement Joule (**Base**) **[verificar]**.
+- Capability **Base**.
+- La fuente indica que el acceso a Joule en SAP S/4HANA Cloud Public Edition **puede requerir entitlement y autorización adicionales** (consultar al account executive).
 
 ### 1.3 Scope item relacionado
-- Scope items de Sales Order Fulfillment / Order to Cash — **[verificar IDs]**.
+- No documentado en la fuente oficial.
 
-### 1.4 Aplicaciones / apps Fiori / servicios requeridos
-- Apps Fiori *Sales Order Fulfillment - Analyze and Resolve Issues*, *Manage Sales Orders*.
-- Joule habilitado en el Launchpad.
+### 1.4 Aplicaciones / apps Fiori / servicios / componentes técnicos
+- Según el Initial Setup oficial, deben cumplirse los **Prerequisites generales de Joule** y ejecutarse la integración técnica de Joule con SAP S/4HANA Cloud Public Edition (ver sección 2).
 
 ### 1.5 Datos maestros / transaccionales previos
-- Sales orders activos con deliveries, billing, ATP info.
+- No documentado en la fuente oficial.
 
 ### 1.6 Restricciones funcionales / técnicas / idioma
-- **Idioma**: inglés primariamente **[verificar]**.
-- Solo S/4HANA Cloud **Public** Edition.
-- Usuario con autorizaciones SD.
+- Aplica a **SAP S/4HANA Cloud Public Edition**.
 
 ---
 
@@ -37,13 +38,13 @@
 
 | # | Actividad estándar | Objeto de configuración | Tipo de configuración | Consultor requerido | Tiempo estimado (h, Medium) |
 |---|---|---|---|---|---|
-| 1 | Confirmar entitlement de Joule | Subaccount BTP + entitlement | General | Consultor BTP | 2 |
-| 2 | Verificar configuración Order Fulfillment (status profiles, blocks) | Configuración SD | General | Consultor SD | 3 |
-| 3 | Asignar business roles SD a usuarios | Business Role / Business Catalog | Particular (por usuario) | Consultor Seguridad | 3 |
-| 4 | Habilitar capability Joule para Sales Order Status | Joule capability scope | General | Consultor Funcional SD + Joule | 2 |
-| 5 | Pruebas iniciales (consultas estado, identificación de bloqueos) | Configuración funcional SD | General | Consultor SD | 2 |
+| 1 | Cumplir los **Prerequisites generales de Joule** y confirmar el entitlement/autorización para Joule en S/4HANA Cloud Public Edition | Prerequisitos generales de Joule | General | Consultor SAP BTP + Funcional S/4HANA | 3 |
+| 2 | Configurar la confianza al **Identity Authentication Tenant** (Configure Trust to the Identity Authentication Tenant) | SAP Cloud Identity Services / Trust | General | Consultor SAP BTP / Identidad | 4 |
+| 3 | Exponer el contenido del **SAP Fiori Launchpad** a SAP BTP y registrar el sistema S/4HANA Cloud Public Edition | SAP Fiori Launchpad / registro de sistema | General | Consultor SAP BTP + S/4HANA | 4 |
+| 4 | Configurar el **Identity Provisioning Service** y mantener la **Custom Content Security Policy** | IPS / CSP | General | Consultor SAP BTP | 3 |
+| 5 | **Habilitar el icono de Joule** en el SAP Fiori Launchpad para los usuarios | SAP Fiori Launchpad (Joule) | General | Consultor SAP BTP + Seguridad | 2 |
 
-**Esfuerzo total estimado (activación): ~12 horas.**
+**Esfuerzo total estimado (activación / configuración): ~16 horas.**
 
 ---
 
@@ -51,9 +52,9 @@
 
 | # | Actividad | Consultor requerido | Tiempo estimado (h, Medium) |
 |---|---|---|---|
-| 1 | Prueba unitaria con escenarios reales (consultar status, bloqueos, predicciones de entrega) | Consultor SD | 4 |
-| 2 | Documentación para el cliente | Consultor SD | 4 |
-| 3 | Transferencia de conocimiento | Consultor SD | 3 |
+| 1 | Prueba unitaria del caso de uso con datos reales en entorno de Quality (consultar estado y problemas de cumplimiento de pedidos vía Joule) | Consultor Funcional SAP S/4HANA (Ventas) | 4 |
+| 2 | Documentación de la activación para el cliente (manual de usuario + manual de configuración) | Consultor Funcional SAP S/4HANA (Ventas) | 4 |
+| 3 | Transferencia de conocimiento al equipo del cliente | Consultor Funcional SAP S/4HANA (Ventas) | 3 |
 
 **Esfuerzo total estimado (validación + entrega): ~11 horas.**
 
@@ -61,8 +62,17 @@
 
 ## 4. Consideraciones especiales
 
-- Joule **consulta y diagnostica**; la resolución se ejecuta en las apps SD.
-- Respeta autorizaciones.
+- Los pasos de la sección 2 corresponden a la integración técnica de Joule con S/4HANA Cloud Public Edition descrita por la fuente; son comunes a las capacidades de Joule sobre este producto.
+- El acceso puede requerir entitlement/autorización adicionales (consultar al account executive).
+- Disponibilidad indicada por SAP: **Generally Available**.
+
+---
+
+## Referencias oficiales
+
+- SAP Discovery Center — Detail Page: https://discovery-center.cloud.sap/ai-feature/8e12da05-b0e4-490f-9cf4-0cc2a9482f71/
+- SAP Help Portal — Initial Setup (Integrating Joule with SAP S/4HANA Cloud Public Edition): https://help.sap.com/docs/joule/integrating-joule-with-sap/integration-with-sap-s-4hana-cloud-public-edition
+- SAP Discovery Center — Pricing Details: No aplica
 
 ---
 
@@ -70,6 +80,6 @@
 
 | Bloque | Horas |
 |---|---|
-| Activación / configuración | 12 |
+| Activación / configuración | 16 |
 | Validación + documentación + KT | 11 |
-| **Total** | **23** |
+| **Total** | **27** |

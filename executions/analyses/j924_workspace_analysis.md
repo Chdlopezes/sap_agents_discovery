@@ -1,39 +1,36 @@
 # Análisis caso de uso J924 — Workspace
 
-> Análisis basado en información públicamente documentada por SAP (SAP Discovery Center). Los valores marcados como **[verificar en SAP Help]** deben validarse contra la documentación oficial vigente.
+> Análisis construido **únicamente** a partir de las fuentes oficiales de SAP asociadas al AI Feature/Agent J924 en `processed/AI_Features_Data_Enriched.xlsx`. Los campos para los que SAP no publica información aparecen literalmente como "No aplica", "No existe en la fuente oficial" o "No documentado en la fuente oficial". **No se ha completado ningún dato con conocimiento general ni con inferencia desde casos similares.**
 
-**Resumen del caso:** **SAP Document AI, Workspace** ofrece a los administradores control integral sobre flujos de automatización documental, permitiendo configurar esquemas, canales, workflows y capacidades de monitoreo y análisis. El valor se centra en reducir tiempos de procesamiento documental y mejorar la gobernanza de Document AI en entornos empresariales.
+**Fuentes oficiales consultadas:**
+- Detail Page (SAP Discovery Center): https://discovery-center.cloud.sap/ai-feature/41b32187-96c9-4780-aa15-fc3cdfac1006/
+- Initial Setup (SAP Help Portal): https://help.sap.com/docs/document-ai/sap-document-ai/subscribing-to-sap-document-ai-workspace-with-identity-authentication-service
+- Pricing Details (SAP Discovery Center): https://discovery-center.cloud.sap/ai-feature/41b32187-96c9-4780-aa15-fc3cdfac1006/#pricing
+
+**Resumen del caso:** SAP Document AI, workspace ofrece a los administradores control integral sobre flujos de automatización documental, permitiendo configurar esquemas, canales, workflows y capacidades de monitoreo y análisis.
 
 ---
 
 ## 1. Prerequisitos para la activación
 
-### 1.1 Productos / componentes SAP requeridos
-- **SAP Document AI** activo (Workspace).
-- Sistemas destino que reciben los datos extraídos (p. ej. **SAP S/4HANA**) con conectividad operativa.
+### 1.1 Producto / componente SAP requerido
+- **SAP Document AI**.
 
 ### 1.2 Licenciamiento / entitlement / paquete
-- Suscripción vigente a **SAP Document AI**.
-- Capability **Premium** — activación con **AI Units**.
-- Precio bajo solicitud; duración del contrato disponible bajo solicitud; tiene prerrequisito **[verificar volumen y costo vigente]**.
+- Capability **Premium**.
+- Pricing (sección *Pricing Details* de la Detail Page): Requiere AI Units para usar esta oferta de IA en el servicio cloud subyacente. El método de activación indicado es “Activate with AI Units”. Precio bajo solicitud; duración del contrato disponible bajo solicitud; tiene prerrequisito.
 
 ### 1.3 Scope item relacionado
-- No aplica scope item directamente; el escenario funcional en el sistema destino tiene su scope item asociado **[verificar]**.
+- No aplica (el producto base no utiliza scope items de SAP S/4HANA).
 
-### 1.4 Aplicaciones / apps Fiori / servicios requeridos
-- **SAP Document AI — Workspace** disponible para los administradores.
-- Canales de entrada (correo, API, upload) y workflows hacia sistemas destino configurables.
+### 1.4 Aplicaciones / apps Fiori / servicios / componentes técnicos
+- Según la fuente oficial abierta: Service Plans and Metering Subscribing to the SAP Document AI Workspace With the Identity Authentication Service Subscribing to the SAP Document AI Workspace With the Identity Authentication Service You have an SAP BTP global account and a Cloud Foundry or Kyma subaccount. You’re a global account administrator.
 
 ### 1.5 Datos maestros / transaccionales previos
-- Esquemas (predefinidos o personalizados) para los tipos de documento a procesar.
-- Datos maestros consistentes en sistemas destino para validar matching.
+- No documentado en la fuente oficial.
 
 ### 1.6 Restricciones funcionales / técnicas / idioma
-- **Idioma**: idiomas de OCR / extracción documentados por SAP **[verificar matriz vigente]**.
-- **Calidad de documentos**: documentos con baja calidad reducen la tasa de extracción correcta.
-- **Roles**: administradores de Document AI con permisos para configurar schemas, canales, workflows; operadores con acceso al workspace.
-
-> **Nota**: el enlace de Initial Setup está identificado en Resources pero no fue posible acceder a la URL final tras reintentos. Aplican los prerequisitos generales de SAP Document AI documentados en https://help.sap.com/docs/SAP_DOCUMENT_AI.
+- No documentado en la fuente oficial.
 
 ---
 
@@ -41,16 +38,12 @@
 
 | # | Actividad estándar | Objeto de configuración | Tipo de configuración | Consultor requerido | Tiempo estimado (h, Medium) |
 |---|---|---|---|---|---|
-| 1 | Confirmar entitlement de SAP Document AI Workspace y AI Units en SAP BTP | Subaccount BTP + entitlement Document AI | General | Consultor BTP | 2 |
-| 2 | Aprovisionar AI Units para el volumen estimado | AI Units | General | Consultor BTP / Licencias | 2 |
-| 3 | Aprovisionar el **SAP Document AI Workspace** | Workspace Document AI | General | Consultor SAP Document AI | 3 |
-| 4 | Configurar esquemas (schemas) para los tipos de documento del cliente | Schemas Document AI | Particular (por tipo de documento) | Consultor SAP Document AI | 5 |
-| 5 | Configurar canales de entrada y workflows hacia sistemas destino | Channels + Workflows Document AI | Particular (por proceso) | Consultor SAP Document AI + Integration Suite | 5 |
-| 6 | Asignar a los usuarios objetivo los roles administrativos / operativos del workspace | Roles SAP Document AI | Particular (por usuario / grupo) | Consultor Seguridad BTP | 2 |
-| 7 | Habilitar **monitoreo y análisis** en el workspace para los workflows configurados | Monitoring Document AI | General | Consultor SAP Document AI | 2 |
-| 8 | Pruebas iniciales en Quality con documentos reales del cliente | Configuración funcional Document AI | General | Consultor SAP Document AI | 4 |
+| 1 | Enable X.509 Authentication | Configuración de SAP Document AI | General | Consultor SAP Document AI / BTP | 4 |
+| 2 | Run SAP Document AI in a Multitenant Application | Configuración de SAP Document AI | General | Consultor SAP Document AI / BTP | 4 |
+| 3 | Subscribe to the SAP Document AI workspace using the Identity Authentication service to handle authentication and authorization tasks in SAP BTP. | Configuración de SAP Document AI | General | Consultor SAP Document AI / BTP | 4 |
+| 4 | Open the SAP BTP cockpit and go to your subaccount. | Configuración de SAP Document AI | General | Consultor SAP Document AI / BTP | 4 |
 
-**Esfuerzo total estimado (activación estándar, sin necesidades adicionales): ~25 horas.**
+**Esfuerzo total estimado (activación / configuración): ~16 horas.**
 
 ---
 
@@ -58,30 +51,26 @@
 
 | # | Actividad | Consultor requerido | Tiempo estimado (h, Medium) |
 |---|---|---|---|
-| 1 | Prueba unitaria con documentos reales del cliente (varios tipos, varios canales) | Consultor SAP Document AI | 4 |
-| 2 | Documentación de la activación para el cliente (manual de configuración + manual de operación / monitoreo) | Consultor SAP Document AI | 4 |
-| 3 | Transferencia de conocimiento al equipo del cliente (sesión funcional + sesión técnica de operación) | Consultor SAP Document AI | 3 |
+| 1 | Prueba unitaria del caso de uso con datos reales en entorno de Quality | Consultor SAP Document AI / BTP | 4 |
+| 2 | Documentación de la activación para el cliente (manual de usuario + manual de configuración) | Consultor SAP Document AI / BTP | 4 |
+| 3 | Transferencia de conocimiento al equipo del cliente | Consultor SAP Document AI / BTP | 3 |
 
 **Esfuerzo total estimado (validación + entrega): ~11 horas.**
 
 ---
 
-## 4. Consideraciones especiales (según guía SAP)
+## 4. Consideraciones especiales
 
-- Es una capability **Premium** que consume **AI Units por volumen**: dimensionar el consumo y planificar el crecimiento.
-- El **monitoreo y análisis** son clave para detectar deriva en la calidad de extracción y para gobernar excepciones.
-- Definir **flujo de excepción** cuando la extracción no alcanza el umbral de confianza.
-- Considerar **gobernanza / data residency** sobre dónde se procesa el documento y dónde se almacenan los datos extraídos.
-- Sujeto a la **fair-use policy** y al consumo de AI Units **[verificar políticas vigentes]**.
-- Antes de la activación, revisar el **SAP Road Map Explorer** y release notes vigentes.
-- Este caso de uso **no incluye desarrollos custom**; cualquier extensión queda fuera del alcance estándar.
+- Caso **Premium**: el consumo se factura según el modelo de AI Units / paquete descrito en *Pricing Details* (ver sección 1.2).
+- Disponibilidad indicada por SAP: **Generally Available**.
 
 ---
 
 ## Referencias oficiales
 
 - SAP Discovery Center — Detail Page: https://discovery-center.cloud.sap/ai-feature/41b32187-96c9-4780-aa15-fc3cdfac1006/
-- SAP Help Portal — SAP Document AI: https://help.sap.com/docs/SAP_DOCUMENT_AI
+- SAP Help Portal — Initial Setup: https://help.sap.com/docs/document-ai/sap-document-ai/subscribing-to-sap-document-ai-workspace-with-identity-authentication-service
+- SAP Discovery Center — Pricing Details: https://discovery-center.cloud.sap/ai-feature/41b32187-96c9-4780-aa15-fc3cdfac1006/#pricing
 
 ---
 
@@ -89,6 +78,6 @@
 
 | Bloque | Horas |
 |---|---|
-| Activación / configuración | 25 |
+| Activación / configuración | 16 |
 | Validación + documentación + KT | 11 |
-| **Total** | **36** |
+| **Total** | **27** |

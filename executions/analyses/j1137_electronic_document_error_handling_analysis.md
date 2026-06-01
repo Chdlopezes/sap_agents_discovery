@@ -1,54 +1,42 @@
 # Análisis caso de uso J1137 — Electronic Document Error Handling
 
-> Análisis basado en información públicamente documentada por SAP (SAP Help Portal, SAP Discovery Center). Los valores marcados como **[verificar en SAP Help]** deben validarse contra la documentación oficial vigente.
+> Análisis construido **únicamente** a partir de las fuentes oficiales de SAP asociadas al AI Feature/Agent J1137 en `processed/AI_Features_Data_Enriched.xlsx`. Los campos para los que SAP no publica información aparecen literalmente como "No aplica", "No existe en la fuente oficial" o "No documentado en la fuente oficial". **No se ha completado ningún dato con conocimiento general ni con inferencia desde casos similares.**
 
-**Resumen del caso:** Ofrece explicaciones en lenguaje natural para errores técnicos o complejos de documentos electrónicos con **Joule** en **SAP Document and Reporting Compliance**. SAP indica una reducción del **80% del tiempo** (de aproximadamente 150 minutos a 30 minutos) dedicado a entender el error e identificar la causa raíz.
+**Fuentes oficiales consultadas:**
+- Detail Page (SAP Discovery Center): https://discovery-center.cloud.sap/ai-feature/d755130d-328a-4e41-b5b8-b0f507ee396c/
+- Initial Setup (SAP Help Portal): No accesible (no existe enlace 'Initial Setup' ni 'AI Feature' accesible en *Resources*).
+- Pricing Details (SAP Discovery Center): No aplica
 
-> **Nota**: este caso comparte nombre con J305 pero es un registro distinto en el AI Foundation Catalog. Confirmar con SAP qué identificador aplica al cliente según su versión / régimen.
+**Resumen del caso:** Ofrece explicaciones en lenguaje natural para errores técnicos o complejos de documentos electrónicos con Joule.
 
 ---
 
 ## 1. Prerequisitos para la activación
 
-### 1.1 Productos / componentes SAP requeridos
-- **SAP Document and Reporting Compliance** (DRC) activo.
-- **SAP S/4HANA Cloud Private Edition** con Joule habilitado **[verificar matriz vigente]**.
+### 1.1 Producto / componente SAP requerido
+- **SAP Document and Reporting Compliance**.
 
 ### 1.2 Licenciamiento / entitlement / paquete
-- Suscripción vigente a **SAP Document and Reporting Compliance**.
-- Capability **Base** **[verificar en AI Foundation Catalog vigente]**.
+- Capability **Base**.
+- No aplica un paquete Premium.
 
 ### 1.3 Scope item relacionado
-- Scope items de **DRC** según país / régimen fiscal aplicable — **[verificar el ID exacto en SAP Signavio Process Navigator]**.
+- No aplica (el producto base no utiliza scope items de SAP S/4HANA).
 
-### 1.4 Aplicaciones / apps Fiori / servicios requeridos
-- Apps Fiori de **DRC** habilitadas (*eDocument Cockpit* / *Statutory Reporting* según escenario).
-- **Joule** habilitado en el SAP Fiori Launchpad del usuario.
+### 1.4 Aplicaciones / apps Fiori / servicios / componentes técnicos
+- No documentado en la fuente oficial.
 
 ### 1.5 Datos maestros / transaccionales previos
-- Documentos electrónicos generados y procesados por DRC para el país objetivo.
-- Errores de validación / transmisión registrados en el log de DRC.
+- No documentado en la fuente oficial.
 
 ### 1.6 Restricciones funcionales / técnicas / idioma
-- **Idioma**: interacciones de Joule soportadas principalmente en **inglés** **[verificar matriz vigente y disponibilidad por país]**.
-- **Edición**: aplica a **SAP S/4HANA Cloud Private Edition** integrado con DRC.
-- **Roles**: el usuario debe tener autorización sobre los documentos electrónicos a analizar.
-
-> **Setup oficial SAP**: la página https://help.sap.com/docs/SAP_S4HANA_CLOUD/ae0b823738ee4227b7ec12cc4fbf1b4c/769137a7913747e0b2ad2315dd2e9e4f.html indica prerequisitos relacionados con *Joule Initial Setup* y la integración de Joule con S/4HANA Cloud Private Edition para *Electronic Document Error Handling*.
+- No documentado en la fuente oficial.
 
 ---
 
 ## 2. Pasos de activación / configuración estándar
 
-| # | Actividad estándar | Objeto de configuración | Tipo de configuración | Consultor requerido | Tiempo estimado (h, Medium) |
-|---|---|---|---|---|---|
-| 1 | Confirmar entitlement de Joule sobre S/4HANA Private Edition y DRC | Subaccount BTP + entitlements | General | Consultor BTP | 2 |
-| 2 | Completar el **Joule Initial Setup** para Private Edition | Joule — Initial Setup | General | Consultor BTP + Consultor S/4HANA | 4 |
-| 3 | Configurar / verificar la integración Joule ↔ DRC | Integración Joule – DRC | General | Consultor S/4HANA + DRC | 3 |
-| 4 | Asignar a los usuarios objetivo los business roles con acceso a DRC y a la capability Joule | Business Role / Business Catalog | Particular (por usuario / grupo) | Consultor Seguridad S/4HANA | 3 |
-| 5 | Pruebas iniciales en Quality (provocar errores controlados en documentos electrónicos y solicitar explicación a Joule) | Configuración funcional DRC | General | Consultor Funcional DRC | 3 |
-
-**Esfuerzo total estimado (activación estándar, sin necesidades adicionales): ~15 horas.**
+> **No se registran pasos de activación.** Tras consultar el Initial Setup y la sección *Resources* de la Detail Page (incl. el enlace 'AI Feature' cuando existe), no fue posible acceder a una página oficial SAP que describa un procedimiento de activación para este caso. No se han fabricado pasos.
 
 ---
 
@@ -56,30 +44,25 @@
 
 | # | Actividad | Consultor requerido | Tiempo estimado (h, Medium) |
 |---|---|---|---|
-| 1 | Prueba unitaria con errores reales del cliente (explicaciones sobre errores de varios países / regímenes) | Consultor Funcional DRC | 4 |
-| 2 | Documentación de la activación para el cliente (manual de usuario + manual de operación) | Consultor Funcional DRC | 4 |
-| 3 | Transferencia de conocimiento al equipo del cliente (sesión funcional + Q&A) | Consultor Funcional DRC | 3 |
+| 1 | Prueba unitaria del caso de uso con datos reales en entorno de Quality | Consultor SAP DRC (producto base) | 4 |
+| 2 | Documentación de la activación para el cliente (manual de usuario + manual de configuración) | Consultor SAP DRC (producto base) | 4 |
+| 3 | Transferencia de conocimiento al equipo del cliente | Consultor SAP DRC (producto base) | 3 |
 
 **Esfuerzo total estimado (validación + entrega): ~11 horas.**
 
 ---
 
-## 4. Consideraciones especiales (según guía SAP)
+## 4. Consideraciones especiales
 
-- Las explicaciones son **apoyo a la operación**: el usuario sigue siendo responsable de aplicar la corrección y reenviar el documento conforme a la normativa local.
-- Joule respeta las autorizaciones del usuario: **no eleva privilegios**.
-- Confirmar la **disponibilidad por país** dentro de DRC y la cobertura de la capability sobre los regímenes que opera el cliente.
-- Validar con SAP qué entrada del catálogo (J305 o J1137) aplica a la suscripción del cliente.
-- Sujeto a la **fair-use policy** de Joule **[verificar políticas vigentes]**.
-- Antes de la activación, revisar el **SAP Road Map Explorer** y release notes vigentes.
-- Este caso de uso **no incluye desarrollos custom**; cualquier extensión queda fuera del alcance estándar.
+- Disponibilidad indicada por SAP: **Generally Available**.
 
 ---
 
 ## Referencias oficiales
 
 - SAP Discovery Center — Detail Page: https://discovery-center.cloud.sap/ai-feature/d755130d-328a-4e41-b5b8-b0f507ee396c/
-- SAP Help Portal — Initial Setup: https://help.sap.com/docs/SAP_S4HANA_CLOUD/ae0b823738ee4227b7ec12cc4fbf1b4c/769137a7913747e0b2ad2315dd2e9e4f.html
+- SAP Help Portal — Initial Setup: No accesible tras reintentos
+- SAP Discovery Center — Pricing Details: No aplica
 
 ---
 
@@ -87,6 +70,6 @@
 
 | Bloque | Horas |
 |---|---|
-| Activación / configuración | 15 |
+| Activación / configuración | No aplica (sin pasos oficialmente documentados) |
 | Validación + documentación + KT | 11 |
-| **Total** | **26** |
+| **Total** | **11** |

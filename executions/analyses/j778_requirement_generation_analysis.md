@@ -1,34 +1,36 @@
-# Análisis caso de uso J778 — Requirement Generation (SAP Cloud ALM)
+# Análisis caso de uso J778 — Requirement Generation
 
-> Basado en información públicamente documentada por SAP. Valores marcados como **[verificar en SAP Help]** requieren validación oficial.
+> Análisis construido **únicamente** a partir de las fuentes oficiales de SAP asociadas al AI Feature/Agent J778 en `processed/AI_Features_Data_Enriched.xlsx`. Los campos para los que SAP no publica información aparecen literalmente como "No aplica", "No existe en la fuente oficial" o "No documentado en la fuente oficial". **No se ha completado ningún dato con conocimiento general ni con inferencia desde casos similares.**
 
-**Resumen del caso:** Esta función de SAP Cloud ALM permite generar automáticamente requerimientos de negocio de alta calidad a partir de transcripciones o notas de talleres Fit-to-Standard. SAP indica: *El valor se centra en acelerar workshops Fit-to-Standard, aumentar la calidad de los requisitos y reducir esfuerzo administrativo durante fases de implementación.*
+**Fuentes oficiales consultadas:**
+- Detail Page (SAP Discovery Center): https://discovery-center.cloud.sap/ai-feature/e5701d25-2615-49ad-acf3-4f2a6363a206/
+- Initial Setup (SAP Help Portal): https://help.sap.com/docs/cloud-alm/applicationhelp/ai-assisted-requirement-generation
+- Pricing Details (SAP Discovery Center): https://discovery-center.cloud.sap/ai-feature/e5701d25-2615-49ad-acf3-4f2a6363a206/#pricing
+
+**Resumen del caso:** Esta función de SAP Cloud ALM permite generar automáticamente requerimientos de negocio de alta calidad a partir de transcripciones o notas de talleres Fit-to-Standard.
 
 ---
 
 ## 1. Prerequisitos para la activación
 
-### 1.1 Productos / componentes SAP requeridos
-- **SAP Cloud ALM** activo (Implementation).
-- Capability AI / Joule integrada **[verificar]**.
+### 1.1 Producto / componente SAP requerido
+- **SAP Cloud ALM**.
 
 ### 1.2 Licenciamiento / entitlement / paquete
-- Suscripción Cloud ALM (incluida con la mayoría de cloud suites SAP).
-- Feature AI habilitada **[verificar]**.
+- Capability **Premium**.
+- Pricing (sección *Pricing Details* de la Detail Page): Pricing Details indica que la función puede agregarse al estimador para calcular una cantidad aproximada de AI Units y costos relacionados mediante AI Estimator. No se muestra un precio unitario fijo en la información visible de Pricing Details.
 
 ### 1.3 Scope item relacionado
-- N/A.
+- No aplica (el producto base no utiliza scope items de SAP S/4HANA).
 
-### 1.4 Aplicaciones / apps Fiori / servicios requeridos
-- Cloud ALM Workspace (Project Management, Requirements).
+### 1.4 Aplicaciones / apps Fiori / servicios / componentes técnicos
+- Según la fuente oficial abierta: You have created a document in the Documents app containing the Fit-to-Standard workshop transcript. You have activated the AI feature. To do so: Log on to SAP for Me. For more information about access to SAP for Me, see Access and Authorizations. To activate a feature, select Request Activation next to the feature name. A pop-up titled Tenants appears. In the Tenants pop-up, select create a support case. An information pop-up appears.
 
 ### 1.5 Datos maestros / transaccionales previos
-- Proyecto Cloud ALM creado; Fit-to-Standard scope definido.
-- Meeting notes / minutas de workshops.
+- No documentado en la fuente oficial.
 
 ### 1.6 Restricciones funcionales / técnicas / idioma
-- **Idioma**: inglés primariamente **[verificar]**.
-- Usuario con rol Cloud ALM Project Member.
+- No documentado en la fuente oficial.
 
 ---
 
@@ -36,13 +38,10 @@
 
 | # | Actividad estándar | Objeto de configuración | Tipo de configuración | Consultor requerido | Tiempo estimado (h, Medium) |
 |---|---|---|---|---|---|
-| 1 | Confirmar entitlement Cloud ALM + AI | Tenant Cloud ALM | General | Consultor Cloud ALM | 2 |
-| 2 | Crear/verificar proyecto Cloud ALM | Configuración Cloud ALM | General | Consultor Cloud ALM | 3 |
-| 3 | Asignar roles Cloud ALM a usuarios | Roles | Particular (por usuario) | Consultor Seguridad | 2 |
-| 4 | Habilitar Requirement Generation | Configuración Cloud ALM | General | Consultor Cloud ALM | 2 |
-| 5 | Pruebas iniciales (generar requirements desde meeting notes) | Configuración Cloud ALM | General | Consultor Cloud ALM | 3 |
+| 1 | Set Up Tricentis Test Automation for SAP | Configuración de SAP Cloud ALM | General | Consultor SAP Cloud ALM | 3 |
+| 2 | Review and adjust the generated content. Edit or delete any inappropriate or unnecessary data. You can also discard the requirement without saving. | Configuración de SAP Cloud ALM | General | Consultor SAP Cloud ALM | 3 |
 
-**Esfuerzo total estimado (activación): ~12 horas.**
+**Esfuerzo total estimado (activación / configuración): ~6 horas.**
 
 ---
 
@@ -50,17 +49,26 @@
 
 | # | Actividad | Consultor requerido | Tiempo estimado (h, Medium) |
 |---|---|---|---|
-| 1 | Prueba unitaria con notas reales de workshops | Consultor Cloud ALM | 4 |
-| 2 | Documentación para el cliente | Consultor Cloud ALM | 3 |
-| 3 | Transferencia de conocimiento | Consultor Cloud ALM | 3 |
+| 1 | Prueba unitaria del caso de uso con datos reales en entorno de Quality | Consultor SAP Cloud ALM | 4 |
+| 2 | Documentación de la activación para el cliente (manual de usuario + manual de configuración) | Consultor SAP Cloud ALM | 4 |
+| 3 | Transferencia de conocimiento al equipo del cliente | Consultor SAP Cloud ALM | 3 |
 
-**Esfuerzo total estimado (validación + entrega): ~10 horas.**
+**Esfuerzo total estimado (validación + entrega): ~11 horas.**
 
 ---
 
 ## 4. Consideraciones especiales
 
-- Requirements generados son borradores; consultor refina y prioriza.
+- Caso **Premium**: el consumo se factura según el modelo de AI Units / paquete descrito en *Pricing Details* (ver sección 1.2).
+- Disponibilidad indicada por SAP: **Generally Available**.
+
+---
+
+## Referencias oficiales
+
+- SAP Discovery Center — Detail Page: https://discovery-center.cloud.sap/ai-feature/e5701d25-2615-49ad-acf3-4f2a6363a206/
+- SAP Help Portal — Initial Setup: https://help.sap.com/docs/cloud-alm/applicationhelp/ai-assisted-requirement-generation
+- SAP Discovery Center — Pricing Details: https://discovery-center.cloud.sap/ai-feature/e5701d25-2615-49ad-acf3-4f2a6363a206/#pricing
 
 ---
 
@@ -68,6 +76,6 @@
 
 | Bloque | Horas |
 |---|---|
-| Activación / configuración | 12 |
-| Validación + documentación + KT | 10 |
-| **Total** | **22** |
+| Activación / configuración | 6 |
+| Validación + documentación + KT | 11 |
+| **Total** | **17** |

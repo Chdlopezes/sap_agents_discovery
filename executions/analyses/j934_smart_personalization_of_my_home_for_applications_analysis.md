@@ -1,53 +1,43 @@
 # Análisis caso de uso J934 — Smart Personalization of My Home for Applications
 
-> Análisis basado en información públicamente documentada por SAP (SAP Help Portal, SAP Discovery Center). Los valores marcados como **[verificar en SAP Help]** deben validarse contra la documentación oficial vigente.
+> Análisis construido **únicamente** a partir de las fuentes oficiales de SAP asociadas al AI Feature/Agent J934 en `processed/AI_Features_Data_Enriched.xlsx`. Los campos para los que SAP no publica información aparecen literalmente como "No aplica", "No existe en la fuente oficial" o "No documentado en la fuente oficial". **No se ha completado ningún dato con conocimiento general ni con inferencia desde casos similares.**
 
-**Resumen del caso:** Capacidad de **SAP S/4HANA Cloud Public Edition** que ayuda a encontrar aplicaciones relevantes para una tarea mediante lenguaje natural y agregarlas con un clic a **My Home**. SAP indica una **reducción del 33%** del costo de personalizar la página inicial.
+**Fuentes oficiales consultadas:**
+- Detail Page (SAP Discovery Center): https://discovery-center.cloud.sap/ai-feature/2b5df257-bdfd-4396-a48b-a8362b2e02f7/
+- Initial Setup (SAP Help Portal): https://help.sap.com/docs/SAP_S4HANA_CLOUD/4fc8d03390c342da8a60f8ee387bca1a/3b78db8727f541ab88e59f9c44f4c377.html?version=2602.500
+- Pricing Details (SAP Discovery Center): https://discovery-center.cloud.sap/ai-feature/2b5df257-bdfd-4396-a48b-a8362b2e02f7/#pricing
+
+**Resumen del caso:** Ayuda a encontrar aplicaciones relevantes para una tarea mediante lenguaje natural y agregarlas con un clic a My Home para acceso directo desde la página inicial.
 
 ---
 
 ## 1. Prerequisitos para la activación
 
-### 1.1 Productos / componentes SAP requeridos
-- **SAP S/4HANA Cloud Public Edition** con Joule habilitado.
-- Página **My Home** del SAP Fiori Launchpad disponible para los usuarios objetivo.
+### 1.1 Producto / componente SAP requerido
+- **SAP S/4HANA Cloud Public Edition**.
 
 ### 1.2 Licenciamiento / entitlement / paquete
-- Suscripción vigente a **SAP S/4HANA Cloud Public Edition**.
-- Capability **Premium** — requiere el paquete **Joule Premium for Financial Management** (no se vende por separado).
-- **AI Units** asignadas al tenant para consumo de la capability **[verificar volumen vigente]**.
+- Capability **Premium**.
+- Paquete comercial: **Joule Premium for Financial Management**.
+- Pricing (sección *Pricing Details* de la Detail Page): Requiere AI Units. La oferta solo puede adquirirse como parte del paquete Joule Premium for Financial Management y no está disponible por separado; el paquete se adquiere mediante AI Units. Precio bajo solicitud; duración de contrato disponible bajo solicitud.
 
 ### 1.3 Scope item relacionado
-- No aplica scope item específico; la capability opera sobre My Home / Fiori Launchpad.
+- No documentado en la fuente oficial.
 
-### 1.4 Aplicaciones / apps Fiori / servicios requeridos
-- **SAP Fiori Launchpad — My Home**.
-- IAM app **SAP Business AI - My Home - Smart App Finder (F8818_TRAN)** o el catálogo equivalente, asignada a los usuarios objetivo.
-- Catálogo de apps Fiori del cliente con metadatos suficientes para que la búsqueda en lenguaje natural funcione correctamente.
+### 1.4 Aplicaciones / apps Fiori / servicios / componentes técnicos
+- No documentado en la fuente oficial.
 
 ### 1.5 Datos maestros / transaccionales previos
-- No aplica un dato transaccional específico; la capability opera sobre el catálogo de apps.
+- No documentado en la fuente oficial.
 
 ### 1.6 Restricciones funcionales / técnicas / idioma
-- **Idioma**: interacciones de Joule soportadas principalmente en **inglés** **[verificar matriz vigente]**.
-- **Edición**: aplica únicamente a **SAP S/4HANA Cloud Public Edition**.
-- **Roles**: el usuario verá únicamente apps a las que tiene autorización (Joule respeta las autorizaciones).
-
-> **Setup oficial SAP**: la página https://help.sap.com/docs/SAP_S4HANA_CLOUD/4fc8d03390c342da8a60f8ee387bca1a/3b78db8727f541ab88e59f9c44f4c377.html describe el procedimiento: verificar la IAM app en *Display IAM Apps*, asignarla al rol de negocio en *Maintain Business Roles* y habilitar el acceso para los usuarios.
+- Disponible para SAP S/4HANA Cloud **Public Edition**.
 
 ---
 
 ## 2. Pasos de activación / configuración estándar
 
-| # | Actividad estándar | Objeto de configuración | Tipo de configuración | Consultor requerido | Tiempo estimado (h, Medium) |
-|---|---|---|---|---|---|
-| 1 | Confirmar entitlement de Joule Premium y AI Units en SAP BTP | Subaccount BTP + entitlement Joule Premium for FM | General | Consultor BTP | 2 |
-| 2 | Aprovisionar paquete Premium y asignar AI Units al tenant | Joule Premium for Financial Management + AI Units | General | Consultor BTP / Licencias | 2 |
-| 3 | Verificar la disponibilidad de la **IAM app F8818_TRAN** en *Display IAM Apps* | IAM App F8818_TRAN | General | Consultor Funcional S/4HANA | 1 |
-| 4 | Asignar la IAM app **F8818_TRAN** (o catálogo equivalente) a los business roles objetivo en *Maintain Business Roles* | Business Role / Business Catalog | Particular (por rol / grupo) | Consultor Seguridad S/4HANA | 3 |
-| 5 | Pruebas iniciales con un usuario piloto (*Add Content* en My Home → búsqueda en lenguaje natural de apps, revisar resultados y agregarlos) | Configuración funcional S/4HANA | General | Consultor Funcional S/4HANA | 2 |
-
-**Esfuerzo total estimado (activación estándar, sin necesidades adicionales): ~10 horas.**
+> **No se registran pasos de activación.** La fuente oficial SAP abierta describe el uso de la capability pero no detalla un procedimiento de activación administrativo explícito. El caso de uso puede venir habilitado por defecto al cumplirse los prerequisitos del producto base.
 
 ---
 
@@ -55,29 +45,27 @@
 
 | # | Actividad | Consultor requerido | Tiempo estimado (h, Medium) |
 |---|---|---|---|
-| 1 | Prueba unitaria con usuarios reales (varios perfiles / módulos, búsqueda y adición de apps representativas) | Consultor Funcional S/4HANA | 4 |
-| 2 | Documentación de la activación para el cliente (manual de usuario + manual breve de operación) | Consultor Funcional S/4HANA | 4 |
-| 3 | Transferencia de conocimiento al equipo del cliente (sesión funcional + Q&A) | Consultor Funcional S/4HANA | 3 |
+| 1 | Prueba unitaria del caso de uso con datos reales en entorno de Quality | Consultor Funcional SAP S/4HANA | 4 |
+| 2 | Documentación de la activación para el cliente (manual de usuario + manual de configuración) | Consultor Funcional SAP S/4HANA | 4 |
+| 3 | Transferencia de conocimiento al equipo del cliente | Consultor Funcional SAP S/4HANA | 3 |
 
 **Esfuerzo total estimado (validación + entrega): ~11 horas.**
 
 ---
 
-## 4. Consideraciones especiales (según guía SAP)
+## 4. Consideraciones especiales
 
-- Es una capability **Premium** que consume **AI Units**: dimensionar el consumo durante el piloto.
-- Joule respeta las autorizaciones del usuario: las búsquedas devuelven **únicamente apps a las que el usuario tiene acceso**.
-- La calidad de las recomendaciones depende de la **consistencia del catálogo de apps** y de sus metadatos.
-- Sujeto a la **fair-use policy** de Joule y al consumo de AI Units **[verificar políticas vigentes]**.
-- Antes de la activación, revisar el **SAP Road Map Explorer** y release notes vigentes.
-- Este caso de uso **no incluye desarrollos custom**; cualquier extensión queda fuera del alcance estándar.
+- Caso **Premium**: el consumo se factura según el modelo de AI Units / paquete descrito en *Pricing Details* (ver sección 1.2).
+- Aplica a SAP S/4HANA Cloud **Public Edition**.
+- Disponibilidad indicada por SAP: **Generally Available**.
 
 ---
 
 ## Referencias oficiales
 
 - SAP Discovery Center — Detail Page: https://discovery-center.cloud.sap/ai-feature/2b5df257-bdfd-4396-a48b-a8362b2e02f7/
-- SAP Help Portal — Smart Personalization of My Home: https://help.sap.com/docs/SAP_S4HANA_CLOUD/4fc8d03390c342da8a60f8ee387bca1a/3b78db8727f541ab88e59f9c44f4c377.html
+- SAP Help Portal — Initial Setup: https://help.sap.com/docs/SAP_S4HANA_CLOUD/4fc8d03390c342da8a60f8ee387bca1a/3b78db8727f541ab88e59f9c44f4c377.html?version=2602.500
+- SAP Discovery Center — Pricing Details: https://discovery-center.cloud.sap/ai-feature/2b5df257-bdfd-4396-a48b-a8362b2e02f7/#pricing
 
 ---
 
@@ -85,6 +73,6 @@
 
 | Bloque | Horas |
 |---|---|
-| Activación / configuración | 10 |
+| Activación / configuración | No aplica (sin pasos oficialmente documentados) |
 | Validación + documentación + KT | 11 |
-| **Total** | **21** |
+| **Total** | **11** |

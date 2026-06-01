@@ -1,35 +1,36 @@
 # Análisis caso de uso J757 — Supplier Delivery Date Mass Update
 
-> Basado en información públicamente documentada por SAP. Valores marcados como **[verificar en SAP Help]** requieren validación oficial.
+> Análisis construido **únicamente** a partir de las fuentes oficiales de SAP asociadas al AI Feature/Agent J757 en `processed/AI_Features_Data_Enriched.xlsx`. Los campos para los que SAP no publica información aparecen literalmente como "No aplica", "No existe en la fuente oficial" o "No documentado en la fuente oficial". **No se ha completado ningún dato con conocimiento general ni con inferencia desde casos similares.**
 
-**Resumen del caso:** Permite realizar actualizaciones masivas de fechas de entrega para múltiples pedidos de compra utilizando Joule en SAP S/4HANA Cloud Public Edition. SAP indica: *Mejora la agilidad del proceso de compras y planificación al mantener actualizadas las fechas de entrega de manera más rápida, reduciendo retrasos operativos y reprocesos.*
+**Fuentes oficiales consultadas:**
+- Detail Page (SAP Discovery Center): https://discovery-center.cloud.sap/ai-feature/d7b65dad-4fa1-4430-a860-6c8eba5ff8e1/
+- Initial Setup (SAP Help Portal): https://help.sap.com/docs/joule/capabilities-guide/updating-delivery-dates-for-purchase-orders
+- Pricing Details (SAP Discovery Center): No aplica
+
+**Resumen del caso:** Permite realizar actualizaciones masivas de fechas de entrega para múltiples pedidos de compra utilizando Joule en SAP S/4HANA Cloud Public Edition.
 
 ---
 
 ## 1. Prerequisitos para la activación
 
-### 1.1 Productos / componentes SAP requeridos
-- **SAP S/4HANA Cloud Public Edition** con Joule habilitado.
-- Componente **MM-PUR – Purchasing** operativo.
+### 1.1 Producto / componente SAP requerido
+- **SAP S/4HANA Cloud Public Edition**.
 
 ### 1.2 Licenciamiento / entitlement / paquete
-- Suscripción S/4HANA Cloud Public Edition.
-- Entitlement Joule (**Base**) **[verificar]**.
+- Capability **Base**.
+- No aplica un paquete Premium.
 
 ### 1.3 Scope item relacionado
-- Scope items de Purchase Order Management — **[verificar IDs]**.
+- No documentado en la fuente oficial.
 
-### 1.4 Aplicaciones / apps Fiori / servicios requeridos
-- App Fiori *Manage Purchase Orders*.
-- Joule habilitado en el Launchpad.
+### 1.4 Aplicaciones / apps Fiori / servicios / componentes técnicos
+- Según la fuente oficial abierta: To use this capability, you must have the following business catalogs assigned: SAP_MM_BC_PO_MPROCESS_PC (Materials Management - Mass Processing of Purchase Orders)
 
 ### 1.5 Datos maestros / transaccionales previos
-- Purchase orders activos con líneas de delivery schedule.
+- No documentado en la fuente oficial.
 
 ### 1.6 Restricciones funcionales / técnicas / idioma
-- **Idioma**: inglés primariamente **[verificar]**.
-- Solo S/4HANA Cloud **Public** Edition.
-- Usuario con autorizaciones MM-PUR.
+- Disponible para SAP S/4HANA Cloud **Public Edition**.
 
 ---
 
@@ -37,13 +38,9 @@
 
 | # | Actividad estándar | Objeto de configuración | Tipo de configuración | Consultor requerido | Tiempo estimado (h, Medium) |
 |---|---|---|---|---|---|
-| 1 | Confirmar entitlement de Joule | Subaccount BTP + entitlement | General | Consultor BTP | 2 |
-| 2 | Verificar configuración Purchasing (document types, schedule lines) | Configuración MM-PUR | General | Consultor MM | 3 |
-| 3 | Asignar business roles MM-PUR a usuarios | Business Role / Business Catalog | Particular (por usuario) | Consultor Seguridad | 3 |
-| 4 | Habilitar capability Joule para Delivery Date Mass Update | Joule capability scope | General | Consultor Funcional MM + Joule | 2 |
-| 5 | Pruebas iniciales: actualización masiva de fechas en QAS | Configuración funcional MM | General | Consultor MM | 2 |
+| 1 | Create Supplier Confirmations for Purchase Orders | Configuración de SAP S/4HANA Cloud Public Edition | General | Consultor Funcional SAP S/4HANA | 3 |
 
-**Esfuerzo total estimado (activación): ~12 horas.**
+**Esfuerzo total estimado (activación / configuración): ~3 horas.**
 
 ---
 
@@ -51,9 +48,9 @@
 
 | # | Actividad | Consultor requerido | Tiempo estimado (h, Medium) |
 |---|---|---|---|
-| 1 | Prueba unitaria con escenarios reales (volúmenes representativos) | Consultor MM | 4 |
-| 2 | Documentación para el cliente | Consultor MM | 4 |
-| 3 | Transferencia de conocimiento | Consultor MM | 3 |
+| 1 | Prueba unitaria del caso de uso con datos reales en entorno de Quality | Consultor Funcional SAP S/4HANA | 4 |
+| 2 | Documentación de la activación para el cliente (manual de usuario + manual de configuración) | Consultor Funcional SAP S/4HANA | 4 |
+| 3 | Transferencia de conocimiento al equipo del cliente | Consultor Funcional SAP S/4HANA | 3 |
 
 **Esfuerzo total estimado (validación + entrega): ~11 horas.**
 
@@ -61,9 +58,16 @@
 
 ## 4. Consideraciones especiales
 
-- Mass update: confirmar volumen máximo recomendado.
-- Cambios en fechas pueden disparar reschedulings / ATP recalc — validar impacto previo.
-- Respeta autorizaciones.
+- Aplica a SAP S/4HANA Cloud **Public Edition**.
+- Disponibilidad indicada por SAP: **Generally Available**.
+
+---
+
+## Referencias oficiales
+
+- SAP Discovery Center — Detail Page: https://discovery-center.cloud.sap/ai-feature/d7b65dad-4fa1-4430-a860-6c8eba5ff8e1/
+- SAP Help Portal — Initial Setup: https://help.sap.com/docs/joule/capabilities-guide/updating-delivery-dates-for-purchase-orders
+- SAP Discovery Center — Pricing Details: No aplica
 
 ---
 
@@ -71,6 +75,6 @@
 
 | Bloque | Horas |
 |---|---|
-| Activación / configuración | 12 |
+| Activación / configuración | 3 |
 | Validación + documentación + KT | 11 |
-| **Total** | **23** |
+| **Total** | **14** |

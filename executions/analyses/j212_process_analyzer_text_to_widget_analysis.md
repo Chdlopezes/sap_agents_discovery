@@ -1,45 +1,42 @@
-# Análisis caso de uso J212 — Process Analyzer, Text To Widget (SAP Signavio)
+# Análisis caso de uso J212 — Process Analyzer‚ Text To Widget
 
-> Basado en información públicamente documentada por SAP. Valores marcados como **[verificar en SAP Help]** requieren validación oficial.
+> Análisis construido **únicamente** a partir de las fuentes oficiales de SAP asociadas al AI Feature/Agent J212 en `processed/AI_Features_Data_Enriched.xlsx`. Los campos para los que SAP no publica información aparecen literalmente como "No aplica", "No existe en la fuente oficial" o "No documentado en la fuente oficial". **No se ha completado ningún dato con conocimiento general ni con inferencia desde casos similares.**
 
-**Resumen del caso:** Process Analyzer, Text to Widget permite crear widgets de dashboard a partir de consultas en lenguaje natural sobre datos de procesos. SAP indica: *El valor se centra en acelerar el time-to-value de los dashboards de procesos, mejorar la autonomía de usuarios de negocio y reducir dependencia de equipos técnicos para análisis básicos.*
+**Fuentes oficiales consultadas:**
+- Detail Page (SAP Discovery Center): https://discovery-center.cloud.sap/ai-feature/6d74c5e9-32c1-443c-be23-c7ebbc51d573/
+- Initial Setup (SAP Help Portal): No accesible (el enlace aparece en *Resources* pero no fue posible acceder a su contenido tras reintentos).
+- Pricing Details (SAP Discovery Center): No aplica
+
+**Resumen del caso:** Process Analyzer, Text to Widget permite crear widgets de dashboard a partir de consultas en lenguaje natural sobre datos de procesos.
 
 ---
 
 ## 1. Prerequisitos para la activación
 
-### 1.1 Productos / componentes SAP requeridos
-- **SAP Signavio Process Intelligence** activo.
-- Capability AI / Joule integrada en Signavio **[verificar]**.
+### 1.1 Producto / componente SAP requerido
+- **SAP Signavio solutions**.
 
 ### 1.2 Licenciamiento / entitlement / paquete
-- Suscripción Signavio Process Intelligence con feature AI **[verificar]**.
+- Capability **Base**.
+- No aplica un paquete Premium.
 
 ### 1.3 Scope item relacionado
-- N/A.
+- No aplica (el producto base no utiliza scope items de SAP S/4HANA).
 
-### 1.4 Aplicaciones / apps Fiori / servicios requeridos
-- Signavio Process Analyzer.
+### 1.4 Aplicaciones / apps Fiori / servicios / componentes técnicos
+- No documentado en la fuente oficial.
 
 ### 1.5 Datos maestros / transaccionales previos
-- Investigations / process data sources cargados.
+- No documentado en la fuente oficial.
 
 ### 1.6 Restricciones funcionales / técnicas / idioma
-- **Idioma**: inglés primariamente **[verificar]**.
-- Usuario con rol Process Analyst.
+- No documentado en la fuente oficial.
 
 ---
 
 ## 2. Pasos de activación / configuración estándar
 
-| # | Actividad estándar | Objeto de configuración | Tipo de configuración | Consultor requerido | Tiempo estimado (h, Medium) |
-|---|---|---|---|---|---|
-| 1 | Confirmar entitlement Signavio + AI | Tenant Signavio | General | Consultor Signavio | 2 |
-| 2 | Asignar rol Process Analyst | Roles | Particular (por usuario) | Consultor Seguridad | 2 |
-| 3 | Habilitar Text To Widget | Signavio admin | General | Consultor Signavio | 2 |
-| 4 | Pruebas iniciales: generar widgets a partir de prompts | Configuración Signavio | General | Consultor Signavio | 3 |
-
-**Esfuerzo total estimado (activación): ~9 horas.**
+> **No se registran pasos de activación.** Tras consultar el Initial Setup y la sección *Resources* de la Detail Page (incl. el enlace 'AI Feature' cuando existe), no fue posible acceder a una página oficial SAP que describa un procedimiento de activación para este caso. No se han fabricado pasos.
 
 ---
 
@@ -47,17 +44,25 @@
 
 | # | Actividad | Consultor requerido | Tiempo estimado (h, Medium) |
 |---|---|---|---|
-| 1 | Prueba unitaria con investigations reales | Consultor Signavio | 4 |
-| 2 | Documentación para el cliente | Consultor Signavio | 3 |
-| 3 | Transferencia de conocimiento | Consultor Signavio | 3 |
+| 1 | Prueba unitaria del caso de uso con datos reales en entorno de Quality | Consultor SAP Signavio (producto base) | 4 |
+| 2 | Documentación de la activación para el cliente (manual de usuario + manual de configuración) | Consultor SAP Signavio (producto base) | 4 |
+| 3 | Transferencia de conocimiento al equipo del cliente | Consultor SAP Signavio (producto base) | 3 |
 
-**Esfuerzo total estimado (validación + entrega): ~10 horas.**
+**Esfuerzo total estimado (validación + entrega): ~11 horas.**
 
 ---
 
 ## 4. Consideraciones especiales
 
-- Resultados dependen de la riqueza del modelo de datos cargado en Signavio.
+- Disponibilidad indicada por SAP: **Generally Available**.
+
+---
+
+## Referencias oficiales
+
+- SAP Discovery Center — Detail Page: https://discovery-center.cloud.sap/ai-feature/6d74c5e9-32c1-443c-be23-c7ebbc51d573/
+- SAP Help Portal — Initial Setup: No accesible tras reintentos
+- SAP Discovery Center — Pricing Details: No aplica
 
 ---
 
@@ -65,6 +70,6 @@
 
 | Bloque | Horas |
 |---|---|
-| Activación / configuración | 9 |
-| Validación + documentación + KT | 10 |
-| **Total** | **19** |
+| Activación / configuración | No aplica (sin pasos oficialmente documentados) |
+| Validación + documentación + KT | 11 |
+| **Total** | **11** |

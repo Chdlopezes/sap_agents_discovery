@@ -1,40 +1,36 @@
 # Análisis caso de uso J180 — SAP HANA application migration
 
-> Análisis basado en información públicamente documentada por SAP (SAP Help Portal, SAP Discovery Center). Los valores marcados como **[verificar en SAP Help]** deben validarse contra la documentación oficial vigente.
+> Análisis construido **únicamente** a partir de las fuentes oficiales de SAP asociadas al AI Feature/Agent J180 en `processed/AI_Features_Data_Enriched.xlsx`. Los campos para los que SAP no publica información aparecen literalmente como "No aplica", "No existe en la fuente oficial" o "No documentado en la fuente oficial". **No se ha completado ningún dato con conocimiento general ni con inferencia desde casos similares.**
 
-**Resumen del caso:** Función que automatiza la migración de la capa de servicios **SAP HANA XS/XSA** hacia **SAP CAP** usando GenAI. Convierte artefactos como **XSJSLIB, XSODATA y XSJS** en servicios modernos basados en CAP, alineados con la guía de desarrollo de SAP BTP.
+**Fuentes oficiales consultadas:**
+- Detail Page (SAP Discovery Center): https://discovery-center.cloud.sap/ai-feature/14bbef6b-5d85-4221-bd0e-342f569ef628/
+- Initial Setup (SAP Help Portal): https://help.sap.com/docs/hana-cloud/sap-hana-cloud-migration-guide/manually-migrate-xs-classic-application-to-sap-cap-and-sap-hana-cloud-a581b87f52d44d9d9e26b8005cd2ab68
+- Pricing Details (SAP Discovery Center): No aplica
+
+**Resumen del caso:** La función automatiza la migración de la capa de servicios SAP HANA XS/XSA hacia SAP CAP usando GenAI. Ayuda a convertir artefactos como XSJSLIB, XSODATA y XSJS en servicios modernos basados en CAP, alineados con la guía de desarrollo de SAP BTP.
 
 ---
 
 ## 1. Prerequisitos para la activación
 
-### 1.1 Productos / componentes SAP requeridos
-- **SAP HANA Cloud** activo.
-- Proyecto **SAP HANA XS Advanced (XSA)** o **XS Classic** del cliente a migrar.
-- Entorno de desarrollo soportado (típicamente **Visual Studio Code** con la extensión correspondiente).
-- Servicios SAP BTP / SAP AI según aplique para la conversión asistida por GenAI.
+### 1.1 Producto / componente SAP requerido
+- **SAP HANA Cloud**.
 
 ### 1.2 Licenciamiento / entitlement / paquete
-- Suscripción vigente a **SAP HANA Cloud**.
-- Capability **Base** **[verificar en AI Foundation Catalog vigente]**.
+- Capability **Base**.
+- No aplica un paquete Premium.
 
 ### 1.3 Scope item relacionado
-- No aplica scope item.
+- No aplica (el producto base no utiliza scope items de SAP S/4HANA).
 
-### 1.4 Aplicaciones / apps Fiori / servicios requeridos
-- **SAP HANA Application Migration Assistant** (extensión para Visual Studio Code).
-- Acceso a destino BTP (subaccount) para desplegar la aplicación CAP convertida.
+### 1.4 Aplicaciones / apps Fiori / servicios / componentes técnicos
+- Según la fuente oficial abierta: You need to provide details of the source instance of SAP HANA on-premise instance which contains the XS advanced applications that you want to migrate. You need access to an SAP BTP sub account where an HTTP destination is defined for the source SAP HANA platform database, which contains the XS advanced applications that you want to migrate. For more information about configuring the required destination, see the steps below. You must have a subscription to SAP Business Application Studio (BAS) or SAP Build. Generative-AI tools are only available in SAP Build plans, which you need to migrate the service layer. To migrate an XS advanced application to SAP CAP, you need to perform the following steps: Connect SAP Cloud Connector to the SAP BTP account where the subscription to SAP Business Application Studio was created.
 
 ### 1.5 Datos maestros / transaccionales previos
-- Código fuente XS/XSA del cliente accesible.
-- Estructuras de base de datos / datos del proyecto migrable accesibles desde el entorno de desarrollo.
+- No documentado en la fuente oficial.
 
 ### 1.6 Restricciones funcionales / técnicas / idioma
-- **Idioma**: no aplica (es una herramienta para developers).
-- **Cobertura**: la conversión cubre artefactos XSJSLIB, XSODATA y XSJS; lógica muy custom puede requerir reescritura manual.
-- **Roles**: developer con acceso a SAP HANA Cloud y a BTP.
-
-> **Setup oficial SAP**: la página https://help.sap.com/docs/hana-cloud/sap-hana-cloud-migration-guide/migrate-xs-advanced-application-to-sap-cap-and-sap-hana-cloud-with-sap-hana-application-migration-assistant-in-visual-studio-code describe el procedimiento de migración con el Migration Assistant.
+- No documentado en la fuente oficial.
 
 ---
 
@@ -42,16 +38,12 @@
 
 | # | Actividad estándar | Objeto de configuración | Tipo de configuración | Consultor requerido | Tiempo estimado (h, Medium) |
 |---|---|---|---|---|---|
-| 1 | Confirmar entitlement de SAP HANA Cloud y subaccount BTP destino | SAP HANA Cloud + Subaccount BTP | General | Consultor BTP / HANA | 2 |
-| 2 | Preparar conectividad al sistema origen XS/XSA | Conectividad origen | General | Consultor SAP HANA + Cliente | 3 |
-| 3 | Configurar el destino BTP donde se desplegará la aplicación CAP | Destino BTP | General | Consultor BTP | 3 |
-| 4 | Crear dev space en Visual Studio Code con la extensión SAP HANA Application Migration Assistant | Dev space VSCode + Extensión | General | Consultor SAP HANA / Developer | 3 |
-| 5 | Ejecutar el Migration Assistant sobre los artefactos XSJSLIB / XSODATA / XSJS | Migration Assistant | Particular (por proyecto) | Consultor SAP HANA / Developer | 6 |
-| 6 | Validar manualmente la conversión, ajustar lógica y ejecutar pruebas funcionales | Aplicación CAP convertida | Particular (por proyecto) | Consultor SAP HANA / Developer | 8 |
+| 1 | Open the Cloud Connector and navigate to the correct sub account. | Configuración de SAP HANA Cloud | General | Consultor SAP HANA Cloud / BTP | 3 |
+| 2 | Add a service channel in the category On-premise to Cloud. | Configuración de SAP HANA Cloud | General | Consultor SAP HANA Cloud / BTP | 3 |
+| 3 | Configure the new On-premise to Cloud service channel as indicated below. | Configuración de SAP HANA Cloud | General | Consultor SAP HANA Cloud / BTP | 3 |
+| 4 | Configure the mapping between the internal and virtual (Cloud-side) hosts. | Configuración de SAP HANA Cloud | General | Consultor SAP HANA Cloud / BTP | 3 |
 
-**Esfuerzo total estimado (activación estándar, sin necesidades adicionales): ~25 horas.**
-
-> **Nota**: el alcance estándar cubre la conversión asistida y un primer ajuste; proyectos con lógica custom extensa requerirán esfuerzo adicional fuera del alcance estándar.
+**Esfuerzo total estimado (activación / configuración): ~12 horas.**
 
 ---
 
@@ -59,29 +51,25 @@
 
 | # | Actividad | Consultor requerido | Tiempo estimado (h, Medium) |
 |---|---|---|---|
-| 1 | Prueba unitaria con escenarios reales del proyecto migrado | Consultor SAP HANA / Developer | 4 |
-| 2 | Documentación de la migración para el cliente (diferencias entre el código original y el convertido) | Consultor SAP HANA / Developer | 4 |
-| 3 | Transferencia de conocimiento al equipo del cliente (sesión técnica) | Consultor SAP HANA / Developer | 3 |
+| 1 | Prueba unitaria del caso de uso con datos reales en entorno de Quality | Consultor SAP HANA Cloud / BTP | 4 |
+| 2 | Documentación de la activación para el cliente (manual de usuario + manual de configuración) | Consultor SAP HANA Cloud / BTP | 4 |
+| 3 | Transferencia de conocimiento al equipo del cliente | Consultor SAP HANA Cloud / BTP | 3 |
 
 **Esfuerzo total estimado (validación + entrega): ~11 horas.**
 
 ---
 
-## 4. Consideraciones especiales (según guía SAP)
+## 4. Consideraciones especiales
 
-- Es una **herramienta para developers**: no aplica concepto de Joule capability ni AI Units en el sentido tradicional.
-- La conversión es **asistida**: el código resultante debe revisarse, probarse y ajustarse manualmente — no es una migración cero-touch.
-- Lógica muy custom o dependencias no soportadas pueden requerir **reescritura manual** fuera del alcance estándar.
-- Sujeto a las condiciones de servicio vigentes de SAP HANA Cloud **[verificar]**.
-- Antes de la activación, revisar el **SAP Road Map Explorer** y release notes vigentes.
-- Este caso de uso **acompaña** la modernización técnica; no entrega la aplicación final lista para producción sin trabajo adicional del developer.
+- Disponibilidad indicada por SAP: **Generally Available**.
 
 ---
 
 ## Referencias oficiales
 
 - SAP Discovery Center — Detail Page: https://discovery-center.cloud.sap/ai-feature/14bbef6b-5d85-4221-bd0e-342f569ef628/
-- SAP Help Portal — Migration Guide: https://help.sap.com/docs/hana-cloud/sap-hana-cloud-migration-guide/migrate-xs-advanced-application-to-sap-cap-and-sap-hana-cloud-with-sap-hana-application-migration-assistant-in-visual-studio-code
+- SAP Help Portal — Initial Setup: https://help.sap.com/docs/hana-cloud/sap-hana-cloud-migration-guide/manually-migrate-xs-classic-application-to-sap-cap-and-sap-hana-cloud-a581b87f52d44d9d9e26b8005cd2ab68
+- SAP Discovery Center — Pricing Details: No aplica
 
 ---
 
@@ -89,6 +77,6 @@
 
 | Bloque | Horas |
 |---|---|
-| Activación / configuración | 25 |
+| Activación / configuración | 12 |
 | Validación + documentación + KT | 11 |
-| **Total** | **36** |
+| **Total** | **23** |

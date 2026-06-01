@@ -1,45 +1,42 @@
-# Análisis caso de uso J893 — Smart Predict (SAP Analytics Cloud)
+# Análisis caso de uso J893 — Smart Predict
 
-> Basado en información públicamente documentada por SAP. Valores marcados como **[verificar en SAP Help]** requieren validación oficial.
+> Análisis construido **únicamente** a partir de las fuentes oficiales de SAP asociadas al AI Feature/Agent J893 en `processed/AI_Features_Data_Enriched.xlsx`. Los campos para los que SAP no publica información aparecen literalmente como "No aplica", "No existe en la fuente oficial" o "No documentado en la fuente oficial". **No se ha completado ningún dato con conocimiento general ni con inferencia desde casos similares.**
 
-**Resumen del caso:** Permite crear modelos predictivos en SAP Analytics Cloud para entregar predicciones aplicables a escenarios de análisis y planificación. SAP indica: *Mejora la anticipación de resultados, acelera el uso de analítica predictiva en decisiones de negocio y reduce dependencia de desarrollos externos para escenarios predictivos básicos.*
+**Fuentes oficiales consultadas:**
+- Detail Page (SAP Discovery Center): https://discovery-center.cloud.sap/ai-feature/3e3dbf93-52e2-4a08-b6f3-58b7396bc445/
+- Initial Setup (SAP Help Portal): https://help.sap.com/docs/SAP_ANALYTICS_CLOUD/00f68c2e08b941f081002fd3691d86a7/8eeb62419dbd4ea38e9108f2f05a938b.html
+- Pricing Details (SAP Discovery Center): No aplica
+
+**Resumen del caso:** Permite crear modelos predictivos en SAP Analytics Cloud para entregar predicciones aplicables a escenarios de análisis y planificación.
 
 ---
 
 ## 1. Prerequisitos para la activación
 
-### 1.1 Productos / componentes SAP requeridos
-- **SAP Analytics Cloud (SAC)** con capability Smart Predict / Predictive **[verificar plan]**.
+### 1.1 Producto / componente SAP requerido
+- **SAP Analytics Cloud**.
 
 ### 1.2 Licenciamiento / entitlement / paquete
-- Licencia SAC que incluya Smart Predict **[verificar matriz]**.
+- Capability **Base**.
+- No aplica un paquete Premium.
 
 ### 1.3 Scope item relacionado
-- N/A.
+- No aplica (el producto base no utiliza scope items de SAP S/4HANA).
 
-### 1.4 Aplicaciones / apps Fiori / servicios requeridos
-- Tenant SAC.
+### 1.4 Aplicaciones / apps Fiori / servicios / componentes técnicos
+- Según la fuente oficial abierta: Searching Your Data Using Just Ask
 
 ### 1.5 Datos maestros / transaccionales previos
-- Datasets con calidad suficiente para entrenar modelos.
+- No documentado en la fuente oficial.
 
 ### 1.6 Restricciones funcionales / técnicas / idioma
-- **Idioma**: UI multilenguaje según SAC.
-- Calidad de los modelos depende de los datos.
+- No documentado en la fuente oficial.
 
 ---
 
 ## 2. Pasos de activación / configuración estándar
 
-| # | Actividad estándar | Objeto de configuración | Tipo de configuración | Consultor requerido | Tiempo estimado (h, Medium) |
-|---|---|---|---|---|---|
-| 1 | Confirmar licencia SAC + Smart Predict | Tenant SAC | General | Consultor SAC | 2 |
-| 2 | Verificar datasets / preparar feature engineering | Datasets SAC | General | Consultor SAC / Data | 5 |
-| 3 | Asignar roles SAC a usuarios | Roles | Particular (por usuario) | Consultor Seguridad | 2 |
-| 4 | Habilitar Smart Predict scenarios | Configuración Predict | General | Consultor SAC | 3 |
-| 5 | Pruebas iniciales (entrenar/desplegar 1 modelo) | Configuración SAC | General | Consultor SAC | 5 |
-
-**Esfuerzo total estimado (activación): ~17 horas.**
+> **No se registran pasos de activación.** La fuente oficial SAP abierta describe el uso de la capability pero no detalla un procedimiento de activación administrativo explícito. El caso de uso puede venir habilitado por defecto al cumplirse los prerequisitos del producto base.
 
 ---
 
@@ -47,17 +44,25 @@
 
 | # | Actividad | Consultor requerido | Tiempo estimado (h, Medium) |
 |---|---|---|---|
-| 1 | Prueba unitaria con casos representativos (classification/regression/timeseries) | Consultor SAC | 5 |
-| 2 | Documentación para el cliente | Consultor SAC | 4 |
-| 3 | Transferencia de conocimiento | Consultor SAC | 3 |
+| 1 | Prueba unitaria del caso de uso con datos reales en entorno de Quality | Consultor SAP Analytics Cloud | 4 |
+| 2 | Documentación de la activación para el cliente (manual de usuario + manual de configuración) | Consultor SAP Analytics Cloud | 4 |
+| 3 | Transferencia de conocimiento al equipo del cliente | Consultor SAP Analytics Cloud | 3 |
 
-**Esfuerzo total estimado (validación + entrega): ~12 horas.**
+**Esfuerzo total estimado (validación + entrega): ~11 horas.**
 
 ---
 
 ## 4. Consideraciones especiales
 
-- Validar bias / explicabilidad antes de adoptar en decisiones críticas.
+- Disponibilidad indicada por SAP: **Generally Available**.
+
+---
+
+## Referencias oficiales
+
+- SAP Discovery Center — Detail Page: https://discovery-center.cloud.sap/ai-feature/3e3dbf93-52e2-4a08-b6f3-58b7396bc445/
+- SAP Help Portal — Initial Setup: https://help.sap.com/docs/SAP_ANALYTICS_CLOUD/00f68c2e08b941f081002fd3691d86a7/8eeb62419dbd4ea38e9108f2f05a938b.html
+- SAP Discovery Center — Pricing Details: No aplica
 
 ---
 
@@ -65,6 +70,6 @@
 
 | Bloque | Horas |
 |---|---|
-| Activación / configuración | 17 |
-| Validación + documentación + KT | 12 |
-| **Total** | **29** |
+| Activación / configuración | No aplica (sin pasos oficialmente documentados) |
+| Validación + documentación + KT | 11 |
+| **Total** | **11** |

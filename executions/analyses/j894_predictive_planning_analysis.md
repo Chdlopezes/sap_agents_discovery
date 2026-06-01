@@ -1,31 +1,36 @@
-# Análisis caso de uso J894 — Predictive Planning (SAP Analytics Cloud)
+# Análisis caso de uso J894 — Predictive Planning
 
-> Basado en información públicamente documentada por SAP. Valores marcados como **[verificar en SAP Help]** requieren validación oficial.
+> Análisis construido **únicamente** a partir de las fuentes oficiales de SAP asociadas al AI Feature/Agent J894 en `processed/AI_Features_Data_Enriched.xlsx`. Los campos para los que SAP no publica información aparecen literalmente como "No aplica", "No existe en la fuente oficial" o "No documentado en la fuente oficial". **No se ha completado ningún dato con conocimiento general ni con inferencia desde casos similares.**
 
-**Resumen del caso:** Predictive Planning en SAP Analytics Cloud utiliza aprendizaje automático automatizado para convertir datos históricos en pronósticos. La capacidad ayuda a actualizar previsiones de forma más ágil y a reducir sesgos en los ciclos de planificación. SAP indica: *Aporta valor al reducir trabajo manual y sesgos en la planeación, mejorar la agilidad de los equipos y aumentar la confiabilidad de los escenarios predictivos usados para decidir.*
+**Fuentes oficiales consultadas:**
+- Detail Page (SAP Discovery Center): https://discovery-center.cloud.sap/ai-feature/07cbfbe5-5fec-4f2f-9e5b-8a7c2dfd6d74/
+- Initial Setup (SAP Help Portal): https://help.sap.com/docs/SAP_ANALYTICS_CLOUD/00f68c2e08b941f081002fd3691d86a7/66eeff9e46334644b43b10e49e2022bf.html
+- Pricing Details (SAP Discovery Center): No aplica
+
+**Resumen del caso:** Predictive Planning en SAP Analytics Cloud utiliza aprendizaje automático automatizado para convertir datos históricos en pronósticos. La capacidad ayuda a actualizar previsiones de forma más ágil y a reducir sesgos en los ciclos de planificación.
 
 ---
 
 ## 1. Prerequisitos para la activación
 
-### 1.1 Productos / componentes SAP requeridos
-- **SAP Analytics Cloud (SAC)** con módulo Planning activo.
+### 1.1 Producto / componente SAP requerido
+- **SAP Analytics Cloud**.
 
 ### 1.2 Licenciamiento / entitlement / paquete
-- Licencia SAC Planning (incluye capability Predictive) **[verificar matriz vigente]**.
+- Capability **Base**.
+- No aplica un paquete Premium.
 
 ### 1.3 Scope item relacionado
-- N/A.
+- No aplica (el producto base no utiliza scope items de SAP S/4HANA).
 
-### 1.4 Aplicaciones / apps Fiori / servicios requeridos
-- Tenant SAC con modelos de planning configurados.
+### 1.4 Aplicaciones / apps Fiori / servicios / componentes técnicos
+- No documentado en la fuente oficial.
 
 ### 1.5 Datos maestros / transaccionales previos
-- Series temporales históricas con calidad suficiente para forecast.
+- No documentado en la fuente oficial.
 
 ### 1.6 Restricciones funcionales / técnicas / idioma
-- **Idioma**: UI multilenguaje según SAC.
-- Calidad del forecast depende del histórico.
+- No documentado en la fuente oficial.
 
 ---
 
@@ -33,13 +38,9 @@
 
 | # | Actividad estándar | Objeto de configuración | Tipo de configuración | Consultor requerido | Tiempo estimado (h, Medium) |
 |---|---|---|---|---|---|
-| 1 | Confirmar licencia Planning + Predictive | Tenant SAC | General | Consultor SAC | 2 |
-| 2 | Verificar modelo de planning con series temporales | Modelos SAC | General | Consultor SAC | 4 |
-| 3 | Asignar roles Planner/Modeler a usuarios | Roles SAC | Particular (por usuario) | Consultor Seguridad | 2 |
-| 4 | Habilitar Predictive scenarios en SAC | Configuración Predictive | General | Consultor SAC | 3 |
-| 5 | Pruebas iniciales (correr predictive scenarios) | Configuración SAC | General | Consultor SAC | 3 |
+| 1 | Define the Settings of Time Series Predictive Models for Planning | Configuración de SAP Analytics Cloud | General | Consultor SAP Analytics Cloud | 3 |
 
-**Esfuerzo total estimado (activación): ~14 horas.**
+**Esfuerzo total estimado (activación / configuración): ~3 horas.**
 
 ---
 
@@ -47,18 +48,25 @@
 
 | # | Actividad | Consultor requerido | Tiempo estimado (h, Medium) |
 |---|---|---|---|
-| 1 | Prueba unitaria con datos reales (KPIs del cliente) | Consultor SAC | 5 |
-| 2 | Documentación para el cliente | Consultor SAC | 4 |
-| 3 | Transferencia de conocimiento | Consultor SAC | 3 |
+| 1 | Prueba unitaria del caso de uso con datos reales en entorno de Quality | Consultor SAP Analytics Cloud | 4 |
+| 2 | Documentación de la activación para el cliente (manual de usuario + manual de configuración) | Consultor SAP Analytics Cloud | 4 |
+| 3 | Transferencia de conocimiento al equipo del cliente | Consultor SAP Analytics Cloud | 3 |
 
-**Esfuerzo total estimado (validación + entrega): ~12 horas.**
+**Esfuerzo total estimado (validación + entrega): ~11 horas.**
 
 ---
 
 ## 4. Consideraciones especiales
 
-- Calidad del forecast mejora con limpieza y volumen del histórico.
-- Revisar bias / estacionalidad.
+- Disponibilidad indicada por SAP: **Generally Available**.
+
+---
+
+## Referencias oficiales
+
+- SAP Discovery Center — Detail Page: https://discovery-center.cloud.sap/ai-feature/07cbfbe5-5fec-4f2f-9e5b-8a7c2dfd6d74/
+- SAP Help Portal — Initial Setup: https://help.sap.com/docs/SAP_ANALYTICS_CLOUD/00f68c2e08b941f081002fd3691d86a7/66eeff9e46334644b43b10e49e2022bf.html
+- SAP Discovery Center — Pricing Details: No aplica
 
 ---
 
@@ -66,6 +74,6 @@
 
 | Bloque | Horas |
 |---|---|
-| Activación / configuración | 14 |
-| Validación + documentación + KT | 12 |
-| **Total** | **26** |
+| Activación / configuración | 3 |
+| Validación + documentación + KT | 11 |
+| **Total** | **14** |

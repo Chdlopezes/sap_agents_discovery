@@ -1,55 +1,43 @@
 # Análisis caso de uso J898 — Depreciation Key Explanation
 
-> Análisis basado en información públicamente documentada por SAP (SAP Help Portal, SAP Discovery Center, SAP AI Foundation Catalog). Los valores marcados como **[verificar en SAP Help]** deben validarse contra la documentación oficial vigente.
+> Análisis construido **únicamente** a partir de las fuentes oficiales de SAP asociadas al AI Feature/Agent J898 en `processed/AI_Features_Data_Enriched.xlsx`. Los campos para los que SAP no publica información aparecen literalmente como "No aplica", "No existe en la fuente oficial" o "No documentado en la fuente oficial". **No se ha completado ningún dato con conocimiento general ni con inferencia desde casos similares.**
 
-**Resumen del caso:** Explica en lenguaje natural cómo funcionan las claves de depreciación y la lógica detrás de los cálculos de depreciación del sistema, sobre **SAP S/4HANA Cloud Private Edition**. SAP indica una reducción del **75% en el esfuerzo** para especificar claves de depreciación durante implementaciones y **90% en el esfuerzo** para analizar y responder consultas sobre valores de activos fijos.
+**Fuentes oficiales consultadas:**
+- Detail Page (SAP Discovery Center): https://discovery-center.cloud.sap/ai-feature/7f81035d-7177-494f-b232-b1e290c05f0c/
+- Initial Setup (SAP Help Portal): No accesible (el enlace aparece en *Resources* pero no fue posible acceder a su contenido tras reintentos).
+- Pricing Details (SAP Discovery Center): https://discovery-center.cloud.sap/ai-feature/7f81035d-7177-494f-b232-b1e290c05f0c/#pricing
+
+**Resumen del caso:** Explica en lenguaje natural cómo funcionan las claves de depreciación y la lógica detrás de los cálculos de depreciación del sistema.
 
 ---
 
 ## 1. Prerequisitos para la activación
 
-### 1.1 Productos / componentes SAP requeridos
-- **SAP S/4HANA Cloud Private Edition** con Joule habilitado.
-- Componente **Asset Accounting (FI-AA)** operativo.
+### 1.1 Producto / componente SAP requerido
+- **SAP S/4HANA Cloud Private Edition**.
 
 ### 1.2 Licenciamiento / entitlement / paquete
-- Suscripción vigente a **SAP S/4HANA Cloud Private Edition**.
-- Capability **Premium** — requiere el paquete **Joule Premium for Financial Management** (no se vende por separado).
-- **AI Units** asignadas al tenant para consumo de la capability **[verificar volumen vigente en Pricing Details]**.
+- Capability **Premium**.
+- Paquete comercial: **Joule Premium for Financial Management**.
+- Pricing (sección *Pricing Details* de la Detail Page): Activación con AI Units. Precio bajo solicitud. Se requieren AI Units para usar esta oferta de IA en el servicio cloud subyacente. La página indica que tiene prerequisito.
 
 ### 1.3 Scope item relacionado
-- Scope items de **Asset Accounting** en S/4HANA Cloud Private Edition — **[verificar IDs en SAP Signavio Process Navigator para Private Edition]**.
+- No documentado en la fuente oficial.
 
-### 1.4 Aplicaciones / apps Fiori / servicios requeridos
-- App Fiori **Manage Fixed Assets** habilitada para los usuarios objetivo (cuando aplique en Private Edition).
-- **Joule** habilitado en el SAP Fiori Launchpad del usuario.
+### 1.4 Aplicaciones / apps Fiori / servicios / componentes técnicos
+- No documentado en la fuente oficial.
 
 ### 1.5 Datos maestros / transaccionales previos
-- Catálogo de activos fijos cargado y consistente.
-- **Claves de depreciación**, áreas de valoración y métodos de cálculo configurados.
-- Activos fijos con valores históricos y movimientos calculados.
+- No documentado en la fuente oficial.
 
 ### 1.6 Restricciones funcionales / técnicas / idioma
-- **Edición**: aplica únicamente a **SAP S/4HANA Cloud Private Edition** (distinguir de J86, que aplica a Public Edition).
-- **Idioma**: interacciones de Joule soportadas principalmente en **inglés** **[verificar matriz vigente]**.
-- **Roles**: el usuario debe tener el rol de Asset Accountant con acceso a la información de activos a explicar.
-
-> **Setup oficial SAP**: la página identificada (https://help.sap.com/docs/SAP_S4HANA_CLOUD/ee9ee0ca4c3942068ea584d2f929b5b1/17fe86dc95334287b50406d466a26c14.html?q=CC05&version=2508.00) referencia la explicación generada por IA para claves de depreciación. El contenido extraído no expone un procedimiento paso a paso completo.
+- Disponible para SAP S/4HANA Cloud **Private Edition**.
 
 ---
 
 ## 2. Pasos de activación / configuración estándar
 
-| # | Actividad estándar | Objeto de configuración | Tipo de configuración | Consultor requerido | Tiempo estimado (h, Medium) |
-|---|---|---|---|---|---|
-| 1 | Confirmar entitlement de Joule Premium y AI Units para Private Edition | Subaccount BTP + entitlement Joule Premium for FM | General | Consultor BTP | 2 |
-| 2 | Aprovisionar paquete Premium y asignar AI Units al tenant | Joule Premium for Financial Management + AI Units | General | Consultor BTP / Licencias | 2 |
-| 3 | Verificar configuración de Asset Accounting (claves de depreciación, áreas de valoración) | Configuración FI-AA | General | Consultor Funcional Asset Accounting | 3 |
-| 4 | Asignar a los usuarios los business roles de Asset Accountant con la capability habilitada | Business Role / Business Catalog | Particular (por usuario / grupo) | Consultor Seguridad S/4HANA | 3 |
-| 5 | Habilitar la capability de Joule para explicación de claves de depreciación | Joule capability scope | General | Consultor Funcional Asset Accounting + Joule | 2 |
-| 6 | Pruebas iniciales en Quality (solicitar explicación de claves representativas) | Configuración funcional FI-AA | General | Consultor Funcional Asset Accounting | 3 |
-
-**Esfuerzo total estimado (activación estándar, sin necesidades adicionales): ~15 horas.**
+> **No se registran pasos de activación.** Tras consultar el Initial Setup y la sección *Resources* de la Detail Page (incl. el enlace 'AI Feature' cuando existe), no fue posible acceder a una página oficial SAP que describa un procedimiento de activación para este caso. No se han fabricado pasos.
 
 ---
 
@@ -57,30 +45,27 @@
 
 | # | Actividad | Consultor requerido | Tiempo estimado (h, Medium) |
 |---|---|---|---|
-| 1 | Prueba unitaria con datos reales del cliente (explicaciones sobre claves de depreciación del negocio) | Consultor Funcional Asset Accounting | 4 |
-| 2 | Documentación de la activación para el cliente (manual de usuario + manual de configuración) | Consultor Funcional Asset Accounting | 4 |
-| 3 | Transferencia de conocimiento al equipo del cliente (sesión funcional + Q&A) | Consultor Funcional Asset Accounting | 3 |
+| 1 | Prueba unitaria del caso de uso con datos reales en entorno de Quality | Consultor Funcional SAP S/4HANA (producto base) | 4 |
+| 2 | Documentación de la activación para el cliente (manual de usuario + manual de configuración) | Consultor Funcional SAP S/4HANA (producto base) | 4 |
+| 3 | Transferencia de conocimiento al equipo del cliente | Consultor Funcional SAP S/4HANA (producto base) | 3 |
 
 **Esfuerzo total estimado (validación + entrega): ~11 horas.**
 
 ---
 
-## 4. Consideraciones especiales (según guía SAP)
+## 4. Consideraciones especiales
 
-- Es una capability **Premium**: requiere el paquete **Joule Premium for Financial Management** y AI Units suficientes.
-- **Solo Private Edition**: confirmar que el cliente está en el sabor correcto antes de planificar.
-- Las explicaciones son **descriptivas, no normativas**: validar con Auditoría/Compliance que el uso sea apropiado en cierre.
-- Joule respeta las autorizaciones del usuario: **no eleva privilegios**.
-- Sujeto a la **fair-use policy** de Joule y consumo de AI Units **[verificar políticas vigentes]**.
-- Antes de la activación, revisar el **SAP Road Map Explorer** y release notes vigentes para confirmar funcionalidades disponibles vs. planificadas.
-- Este caso de uso **no incluye desarrollos custom**; cualquier extensión queda fuera del alcance estándar.
+- Caso **Premium**: el consumo se factura según el modelo de AI Units / paquete descrito en *Pricing Details* (ver sección 1.2).
+- Restringido a SAP S/4HANA Cloud **Private Edition**.
+- Disponibilidad indicada por SAP: **Generally Available**.
 
 ---
 
 ## Referencias oficiales
 
 - SAP Discovery Center — Detail Page: https://discovery-center.cloud.sap/ai-feature/7f81035d-7177-494f-b232-b1e290c05f0c/
-- SAP Help Portal — Initial Setup: https://help.sap.com/docs/SAP_S4HANA_CLOUD/ee9ee0ca4c3942068ea584d2f929b5b1/17fe86dc95334287b50406d466a26c14.html?q=CC05&version=2508.00
+- SAP Help Portal — Initial Setup: No accesible tras reintentos
+- SAP Discovery Center — Pricing Details: https://discovery-center.cloud.sap/ai-feature/7f81035d-7177-494f-b232-b1e290c05f0c/#pricing
 
 ---
 
@@ -88,6 +73,6 @@
 
 | Bloque | Horas |
 |---|---|
-| Activación / configuración | 15 |
+| Activación / configuración | No aplica (sin pasos oficialmente documentados) |
 | Validación + documentación + KT | 11 |
-| **Total** | **26** |
+| **Total** | **11** |

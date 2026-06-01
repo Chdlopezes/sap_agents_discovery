@@ -1,49 +1,42 @@
-# Análisis caso de uso J967 — Transformation Advisory, Initiative Builder
+# Análisis caso de uso J967 — Transformation Advisory‚ Initiative Builder
 
-> Análisis basado en información públicamente documentada por SAP (SAP Discovery Center). Los valores marcados como **[verificar en SAP Help]** deben validarse contra la documentación oficial vigente.
+> Análisis construido **únicamente** a partir de las fuentes oficiales de SAP asociadas al AI Feature/Agent J967 en `processed/AI_Features_Data_Enriched.xlsx`. Los campos para los que SAP no publica información aparecen literalmente como "No aplica", "No existe en la fuente oficial" o "No documentado en la fuente oficial". **No se ha completado ningún dato con conocimiento general ni con inferencia desde casos similares.**
 
-**Resumen del caso:** Capacidad de **SAP Signavio** que ayuda a identificar oportunidades de transformación alineadas con la estrategia y acelera la ejecución mediante la creación de iniciativas. Conecta estrategia y ejecución, facilitando que oportunidades de transformación se conviertan en planes concretos.
+**Fuentes oficiales consultadas:**
+- Detail Page (SAP Discovery Center): https://discovery-center.cloud.sap/ai-feature/9ced0e83-412a-4e06-beda-6ef81e4bce95/
+- Initial Setup (SAP Help Portal): No accesible (no existe enlace 'Initial Setup' ni 'AI Feature' accesible en *Resources*).
+- Pricing Details (SAP Discovery Center): No aplica
+
+**Resumen del caso:** Ayuda a identificar oportunidades de transformación alineadas con la estrategia y acelera la ejecución mediante la creación de iniciativas en SAP Signavio solutions.
 
 ---
 
 ## 1. Prerequisitos para la activación
 
-### 1.1 Productos / componentes SAP requeridos
-- **SAP Signavio solutions** (suscripción activa).
-- Acceso al módulo de Transformation Advisory / Process Transformation Manager dentro de SAP Signavio.
+### 1.1 Producto / componente SAP requerido
+- **SAP Signavio solutions**.
 
 ### 1.2 Licenciamiento / entitlement / paquete
-- Suscripción vigente a **SAP Signavio solutions**.
-- Capability **Base** **[verificar en AI Foundation Catalog vigente]**.
+- Capability **Base**.
+- No aplica un paquete Premium.
 
 ### 1.3 Scope item relacionado
-- No aplica scope item.
+- No aplica (el producto base no utiliza scope items de SAP S/4HANA).
 
-### 1.4 Aplicaciones / apps Fiori / servicios requeridos
-- **SAP Signavio** con el módulo Transformation Advisory habilitado.
+### 1.4 Aplicaciones / apps Fiori / servicios / componentes técnicos
+- No documentado en la fuente oficial.
 
 ### 1.5 Datos maestros / transaccionales previos
-- Definición estratégica del cliente (objetivos, prioridades) cargada o accesible.
-- Modelos de procesos relevantes en SAP Signavio.
+- No documentado en la fuente oficial.
 
 ### 1.6 Restricciones funcionales / técnicas / idioma
-- **Idioma**: capability publicada por SAP Signavio **[verificar idiomas soportados vigentes]**.
-- **Roles**: Transformation Lead / Strategist con permisos sobre el módulo de iniciativas.
-
-> **Nota**: SAP Discovery Center indica que no existe enlace de Initial Setup específico en la sección Resources. Aplican los prerequisitos generales de SAP Signavio.
+- No documentado en la fuente oficial.
 
 ---
 
 ## 2. Pasos de activación / configuración estándar
 
-| # | Actividad estándar | Objeto de configuración | Tipo de configuración | Consultor requerido | Tiempo estimado (h, Medium) |
-|---|---|---|---|---|---|
-| 1 | Confirmar entitlement de SAP Signavio Transformation Advisory | Workspace Signavio + entitlement | General | Consultor SAP Signavio | 2 |
-| 2 | Habilitar el módulo Transformation Advisory en el workspace | Workspace Signavio — Transformation Advisory | General | Consultor SAP Signavio | 2 |
-| 3 | Asignar a los usuarios objetivo los roles Signavio con acceso a Transformation Advisory | Roles SAP Signavio | Particular (por usuario / grupo) | Consultor Seguridad Signavio | 2 |
-| 4 | Pruebas iniciales con un Transformation Lead piloto (generar iniciativas a partir de oportunidades representativas) | Configuración funcional Signavio | General | Consultor SAP Signavio | 3 |
-
-**Esfuerzo total estimado (activación estándar, sin necesidades adicionales): ~9 horas.**
+> **No se registran pasos de activación.** Tras consultar el Initial Setup y la sección *Resources* de la Detail Page (incl. el enlace 'AI Feature' cuando existe), no fue posible acceder a una página oficial SAP que describa un procedimiento de activación para este caso. No se han fabricado pasos.
 
 ---
 
@@ -51,27 +44,25 @@
 
 | # | Actividad | Consultor requerido | Tiempo estimado (h, Medium) |
 |---|---|---|---|
-| 1 | Prueba unitaria con escenarios reales del cliente (iniciativas a partir de procesos representativos) | Consultor SAP Signavio | 4 |
-| 2 | Documentación de la activación para el cliente (manual de usuario + manual de operación) | Consultor SAP Signavio | 4 |
-| 3 | Transferencia de conocimiento al equipo del cliente (sesión funcional + Q&A) | Consultor SAP Signavio | 3 |
+| 1 | Prueba unitaria del caso de uso con datos reales en entorno de Quality | Consultor SAP Signavio (producto base) | 4 |
+| 2 | Documentación de la activación para el cliente (manual de usuario + manual de configuración) | Consultor SAP Signavio (producto base) | 4 |
+| 3 | Transferencia de conocimiento al equipo del cliente | Consultor SAP Signavio (producto base) | 3 |
 
 **Esfuerzo total estimado (validación + entrega): ~11 horas.**
 
 ---
 
-## 4. Consideraciones especiales (según guía SAP)
+## 4. Consideraciones especiales
 
-- Las iniciativas generadas son **borradores**: requieren revisión y priorización por parte del equipo de transformación.
-- La utilidad depende de la **calidad y consistencia de la información estratégica y de procesos** disponible en SAP Signavio.
-- Sujeto a las condiciones de servicio vigentes de SAP Signavio **[verificar]**.
-- Antes de la activación, revisar el **SAP Road Map Explorer** y release notes vigentes.
-- Este caso de uso **no incluye desarrollos custom**; cualquier extensión queda fuera del alcance estándar.
+- Disponibilidad indicada por SAP: **Generally Available**.
 
 ---
 
 ## Referencias oficiales
 
 - SAP Discovery Center — Detail Page: https://discovery-center.cloud.sap/ai-feature/9ced0e83-412a-4e06-beda-6ef81e4bce95/
+- SAP Help Portal — Initial Setup: No accesible tras reintentos
+- SAP Discovery Center — Pricing Details: No aplica
 
 ---
 
@@ -79,6 +70,6 @@
 
 | Bloque | Horas |
 |---|---|
-| Activación / configuración | 9 |
+| Activación / configuración | No aplica (sin pasos oficialmente documentados) |
 | Validación + documentación + KT | 11 |
-| **Total** | **20** |
+| **Total** | **11** |

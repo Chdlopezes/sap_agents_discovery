@@ -1,39 +1,36 @@
 # Análisis caso de uso J47 — AI-Assisted Texting
 
-> Análisis basado en información públicamente documentada por SAP (SAP LeanIX Help, SAP Discovery Center). Los valores marcados como **[verificar en SAP Help]** deben validarse contra la documentación oficial vigente.
+> Análisis construido **únicamente** a partir de las fuentes oficiales de SAP asociadas al AI Feature/Agent J47 en `processed/AI_Features_Data_Enriched.xlsx`. Los campos para los que SAP no publica información aparecen literalmente como "No aplica", "No existe en la fuente oficial" o "No documentado en la fuente oficial". **No se ha completado ningún dato con conocimiento general ni con inferencia desde casos similares.**
 
-**Resumen del caso:** Capacidad de **SAP LeanIX** que permite crear o mejorar textos analizando contenido y contexto, con opciones para reescribir o resumir información existente (p. ej. generar descripciones para fact sheets). SAP indica hasta un **80% de reducción** en el tiempo para completar descripciones de aplicaciones.
+**Fuentes oficiales consultadas:**
+- Detail Page (SAP Discovery Center): https://discovery-center.cloud.sap/ai-feature/86968b11-6426-4749-90c5-39d6711514a7/
+- Initial Setup (SAP Help Portal): https://docs-eam.leanix.net/docs/ai-capabilities
+- Pricing Details (SAP Discovery Center): No aplica
+
+**Resumen del caso:** Permite crear o mejorar textos analizando contenido y contexto, con opciones para reescribir o resumir información existente. Un ejemplo indicado es generar descripciones concisas y precisas para fact sheets.
 
 ---
 
 ## 1. Prerequisitos para la activación
 
-### 1.1 Productos / componentes SAP requeridos
-- **SAP LeanIX solutions** (suscripción activa).
-- Workspace LeanIX del cliente operativo con fact sheets que se vayan a usar.
+### 1.1 Producto / componente SAP requerido
+- **SAP LeanIX solutions**.
 
 ### 1.2 Licenciamiento / entitlement / paquete
-- Suscripción vigente a **SAP LeanIX**.
-- Capability **Base** — incluida según el contrato comercial vigente.
-- **SAP AI terms** incluidos para nuevos clientes; clientes anteriores deben confirmar con su representante SAP si los términos de IA están firmados.
+- Capability **Base**.
+- No aplica un paquete Premium.
 
 ### 1.3 Scope item relacionado
-- No aplica scope item (SAP LeanIX no usa scope items de S/4HANA).
+- No aplica (el producto base no utiliza scope items de SAP S/4HANA).
 
-### 1.4 Aplicaciones / apps Fiori / servicios requeridos
-- **SAP LeanIX** con fact sheets / atributos donde se vaya a usar la asistencia textual.
-- Roles administrativos LeanIX para activar AI Capabilities **[verificar permisos exactos]**.
+### 1.4 Aplicaciones / apps Fiori / servicios / componentes técnicos
+- Según la fuente oficial abierta: If you haven’t signed your contract and want to activate AI capabilities, contact your SAP Account Executive to sign the SAP AI terms and start the activation process.
 
 ### 1.5 Datos maestros / transaccionales previos
-- Fact sheets del workspace con suficiente contenido para reformular/resumir.
-- Configuración del metamodelo LeanIX vigente.
+- No documentado en la fuente oficial.
 
 ### 1.6 Restricciones funcionales / técnicas / idioma
-- **Idioma**: capability publicada por SAP LeanIX **[verificar idiomas soportados vigentes]**.
-- **Roles**: el usuario debe tener permisos para crear/editar contenido textual en LeanIX.
-- **Contractuales**: SAP AI terms firmados.
-
-> **Setup oficial SAP**: la página `https://help.sap.com/docs/leanix/ea/ai-capabilities` identifica la activación de AI Capabilities para SAP LeanIX. El extracto disponible no expone el procedimiento completo paso a paso.
+- No documentado en la fuente oficial.
 
 ---
 
@@ -41,12 +38,9 @@
 
 | # | Actividad estándar | Objeto de configuración | Tipo de configuración | Consultor requerido | Tiempo estimado (h, Medium) |
 |---|---|---|---|---|---|
-| 1 | Validar con representante SAP que los términos de IA de LeanIX están firmados (contractual) | Términos de IA SAP LeanIX | General | Consultor SAP LeanIX + Cliente Legal | 2 |
-| 2 | Habilitar AI Capabilities en el workspace de SAP LeanIX | Workspace LeanIX — AI Capabilities | General | Consultor SAP LeanIX | 2 |
-| 3 | Asignar a los usuarios objetivo los roles LeanIX con acceso a la funcionalidad de texto asistido | Roles SAP LeanIX | Particular (por usuario / grupo) | Consultor Seguridad LeanIX | 2 |
-| 4 | Pruebas iniciales con un usuario piloto (reescribir / resumir descripciones de fact sheets) | Configuración funcional LeanIX | General | Consultor SAP LeanIX | 3 |
+| 1 | Register to use Joule in SAP LeanIX | Configuración de SAP LeanIX solutions | General | Consultor SAP LeanIX | 3 |
 
-**Esfuerzo total estimado (activación estándar, sin necesidades adicionales): ~9 horas.**
+**Esfuerzo total estimado (activación / configuración): ~3 horas.**
 
 ---
 
@@ -54,28 +48,25 @@
 
 | # | Actividad | Consultor requerido | Tiempo estimado (h, Medium) |
 |---|---|---|---|
-| 1 | Prueba unitaria con contenido real del cliente (descripciones, reescritura, resumen sobre fact sheets representativos) | Consultor SAP LeanIX | 4 |
-| 2 | Documentación de la activación para el cliente (manual de usuario + manual breve de operación) | Consultor SAP LeanIX | 4 |
-| 3 | Transferencia de conocimiento al equipo del cliente (sesión funcional + Q&A) | Consultor SAP LeanIX | 3 |
+| 1 | Prueba unitaria del caso de uso con datos reales en entorno de Quality | Consultor SAP LeanIX | 4 |
+| 2 | Documentación de la activación para el cliente (manual de usuario + manual de configuración) | Consultor SAP LeanIX | 4 |
+| 3 | Transferencia de conocimiento al equipo del cliente | Consultor SAP LeanIX | 3 |
 
 **Esfuerzo total estimado (validación + entrega): ~11 horas.**
 
 ---
 
-## 4. Consideraciones especiales (según guía SAP)
+## 4. Consideraciones especiales
 
-- La habilitación depende de **términos contractuales de IA**: validar antes de planificar la activación.
-- Los textos generados deben ser **revisados** por el responsable funcional antes de publicarse: la IA asiste, no reemplaza el control editorial.
-- Sujeto a las condiciones de servicio vigentes de SAP LeanIX **[verificar]**.
-- Antes de la activación, revisar el **SAP Road Map Explorer** y release notes vigentes.
-- Este caso de uso **no incluye desarrollos custom**; cualquier extensión queda fuera del alcance estándar.
+- Disponibilidad indicada por SAP: **Generally Available**.
 
 ---
 
 ## Referencias oficiales
 
 - SAP Discovery Center — Detail Page: https://discovery-center.cloud.sap/ai-feature/86968b11-6426-4749-90c5-39d6711514a7/
-- SAP Help Portal — AI Capabilities (LeanIX): https://help.sap.com/docs/leanix/ea/ai-capabilities
+- SAP Help Portal — Initial Setup: https://docs-eam.leanix.net/docs/ai-capabilities
+- SAP Discovery Center — Pricing Details: No aplica
 
 ---
 
@@ -83,6 +74,6 @@
 
 | Bloque | Horas |
 |---|---|
-| Activación / configuración | 9 |
+| Activación / configuración | 3 |
 | Validación + documentación + KT | 11 |
-| **Total** | **20** |
+| **Total** | **14** |

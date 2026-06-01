@@ -1,37 +1,36 @@
 # Análisis caso de uso J1684 — Enterprise Architecture Decision Management
 
-> Análisis basado en información públicamente documentada por SAP (SAP Discovery Center). Los valores marcados como **[verificar en SAP Help]** deben validarse contra la documentación oficial vigente.
+> Análisis construido **únicamente** a partir de las fuentes oficiales de SAP asociadas al AI Feature/Agent J1684 en `processed/AI_Features_Data_Enriched.xlsx`. Los campos para los que SAP no publica información aparecen literalmente como "No aplica", "No existe en la fuente oficial" o "No documentado en la fuente oficial". **No se ha completado ningún dato con conocimiento general ni con inferencia desde casos similares.**
 
-**Resumen del caso:** Capacidad de **SAP LeanIX** que analiza y extrae datos relevantes para generar entradas de decisiones de arquitectura con el contexto e información que los stakeholders necesitan para aprobarlas.
+**Fuentes oficiales consultadas:**
+- Detail Page (SAP Discovery Center): https://discovery-center.cloud.sap/ai-feature/e9e98379-9c5f-4f4a-84f6-12a772c66ae2/
+- Initial Setup (SAP Help Portal): https://help.sap.com/docs/leanix/ea/ai-capabilities#prerequisites
+- Pricing Details (SAP Discovery Center): No aplica
+
+**Resumen del caso:** Analiza y extrae datos relevantes para generar entradas de decisiones de arquitectura con el contexto e información que los stakeholders necesitan para aprobarlas.
 
 ---
 
 ## 1. Prerequisitos para la activación
 
-### 1.1 Productos / componentes SAP requeridos
-- **SAP LeanIX solutions** (suscripción activa).
-- Workspace LeanIX del cliente con inventario y landscape cargado.
+### 1.1 Producto / componente SAP requerido
+- **SAP LeanIX solutions**.
 
 ### 1.2 Licenciamiento / entitlement / paquete
-- Suscripción vigente a **SAP LeanIX**.
-- Capability **Base** **[verificar en AI Foundation Catalog vigente]**.
-- **SAP AI terms** firmados.
+- Capability **Base**.
+- No aplica un paquete Premium.
 
 ### 1.3 Scope item relacionado
-- No aplica scope item.
+- No aplica (el producto base no utiliza scope items de SAP S/4HANA).
 
-### 1.4 Aplicaciones / apps Fiori / servicios requeridos
-- **SAP LeanIX** con módulos de Enterprise Architecture / Decision Management activos.
+### 1.4 Aplicaciones / apps Fiori / servicios / componentes técnicos
+- Según la fuente oficial abierta: If you haven’t signed your contract and want to activate AI capabilities, contact your SAP Account Executive to sign the SAP AI terms and start the activation process.
 
 ### 1.5 Datos maestros / transaccionales previos
-- Inventario de aplicaciones, capacidades de negocio y stakeholders cargados en LeanIX.
-- Procesos formales de decisión de arquitectura definidos (qué se decide y quién aprueba).
+- No documentado en la fuente oficial.
 
 ### 1.6 Restricciones funcionales / técnicas / idioma
-- **Idioma**: capability publicada por SAP LeanIX **[verificar idiomas soportados vigentes]**.
-- **Roles**: Enterprise Architect / EA Admin con permisos sobre decisiones y stakeholders.
-
-> **Nota**: el recurso *Initial Setup* existe en la página de detalle, pero no fue posible extraer texto suficiente desde la herramienta para identificar prerequisitos concretos. Aplican los prerequisitos generales de AI Capabilities de SAP LeanIX.
+- No documentado en la fuente oficial.
 
 ---
 
@@ -39,13 +38,9 @@
 
 | # | Actividad estándar | Objeto de configuración | Tipo de configuración | Consultor requerido | Tiempo estimado (h, Medium) |
 |---|---|---|---|---|---|
-| 1 | Validar términos de IA de LeanIX (contractual) | Términos de IA SAP LeanIX | General | Consultor SAP LeanIX + Cliente Legal | 2 |
-| 2 | Habilitar AI Capabilities en el workspace de SAP LeanIX | Workspace LeanIX — AI Capabilities | General | Consultor SAP LeanIX | 2 |
-| 3 | Configurar el módulo de **Decision Management** según los procesos del cliente (categorías de decisión, stakeholders, plantillas) | Decision Management — Configuración | Particular (por categoría de decisión) | Consultor SAP LeanIX + Enterprise Architect | 4 |
-| 4 | Asignar a los usuarios objetivo los roles LeanIX con acceso a la capability | Roles SAP LeanIX | Particular (por usuario / grupo) | Consultor Seguridad LeanIX | 2 |
-| 5 | Pruebas iniciales con un Enterprise Architect piloto (generar entradas de decisión asistidas por IA) | Configuración funcional LeanIX | General | Consultor SAP LeanIX | 3 |
+| 1 | Register to use Joule in SAP LeanIX | Configuración de SAP LeanIX solutions | General | Consultor SAP LeanIX | 3 |
 
-**Esfuerzo total estimado (activación estándar, sin necesidades adicionales): ~13 horas.**
+**Esfuerzo total estimado (activación / configuración): ~3 horas.**
 
 ---
 
@@ -53,28 +48,25 @@
 
 | # | Actividad | Consultor requerido | Tiempo estimado (h, Medium) |
 |---|---|---|---|
-| 1 | Prueba unitaria con decisiones reales del cliente (varios tipos / dominios) | Consultor SAP LeanIX | 4 |
-| 2 | Documentación de la activación para el cliente (manual de usuario + manual de operación EA) | Consultor SAP LeanIX | 4 |
-| 3 | Transferencia de conocimiento al equipo de Enterprise Architecture | Consultor SAP LeanIX | 3 |
+| 1 | Prueba unitaria del caso de uso con datos reales en entorno de Quality | Consultor SAP LeanIX | 4 |
+| 2 | Documentación de la activación para el cliente (manual de usuario + manual de configuración) | Consultor SAP LeanIX | 4 |
+| 3 | Transferencia de conocimiento al equipo del cliente | Consultor SAP LeanIX | 3 |
 
 **Esfuerzo total estimado (validación + entrega): ~11 horas.**
 
 ---
 
-## 4. Consideraciones especiales (según guía SAP)
+## 4. Consideraciones especiales
 
-- La calidad de las entradas generadas depende **directamente del inventario y datos contextuales** del workspace.
-- Las decisiones siguen siendo **responsabilidad de los stakeholders aprobadores**: la IA prepara, los humanos deciden.
-- Definir **gobernanza** del flujo: quién revisa, quién aprueba, quién publica.
-- Sujeto a las condiciones de servicio vigentes de SAP LeanIX **[verificar]**.
-- Antes de la activación, revisar el **SAP Road Map Explorer** y release notes vigentes.
-- Este caso de uso **no incluye desarrollos custom**; cualquier extensión queda fuera del alcance estándar.
+- Disponibilidad indicada por SAP: **Generally Available**.
 
 ---
 
 ## Referencias oficiales
 
 - SAP Discovery Center — Detail Page: https://discovery-center.cloud.sap/ai-feature/e9e98379-9c5f-4f4a-84f6-12a772c66ae2/
+- SAP Help Portal — Initial Setup: https://help.sap.com/docs/leanix/ea/ai-capabilities#prerequisites
+- SAP Discovery Center — Pricing Details: No aplica
 
 ---
 
@@ -82,6 +74,6 @@
 
 | Bloque | Horas |
 |---|---|
-| Activación / configuración | 13 |
+| Activación / configuración | 3 |
 | Validación + documentación + KT | 11 |
-| **Total** | **24** |
+| **Total** | **14** |

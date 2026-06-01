@@ -1,36 +1,36 @@
-# Análisis caso de uso J825 — Resolution of Outsorted Billing Documents (IS-U)
+# Análisis caso de uso J825 — Resolution of Outsorted Billing Documents
 
-> Basado en información públicamente documentada por SAP. Valores marcados como **[verificar en SAP Help]** requieren validación oficial.
+> Análisis construido **únicamente** a partir de las fuentes oficiales de SAP asociadas al AI Feature/Agent J825 en `processed/AI_Features_Data_Enriched.xlsx`. Los campos para los que SAP no publica información aparecen literalmente como "No aplica", "No existe en la fuente oficial" o "No documentado en la fuente oficial". **No se ha completado ningún dato con conocimiento general ni con inferencia desde casos similares.**
 
-**Resumen del caso:** La capacidad se integra en el proceso de billing de IS-U para apoyar el procesamiento de documentos de facturación apartados u outsorted. SAP indica: *El valor de negocio está en mejorar eficiencia operativa, acelerar el tratamiento de excepciones de billing y disminuir carga manual en procesos de facturación.*
+**Fuentes oficiales consultadas:**
+- Detail Page (SAP Discovery Center): https://discovery-center.cloud.sap/ai-feature/f9a4201e-955f-4aaf-b41a-d2479fb13ed1/
+- Initial Setup (SAP Help Portal): https://help.sap.com/docs/SAP_S4HANA_ON-PREMISE/021b182b0c47416c8fafed67ebfd78a9/e668f657772ebc12e10000000a4450e5.html
+- Pricing Details (SAP Discovery Center): No aplica
+
+**Resumen del caso:** La capacidad se integra en el proceso de billing de IS-U para apoyar el procesamiento de documentos de facturación apartados u outsorted.
 
 ---
 
 ## 1. Prerequisitos para la activación
 
-### 1.1 Productos / componentes SAP requeridos
-- **SAP S/4HANA Cloud Private Edition** con **IS-U / Utilities** activo.
-- Componente **BI – Billing / Invoicing IS-U** operativo.
+### 1.1 Producto / componente SAP requerido
+- **SAP S/4HANA Cloud Private Edition**.
 
 ### 1.2 Licenciamiento / entitlement / paquete
-- Suscripción S/4HANA Cloud Private Edition con IS-U.
-- Entitlement Joule (+ capability ML si aplica) **[verificar]**.
+- Capability **Base**.
+- No aplica un paquete Premium.
 
 ### 1.3 Scope item relacionado
-- Scope items de Utilities - Billing Process — **[verificar IDs]**.
+- No documentado en la fuente oficial.
 
-### 1.4 Aplicaciones / apps Fiori / servicios requeridos
-- Apps Fiori de IS-U Billing Workbench / Outsorted Documents.
-- Joule habilitado en el Launchpad.
+### 1.4 Aplicaciones / apps Fiori / servicios / componentes técnicos
+- Según la fuente oficial abierta: Roles, Business Catalogs and Technical Catalogs This app is available for the role Billing Specialist (Utilities) (SAP_BR_BILLING_SPECIALIST_ISU). After you have successfully performed an action, the worklist is refreshed, and the related billing document is removed from the worklist. After you have reversed the document, further actions are possible, such as Change Contract, Change Rate Data, or Correct Meter Reading Results. You can simulate and create the bill after you have made your changes. If you have already defined your own CI_ERCH includes in the database table ERCH, you can display the related fields in this app.
 
 ### 1.5 Datos maestros / transaccionales previos
-- Configuración de billing IS-U (procedures, rate categories).
-- Volumen histórico de outsorted documents para entrenar/predecir.
+- No documentado en la fuente oficial.
 
 ### 1.6 Restricciones funcionales / técnicas / idioma
-- **Idioma**: inglés primariamente **[verificar]**.
-- Solo S/4HANA Cloud **Private** Edition.
-- Industry-specific: solo IS-U.
+- Disponible para SAP S/4HANA Cloud **Private Edition**.
 
 ---
 
@@ -38,13 +38,10 @@
 
 | # | Actividad estándar | Objeto de configuración | Tipo de configuración | Consultor requerido | Tiempo estimado (h, Medium) |
 |---|---|---|---|---|---|
-| 1 | Confirmar entitlement de Joule + ML | Subaccount BTP + entitlement | General | Consultor BTP | 2 |
-| 2 | Verificar configuración IS-U Billing | Configuración IS-U BI | General | Consultor IS-U | 4 |
-| 3 | Asignar business roles IS-U Billing a usuarios | Business Role / Authorizations | Particular (por usuario) | Consultor Seguridad | 3 |
-| 4 | Habilitar capability Joule para Outsorted Billing | Joule capability scope IS-U | General | Consultor Funcional IS-U + Joule | 3 |
-| 5 | Pruebas iniciales con documentos outsorted reales | Configuración funcional IS-U | General | Consultor IS-U | 4 |
+| 1 | Perform actions for one or more billing documents directly from the worklist: | Configuración de SAP S/4HANA Cloud Private Edition | General | Consultor Funcional SAP S/4HANA | 3 |
+| 2 | Perform actions: | Configuración de SAP S/4HANA Cloud Private Edition | General | Consultor Funcional SAP S/4HANA | 3 |
 
-**Esfuerzo total estimado (activación): ~16 horas.**
+**Esfuerzo total estimado (activación / configuración): ~6 horas.**
 
 ---
 
@@ -52,18 +49,26 @@
 
 | # | Actividad | Consultor requerido | Tiempo estimado (h, Medium) |
 |---|---|---|---|
-| 1 | Prueba unitaria con escenarios reales | Consultor IS-U | 6 |
-| 2 | Documentación para el cliente | Consultor IS-U | 4 |
-| 3 | Transferencia de conocimiento | Consultor IS-U | 3 |
+| 1 | Prueba unitaria del caso de uso con datos reales en entorno de Quality | Consultor Funcional SAP S/4HANA | 4 |
+| 2 | Documentación de la activación para el cliente (manual de usuario + manual de configuración) | Consultor Funcional SAP S/4HANA | 4 |
+| 3 | Transferencia de conocimiento al equipo del cliente | Consultor Funcional SAP S/4HANA | 3 |
 
-**Esfuerzo total estimado (validación + entrega): ~13 horas.**
+**Esfuerzo total estimado (validación + entrega): ~11 horas.**
 
 ---
 
 ## 4. Consideraciones especiales
 
-- Procesamiento ML reduce el backlog manual; usuario sigue validando excepciones.
-- Cobertura de motivos de outsorting puede ampliarse — revisar **Road Map Explorer**.
+- Restringido a SAP S/4HANA Cloud **Private Edition**.
+- Disponibilidad indicada por SAP: **Generally Available**.
+
+---
+
+## Referencias oficiales
+
+- SAP Discovery Center — Detail Page: https://discovery-center.cloud.sap/ai-feature/f9a4201e-955f-4aaf-b41a-d2479fb13ed1/
+- SAP Help Portal — Initial Setup: https://help.sap.com/docs/SAP_S4HANA_ON-PREMISE/021b182b0c47416c8fafed67ebfd78a9/e668f657772ebc12e10000000a4450e5.html
+- SAP Discovery Center — Pricing Details: No aplica
 
 ---
 
@@ -71,6 +76,6 @@
 
 | Bloque | Horas |
 |---|---|
-| Activación / configuración | 16 |
-| Validación + documentación + KT | 13 |
-| **Total** | **29** |
+| Activación / configuración | 6 |
+| Validación + documentación + KT | 11 |
+| **Total** | **17** |

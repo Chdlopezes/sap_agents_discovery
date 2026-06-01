@@ -1,37 +1,36 @@
 # Análisis caso de uso J178 — Inventory Builder
 
-> Análisis basado en información públicamente documentada por SAP (SAP Help Portal, SAP Discovery Center). Los valores marcados como **[verificar en SAP Help]** deben validarse contra la documentación oficial vigente.
+> Análisis construido **únicamente** a partir de las fuentes oficiales de SAP asociadas al AI Feature/Agent J178 en `processed/AI_Features_Data_Enriched.xlsx`. Los campos para los que SAP no publica información aparecen literalmente como "No aplica", "No existe en la fuente oficial" o "No documentado en la fuente oficial". **No se ha completado ningún dato con conocimiento general ni con inferencia desde casos similares.**
 
-**Resumen del caso:** **SAP LeanIX Inventory Builder** acelera el onboarding inicial de clientes, el mantenimiento de inventario y otras tareas de edición de datos dentro de SAP LeanIX. El valor se centra en reducir el esfuerzo manual para construir y mantener inventarios de arquitectura empresarial.
+**Fuentes oficiales consultadas:**
+- Detail Page (SAP Discovery Center): https://discovery-center.cloud.sap/ai-feature/3b4cd740-d09d-4e79-9efc-69bf49221e83/
+- Initial Setup (SAP Help Portal): https://docs-eam.leanix.net/docs/inventory-builder
+- Pricing Details (SAP Discovery Center): https://discovery-center.cloud.sap/ai-feature/3b4cd740-d09d-4e79-9efc-69bf49221e83/#pricing
+
+**Resumen del caso:** SAP LeanIX Inventory Builder acelera el onboarding inicial de clientes, el mantenimiento de inventario y otras tareas de edición de datos dentro de SAP LeanIX.
 
 ---
 
 ## 1. Prerequisitos para la activación
 
-### 1.1 Productos / componentes SAP requeridos
-- **SAP LeanIX solutions** (suscripción activa).
-- Workspace LeanIX del cliente disponible.
+### 1.1 Producto / componente SAP requerido
+- **SAP LeanIX solutions**.
 
 ### 1.2 Licenciamiento / entitlement / paquete
-- Suscripción vigente a **SAP LeanIX**.
-- Capability **Premium** — activación con **AI Units** **[verificar volumen vigente]**.
-- **SAP AI terms** firmados.
+- Capability **Premium**.
+- Pricing (sección *Pricing Details* de la Detail Page): Activar con AI Units Precio bajo solicitud AI Units requeridas para usar la oferta en el Cloud Service subyacente. Tiene prerrequisito.
 
 ### 1.3 Scope item relacionado
-- No aplica scope item.
+- No aplica (el producto base no utiliza scope items de SAP S/4HANA).
 
-### 1.4 Aplicaciones / apps Fiori / servicios requeridos
-- **SAP LeanIX** con módulos de Enterprise Architecture activos.
+### 1.4 Aplicaciones / apps Fiori / servicios / componentes técnicos
+- Según la fuente oficial abierta: The inventory builder is a premium AI feature. To use it in production workspaces, you must accept the AI terms and have AI units assigned to your tenant. In some test or demo workspaces, you may be able to try premium AI features without buying AI units. You have accepted the AI terms. You have purchased AI units and they are assigned to your tenant.
 
 ### 1.5 Datos maestros / transaccionales previos
-- Fuentes de datos a cargar / analizar (planillas, CMDB, exportaciones de otros sistemas) para que el builder pueda procesarlas.
+- No documentado en la fuente oficial.
 
 ### 1.6 Restricciones funcionales / técnicas / idioma
-- **Idioma**: capability publicada por SAP LeanIX **[verificar idiomas soportados vigentes]**.
-- **Formatos / volumen**: el contenido accesible no detalla límites técnicos exactos **[verificar]**.
-- **Roles**: EA Admin / Workspace Admin con acceso a Inventory Builder.
-
-> **Setup oficial SAP**: la página https://help.sap.com/docs/leanix/ea/ai-capabilities describe la activación de AI Capabilities en SAP LeanIX. El contenido completo del procedimiento específico de Inventory Builder no fue totalmente extractable.
+- No documentado en la fuente oficial.
 
 ---
 
@@ -39,14 +38,10 @@
 
 | # | Actividad estándar | Objeto de configuración | Tipo de configuración | Consultor requerido | Tiempo estimado (h, Medium) |
 |---|---|---|---|---|---|
-| 1 | Validar términos de IA de LeanIX (contractual) | Términos de IA SAP LeanIX | General | Consultor SAP LeanIX + Cliente Legal | 2 |
-| 2 | Confirmar AI Units asignadas para Inventory Builder | AI Units | General | Consultor BTP / Licencias | 2 |
-| 3 | Habilitar AI Capabilities en el workspace de SAP LeanIX | Workspace LeanIX — AI Capabilities | General | Consultor SAP LeanIX | 2 |
-| 4 | Preparar las fuentes de datos (formatos, calidad, mapeos) que va a procesar Inventory Builder | Fuentes de datos | Particular (por fuente) | Consultor SAP LeanIX + Cliente Funcional | 5 |
-| 5 | Asignar a los usuarios objetivo los roles LeanIX con acceso a Inventory Builder | Roles SAP LeanIX | Particular (por usuario / grupo) | Consultor Seguridad LeanIX | 2 |
-| 6 | Pruebas iniciales con datos representativos (cargas controladas y validación de resultados) | Configuración funcional LeanIX | General | Consultor SAP LeanIX | 4 |
+| 1 | Open this video in a new window | Configuración de SAP LeanIX solutions | General | Consultor SAP LeanIX | 3 |
+| 2 | Review the proposed fact sheets and relations. While reviewing, you can make the following changes: | Configuración de SAP LeanIX solutions | General | Consultor SAP LeanIX | 3 |
 
-**Esfuerzo total estimado (activación estándar, sin necesidades adicionales): ~17 horas.**
+**Esfuerzo total estimado (activación / configuración): ~6 horas.**
 
 ---
 
@@ -54,29 +49,26 @@
 
 | # | Actividad | Consultor requerido | Tiempo estimado (h, Medium) |
 |---|---|---|---|
-| 1 | Prueba unitaria con datos reales del cliente (varios formatos / dominios) | Consultor SAP LeanIX | 4 |
-| 2 | Documentación de la activación para el cliente (manual de usuario + manual de operación) | Consultor SAP LeanIX | 4 |
-| 3 | Transferencia de conocimiento al equipo del cliente (sesión funcional + Q&A) | Consultor SAP LeanIX | 3 |
+| 1 | Prueba unitaria del caso de uso con datos reales en entorno de Quality | Consultor SAP LeanIX | 4 |
+| 2 | Documentación de la activación para el cliente (manual de usuario + manual de configuración) | Consultor SAP LeanIX | 4 |
+| 3 | Transferencia de conocimiento al equipo del cliente | Consultor SAP LeanIX | 3 |
 
 **Esfuerzo total estimado (validación + entrega): ~11 horas.**
 
 ---
 
-## 4. Consideraciones especiales (según guía SAP)
+## 4. Consideraciones especiales
 
-- Es una capability **Premium** que consume **AI Units**: dimensionar el consumo durante el piloto.
-- Los datos cargados deben pasar por **revisión humana** antes de promoverse a producción: la IA acelera, no reemplaza el control de calidad de datos.
-- Considerar **gobernanza** sobre qué fuentes de datos están autorizadas a ingresar al workspace.
-- Sujeto a las condiciones de servicio vigentes de SAP LeanIX **[verificar]**.
-- Antes de la activación, revisar el **SAP Road Map Explorer** y release notes vigentes.
-- Este caso de uso **no incluye desarrollos custom**; cualquier extensión queda fuera del alcance estándar.
+- Caso **Premium**: el consumo se factura según el modelo de AI Units / paquete descrito en *Pricing Details* (ver sección 1.2).
+- Disponibilidad indicada por SAP: **Generally Available**.
 
 ---
 
 ## Referencias oficiales
 
 - SAP Discovery Center — Detail Page: https://discovery-center.cloud.sap/ai-feature/3b4cd740-d09d-4e79-9efc-69bf49221e83/
-- SAP Help Portal — AI Capabilities (LeanIX): https://help.sap.com/docs/leanix/ea/ai-capabilities
+- SAP Help Portal — Initial Setup: https://docs-eam.leanix.net/docs/inventory-builder
+- SAP Discovery Center — Pricing Details: https://discovery-center.cloud.sap/ai-feature/3b4cd740-d09d-4e79-9efc-69bf49221e83/#pricing
 
 ---
 
@@ -84,6 +76,6 @@
 
 | Bloque | Horas |
 |---|---|
-| Activación / configuración | 17 |
+| Activación / configuración | 6 |
 | Validación + documentación + KT | 11 |
-| **Total** | **28** |
+| **Total** | **17** |

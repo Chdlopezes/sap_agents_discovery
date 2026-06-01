@@ -1,37 +1,37 @@
 # Análisis caso de uso J241 — Maintenance Order Recommendation
 
-> Basado en información públicamente documentada por SAP. Valores marcados como **[verificar en SAP Help]** requieren validación oficial.
+> Análisis construido **únicamente** a partir de las fuentes oficiales de SAP asociadas al AI Feature/Agent J241 en `processed/AI_Features_Data_Enriched.xlsx`. Los campos para los que SAP no publica información aparecen literalmente como "No aplica", "No existe en la fuente oficial" o "No documentado en la fuente oficial". **No se ha completado ningún dato con conocimiento general ni con inferencia desde casos similares.**
 
-**Resumen del caso:** Recomienda órdenes de mantenimiento que resolvieron incidentes similares a partir del historial de mantenimiento. El planificador revisa las recomendaciones y selecciona una orden como referencia para crear una nueva orden de mantenimiento. SAP indica: *40% de aumento en productividad del planificador de mantenimiento; 1% de reducción del downtime no planificado; 5% de aumento en la tasa de resolución en el primer intento de técnicos de mantenimiento.*
+**Fuentes oficiales consultadas:**
+- Detail Page (SAP Discovery Center): https://discovery-center.cloud.sap/ai-feature/d2a47a4f-3ea2-4f5b-9bdf-43fc2a3d95f2/
+- Initial Setup (SAP Help Portal): https://help.sap.com/docs/SAP_S4HANA_ON-PREMISE/e72f747389b340229f7fa343975bfa57/ff90ad7fa38a41a5a0f3a8faa21189f9.html?locale=en-US
+- Pricing Details (SAP Discovery Center): https://discovery-center.cloud.sap/ai-feature/d2a47a4f-3ea2-4f5b-9bdf-43fc2a3d95f2/#pricing
+
+**Resumen del caso:** Recomienda órdenes de mantenimiento que resolvieron incidentes similares a partir del historial de mantenimiento. El planificador revisa las recomendaciones y selecciona una orden como referencia para crear una nueva orden de mantenimiento.
 
 ---
 
 ## 1. Prerequisitos para la activación
 
-### 1.1 Productos / componentes SAP requeridos
-- **SAP S/4HANA Cloud Private Edition** con Joule habilitado.
-- Componente **PM / EAM – Plant Maintenance / Enterprise Asset Management** operativo.
-- Datos históricos suficientes de maintenance orders para entrenar/recomendar.
+### 1.1 Producto / componente SAP requerido
+- **SAP S/4HANA Cloud Private Edition**.
 
 ### 1.2 Licenciamiento / entitlement / paquete
-- Suscripción S/4HANA Cloud Private Edition.
-- Entitlement Joule (capability puede ser Premium dado el componente ML) **[verificar]**.
+- Capability **Premium**.
+- Paquete comercial: **Joule Premium for Supply Chain Management**.
+- Pricing (sección *Pricing Details* de la Detail Page): AI Units requeridos. En Pricing Details se indica que la oferta se adquiere como parte de Joule Premium for Supply Chain Management y no por separado; el precio está disponible bajo solicitud. Las solicitudes adicionales se cobran en bloques de 1.000 por 2 AI Unit(s).
 
 ### 1.3 Scope item relacionado
-- Scope items de Plant Maintenance / EAM — **[verificar IDs]**.
+- No documentado en la fuente oficial.
 
-### 1.4 Aplicaciones / apps Fiori / servicios requeridos
-- Apps Fiori *Manage Maintenance Orders*, *Maintenance Planner*.
-- Joule habilitado en el Launchpad.
+### 1.4 Aplicaciones / apps Fiori / servicios / componentes técnicos
+- Según la fuente oficial abierta: As a system administrator, you need to perform some initial setup steps to enable the system to generate order recommendations. Use of this AI-assisted feature may require additional entitlement and authorization. Please consult your SAP account executive for more information. Required Users and Authorizations Make sure that you have access to the Intelligent Scenario Management app (F4470), which is included in the business role template for the Analytics Specialist (SAP_BR_ANALYTICS_SPECIALIST). Personalized Recommendation is a service provided on SAP Business Technology Platform (SAP BTP). To use this service, contact SAP to request a service instance for Personalized Recommendation and to be onboarded to the intelligent scenario EAM_MAINTORD_RECMDN. Make sure you have noted down the name of the intelligent scenario, as you will need it later in the setup process. For more information, see Requesting Access to SAP AI Services on SAP Business Technology Platform (SAP BTP).
 
 ### 1.5 Datos maestros / transaccionales previos
-- Functional locations, equipment, task lists, maintenance plans, historial de OTs cerradas.
-- Volumen de datos históricos suficiente para que las recomendaciones tengan calidad.
+- No documentado en la fuente oficial.
 
 ### 1.6 Restricciones funcionales / técnicas / idioma
-- **Idioma**: inglés primariamente **[verificar]**.
-- Solo S/4HANA Cloud **Private** Edition.
-- Usuario con autorizaciones PM.
+- Disponible para SAP S/4HANA Cloud **Private Edition**.
 
 ---
 
@@ -39,13 +39,9 @@
 
 | # | Actividad estándar | Objeto de configuración | Tipo de configuración | Consultor requerido | Tiempo estimado (h, Medium) |
 |---|---|---|---|---|---|
-| 1 | Confirmar entitlement de Joule + capability ML | Subaccount BTP + entitlement | General | Consultor BTP | 2 |
-| 2 | Verificar configuración PM (order types, activity types, task lists) | Configuración PM | General | Consultor PM | 3 |
-| 3 | Asignar business roles PM a usuarios | Business Role / Business Catalog | Particular (por usuario) | Consultor Seguridad | 3 |
-| 4 | Habilitar capability Joule para Maintenance Recommendation | Joule capability scope | General | Consultor Funcional PM + Joule | 3 |
-| 5 | Pruebas iniciales: validar recomendaciones contra historial real | Configuración funcional PM | General | Consultor PM | 4 |
+| 1 | Request Access to SAP Business Technology Platform (SAP BTP) | Configuración de SAP S/4HANA Cloud Private Edition | General | Consultor Funcional SAP S/4HANA | 3 |
 
-**Esfuerzo total estimado (activación): ~15 horas.**
+**Esfuerzo total estimado (activación / configuración): ~3 horas.**
 
 ---
 
@@ -53,19 +49,27 @@
 
 | # | Actividad | Consultor requerido | Tiempo estimado (h, Medium) |
 |---|---|---|---|
-| 1 | Prueba unitaria con escenarios reales (recomendaciones por tipo de equipo) | Consultor PM | 5 |
-| 2 | Documentación para el cliente | Consultor PM | 4 |
-| 3 | Transferencia de conocimiento | Consultor PM | 3 |
+| 1 | Prueba unitaria del caso de uso con datos reales en entorno de Quality | Consultor Funcional SAP S/4HANA | 4 |
+| 2 | Documentación de la activación para el cliente (manual de usuario + manual de configuración) | Consultor Funcional SAP S/4HANA | 4 |
+| 3 | Transferencia de conocimiento al equipo del cliente | Consultor Funcional SAP S/4HANA | 3 |
 
-**Esfuerzo total estimado (validación + entrega): ~12 horas.**
+**Esfuerzo total estimado (validación + entrega): ~11 horas.**
 
 ---
 
 ## 4. Consideraciones especiales
 
-- Calidad de recomendación depende del volumen y limpieza del histórico.
-- Validar periodicidad de reentrenamiento (si aplica).
-- Usuario confirma antes de crear la OT.
+- Caso **Premium**: el consumo se factura según el modelo de AI Units / paquete descrito en *Pricing Details* (ver sección 1.2).
+- Restringido a SAP S/4HANA Cloud **Private Edition**.
+- Disponibilidad indicada por SAP: **Generally Available**.
+
+---
+
+## Referencias oficiales
+
+- SAP Discovery Center — Detail Page: https://discovery-center.cloud.sap/ai-feature/d2a47a4f-3ea2-4f5b-9bdf-43fc2a3d95f2/
+- SAP Help Portal — Initial Setup: https://help.sap.com/docs/SAP_S4HANA_ON-PREMISE/e72f747389b340229f7fa343975bfa57/ff90ad7fa38a41a5a0f3a8faa21189f9.html?locale=en-US
+- SAP Discovery Center — Pricing Details: https://discovery-center.cloud.sap/ai-feature/d2a47a4f-3ea2-4f5b-9bdf-43fc2a3d95f2/#pricing
 
 ---
 
@@ -73,6 +77,6 @@
 
 | Bloque | Horas |
 |---|---|
-| Activación / configuración | 15 |
-| Validación + documentación + KT | 12 |
-| **Total** | **27** |
+| Activación / configuración | 3 |
+| Validación + documentación + KT | 11 |
+| **Total** | **14** |

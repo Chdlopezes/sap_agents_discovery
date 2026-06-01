@@ -1,36 +1,36 @@
 # Análisis caso de uso J48 — Translation Support
 
-> Análisis basado en información públicamente documentada por SAP (SAP Discovery Center). Los valores marcados como **[verificar en SAP Help]** deben validarse contra la documentación oficial vigente.
+> Análisis construido **únicamente** a partir de las fuentes oficiales de SAP asociadas al AI Feature/Agent J48 en `processed/AI_Features_Data_Enriched.xlsx`. Los campos para los que SAP no publica información aparecen literalmente como "No aplica", "No existe en la fuente oficial" o "No documentado en la fuente oficial". **No se ha completado ningún dato con conocimiento general ni con inferencia desde casos similares.**
 
-**Resumen del caso:** Traducción asistida por IA en **SAP LeanIX** que permite a administradores agregar y traducir etiquetas y textos de ayuda para atributos nuevos o existentes en la configuración del metamodelo. El valor está en reducir el tiempo requerido para traducir términos del metamodelo y mejorar la accesibilidad del producto.
+**Fuentes oficiales consultadas:**
+- Detail Page (SAP Discovery Center): https://discovery-center.cloud.sap/ai-feature/6719d6d7-fda7-4ea9-b0dd-43b99fbab6b6/
+- Initial Setup (SAP Help Portal): https://docs-eam.leanix.net/docs/ai-capabilities
+- Pricing Details (SAP Discovery Center): No aplica
+
+**Resumen del caso:** La traducción asistida por IA permite a administradores agregar y traducir etiquetas y textos de ayuda para atributos nuevos o existentes en la configuración del metamodelo de SAP LeanIX.
 
 ---
 
 ## 1. Prerequisitos para la activación
 
-### 1.1 Productos / componentes SAP requeridos
-- **SAP LeanIX solutions** (suscripción activa).
-- Workspace LeanIX del cliente operativo.
+### 1.1 Producto / componente SAP requerido
+- **SAP LeanIX solutions**.
 
 ### 1.2 Licenciamiento / entitlement / paquete
-- Suscripción vigente a **SAP LeanIX**.
-- Capability **Base** **[verificar en AI Foundation Catalog vigente]**.
-- **SAP AI terms** firmados.
+- Capability **Base**.
+- No aplica un paquete Premium.
 
 ### 1.3 Scope item relacionado
-- No aplica scope item.
+- No aplica (el producto base no utiliza scope items de SAP S/4HANA).
 
-### 1.4 Aplicaciones / apps Fiori / servicios requeridos
-- **SAP LeanIX** con acceso al **metamodel administration** del workspace.
+### 1.4 Aplicaciones / apps Fiori / servicios / componentes técnicos
+- Según la fuente oficial abierta: If you haven’t signed your contract and want to activate AI capabilities, contact your SAP Account Executive to sign the SAP AI terms and start the activation process.
 
 ### 1.5 Datos maestros / transaccionales previos
-- Metamodelo LeanIX del cliente con atributos / labels existentes a traducir.
+- No documentado en la fuente oficial.
 
 ### 1.6 Restricciones funcionales / técnicas / idioma
-- **Idiomas soportados**: según el modelo subyacente **[verificar matriz vigente]**.
-- **Roles**: Workspace Admin / EA Admin con acceso a la configuración del metamodelo.
-
-> **Nota**: SAP Discovery Center indica que no existe enlace de Initial Setup específico en la sección Resources. Aplican los prerequisitos generales de AI Capabilities de SAP LeanIX.
+- No documentado en la fuente oficial.
 
 ---
 
@@ -38,13 +38,9 @@
 
 | # | Actividad estándar | Objeto de configuración | Tipo de configuración | Consultor requerido | Tiempo estimado (h, Medium) |
 |---|---|---|---|---|---|
-| 1 | Validar términos de IA de LeanIX (contractual) | Términos de IA SAP LeanIX | General | Consultor SAP LeanIX + Cliente Legal | 2 |
-| 2 | Habilitar AI Capabilities en el workspace de SAP LeanIX | Workspace LeanIX — AI Capabilities | General | Consultor SAP LeanIX | 2 |
-| 3 | Identificar atributos / labels del metamodelo objetivo de traducción | Metamodel LeanIX | Particular (por atributo / dominio) | Consultor SAP LeanIX | 3 |
-| 4 | Asignar a los usuarios objetivo los roles administrativos LeanIX con acceso al metamodelo | Roles SAP LeanIX | Particular (por usuario / grupo) | Consultor Seguridad LeanIX | 2 |
-| 5 | Pruebas iniciales con un Workspace Admin (traducir un conjunto representativo de labels) | Configuración funcional LeanIX | General | Consultor SAP LeanIX | 2 |
+| 1 | Register to use Joule in SAP LeanIX | Configuración de SAP LeanIX solutions | General | Consultor SAP LeanIX | 3 |
 
-**Esfuerzo total estimado (activación estándar, sin necesidades adicionales): ~11 horas.**
+**Esfuerzo total estimado (activación / configuración): ~3 horas.**
 
 ---
 
@@ -52,27 +48,25 @@
 
 | # | Actividad | Consultor requerido | Tiempo estimado (h, Medium) |
 |---|---|---|---|
-| 1 | Prueba unitaria con traducciones reales del cliente (varios dominios / idiomas) | Consultor SAP LeanIX | 4 |
-| 2 | Documentación de la activación para el cliente (manual de usuario + lineamientos de traducción) | Consultor SAP LeanIX | 4 |
-| 3 | Transferencia de conocimiento al equipo del cliente (sesión funcional + Q&A) | Consultor SAP LeanIX | 3 |
+| 1 | Prueba unitaria del caso de uso con datos reales en entorno de Quality | Consultor SAP LeanIX | 4 |
+| 2 | Documentación de la activación para el cliente (manual de usuario + manual de configuración) | Consultor SAP LeanIX | 4 |
+| 3 | Transferencia de conocimiento al equipo del cliente | Consultor SAP LeanIX | 3 |
 
 **Esfuerzo total estimado (validación + entrega): ~11 horas.**
 
 ---
 
-## 4. Consideraciones especiales (según guía SAP)
+## 4. Consideraciones especiales
 
-- Las traducciones generadas son **borradores**: deben ser revisadas por personas con dominio del idioma destino antes de publicarse, especialmente para términos técnicos.
-- Considerar **gobernanza** sobre quién aprueba el cambio en el metamodelo (afecta a todos los usuarios del workspace).
-- Sujeto a las condiciones de servicio vigentes de SAP LeanIX **[verificar]**.
-- Antes de la activación, revisar el **SAP Road Map Explorer** y release notes vigentes.
-- Este caso de uso **no incluye desarrollos custom**; cualquier extensión queda fuera del alcance estándar.
+- Disponibilidad indicada por SAP: **Generally Available**.
 
 ---
 
 ## Referencias oficiales
 
 - SAP Discovery Center — Detail Page: https://discovery-center.cloud.sap/ai-feature/6719d6d7-fda7-4ea9-b0dd-43b99fbab6b6/
+- SAP Help Portal — Initial Setup: https://docs-eam.leanix.net/docs/ai-capabilities
+- SAP Discovery Center — Pricing Details: No aplica
 
 ---
 
@@ -80,6 +74,6 @@
 
 | Bloque | Horas |
 |---|---|
-| Activación / configuración | 11 |
+| Activación / configuración | 3 |
 | Validación + documentación + KT | 11 |
-| **Total** | **22** |
+| **Total** | **14** |
