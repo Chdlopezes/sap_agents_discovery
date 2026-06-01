@@ -32,11 +32,10 @@ Importante:
 
 ARCHIVO DE SALIDA
 
-Genera un archivo Excel `.xlsx` con exactamente 3 hojas:
+Genera un archivo Excel `.xlsx` con exactamente 2 hojas:
 
 1. AI Features & Agents
 2. Pricing Premium
-3. Initial Setup
 
 No agregues hojas adicionales.
 No agregues columnas adicionales salvo que sean las definidas en este prompt.
@@ -118,83 +117,6 @@ El campo “Pricing Details” debe estar en español, pero sin alterar el signi
 
 ---
 
-HOJA 3: “Initial Setup”
-
-Para cada registro del lote, debes hacer este flujo obligatorio:
-
-1. Entrar primero al link de “Detail Page”.
-2. Dentro de esa página, buscar la sección “Resources”.
-3. Dentro de “Resources”, identificar únicamente el link llamado exactamente o de forma equivalente:
-   - “Initial Setup - SAP Help Portal”
-4. Solo si ese link existe dentro de Resources, abrirlo.
-5. Usar únicamente ese link de SAP Help Portal para llenar la información de Initial Setup.
-
-Regla crítica:
-
-- El link de Initial Setup debe salir únicamente desde la página de “Detail Page”.
-- No debes buscar el Initial Setup en Google.
-- No debes buscarlo directamente en SAP Help Portal.
-- No debes usar páginas alternativas.
-- No debes usar documentación general de SAP Help Portal si no fue enlazada desde la sección Resources de la Detail Page.
-- Si el link no aparece en Resources, escribe:
-  “No existe enlace de Initial Setup en la sección Resources”.
-- Si el link aparece pero no se puede acceder, realiza reintentos antes de marcarlo como inaccesible.
-- Si después de reintentos no se puede acceder, escribe:
-  “El enlace de Initial Setup aparece en Resources, pero no fue posible acceder después de reintentos”.
-- No rellenes información de setup con otras fuentes.
-
-Columnas de esta hoja:
-
-- Name
-- Product
-- Identifier
-- Detail Page
-- Prerequisitos
-- Procedimiento
-- Próximos Pasos
-- Dificultad estimada
-- Tipo
-- Link
-
-Criterios para llenar cada columna:
-
-Prerequisitos:
-- Extrae y resume los prerrequisitos indicados en el Initial Setup.
-- Si no hay prerrequisitos explícitos, escribe: “No se indican prerrequisitos explícitos en el Initial Setup”.
-
-Procedimiento:
-- Resume los pasos principales de configuración.
-- Mantén orden lógico.
-- No incluyas detalles irrelevantes o demasiado técnicos si no son necesarios para entender el proceso.
-
-Próximos Pasos:
-- Extrae próximos pasos si existen.
-- Si no existen, escribe: “No se indican próximos pasos explícitos”.
-
-Dificultad estimada:
-- Clasifica como Baja, Media o Alta.
-- Esta clasificación debe basarse únicamente en la complejidad observada en el Initial Setup.
-- Usa estos criterios:
-  - Baja: pocos pasos, configuración simple, sin integraciones complejas.
-  - Media: requiere roles, configuración administrativa, activación de servicios, comunicación o parametrización.
-  - Alta: requiere múltiples servicios, integraciones, destinos, comunicación entre sistemas, configuración técnica avanzada o dependencias complejas.
-
-Tipo:
-- Clasifica el setup de forma breve, por ejemplo:
-  - Activación de funcionalidad
-  - Configuración administrativa
-  - Configuración técnica
-  - Integración
-  - Configuración de servicio
-  - No disponible
-
-Link:
-- Incluye el link exacto de Initial Setup encontrado en Resources.
-- Si no existe, coloca la frase indicada:
-  “No existe enlace de Initial Setup en la sección Resources”.
-
----
-
 FORMATO DEL EXCEL
 
 El archivo debe tener formato profesional y limpio:
@@ -204,10 +126,9 @@ El archivo debe tener formato profesional y limpio:
 - Texto ajustado en celdas largas.
 - Congelar la primera fila si es posible.
 - No usar colores excesivos.
-- Mantener nombres exactos de las tres hojas:
+- Mantener nombres exactos de las dos hojas:
   - AI Features & Agents
   - Pricing Premium
-  - Initial Setup
 
 Nombre sugerido del archivo:
 
@@ -223,17 +144,13 @@ CONTROL DE CALIDAD ANTES DE ENTREGAR
 
 Antes de entregar el archivo, valida lo siguiente:
 
-1. El Excel tiene exactamente 3 hojas.
+1. El Excel tiene exactamente 2 hojas.
 2. No hay hojas adicionales.
 3. La hoja “AI Features & Agents” tiene únicamente registros del lote solicitado.
 4. La hoja “Pricing Premium” contiene solo registros con Commercial Type = Premium.
 5. Si no hay Premium, la hoja “Pricing Premium” existe pero solo con encabezados.
-6. La hoja “Initial Setup” incluye una fila por cada registro del lote.
-7. Ningún Initial Setup fue buscado fuera del link encontrado en Resources.
-8. Si no había link de Initial Setup en Resources, se usó exactamente:
-   “No existe enlace de Initial Setup en la sección Resources”.
-9. No se usaron fuentes externas.
-10. El archivo final es descargable en formato `.xlsx`.
+6. No se usaron fuentes externas.
+7. El archivo final es descargable en formato `.xlsx`.
 
 ---
 
@@ -244,7 +161,6 @@ Cuando termines, responde de forma breve indicando:
 - Lote procesado.
 - Número de registros procesados.
 - Número de registros Premium incluidos en Pricing Premium.
-- Si hubo enlaces de Initial Setup no encontrados o inaccesibles.
 - Link de descarga del archivo Excel.
 
 No incluyas todo el contenido del Excel en el mensaje final; solo entrega el archivo.
@@ -267,9 +183,3 @@ Hoja 2: Pricing Premium
 Si el lote no tiene Premium:
 | Name | Product | Commercial Type | Package | Identifier | Detail Page | Pricing Details |
 | ---- | ------- | --------------- | ------- | ---------- | ----------- | --------------- |
-
-Hoja 3: Initial Setup
-
-| Name                   | Product      | Identifier | Detail Page   | Prerequisitos               | Procedimiento                         | Próximos Pasos                                | Dificultad estimada | Tipo                  | Link                                |
-| ---------------------- | ------------ | ---------- | ------------- | --------------------------- | ------------------------------------- | --------------------------------------------- | ------------------- | --------------------- | ----------------------------------- |
-| Nombre de la capacidad | Producto SAP | ID         | Link original | Resumen desde Initial Setup | Pasos principales desde Initial Setup | Próximos pasos o texto estándar si no existen | Baja / Media / Alta | Tipo de configuración | Link exacto encontrado en Resources |

@@ -12,19 +12,18 @@ Analiza el caso de uso **J214** — *Database Administration*.
 
 ## 3.1 Antes de escribir cualquier contenido
 
-> **El XLSX `processed/AI_Features_Data_Enriched.xlsx` NO es la fuente del análisis. Es solo un *índice* que apunta a las URLs oficiales de SAP. La fuente real son las páginas web a las que esas URLs llevan.** Los campos `Prerequisitos`, `Procedimiento`, `Próximos Pasos`, `Dificultad estimada` del XLSX son pre-resúmenes generados por un proceso de enriquecimiento previo que puede estar incompleto o haber fallado parcialmente — **no los uses como sustituto del contenido de las URLs**.
+> **El XLSX `processed/AI_Features_Data_Enriched.xlsx` NO es la fuente del análisis. Es solo un *índice* (2 hojas) que apunta a las URLs oficiales de SAP. La fuente real son las páginas web a las que esas URLs llevan.** La URL del Initial Setup **no está en el XLSX**: se resuelve **en vivo** desde la sección *Resources* de la `Detail Page` (ver 3.1.1).
 
 Localiza la fila del Identifier `J214` en estas hojas del XLSX y anota las URLs:
 
-- **"AI Features & Agents"** — toma: `Name`, `Commercial Type`, `Product`, `Package`, `Detail Page` (**URL**), `Overview` (resumen, usable para el bloque "Resumen del caso"), `Beneficios`, `Business Value`, `Availability`.
-- **"Initial Setup"** — el campo `Link` y los campos `Prerequisitos`/`Procedimiento`/`Próximos Pasos` provienen de un enriquecimiento que **falló en muchas filas y NO son fiables**: úsalos solo como pista de cross-check, nunca como fuente. La URL real del Initial Setup se resuelve **en vivo** desde la sección *Resources* de la `Detail Page` (ver 3.1.1).
-- **"Pricing Premium"** — solo si `Commercial Type = Premium`. URL = `Detail Page` + ancla a *Pricing Details*. Campo `Pricing Details` del XLSX = resumen del enriquecimiento, no la fuente.
+- **"AI Features & Agents"** — toma: `Name`, `Commercial Type`, `Product`, `Package`, `Detail Page` (**URL** — punto de partida para resolver el Initial Setup en vivo), `Overview` (resumen, usable para el bloque "Resumen del caso"), `Beneficios`, `Business Value`, `Availability`.
+- **"Pricing Premium"** — solo si `Commercial Type = Premium`. URL = `Detail Page` + ancla a *Pricing Details*. Campo `Pricing Details` del XLSX = resumen del enriquecimiento; confírmalo en la página.
 
 ## 3.1.1 Flujo OBLIGATORIO para obtener la fuente
 
 > Para **cómo abrir una URL en este entorno** (qué herramienta usar, cómo detectar SPAs JavaScript, cómo descubrir enlaces dentro de una página), consulta la sección **"Cómo abrir páginas web"** en `docs/AGENT_GUIDE.md` (path desde la raíz del repositorio). Aquí solo se describe **qué fuente buscar y en qué orden**.
 
-> **REGLA BASE (no negociable): la URL del Initial Setup se resuelve EN VIVO desde la sección _Resources_ de la `Detail Page`, NO desde el campo `Link` del XLSX.** Ese campo (y `Prerequisitos`/`Procedimiento`/`Próximos Pasos`) proviene de un enriquecimiento previo que **falló en muchas filas**: links no resueltos, marcados como inexistentes cuando sí existen, o apuntando a páginas equivocadas. El XLSX es solo un índice y una pista de cross-check.
+> **REGLA BASE (no negociable): la URL del Initial Setup se resuelve EN VIVO desde la sección _Resources_ de la `Detail Page`.** El XLSX (2 hojas) **no** contiene esa URL ni los pasos de activación: solo aporta la `Detail Page` como punto de partida. Toda afirmación técnica del análisis (prerequisitos, business catalogs/roles, pasos, dificultad) debe provenir de una página oficial SAP **abierta en vivo**, nunca del XLSX.
 
 Antes de escribir cualquier sección del análisis, obtén la fuente principal siguiendo este orden:
 
@@ -43,9 +42,7 @@ Antes de escribir cualquier sección del análisis, obtén la fuente principal s
 
 4. **Si _Resources_ no trae "Initial Setup" ni "AI Feature":** sigue cualquier otro enlace de _Resources_ a `help.sap.com` claramente pertinente (Setup Guide, Configuration Guide, página del módulo/app). Si ninguno aplica, usa la `Detail Page` como única fuente y declara en la sección 2 el bloque canónico (ver 3.5, Caso 3).
 
-5. **Cross-check con el XLSX (opcional):** el campo `Link` de la hoja Initial Setup puede coincidir con el enlace que resolviste en vivo; si **difiere**, manda el de _Resources_ (el del XLSX puede estar mal).
-
-6. **Valida antes de escribir:** no escribas ninguna sección hasta haber abierto al menos una URL oficial **en vivo**. El XLSX **no basta**. Si todo el fetching falla, pide al usuario que pegue el contenido.
+5. **Valida antes de escribir:** no escribas ninguna sección hasta haber abierto al menos una URL oficial **en vivo**. El XLSX **no basta** (no contiene la fuente). Si todo el fetching falla, pide al usuario que pegue el contenido.
 
 Toda URL que uses debe ser **publicada por SAP** en un dominio oficial. Si una URL no es claramente oficial de SAP, no la uses.
 
@@ -53,11 +50,11 @@ Toda URL que uses debe ser **publicada por SAP** en un dominio oficial. Si una U
 
 ### Fuente principal (cuando existe)
 
-1. **El `Link` de la hoja "Initial Setup"** para este ID (URL de SAP Help Portal). **Es la fuente principal del análisis.** Cuando existe, la mayor parte del contenido — sobre todo prerequisitos técnicos, pasos de activación y dificultad — debe basarse en esta URL.
+1. **La página de Initial Setup** resuelta en vivo desde la sección *Resources* de la `Detail Page` (paso 1 de 3.1.1; URL de SAP Help Portal). **Es la fuente principal del análisis.** La mayor parte del contenido — sobre todo prerequisitos técnicos, pasos de activación y dificultad — debe basarse en esta URL.
 
 ### Fuentes complementarias (siempre permitidas, oficiales de SAP)
 
-Puedes usarlas para **complementar** la fuente principal cuando cubra un campo que el Link de Initial Setup omite, o como **fuente sustituta** cuando el Link no existe:
+Puedes usarlas para **complementar** la fuente principal cuando ésta omita un campo, o como **fuente sustituta** cuando no hay enlace de Initial Setup en *Resources*:
 
 2. **El enlace `AI Feature - SAP Help Portal`** de la sección *Resources* de la `Detail Page`. Es el **sustituto principal** del Initial Setup cuando éste no existe en *Resources* (paso 2 de 3.1.1): describe la capacidad y suele listar prerequisitos accionables, business roles y modo de uso.
 3. **La `Detail Page`** del ID (URL de SAP Discovery Center). Fuente natural para Overview, beneficios, valor de negocio, disponibilidad (GA / wave), `Commercial Type`, `Product`, `Package`.
@@ -133,7 +130,7 @@ Produce un único archivo Markdown con exactamente las siguientes secciones, en 
 
 **Fuentes oficiales consultadas:**
 - Detail Page (SAP Discovery Center): <URL exacta del campo Detail Page del XLSX>
-- Initial Setup (SAP Help Portal): <URL exacta del campo Link de la hoja Initial Setup, o "No existe en la fuente oficial" si está vacío>
+- Initial Setup (SAP Help Portal): <URL resuelta en vivo desde *Resources* (paso 1 de 3.1.1), o "No existe en la fuente oficial" si no hay enlace accesible>
 - Pricing Details (SAP Discovery Center): <URL Detail Page + "#pricing", solo si Commercial Type = Premium; "No aplica" en caso contrario>
 - Fuentes complementarias oficiales SAP (si aplican): <una línea por cada URL adicional usada — SAP Help Portal, SAP Road Map Explorer, SAP AI Foundation Catalog, página oficial del producto. Si no usaste fuentes complementarias, omite esta línea o pon "Ninguna">
 
@@ -174,7 +171,7 @@ Una sub-sección por cada categoría. Para cada una, registra **solo** lo que ap
 
 ## 4.3 Sección 2 — Pasos de activación / configuración estándar
 
-Lista únicamente los pasos que **la fuente viva describe textualmente** (la página de Initial Setup —o su sustituto "AI Feature - SAP Help Portal"— que abriste según 3.1.1). El campo `Procedimiento` del XLSX **no es fuente**: úsalo solo si coincide con lo que leíste en la página viva; ante cualquier discrepancia, manda la fuente viva.
+Lista únicamente los pasos que **la fuente viva describe textualmente** (la página de Initial Setup —o su sustituto "AI Feature - SAP Help Portal"— que abriste según 3.1.1). El XLSX **no contiene pasos**: no inventes ni infieras; si la fuente viva no describe pasos, aplica el bloque canónico de 3.5.
 
 **Si la fuente oficial no describe pasos de activación**, escribe el bloque exacto siguiente y NO incluyas tabla:
 
@@ -258,7 +255,7 @@ Antes de escribir el archivo `.md`, autorevisa el análisis y descarta cualquier
 
 ## 5.1 Sobre la fuente
 
-- ¿Resolví la URL del Initial Setup **en vivo** desde la sección *Resources* de la `Detail Page` (paso 1 de 3.1.1), y no me limité al campo `Link` del XLSX? → Si solo usé el XLSX y nunca abrí ninguna URL en vivo, **el análisis no se puede guardar**. Vuelve al paso 1.
+- ¿Resolví la URL del Initial Setup **en vivo** desde la sección *Resources* de la `Detail Page` (paso 1 de 3.1.1)? → Si solo usé el XLSX y nunca abrí ninguna URL en vivo, **el análisis no se puede guardar**. Vuelve al paso 1.
 - ¿Si no había "Initial Setup" en *Resources*, usé el enlace **"AI Feature - SAP Help Portal"** como sustituto (paso 2), y reintenté variantes/versión antes de declarar algo inaccesible (paso 3)? → Si no, hazlo.
 - ¿Cada afirmación técnica del análisis (nombre de business catalog, business role, IAM app, app Fiori, scope item, condition type, horas) está respaldada por algo que leí literalmente en la URL abierta? → Si una afirmación no está respaldada, elimínala o reemplázala por la frase canónica correspondiente.
 - ¿Las URLs listadas en "Fuentes oficiales consultadas" y "Referencias oficiales" son las que efectivamente abrí (no solo las que estaban en el XLSX)? → Si no, corrige.

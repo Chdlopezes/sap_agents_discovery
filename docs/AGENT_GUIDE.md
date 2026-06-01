@@ -124,12 +124,13 @@ Cuando `pipeline_status.py` reporta `pending enrichment > 0`.
    - Para **AI Features & Agents** usa SOLO la URL `Detail Page` del CSV.
    - Para **Pricing Premium** incluye solo IDs con `Commercial Type = Premium`
      y usa SOLO la sección *Pricing Details* de la misma `Detail Page`.
-   - Para **Initial Setup** abre `Detail Page`, busca la sección *Resources*,
-     y úsala SOLO si tiene un enlace "Initial Setup - SAP Help Portal".
-     Si no existe, escribe el texto estándar definido en el prompt.
+   - El enriquecimiento genera **2 hojas** (AI Features & Agents, Pricing
+     Premium). La antigua hoja *Initial Setup* fue eliminada: ese contenido
+     ahora se produce en vivo en la Stage 4b (desde *Resources* de la Detail
+     Page), no se pre-enriquece aquí.
 
 3. **Visita cada `Detail Page`** con `WebFetch`. Extrae el contenido
-   relevante para las 3 hojas. Para campos que no aparecen, usa los
+   relevante para las 2 hojas. Para campos que no aparecen, usa los
    textos estándar definidos en el prompt (no inventes datos).
 
 4. **Compila el payload JSON** con la forma documentada en
@@ -157,21 +158,7 @@ Cuando `pipeline_status.py` reporta `pending enrichment > 0`.
          "Business Value": "..."
        }
      ],
-     "pricing_premium": [],
-     "initial_setup": [
-       {
-         "Name": "Back Order Processing",
-         "Product": "SAP S/4HANA Cloud Public Edition",
-         "Identifier": "J597",
-         "Detail Page": "https://...",
-         "Prerequisitos": "...",
-         "Procedimiento": "...",
-         "Próximos Pasos": "...",
-         "Dificultad estimada": "Alta",
-         "Tipo": "Configuración técnica",
-         "Link": "https://help.sap.com/..."
-       }
-     ]
+     "pricing_premium": []
    }
    ```
 
@@ -199,7 +186,7 @@ Cuando hay batches sin mergear (o un batch nuevo), corre:
 python scripts/merge_enriched_batches.py
 ```
 
-Esto regenera `processed/AI_Features_Data_Enriched.xlsx` con las 3 hojas
+Esto regenera `processed/AI_Features_Data_Enriched.xlsx` con las 2 hojas
 unificadas y deduplicadas por `Identifier` (último batch gana en conflictos).
 
 ---
@@ -236,9 +223,9 @@ Para cada `executions/prompts/<id>_<slug>_analysis.prompt.md` sin su
 `executions/analyses/<id>_<slug>_analysis.md` correspondiente:
 
 1. **Lee el prompt** (`Read`).
-2. **Resuelve la fuente EN VIVO** (no confíes en la hoja Initial Setup del
-   XLSX: su `Link`/`Prerequisitos`/`Procedimiento` vienen de un enriquecimiento
-   que falló en muchas filas). Procedimiento validado:
+2. **Resuelve la fuente EN VIVO** (el XLSX ya **no** incluye datos de Initial
+   Setup; solo aporta la `Detail Page` como punto de partida). Procedimiento
+   validado:
    - Abre la `Detail Page` y lista sus enlaces de *Resources*:
      `python scripts/fetch_sap_page.py "<Detail Page>" --links`
    - En la sección `## Links`, toma la URL de la línea con texto exacto
@@ -354,7 +341,7 @@ python scripts/compile_analyses.py --rebuild
 Antes de reportar "pipeline ejecutado":
 
 1. `python scripts/pipeline_status.py` reporta 0 en todas las etapas.
-2. `processed/AI_Features_Data_Enriched.xlsx` tiene las 3 hojas y filas == filas del CSV.
+2. `processed/AI_Features_Data_Enriched.xlsx` tiene las 2 hojas y filas == filas del CSV.
 3. `executions/compiled/analyses_compiled.md` existe y su encabezado tiene
    la cuenta correcta.
 4. `state/id_slug_map.json` tiene una entrada por cada ID del enriched.

@@ -41,10 +41,11 @@ executions/compiled/analyses_compiled.md   ← corpus RAG
 3. **Reanudación**: si te interrumpen a mitad de la Stage 1 o 4, el
    trabajo ya guardado (XLSX por lote o `.md` por caso) está intacto en
    disco. Al reanudar, `pipeline_status.py` te dice qué falta.
-4. **Sin fuentes externas no permitidas**: la Stage 1 usa **únicamente**
-   las URLs `Detail Page` del CSV y los enlaces "Initial Setup" hallados en
-   la sección *Resources*. No uses Google, blogs, KBAs ni SAP Help directo.
-   Reglas detalladas en [`prompt/prompt_enriquecimiento_ia_csv.md`](prompt/prompt_enriquecimiento_ia_csv.md).
+4. **Sin fuentes externas no permitidas**: la Stage 1 usa **únicamente** la
+   URL `Detail Page` del CSV (y su sección *Pricing Details* para los Premium)
+   para generar las **2 hojas** del enriquecido. No uses Google, blogs, KBAs ni
+   SAP Help directo. (La resolución del Initial Setup ocurre en la Stage 4, en
+   vivo desde *Resources* — ver regla 7.) Reglas detalladas en [`prompt/prompt_enriquecimiento_ia_csv.md`](prompt/prompt_enriquecimiento_ia_csv.md).
 5. **Lotes pequeños**: Stage 1 trabaja en lotes de **10 IDs** por defecto.
    Esto limita el uso de tokens y crea checkpoints frecuentes en disco.
 6. **Nunca modifiques** `prompt/PROMPT_USO_IA_ESFUERZO.md` ni
@@ -53,9 +54,9 @@ executions/compiled/analyses_compiled.md   ← corpus RAG
 7. **Stage 4 — fuente en vivo, no el XLSX**: cada análisis se fundamenta en la
    página oficial abierta **en vivo**, resolviendo la URL desde la sección
    *Resources* de la `Detail Page` (`Initial Setup - SAP Help Portal`; si no
-   existe, `AI Feature - SAP Help Portal`). La hoja Initial Setup del XLSX
-   (`Link`/`Prerequisitos`/`Procedimiento`) **no es fuente** (enriquecimiento
-   poco fiable). Si la página no carga tras reintentos (versión/login), decláralo
+   existe, `AI Feature - SAP Help Portal`). El XLSX (2 hojas) **no** contiene
+   datos de Initial Setup; solo aporta la `Detail Page` como punto de partida.
+   Si la página no carga tras reintentos (versión/login), decláralo
    honestamente y usa el bloque canónico "No se registran pasos"; **no fabriques**.
    Detalle en [`docs/AGENT_GUIDE.md`](docs/AGENT_GUIDE.md) Stage 4b.
 
@@ -92,7 +93,7 @@ state/                   id_slug_map.json, compiled_state.json
 | Mergear lotes                          | Script        | `python scripts/merge_enriched_batches.py`    |
 | Mapa id→slug                           | Script        | `python scripts/build_id_slug_map.py`         |
 | Renderizar prompts                     | Script        | `python scripts/render_pending_prompts.py`    |
-| Resolver fuente del análisis (en vivo) | **Agente**    | `python scripts/fetch_sap_page.py "<Detail Page>" --links` → tomar el enlace **`Initial Setup - SAP Help Portal`** de *Resources*; si no existe, el **`AI Feature - SAP Help Portal`**. NO uses el `Link` del XLSX (poco fiable). |
+| Resolver fuente del análisis (en vivo) | **Agente**    | `python scripts/fetch_sap_page.py "<Detail Page>" --links` → tomar el enlace **`Initial Setup - SAP Help Portal`** de *Resources*; si no existe, el **`AI Feature - SAP Help Portal`**. El XLSX no contiene esa URL. |
 | Escribir cada análisis                 | **Agente**    | `Write` un `.md` por caso siguiendo el prompt, **fundamentado en la fuente viva** (no en el XLSX) |
 | Compilar corpus RAG                    | Script        | `python scripts/compile_analyses.py`          |
 

@@ -12,10 +12,11 @@ Un único archivo CSV en `inputs/AI Features Data.csv` exportado desde
 
 ## Salida
 
-- `processed/AI_Features_Data_Enriched.xlsx` — XLSX con 3 hojas
-  (*AI Features & Agents*, *Pricing Premium*, *Initial Setup*) enriquecido
-  con `Overview`, `Beneficios`, `Business Value`, `Pricing Details`,
-  `Prerequisitos`, `Procedimiento`, `Dificultad estimada`, `Tipo`, `Link`.
+- `processed/AI_Features_Data_Enriched.xlsx` — XLSX con 2 hojas
+  (*AI Features & Agents*, *Pricing Premium*) enriquecido con `Overview`,
+  `Beneficios`, `Business Value` y `Pricing Details`. (La información de
+  Initial Setup ya no se pre-enriquece aquí: se resuelve en vivo al generar
+  cada análisis.)
 - `state/id_slug_map.json` — mapa `JNNN → slug` para uso externo.
 - `executions/prompts/*.md` — un prompt por caso de uso.
 - `executions/analyses/*.md` — un análisis estructurado por caso de uso.
@@ -73,7 +74,7 @@ executions/compiled/analyses_compiled.md   ← corpus RAG
 | Script                          | Qué hace                                                  |
 |---------------------------------|-----------------------------------------------------------|
 | `pipeline_status.py`            | Reporta pendientes en cada etapa.                         |
-| `save_enriched_batch.py`        | Persiste un lote enriquecido como XLSX de 3 hojas.        |
+| `save_enriched_batch.py`        | Persiste un lote enriquecido como XLSX de 2 hojas.        |
 | `merge_enriched_batches.py`     | Une todos los lotes en el XLSX final.                     |
 | `build_id_slug_map.py`          | Genera el mapa `id → slug` desde el XLSX final.           |
 | `render_pending_prompts.py`     | Renderiza prompts faltantes desde el XLSX final.          |

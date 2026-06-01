@@ -3,7 +3,8 @@
 
 - Reads every `enriched_data/batches/*.xlsx`.
 - Concatenates rows across batches, sheet by sheet (AI Features & Agents,
-  Pricing Premium, Initial Setup).
+  Pricing Premium). Any legacy "Initial Setup" sheet in older batches is
+  ignored — only the 2 canonical sheets are emitted.
 - Deduplicates by Identifier within each sheet; on conflict, prefers the most
   recent batch (last write wins).
 - Writes `processed/AI_Features_Data_Enriched.xlsx` with frozen header row.

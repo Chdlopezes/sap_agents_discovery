@@ -1,9 +1,13 @@
 #!/usr/bin/env python3
-"""Persist one enrichment batch as a 3-sheet XLSX.
+"""Persist one enrichment batch as a 2-sheet XLSX.
 
 The enrichment agent calls this with a JSON payload containing the data it
 extracted from SAP Discovery Center Detail Pages, and this script writes the
 canonical XLSX into `enriched_data/batches/`.
+
+Sheets: "AI Features & Agents" and "Pricing Premium". (The former "Initial
+Setup" sheet was removed: that content is now produced live in Stage 4b from
+the Detail Page > Resources links, not pre-enriched here.)
 
 Payload shape (JSON):
 {
@@ -24,16 +28,6 @@ Payload shape (JSON):
       "Name": "...", "Product": "...", "Commercial Type": "Premium",
       "Package": "...", "Identifier": "...", "Detail Page": "...",
       "Pricing Details": "..."
-    },
-    ...
-  ],
-  "initial_setup": [                # one row per record in the batch
-    {
-      "Name": "...", "Product": "...", "Identifier": "...", "Detail Page": "...",
-      "Prerequisitos": "...", "Procedimiento": "...", "Próximos Pasos": "...",
-      "Dificultad estimada": "Baja|Media|Alta",
-      "Tipo": "...",
-      "Link": "..."
     },
     ...
   ]
@@ -66,11 +60,6 @@ SHEETS = (
     ("Pricing Premium", "pricing_premium", [
         "Name", "Product", "Commercial Type", "Package", "Identifier",
         "Detail Page", "Pricing Details",
-    ]),
-    ("Initial Setup", "initial_setup", [
-        "Name", "Product", "Identifier", "Detail Page",
-        "Prerequisitos", "Procedimiento", "Próximos Pasos",
-        "Dificultad estimada", "Tipo", "Link",
     ]),
 )
 
@@ -131,7 +120,6 @@ def main() -> int:
     print(f"Wrote {out}")
     print(f"  AI Features & Agents rows: {len(payload.get('ai_features_agents') or [])}")
     print(f"  Pricing Premium rows:      {len(payload.get('pricing_premium') or [])}")
-    print(f"  Initial Setup rows:        {len(payload.get('initial_setup') or [])}")
     return 0
 
 

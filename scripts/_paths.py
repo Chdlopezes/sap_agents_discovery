@@ -23,4 +23,4 @@ STATE_DIR = ROOT / "state"
 ID_SLUG_MAP = STATE_DIR / "id_slug_map.json"
 COMPILED_STATE = STATE_DIR / "compiled_state.json"
 
-ENRICHED_SHEETS = ("AI Features & Agents", "Pricing Premium", "Initial Setup")
+ENRICHED_SHEETS = ("AI Features & Agents", "Pricing Premium")
