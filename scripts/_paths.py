@@ -10,17 +10,25 @@ INPUT_CSV = ROOT / "inputs" / "AI Features Data.csv"
 
 PROMPT_ENRICH = ROOT / "prompt" / "prompt_enriquecimiento_ia_csv.md"
 PROMPT_ANALYSIS = ROOT / "prompt" / "PROMPT_USO_IA_ESFUERZO.md"
+PROMPT_DESCRIPTION = ROOT / "prompt" / "PROMPT_DESCRIPCION_AI_FEATURE.md"
 
 ENRICHED_BATCHES_DIR = ROOT / "enriched_data" / "batches"
 ENRICHED_FINAL = ROOT / "processed" / "AI_Features_Data_Enriched.xlsx"
 
-EXEC_PROMPTS_DIR = ROOT / "executions" / "prompts"
-EXEC_ANALYSES_DIR = ROOT / "executions" / "analyses"
-EXEC_COMPILED_DIR = ROOT / "executions" / "compiled"
+EXEC_PROMPTS_DIR = ROOT / "effort" / "prompts"
+EXEC_ANALYSES_DIR = ROOT / "effort" / "analyses"
+EXEC_COMPILED_DIR = ROOT / "effort" / "compiled"
 COMPILED_MD = EXEC_COMPILED_DIR / "analyses_compiled.md"
+
+# --- Description pipeline (fichas explicativas por AI Feature) ---
+DESC_PROMPTS_DIR = ROOT / "description" / "prompts"
+DESC_FICHAS_DIR = ROOT / "description" / "fichas"
+DESC_COMPILED_DIR = ROOT / "description" / "compiled"
+DESC_COMPILED_MD = DESC_COMPILED_DIR / "descriptions_compiled.md"
 
 STATE_DIR = ROOT / "state"
 ID_SLUG_MAP = STATE_DIR / "id_slug_map.json"
 COMPILED_STATE = STATE_DIR / "compiled_state.json"
+DESC_COMPILED_STATE = STATE_DIR / "descriptions_compiled_state.json"
 
 ENRICHED_SHEETS = ("AI Features & Agents", "Pricing Premium")

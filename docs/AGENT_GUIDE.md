@@ -219,8 +219,8 @@ para casos puntuales.)
 
 ## Stage 4b — Escribir cada análisis pendiente
 
-Para cada `executions/prompts/<id>_<slug>_analysis.prompt.md` sin su
-`executions/analyses/<id>_<slug>_analysis.md` correspondiente:
+Para cada `effort/prompts/<id>_<slug>_analysis.prompt.md` sin su
+`effort/analyses/<id>_<slug>_analysis.md` correspondiente:
 
 1. **Lee el prompt** (`Read`).
 2. **Resuelve la fuente EN VIVO** (el XLSX ya **no** incluye datos de Initial
@@ -314,7 +314,7 @@ python scripts/compile_analyses.py
 ```
 
 - Es **incremental**: solo agrega los análisis nuevos al estado.
-- Reescribe `executions/compiled/analyses_compiled.md` con un encabezado
+- Reescribe `effort/compiled/analyses_compiled.md` con un encabezado
   RAG-friendly y todos los análisis ordenados alfabéticamente por nombre
   de archivo, separados por `---` y con `## [JNNN] — Name` como anchor.
 - Mantiene `state/compiled_state.json` con los archivos ya incluidos.
@@ -344,6 +344,6 @@ Antes de reportar "pipeline ejecutado":
 
 1. `python scripts/pipeline_status.py` reporta 0 en todas las etapas.
 2. `processed/AI_Features_Data_Enriched.xlsx` tiene las 2 hojas y filas == filas del CSV.
-3. `executions/compiled/analyses_compiled.md` existe y su encabezado tiene
+3. `effort/compiled/analyses_compiled.md` existe y su encabezado tiene
    la cuenta correcta.
 4. `state/id_slug_map.json` tiene una entrada por cada ID del enriched.

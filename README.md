@@ -18,9 +18,9 @@ Un único archivo CSV en `inputs/AI Features Data.csv` exportado desde
   Initial Setup ya no se pre-enriquece aquí: se resuelve en vivo al generar
   cada análisis.)
 - `state/id_slug_map.json` — mapa `JNNN → slug` para uso externo.
-- `executions/prompts/*.md` — un prompt por caso de uso.
-- `executions/analyses/*.md` — un análisis estructurado por caso de uso.
-- `executions/compiled/analyses_compiled.md` — corpus único, RAG-friendly.
+- `effort/prompts/*.md` — un prompt por caso de uso.
+- `effort/analyses/*.md` — un análisis estructurado por caso de uso.
+- `effort/compiled/analyses_compiled.md` — corpus único, RAG-friendly.
 
 ## Ejecución (agentic, vía Claude Code)
 
@@ -48,7 +48,7 @@ por análisis). Al reanudar, el agente detecta y procesa solo lo nuevo.
 5. Dile al agente: *"Corre el pipeline SAP Business AI"*.
 
 El agente hará todo lo demás. Si el repo ya viene con análisis previos
-en `executions/analyses/`, se reaprovecharán: solo se procesarán los IDs
+en `effort/analyses/`, se reaprovecharán: solo se procesarán los IDs
 nuevos del CSV.
 
 ## Pipeline (5 etapas)
@@ -62,11 +62,11 @@ processed/AI_Features_Data_Enriched.xlsx
   ▼ scripts/build_id_slug_map.py
 state/id_slug_map.json
   ▼ scripts/render_pending_prompts.py
-executions/prompts/<id>_<slug>_analysis.prompt.md
+effort/prompts/<id>_<slug>_analysis.prompt.md
   ▼ Stage 4 (agente escribe cada análisis)
-executions/analyses/<id>_<slug>_analysis.md
+effort/analyses/<id>_<slug>_analysis.md
   ▼ scripts/compile_analyses.py
-executions/compiled/analyses_compiled.md   ← corpus RAG
+effort/compiled/analyses_compiled.md   ← corpus RAG
 ```
 
 ## Scripts (todos en `scripts/`)
@@ -79,12 +79,36 @@ executions/compiled/analyses_compiled.md   ← corpus RAG
 | `build_id_slug_map.py`          | Genera el mapa `id → slug` desde el XLSX final.           |
 | `render_pending_prompts.py`     | Renderiza prompts faltantes desde el XLSX final.          |
 | `run_prompt.py`                 | Renderizado ad-hoc (CSV o `--code/--name`).               |
-| `compile_analyses.py`           | Compila incremental el corpus RAG.                        |
+| `compile_analyses.py`           | Compila incremental el corpus RAG (esfuerzo).            |
+| `render_pending_descriptions.py`| Renderiza prompts de ficha faltantes (`description/`).    |
+| `generate_descriptions.py`      | Genera fichas descriptivas en español (live Detail Page + campos ES del XLSX), idempotente. |
+| `compile_descriptions.py`       | Compila incremental el corpus RAG de fichas.              |
+
+## Pipeline de descripción (`description/`)
+
+Pipeline paralelo al de esfuerzo, enfocado en **entender qué hace cada AI
+Feature** (no en estimar su esfuerzo). Salida en español, una **ficha** por caso:
+
+```
+processed/AI_Features_Data_Enriched.xlsx
+  ▼ scripts/render_pending_descriptions.py
+description/prompts/<id>_<slug>_description.prompt.md   (prompt por caso)
+  ▼ scripts/generate_descriptions.py   (abre la Detail Page en vivo + campos ES)
+description/fichas/<id>_<slug>_description.md
+  ▼ scripts/compile_descriptions.py
+description/compiled/descriptions_compiled.md          ← corpus RAG
+```
+
+`generate_descriptions.py` es idempotente (solo genera las fichas faltantes;
+`--force` regenera todo). Cada ficha trae: *En una frase · ¿Qué es? · Beneficios
+· Valor de negocio · ¿Cómo funciona? · Casos de uso (ilustrativos) · ¿Cuándo
+usarla? · Datos clave · Fuente*.
 
 ## Prompts (en `prompt/`)
 
 - `prompt_enriquecimiento_ia_csv.md` — instrucciones para Stage 1.
-- `PROMPT_USO_IA_ESFUERZO.md` — plantilla para los prompts por caso.
+- `PROMPT_USO_IA_ESFUERZO.md` — plantilla para los prompts de esfuerzo por caso.
+- `PROMPT_DESCRIPCION_AI_FEATURE.md` — plantilla para las fichas descriptivas.
 
 ## Estructura del repositorio
 
@@ -95,9 +119,9 @@ scripts/                         # Pipeline scripts (Python, idempotentes)
 docs/                            # AGENT_GUIDE.md
 enriched_data/batches/           # XLSX por lote (checkpoints)
 processed/                       # XLSX final enriquecido
-executions/prompts/              # Prompts renderizados
-executions/analyses/             # Análisis escritos (Markdown ES)
-executions/compiled/             # analyses_compiled.md (corpus RAG)
+effort/prompts/              # Prompts renderizados
+effort/analyses/             # Análisis escritos (Markdown ES)
+effort/compiled/             # analyses_compiled.md (corpus RAG)
 state/                           # id_slug_map.json, compiled_state.json
 state/historical/                # Snapshots de referencia (tier2/3_context)
 CLAUDE.md                        # Guía para el agente
@@ -106,8 +130,8 @@ CLAUDE.md                        # Guía para el agente
 ## Convenciones de nombres
 
 - Slug = `slugify(Name)`: lowercase + `[^a-z0-9]+` → `_` + strip `_`.
-- Prompt:   `executions/prompts/<id_lower>_<slug>_analysis.prompt.md`
-- Análisis: `executions/analyses/<id_lower>_<slug>_analysis.md`
+- Prompt:   `effort/prompts/<id_lower>_<slug>_analysis.prompt.md`
+- Análisis: `effort/analyses/<id_lower>_<slug>_analysis.md`
 - Lote enriched: `enriched_data/batches/AI_Features_Data_lote_<start>_<end>_enriquecido.xlsx`
 
 ## Licencia / origen de datos

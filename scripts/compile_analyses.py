@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
-"""Incrementally compile executions/analyses/*.md into one RAG-ready .md file.
+"""Incrementally compile effort/analyses/*.md into one RAG-ready .md file.
 
 - Tracks which analysis files have already been included in
-  `executions/compiled/analyses_compiled.md` via `state/compiled_state.json`.
+  `effort/compiled/analyses_compiled.md` via `state/compiled_state.json`.
 - On each run, appends any new files (sorted alphabetically by filename for
   deterministic order) and updates the state.
 - Initializes the compiled file with a static header explaining its purpose
@@ -66,7 +66,7 @@ Cada análisis describe, para un caso de uso identificado por su código
   línea horizontal `---` y precedida por un encabezado de nivel 2 con el
   formato `## [JNNN] — Nombre del caso de uso`.
 - El contenido de cada sección es el texto completo del análisis individual,
-  tal como existe en `executions/analyses/<id>_<slug>_analysis.md`.
+  tal como existe en `effort/analyses/<id>_<slug>_analysis.md`.
 
 > Para cargar este corpus en un sistema RAG: trocea por sección de nivel 2
 > (`##`) y trata el texto bajo cada encabezado como una unidad semántica.

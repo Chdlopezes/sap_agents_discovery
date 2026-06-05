@@ -21,13 +21,13 @@ processed/AI_Features_Data_Enriched.xlsx
 state/id_slug_map.json
         │
         ▼ scripts/render_pending_prompts.py
-executions/prompts/<id>_<slug>_analysis.prompt.md
+effort/prompts/<id>_<slug>_analysis.prompt.md
         │
         ▼ [Stage 4] Analysis      (agente, SAP knowledge, por archivo)
-executions/analyses/<id>_<slug>_analysis.md
+effort/analyses/<id>_<slug>_analysis.md
         │
         ▼ scripts/compile_analyses.py
-executions/compiled/analyses_compiled.md   ← corpus RAG
+effort/compiled/analyses_compiled.md   ← corpus RAG
 ```
 
 ## Reglas operativas (no negociables)
@@ -64,8 +64,8 @@ executions/compiled/analyses_compiled.md   ← corpus RAG
 ## Convenciones de nombres
 
 - Slug = `slugify(Name)` = lowercase + `[^a-z0-9]+ → _` + strip `_`.
-- Prompt:   `executions/prompts/<id_lower>_<slug>_analysis.prompt.md`
-- Análisis: `executions/analyses/<id_lower>_<slug>_analysis.md`
+- Prompt:   `effort/prompts/<id_lower>_<slug>_analysis.prompt.md`
+- Análisis: `effort/analyses/<id_lower>_<slug>_analysis.md`
 - Batch enriched: `enriched_data/batches/AI_Features_Data_lote_<start>_<end>_enriquecido.xlsx`
 
 ## Estructura del repositorio
@@ -77,9 +77,9 @@ scripts/                 Pipeline scripts (Python, idempotentes)
 docs/                    AGENT_GUIDE.md (procedimiento detallado)
 enriched_data/batches/   XLSX por lote, generados por el agente
 processed/               XLSX final enriquecido
-executions/prompts/      Prompts renderizados por caso
-executions/analyses/     Análisis escritos por caso (Markdown ES)
-executions/compiled/     analyses_compiled.md (corpus RAG)
+effort/prompts/      Prompts renderizados por caso
+effort/analyses/     Análisis escritos por caso (Markdown ES)
+effort/compiled/     analyses_compiled.md (corpus RAG)
 state/                   id_slug_map.json, compiled_state.json
 ```
 

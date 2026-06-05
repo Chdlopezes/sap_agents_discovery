@@ -6,9 +6,9 @@ Usage:
     python scripts/run_prompt.py --csv inputs/input.csv
     python scripts/run_prompt.py --csv inputs/input.csv --only J600
 
-Output: one rendered prompt per case at executions/prompts/<code>_<slug>_analysis.prompt.md
+Output: one rendered prompt per case at effort/prompts/<code>_<slug>_analysis.prompt.md
 The analysis itself (LLM response) is expected to be saved as
-executions/analyses/<code>_<slug>_analysis.md.
+effort/analyses/<code>_<slug>_analysis.md.
 """
 import argparse
 import csv
@@ -18,8 +18,8 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 TEMPLATE = ROOT / "prompt" / "PROMPT_USO_IA_ESFUERZO.md"
-OUT_DIR = ROOT / "executions" / "prompts"
-ANALYSES_DIR = ROOT / "executions" / "analyses"
+OUT_DIR = ROOT / "effort" / "prompts"
+ANALYSES_DIR = ROOT / "effort" / "analyses"
 
 
 def slugify(text: str) -> str:

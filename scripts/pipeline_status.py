@@ -21,6 +21,7 @@ from _paths import (
     INPUT_CSV, ENRICHED_BATCHES_DIR, ENRICHED_FINAL,
     EXEC_PROMPTS_DIR, EXEC_ANALYSES_DIR, COMPILED_MD,
     ID_SLUG_MAP, COMPILED_STATE,
+    DESC_PROMPTS_DIR, DESC_FICHAS_DIR, DESC_COMPILED_MD, DESC_COMPILED_STATE,
 )
 
 
@@ -147,12 +148,58 @@ def main() -> int:
         for a in pending_compile[:5]:
             print(f"    {a}")
 
+    # --- Description pipeline (fichas explicativas) ---
+    print()
+    print("Stage 6 — Description prompts")
+    existing_desc_prompts = {p.name for p in DESC_PROMPTS_DIR.glob("*.prompt.md")}
+    pending_desc_prompts = []
+    for code in (batch_ids | final_ids):
+        name = names.get(code)
+        if not name:
+            continue
+        expected = f"{code.lower()}_{slugify(name)}_description.prompt.md"
+        if expected not in existing_desc_prompts:
+            pending_desc_prompts.append((code, expected))
+    print(f"  Rendered description prompts: {len(existing_desc_prompts)}")
+    print(f"  Pending description prompts:  {len(pending_desc_prompts)}")
+    if pending_desc_prompts:
+        for code, fn in pending_desc_prompts[:5]:
+            print(f"    {code} -> {fn}")
+
+    print()
+    print("Stage 7 — Fichas (descriptions)")
+    existing_fichas = {p.name for p in DESC_FICHAS_DIR.glob("*.md")}
+    pending_fichas = []
+    for prompt_name in existing_desc_prompts:
+        ficha_name = prompt_name.replace(".prompt.md", ".md")
+        if ficha_name not in existing_fichas:
+            pending_fichas.append(ficha_name)
+    print(f"  Written fichas:               {len(existing_fichas)}")
+    print(f"  Pending fichas:               {len(pending_fichas)}")
+    if pending_fichas:
+        for a in pending_fichas[:5]:
+            print(f"    {a}")
+
+    print()
+    print("Stage 8 — Descriptions compiled RAG file")
+    if DESC_COMPILED_STATE.exists():
+        desc_compiled = set(json.loads(DESC_COMPILED_STATE.read_text(encoding="utf-8")).get("compiled_files", []))
+    else:
+        desc_compiled = set()
+    pending_desc_compile = sorted(existing_fichas - desc_compiled)
+    print(f"  Compiled file:                {DESC_COMPILED_MD}  {'(exists)' if DESC_COMPILED_MD.exists() else '(missing)'}")
+    print(f"  Already compiled:             {len(desc_compiled)}")
+    print(f"  Pending compile:              {len(pending_desc_compile)}")
+
     print()
     print("Summary:")
-    print(f"  pending enrichment:  {len(pending_enrich)}")
-    print(f"  pending prompts:     {len(pending_prompts)}")
-    print(f"  pending analyses:    {len(pending_analyses)}")
-    print(f"  pending compile:     {len(pending_compile)}")
+    print(f"  pending enrichment:        {len(pending_enrich)}")
+    print(f"  pending prompts:           {len(pending_prompts)}")
+    print(f"  pending analyses:          {len(pending_analyses)}")
+    print(f"  pending compile:           {len(pending_compile)}")
+    print(f"  pending description prompts:{len(pending_desc_prompts)}")
+    print(f"  pending fichas:            {len(pending_fichas)}")
+    print(f"  pending description compile:{len(pending_desc_compile)}")
     return 0
 
 

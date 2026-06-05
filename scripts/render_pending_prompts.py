@@ -5,7 +5,7 @@ Reads `processed/AI_Features_Data_Enriched.xlsx` for (Identifier, Name) pairs
 and renders `prompt/PROMPT_USO_IA_ESFUERZO.md` with substitutions, writing
 each output to:
 
-    executions/prompts/<id_lower>_<slug>_analysis.prompt.md
+    effort/prompts/<id_lower>_<slug>_analysis.prompt.md
 
 Skips any output file that already exists (idempotent).
 
