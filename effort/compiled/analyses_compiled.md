@@ -1,7 +1,7 @@
 # SAP Business AI — Análisis de Esfuerzo de Activación (Corpus RAG)
 
-> **Última actualización:** 2026-06-05T20:05:31+00:00
-> **Análisis incluidos:** 123
+> **Última actualización:** 2026-06-11T15:45:47+00:00
+> **Análisis incluidos:** 161
 
 ## Qué contiene este documento
 
@@ -143,6 +143,85 @@ Cada análisis describe, para un caso de uso identificado por su código
 
 ---
 
+## [J1043] — Dispute Resolution Agent
+
+> Análisis construido **únicamente** a partir de las fuentes oficiales de SAP asociadas al AI Feature/Agent J1043 en `processed/AI_Features_Data_Enriched.xlsx`. Los campos para los que SAP no publica información aparecen literalmente como "No aplica", "No existe en la fuente oficial" o "No documentado en la fuente oficial". **No se ha completado ningún dato con conocimiento general ni con inferencia desde casos similares.**
+
+**Fuentes oficiales consultadas:**
+- Detail Page (SAP Discovery Center): https://discovery-center.cloud.sap/ai-feature/d3a94887-d357-4620-98d5-784a035f9e41/
+- Initial Setup (SAP Help Portal): No existe enlace 'Initial Setup' en *Resources*.
+- Pricing Details (SAP Discovery Center): No aplica
+
+**Resumen del caso:** Automatiza el análisis de causa raíz y sugiere soluciones accionables: revisa rápidamente facturas, pedidos de venta, registros de entrega, acuerdos de precios, reglas de impuestos y datos históricos para identificar las causas de la disputa. Ofrece recomendaciones conformes y a medida, reduciendo el tiempo y el esfuerzo de resolución y avanzando hacia una gestión de disputas automatizada, más rápida y alineada con la regulación.
+
+---
+
+## 1. Prerequisitos para la activación
+
+### 1.1 Producto / componente SAP requerido
+- **SAP S/4HANA Cloud Public Edition‚ Joule**.
+
+### 1.2 Licenciamiento / entitlement / paquete
+- Capability **Base**.
+- No aplica un paquete Premium.
+
+### 1.3 Scope item relacionado
+- No documentado en la fuente oficial.
+
+### 1.4 Aplicaciones / apps Fiori / servicios / componentes técnicos
+- No documentado en la fuente oficial.
+
+### 1.5 Datos maestros / transaccionales previos
+- No documentado en la fuente oficial.
+
+### 1.6 Restricciones funcionales / técnicas / idioma
+- Disponible para SAP S/4HANA Cloud **Public Edition**.
+
+---
+
+## 2. Pasos de activación / configuración estándar
+
+> **No se registran pasos de activación.** Tras consultar el Initial Setup y la página AI Feature enlazados en *Resources*, no fue posible acceder a una página oficial SAP que describa un procedimiento de activación para este caso. No se han fabricado pasos.
+
+---
+
+## 3. Pasos adicionales de validación
+
+| # | Actividad | Consultor requerido | Tiempo estimado (h, Medium) |
+|---|---|---|---|
+| 1 | Prueba unitaria del caso de uso con datos reales en entorno de Quality | Consultor Funcional SAP S/4HANA (producto base) | 4 |
+| 2 | Documentación de la activación para el cliente (manual de usuario + manual de configuración) | Consultor Funcional SAP S/4HANA (producto base) | 4 |
+| 3 | Transferencia de conocimiento al equipo del cliente | Consultor Funcional SAP S/4HANA (producto base) | 3 |
+
+**Esfuerzo total estimado (validación + entrega): ~11 horas.**
+
+---
+
+## 4. Consideraciones especiales
+
+- Aplica a SAP S/4HANA Cloud **Public Edition**.
+- Disponibilidad indicada por SAP: **Beta**.
+
+---
+
+## Referencias oficiales
+
+- SAP Discovery Center — Detail Page: https://discovery-center.cloud.sap/ai-feature/d3a94887-d357-4620-98d5-784a035f9e41/
+- SAP Help Portal — Initial Setup: No existe enlace en *Resources*
+- SAP Discovery Center — Pricing Details: No aplica
+
+---
+
+## Resumen ejecutivo de esfuerzo
+
+| Bloque | Horas |
+|---|---|
+| Activación / configuración | No aplica (sin pasos oficialmente documentados) |
+| Validación + documentación + KT | 11 |
+| **Total** | **11** |
+
+---
+
 ## [J1047] — Sales Order Status Check
 
 > Análisis construido **únicamente** a partir de las fuentes oficiales de SAP asociadas al AI Feature/Agent J1047 en `processed/AI_Features_Data_Enriched.xlsx`. Los campos para los que SAP no publica información aparecen literalmente como "No aplica", "No existe en la fuente oficial" o "No documentado en la fuente oficial". **No se ha completado ningún dato con conocimiento general ni con inferencia desde casos similares.**
@@ -231,6 +310,84 @@ Cada análisis describe, para un caso de uso identificado por su código
 | Activación / configuración | 16 |
 | Validación + documentación + KT | 11 |
 | **Total** | **27** |
+
+---
+
+## [J1088] — Joule with SAP Order Management Services
+
+> Análisis construido **únicamente** a partir de las fuentes oficiales de SAP asociadas al AI Feature/Agent J1088 en `processed/AI_Features_Data_Enriched.xlsx`. Los campos para los que SAP no publica información aparecen literalmente como "No aplica", "No existe en la fuente oficial" o "No documentado en la fuente oficial". **No se ha completado ningún dato con conocimiento general ni con inferencia desde casos similares.**
+
+**Fuentes oficiales consultadas:**
+- Detail Page (SAP Discovery Center): https://discovery-center.cloud.sap/ai-feature/b9498c45-6944-48e3-bb0e-902c71bef176/
+- Initial Setup (SAP Help Portal): No existe enlace 'Initial Setup' en *Resources*.
+- Pricing Details (SAP Discovery Center): No aplica
+
+**Resumen del caso:** La integración de Joule con SAP Order Management Services permite a los operations managers acceder a los datos del servicio mediante consultas conversacionales, con guía operativa en tiempo real basada en rol, cubriendo múltiples dominios: procesamiento de pedidos, orquestación, sourcing, disponibilidad, devoluciones y flujos.
+
+---
+
+## 1. Prerequisitos para la activación
+
+### 1.1 Producto / componente SAP requerido
+- **SAP Order Management Services**.
+
+### 1.2 Licenciamiento / entitlement / paquete
+- Capability **Base**.
+- No aplica un paquete Premium.
+
+### 1.3 Scope item relacionado
+- No aplica (el producto base no utiliza scope items de SAP S/4HANA).
+
+### 1.4 Aplicaciones / apps Fiori / servicios / componentes técnicos
+- No documentado en la fuente oficial.
+
+### 1.5 Datos maestros / transaccionales previos
+- No documentado en la fuente oficial.
+
+### 1.6 Restricciones funcionales / técnicas / idioma
+- No documentado en la fuente oficial.
+
+---
+
+## 2. Pasos de activación / configuración estándar
+
+> **No se registran pasos de activación.** Tras consultar el Initial Setup y la página AI Feature enlazados en *Resources*, no fue posible acceder a una página oficial SAP que describa un procedimiento de activación para este caso. No se han fabricado pasos.
+
+---
+
+## 3. Pasos adicionales de validación
+
+| # | Actividad | Consultor requerido | Tiempo estimado (h, Medium) |
+|---|---|---|---|
+| 1 | Prueba unitaria del caso de uso con datos reales en entorno de Quality | Consultor Funcional del producto base (producto base) | 4 |
+| 2 | Documentación de la activación para el cliente (manual de usuario + manual de configuración) | Consultor Funcional del producto base (producto base) | 4 |
+| 3 | Transferencia de conocimiento al equipo del cliente | Consultor Funcional del producto base (producto base) | 3 |
+
+**Esfuerzo total estimado (validación + entrega): ~11 horas.**
+
+---
+
+## 4. Consideraciones especiales
+
+- Disponibilidad indicada por SAP: **Beta**.
+
+---
+
+## Referencias oficiales
+
+- SAP Discovery Center — Detail Page: https://discovery-center.cloud.sap/ai-feature/b9498c45-6944-48e3-bb0e-902c71bef176/
+- SAP Help Portal — Initial Setup: No existe enlace en *Resources*
+- SAP Discovery Center — Pricing Details: No aplica
+
+---
+
+## Resumen ejecutivo de esfuerzo
+
+| Bloque | Horas |
+|---|---|
+| Activación / configuración | No aplica (sin pasos oficialmente documentados) |
+| Validación + documentación + KT | 11 |
+| **Total** | **11** |
 
 ---
 
@@ -498,6 +655,162 @@ Cada análisis describe, para un caso de uso identificado por su código
 
 ---
 
+## [J1122] — Process Analyzer‚ Automated Mapping
+
+> Análisis construido **únicamente** a partir de las fuentes oficiales de SAP asociadas al AI Feature/Agent J1122 en `processed/AI_Features_Data_Enriched.xlsx`. Los campos para los que SAP no publica información aparecen literalmente como "No aplica", "No existe en la fuente oficial" o "No documentado en la fuente oficial". **No se ha completado ningún dato con conocimiento general ni con inferencia desde casos similares.**
+
+**Fuentes oficiales consultadas:**
+- Detail Page (SAP Discovery Center): https://discovery-center.cloud.sap/ai-feature/6c6eb8d1-764c-4727-b8d5-4911607f89b8/
+- Initial Setup (SAP Help Portal): No existe enlace 'Initial Setup' en *Resources*.
+- Pricing Details (SAP Discovery Center): No aplica
+
+**Resumen del caso:** Con el mapeo automatizado, los analistas de procesos pueden vincular automáticamente actividades de modelos BPMN con eventos sin necesidad de coincidencias exactas de nombre. Interpreta el contexto de forma inteligente, permitiendo mapear acciones —eventos, actividades, mejores prácticas, bloqueadores o acciones de texto libre— aunque aparezcan en distintos idiomas, contengan abreviaturas o errores tipográficos. Los mapeos se reutilizan en análisis futuros.
+
+---
+
+## 1. Prerequisitos para la activación
+
+### 1.1 Producto / componente SAP requerido
+- **SAP Signavio Process Intelligence**.
+
+### 1.2 Licenciamiento / entitlement / paquete
+- Capability **Base**.
+- No aplica un paquete Premium.
+
+### 1.3 Scope item relacionado
+- No aplica (el producto base no utiliza scope items de SAP S/4HANA).
+
+### 1.4 Aplicaciones / apps Fiori / servicios / componentes técnicos
+- No documentado en la fuente oficial.
+
+### 1.5 Datos maestros / transaccionales previos
+- No documentado en la fuente oficial.
+
+### 1.6 Restricciones funcionales / técnicas / idioma
+- No documentado en la fuente oficial.
+
+---
+
+## 2. Pasos de activación / configuración estándar
+
+> **No se registran pasos de activación.** Tras consultar el Initial Setup y la página AI Feature enlazados en *Resources*, no fue posible acceder a una página oficial SAP que describa un procedimiento de activación para este caso. No se han fabricado pasos.
+
+---
+
+## 3. Pasos adicionales de validación
+
+| # | Actividad | Consultor requerido | Tiempo estimado (h, Medium) |
+|---|---|---|---|
+| 1 | Prueba unitaria del caso de uso con datos reales en entorno de Quality | Consultor SAP Signavio (producto base) | 4 |
+| 2 | Documentación de la activación para el cliente (manual de usuario + manual de configuración) | Consultor SAP Signavio (producto base) | 4 |
+| 3 | Transferencia de conocimiento al equipo del cliente | Consultor SAP Signavio (producto base) | 3 |
+
+**Esfuerzo total estimado (validación + entrega): ~11 horas.**
+
+---
+
+## 4. Consideraciones especiales
+
+- Disponibilidad indicada por SAP: **Beta**.
+
+---
+
+## Referencias oficiales
+
+- SAP Discovery Center — Detail Page: https://discovery-center.cloud.sap/ai-feature/6c6eb8d1-764c-4727-b8d5-4911607f89b8/
+- SAP Help Portal — Initial Setup: No existe enlace en *Resources*
+- SAP Discovery Center — Pricing Details: No aplica
+
+---
+
+## Resumen ejecutivo de esfuerzo
+
+| Bloque | Horas |
+|---|---|
+| Activación / configuración | No aplica (sin pasos oficialmente documentados) |
+| Validación + documentación + KT | 11 |
+| **Total** | **11** |
+
+---
+
+## [J1129] — Workspace Administration Agent
+
+> Análisis construido **únicamente** a partir de las fuentes oficiales de SAP asociadas al AI Feature/Agent J1129 en `processed/AI_Features_Data_Enriched.xlsx`. Los campos para los que SAP no publica información aparecen literalmente como "No aplica", "No existe en la fuente oficial" o "No documentado en la fuente oficial". **No se ha completado ningún dato con conocimiento general ni con inferencia desde casos similares.**
+
+**Fuentes oficiales consultadas:**
+- Detail Page (SAP Discovery Center): https://discovery-center.cloud.sap/ai-feature/d8e34c50-6983-4129-aa44-3356bf2fb4bf/
+- Initial Setup (SAP Help Portal): No existe enlace 'Initial Setup' en *Resources*.
+- Pricing Details (SAP Discovery Center): No aplica
+
+**Resumen del caso:** Automatiza el onboarding de usuarios y la gestión del workspace, permitiendo a expertos de proceso y usuarios de negocio empezar a usar SAP Signavio el doble de rápido. Agiliza la inscripción para modelado y minería de procesos creando múltiples usuarios, asignando los roles, licencias y derechos de acceso correctos, e inscribiéndolos en los procesos relevantes, asegurando que cada nuevo usuario tenga los permisos adecuados desde el primer día.
+
+---
+
+## 1. Prerequisitos para la activación
+
+### 1.1 Producto / componente SAP requerido
+- **SAP Signavio Process Collaboration Hub‚ Joule**.
+
+### 1.2 Licenciamiento / entitlement / paquete
+- Capability **Base**.
+- No aplica un paquete Premium.
+
+### 1.3 Scope item relacionado
+- No aplica (el producto base no utiliza scope items de SAP S/4HANA).
+
+### 1.4 Aplicaciones / apps Fiori / servicios / componentes técnicos
+- No documentado en la fuente oficial.
+
+### 1.5 Datos maestros / transaccionales previos
+- No documentado en la fuente oficial.
+
+### 1.6 Restricciones funcionales / técnicas / idioma
+- No documentado en la fuente oficial.
+
+---
+
+## 2. Pasos de activación / configuración estándar
+
+> **No se registran pasos de activación.** Tras consultar el Initial Setup y la página AI Feature enlazados en *Resources*, no fue posible acceder a una página oficial SAP que describa un procedimiento de activación para este caso. No se han fabricado pasos.
+
+---
+
+## 3. Pasos adicionales de validación
+
+| # | Actividad | Consultor requerido | Tiempo estimado (h, Medium) |
+|---|---|---|---|
+| 1 | Prueba unitaria del caso de uso con datos reales en entorno de Quality | Consultor SAP Signavio (producto base) | 4 |
+| 2 | Documentación de la activación para el cliente (manual de usuario + manual de configuración) | Consultor SAP Signavio (producto base) | 4 |
+| 3 | Transferencia de conocimiento al equipo del cliente | Consultor SAP Signavio (producto base) | 3 |
+
+**Esfuerzo total estimado (validación + entrega): ~11 horas.**
+
+---
+
+## 4. Consideraciones especiales
+
+- Disponibilidad indicada por SAP: **Beta**.
+
+---
+
+## Referencias oficiales
+
+- SAP Discovery Center — Detail Page: https://discovery-center.cloud.sap/ai-feature/d8e34c50-6983-4129-aa44-3356bf2fb4bf/
+- SAP Help Portal — Initial Setup: No existe enlace en *Resources*
+- SAP Discovery Center — Pricing Details: No aplica
+
+---
+
+## Resumen ejecutivo de esfuerzo
+
+| Bloque | Horas |
+|---|---|
+| Activación / configuración | No aplica (sin pasos oficialmente documentados) |
+| Validación + documentación + KT | 11 |
+| **Total** | **11** |
+
+---
+
 ## [J112] — Process Analyzer‚ Text to Insight
 
 > Análisis construido **únicamente** a partir de las fuentes oficiales de SAP asociadas al AI Feature/Agent J112 en `processed/AI_Features_Data_Enriched.xlsx`. Los campos para los que SAP no publica información aparecen literalmente como "No aplica", "No existe en la fuente oficial" o "No documentado en la fuente oficial". **No se ha completado ningún dato con conocimiento general ni con inferencia desde casos similares.**
@@ -564,6 +877,240 @@ Cada análisis describe, para un caso de uso identificado por su código
 - SAP Discovery Center — Detail Page: https://discovery-center.cloud.sap/ai-feature/a6dde1d9-6da4-443f-874a-e6eb183e2bd5/
 - SAP Help Portal — Initial Setup: No accesible tras reintentos
 - SAP Help Portal — AI Feature: No accesible tras reintentos
+- SAP Discovery Center — Pricing Details: No aplica
+
+---
+
+## Resumen ejecutivo de esfuerzo
+
+| Bloque | Horas |
+|---|---|
+| Activación / configuración | No aplica (sin pasos oficialmente documentados) |
+| Validación + documentación + KT | 11 |
+| **Total** | **11** |
+
+---
+
+## [J1130] — Screen Guide Agent
+
+> Análisis construido **únicamente** a partir de las fuentes oficiales de SAP asociadas al AI Feature/Agent J1130 en `processed/AI_Features_Data_Enriched.xlsx`. Los campos para los que SAP no publica información aparecen literalmente como "No aplica", "No existe en la fuente oficial" o "No documentado en la fuente oficial". **No se ha completado ningún dato con conocimiento general ni con inferencia desde casos similares.**
+
+**Fuentes oficiales consultadas:**
+- Detail Page (SAP Discovery Center): https://discovery-center.cloud.sap/ai-feature/1be89884-5087-4293-9b9e-da35987fe9bc/
+- Initial Setup (SAP Help Portal): No existe enlace 'Initial Setup' en *Resources*.
+- Pricing Details (SAP Discovery Center): No aplica
+
+**Resumen del caso:** Transforma pantallas complejas y ricas en funciones en comprensión clara y accionable: reconoce dinámicamente la pantalla que ve el usuario, explica su propósito, guía sobre las acciones disponibles y resalta los datos y controles más relevantes. Integrado en SAP Signavio, entrega explicaciones en lenguaje natural, resaltados visuales y tips por rol.
+
+---
+
+## 1. Prerequisitos para la activación
+
+### 1.1 Producto / componente SAP requerido
+- **SAP Signavio Process Collaboration Hub‚ Joule**.
+
+### 1.2 Licenciamiento / entitlement / paquete
+- Capability **Base**.
+- No aplica un paquete Premium.
+
+### 1.3 Scope item relacionado
+- No aplica (el producto base no utiliza scope items de SAP S/4HANA).
+
+### 1.4 Aplicaciones / apps Fiori / servicios / componentes técnicos
+- No documentado en la fuente oficial.
+
+### 1.5 Datos maestros / transaccionales previos
+- No documentado en la fuente oficial.
+
+### 1.6 Restricciones funcionales / técnicas / idioma
+- No documentado en la fuente oficial.
+
+---
+
+## 2. Pasos de activación / configuración estándar
+
+> **No se registran pasos de activación.** Tras consultar el Initial Setup y la página AI Feature enlazados en *Resources*, no fue posible acceder a una página oficial SAP que describa un procedimiento de activación para este caso. No se han fabricado pasos.
+
+---
+
+## 3. Pasos adicionales de validación
+
+| # | Actividad | Consultor requerido | Tiempo estimado (h, Medium) |
+|---|---|---|---|
+| 1 | Prueba unitaria del caso de uso con datos reales en entorno de Quality | Consultor SAP Signavio (producto base) | 4 |
+| 2 | Documentación de la activación para el cliente (manual de usuario + manual de configuración) | Consultor SAP Signavio (producto base) | 4 |
+| 3 | Transferencia de conocimiento al equipo del cliente | Consultor SAP Signavio (producto base) | 3 |
+
+**Esfuerzo total estimado (validación + entrega): ~11 horas.**
+
+---
+
+## 4. Consideraciones especiales
+
+- Disponibilidad indicada por SAP: **Beta**.
+
+---
+
+## Referencias oficiales
+
+- SAP Discovery Center — Detail Page: https://discovery-center.cloud.sap/ai-feature/1be89884-5087-4293-9b9e-da35987fe9bc/
+- SAP Help Portal — Initial Setup: No existe enlace en *Resources*
+- SAP Discovery Center — Pricing Details: No aplica
+
+---
+
+## Resumen ejecutivo de esfuerzo
+
+| Bloque | Horas |
+|---|---|
+| Activación / configuración | No aplica (sin pasos oficialmente documentados) |
+| Validación + documentación + KT | 11 |
+| **Total** | **11** |
+
+---
+
+## [J1131] — Value Case Creation Agent
+
+> Análisis construido **únicamente** a partir de las fuentes oficiales de SAP asociadas al AI Feature/Agent J1131 en `processed/AI_Features_Data_Enriched.xlsx`. Los campos para los que SAP no publica información aparecen literalmente como "No aplica", "No existe en la fuente oficial" o "No documentado en la fuente oficial". **No se ha completado ningún dato con conocimiento general ni con inferencia desde casos similares.**
+
+**Fuentes oficiales consultadas:**
+- Detail Page (SAP Discovery Center): https://discovery-center.cloud.sap/ai-feature/e5f8f643-4dc9-46d4-96e6-15d73187869a/
+- Initial Setup (SAP Help Portal): No existe enlace 'Initial Setup' en *Resources*.
+- Pricing Details (SAP Discovery Center): No aplica
+
+**Resumen del caso:** Ayuda a las organizaciones a traducir insights de procesos en valor de negocio tangible: identifica automáticamente ineficiencias (retrabajos, demoras) y las vincula con oportunidades de mejora (automatización, estandarización). Estimando el impacto financiero potencial con parámetros configurables de costo y esfuerzo, permite crear value cases basados en datos sin requerir experiencia analítica profunda. Entrega borradores editables (resumen del problema, causas raíz, beneficios esperados).
+
+---
+
+## 1. Prerequisitos para la activación
+
+### 1.1 Producto / componente SAP requerido
+- **SAP Signavio Process Intelligence‚ Joule**.
+
+### 1.2 Licenciamiento / entitlement / paquete
+- Capability **Base**.
+- No aplica un paquete Premium.
+
+### 1.3 Scope item relacionado
+- No aplica (el producto base no utiliza scope items de SAP S/4HANA).
+
+### 1.4 Aplicaciones / apps Fiori / servicios / componentes técnicos
+- No documentado en la fuente oficial.
+
+### 1.5 Datos maestros / transaccionales previos
+- No documentado en la fuente oficial.
+
+### 1.6 Restricciones funcionales / técnicas / idioma
+- No documentado en la fuente oficial.
+
+---
+
+## 2. Pasos de activación / configuración estándar
+
+> **No se registran pasos de activación.** Tras consultar el Initial Setup y la página AI Feature enlazados en *Resources*, no fue posible acceder a una página oficial SAP que describa un procedimiento de activación para este caso. No se han fabricado pasos.
+
+---
+
+## 3. Pasos adicionales de validación
+
+| # | Actividad | Consultor requerido | Tiempo estimado (h, Medium) |
+|---|---|---|---|
+| 1 | Prueba unitaria del caso de uso con datos reales en entorno de Quality | Consultor SAP Signavio (producto base) | 4 |
+| 2 | Documentación de la activación para el cliente (manual de usuario + manual de configuración) | Consultor SAP Signavio (producto base) | 4 |
+| 3 | Transferencia de conocimiento al equipo del cliente | Consultor SAP Signavio (producto base) | 3 |
+
+**Esfuerzo total estimado (validación + entrega): ~11 horas.**
+
+---
+
+## 4. Consideraciones especiales
+
+- Disponibilidad indicada por SAP: **Beta**.
+
+---
+
+## Referencias oficiales
+
+- SAP Discovery Center — Detail Page: https://discovery-center.cloud.sap/ai-feature/e5f8f643-4dc9-46d4-96e6-15d73187869a/
+- SAP Help Portal — Initial Setup: No existe enlace en *Resources*
+- SAP Discovery Center — Pricing Details: No aplica
+
+---
+
+## Resumen ejecutivo de esfuerzo
+
+| Bloque | Horas |
+|---|---|
+| Activación / configuración | No aplica (sin pasos oficialmente documentados) |
+| Validación + documentación + KT | 11 |
+| **Total** | **11** |
+
+---
+
+## [J1132] — Dashboard Analyzer Agent
+
+> Análisis construido **únicamente** a partir de las fuentes oficiales de SAP asociadas al AI Feature/Agent J1132 en `processed/AI_Features_Data_Enriched.xlsx`. Los campos para los que SAP no publica información aparecen literalmente como "No aplica", "No existe en la fuente oficial" o "No documentado en la fuente oficial". **No se ha completado ningún dato con conocimiento general ni con inferencia desde casos similares.**
+
+**Fuentes oficiales consultadas:**
+- Detail Page (SAP Discovery Center): https://discovery-center.cloud.sap/ai-feature/251eb6f4-4565-4ac7-8e6c-f5eb6df7d210/
+- Initial Setup (SAP Help Portal): No existe enlace 'Initial Setup' en *Resources*.
+- Pricing Details (SAP Discovery Center): No aplica
+
+**Resumen del caso:** Transforma datos complejos de process mining en insights claros y accionables: interpreta de forma autónoma event logs y KPIs, identifica ineficiencias y desviaciones, y recomienda próximas mejores acciones, convirtiendo dashboards estáticos en herramientas prescriptivas. Integrado en SAP Signavio, entrega resúmenes en lenguaje natural que explican qué ocurre, por qué importa y cómo mejorar.
+
+---
+
+## 1. Prerequisitos para la activación
+
+### 1.1 Producto / componente SAP requerido
+- **SAP Signavio Process Intelligence‚ Joule**.
+
+### 1.2 Licenciamiento / entitlement / paquete
+- Capability **Base**.
+- No aplica un paquete Premium.
+
+### 1.3 Scope item relacionado
+- No aplica (el producto base no utiliza scope items de SAP S/4HANA).
+
+### 1.4 Aplicaciones / apps Fiori / servicios / componentes técnicos
+- No documentado en la fuente oficial.
+
+### 1.5 Datos maestros / transaccionales previos
+- No documentado en la fuente oficial.
+
+### 1.6 Restricciones funcionales / técnicas / idioma
+- No documentado en la fuente oficial.
+
+---
+
+## 2. Pasos de activación / configuración estándar
+
+> **No se registran pasos de activación.** Tras consultar el Initial Setup y la página AI Feature enlazados en *Resources*, no fue posible acceder a una página oficial SAP que describa un procedimiento de activación para este caso. No se han fabricado pasos.
+
+---
+
+## 3. Pasos adicionales de validación
+
+| # | Actividad | Consultor requerido | Tiempo estimado (h, Medium) |
+|---|---|---|---|
+| 1 | Prueba unitaria del caso de uso con datos reales en entorno de Quality | Consultor SAP Signavio (producto base) | 4 |
+| 2 | Documentación de la activación para el cliente (manual de usuario + manual de configuración) | Consultor SAP Signavio (producto base) | 4 |
+| 3 | Transferencia de conocimiento al equipo del cliente | Consultor SAP Signavio (producto base) | 3 |
+
+**Esfuerzo total estimado (validación + entrega): ~11 horas.**
+
+---
+
+## 4. Consideraciones especiales
+
+- Disponibilidad indicada por SAP: **Beta**.
+
+---
+
+## Referencias oficiales
+
+- SAP Discovery Center — Detail Page: https://discovery-center.cloud.sap/ai-feature/251eb6f4-4565-4ac7-8e6c-f5eb6df7d210/
+- SAP Help Portal — Initial Setup: No existe enlace en *Resources*
 - SAP Discovery Center — Pricing Details: No aplica
 
 ---
@@ -907,6 +1454,85 @@ Cada análisis describe, para un caso de uso identificado por su código
 
 ---
 
+## [J1164] — Task Automation
+
+> Análisis construido **únicamente** a partir de las fuentes oficiales de SAP asociadas al AI Feature/Agent J1164 en `processed/AI_Features_Data_Enriched.xlsx`. Los campos para los que SAP no publica información aparecen literalmente como "No aplica", "No existe en la fuente oficial" o "No documentado en la fuente oficial". **No se ha completado ningún dato con conocimiento general ni con inferencia desde casos similares.**
+
+**Fuentes oficiales consultadas:**
+- Detail Page (SAP Discovery Center): https://discovery-center.cloud.sap/ai-feature/0d089203-038a-4f68-a7e0-79078e26eae4/
+- Initial Setup (SAP Help Portal): No existe enlace 'Initial Setup' en *Resources*.
+- Pricing Details (SAP Discovery Center): No aplica
+
+**Resumen del caso:** La automatización de tareas asistida por IA permite a los usuarios de negocio crear procesos automatizados en apps SAP Fiori de SAP Cloud ERP. Los expertos de proceso los crean mediante instrucciones en lenguaje natural y documentos de grounding opcionales; la IA los analiza y mapea a las aplicaciones y herramientas requeridas, que el usuario revisa y aprueba. Los procesos se inician desde My Home o una app dedicada, con monitoreo y aprobación de cambios.
+
+---
+
+## 1. Prerequisitos para la activación
+
+### 1.1 Producto / componente SAP requerido
+- **SAP S/4HANA Cloud Public Edition**.
+
+### 1.2 Licenciamiento / entitlement / paquete
+- Capability **Base**.
+- No aplica un paquete Premium.
+
+### 1.3 Scope item relacionado
+- No documentado en la fuente oficial.
+
+### 1.4 Aplicaciones / apps Fiori / servicios / componentes técnicos
+- No documentado en la fuente oficial.
+
+### 1.5 Datos maestros / transaccionales previos
+- No documentado en la fuente oficial.
+
+### 1.6 Restricciones funcionales / técnicas / idioma
+- Disponible para SAP S/4HANA Cloud **Public Edition**.
+
+---
+
+## 2. Pasos de activación / configuración estándar
+
+> **No se registran pasos de activación.** Tras consultar el Initial Setup y la página AI Feature enlazados en *Resources*, no fue posible acceder a una página oficial SAP que describa un procedimiento de activación para este caso. No se han fabricado pasos.
+
+---
+
+## 3. Pasos adicionales de validación
+
+| # | Actividad | Consultor requerido | Tiempo estimado (h, Medium) |
+|---|---|---|---|
+| 1 | Prueba unitaria del caso de uso con datos reales en entorno de Quality | Consultor Funcional SAP S/4HANA (producto base) | 4 |
+| 2 | Documentación de la activación para el cliente (manual de usuario + manual de configuración) | Consultor Funcional SAP S/4HANA (producto base) | 4 |
+| 3 | Transferencia de conocimiento al equipo del cliente | Consultor Funcional SAP S/4HANA (producto base) | 3 |
+
+**Esfuerzo total estimado (validación + entrega): ~11 horas.**
+
+---
+
+## 4. Consideraciones especiales
+
+- Aplica a SAP S/4HANA Cloud **Public Edition**.
+- Disponibilidad indicada por SAP: **Beta**.
+
+---
+
+## Referencias oficiales
+
+- SAP Discovery Center — Detail Page: https://discovery-center.cloud.sap/ai-feature/0d089203-038a-4f68-a7e0-79078e26eae4/
+- SAP Help Portal — Initial Setup: No existe enlace en *Resources*
+- SAP Discovery Center — Pricing Details: No aplica
+
+---
+
+## Resumen ejecutivo de esfuerzo
+
+| Bloque | Horas |
+|---|---|
+| Activación / configuración | No aplica (sin pasos oficialmente documentados) |
+| Validación + documentación + KT | 11 |
+| **Total** | **11** |
+
+---
+
 ## [J116] — Generation of SAP HANA Applications
 
 > Análisis construido **únicamente** a partir de las fuentes oficiales de SAP asociadas al AI Feature/Agent J116 en `processed/AI_Features_Data_Enriched.xlsx`. Los campos para los que SAP no publica información aparecen literalmente como "No aplica", "No existe en la fuente oficial" o "No documentado en la fuente oficial". **No se ha completado ningún dato con conocimiento general ni con inferencia desde casos similares.**
@@ -992,6 +1618,94 @@ Cada análisis describe, para un caso de uso identificado por su código
 | Activación / configuración | 20 |
 | Validación + documentación + KT | 11 |
 | **Total** | **31** |
+
+---
+
+## [J1173] — Deep Research Capability
+
+> Análisis construido **únicamente** a partir de las fuentes oficiales de SAP asociadas al AI Feature/Agent J1173 en `processed/AI_Features_Data_Enriched.xlsx`. Los campos para los que SAP no publica información aparecen literalmente como "No aplica", "No existe en la fuente oficial" o "No documentado en la fuente oficial". **No se ha completado ningún dato con conocimiento general ni con inferencia desde casos similares.**
+
+**Fuentes oficiales consultadas:**
+- Detail Page (SAP Discovery Center): https://discovery-center.cloud.sap/ai-feature/0cbab727-02fe-47d3-9bf1-ff96d6c2ae62/
+- Initial Setup (SAP Help Portal): https://help.sap.com/docs/joule/integrating-joule-with-sap/initial-setup?locale=en-US
+- Pricing Details (SAP Discovery Center): No aplica
+
+**Resumen del caso:** La capacidad de deep research en Joule permite a los usuarios buscar, preguntar y acceder al conocimiento e insights que necesitan dentro de su flujo de trabajo. Accediendo a recursos internos y a conocimiento externo —estructurado o no estructurado— Joule entrega información relevante y accionable, asegurando cumplimiento y maximizando la productividad.
+
+---
+
+## 1. Prerequisitos para la activación
+
+### 1.1 Producto / componente SAP requerido
+- **Joule**.
+
+### 1.2 Licenciamiento / entitlement / paquete
+- Capability **Base**.
+- No aplica un paquete Premium.
+
+### 1.3 Scope item relacionado
+- No aplica (el producto base no utiliza scope items de SAP S/4HANA).
+
+### 1.4 Aplicaciones / apps Fiori / servicios / componentes técnicos
+- Según las fuentes oficiales abiertas (Initial Setup / AI Feature): You provision and configure Joule yourself using SAP BTP, with full control over subaccounts, entitlements, and system integrations. You have checked the general prerequisites for provisioning. A global account, subaccounts, and entitlements have been set up by performing administrative actions in the SAP BTP cockpit. Make sure you have completed the configuration steps before you run the Joule booster.
+
+### 1.5 Datos maestros / transaccionales previos
+- No documentado en la fuente oficial.
+
+### 1.6 Restricciones funcionales / técnicas / idioma
+- No documentado en la fuente oficial.
+
+---
+
+## 2. Pasos de activación / configuración estándar
+
+| # | Actividad estándar | Objeto de configuración | Tipo de configuración | Consultor requerido | Tiempo estimado (h, Medium) |
+|---|---|---|---|---|---|
+| 1 | Configure Trust to the Identity Authentication Tenant | Configuración de Joule | General | Consultor SAP BTP + Funcional | 4 |
+| 2 | Configure User Attributes for Joule from the Identity Directory | Configuración de Joule | Particular (por usuario / rol) | Consultor SAP BTP + Funcional | 4 |
+| 3 | Run the Joule Booster | Configuración de Joule | General | Consultor SAP BTP + Funcional | 4 |
+| 4 | Configure Trusted Domains in Identity Authentication | Configuración de Joule | General | Consultor SAP BTP + Funcional | 4 |
+| 5 | Configure Trusted Domain in SAP BTP | Configuración de Joule | General | Consultor SAP BTP + Funcional | 4 |
+| 6 | Configure Opt-in/Out of Conversation Log Storage | Configuración de Joule | General | Consultor SAP BTP + Funcional | 4 |
+| 7 | Set Up Document Grounding | Configuración de Joule | General | Consultor SAP BTP + Funcional | 4 |
+
+**Esfuerzo total estimado (activación / configuración): ~28 horas.**
+
+---
+
+## 3. Pasos adicionales de validación
+
+| # | Actividad | Consultor requerido | Tiempo estimado (h, Medium) |
+|---|---|---|---|
+| 1 | Prueba unitaria del caso de uso con datos reales en entorno de Quality | Consultor SAP BTP + Funcional | 4 |
+| 2 | Documentación de la activación para el cliente (manual de usuario + manual de configuración) | Consultor SAP BTP + Funcional | 4 |
+| 3 | Transferencia de conocimiento al equipo del cliente | Consultor SAP BTP + Funcional | 3 |
+
+**Esfuerzo total estimado (validación + entrega): ~11 horas.**
+
+---
+
+## 4. Consideraciones especiales
+
+- Disponibilidad indicada por SAP: **Beta**.
+
+---
+
+## Referencias oficiales
+
+- SAP Discovery Center — Detail Page: https://discovery-center.cloud.sap/ai-feature/0cbab727-02fe-47d3-9bf1-ff96d6c2ae62/
+- SAP Help Portal — Initial Setup: https://help.sap.com/docs/joule/integrating-joule-with-sap/initial-setup?locale=en-US
+- SAP Discovery Center — Pricing Details: No aplica
+
+---
+
+## Resumen ejecutivo de esfuerzo
+
+| Bloque | Horas |
+|---|---|
+| Activación / configuración | 28 |
+| Validación + documentación + KT | 11 |
+| **Total** | **39** |
 
 ---
 
@@ -1683,6 +2397,85 @@ Cada análisis describe, para un caso de uso identificado por su código
 | Activación / configuración | 32 |
 | Validación + documentación + KT | 11 |
 | **Total** | **43** |
+
+---
+
+## [J1325] — Project Billing Price Verification Agent
+
+> Análisis construido **únicamente** a partir de las fuentes oficiales de SAP asociadas al AI Feature/Agent J1325 en `processed/AI_Features_Data_Enriched.xlsx`. Los campos para los que SAP no publica información aparecen literalmente como "No aplica", "No existe en la fuente oficial" o "No documentado en la fuente oficial". **No se ha completado ningún dato con conocimiento general ni con inferencia desde casos similares.**
+
+**Fuentes oficiales consultadas:**
+- Detail Page (SAP Discovery Center): https://discovery-center.cloud.sap/ai-feature/540eb523-953a-43eb-8f93-525ee99d57fd/
+- Initial Setup (SAP Help Portal): No existe enlace 'Initial Setup' en *Resources*.
+- Pricing Details (SAP Discovery Center): No aplica
+
+**Resumen del caso:** En la app Manage Project Billing de SAP S/4HANA Cloud Public Edition, ayuda a los especialistas de facturación a identificar rápidamente discrepancias entre precios acordados y montos facturados. Identifica los contratos y Statements of Work (SoW) del proyecto del cliente, extrae datos clave de precios y los compara con los valores de la Project Billing Request, resaltando discrepancias, aportando contexto y sugiriendo acciones correctivas.
+
+---
+
+## 1. Prerequisitos para la activación
+
+### 1.1 Producto / componente SAP requerido
+- **SAP S/4HANA Cloud Public Edition**.
+
+### 1.2 Licenciamiento / entitlement / paquete
+- Capability **Base**.
+- No aplica un paquete Premium.
+
+### 1.3 Scope item relacionado
+- No documentado en la fuente oficial.
+
+### 1.4 Aplicaciones / apps Fiori / servicios / componentes técnicos
+- No documentado en la fuente oficial.
+
+### 1.5 Datos maestros / transaccionales previos
+- No documentado en la fuente oficial.
+
+### 1.6 Restricciones funcionales / técnicas / idioma
+- Disponible para SAP S/4HANA Cloud **Public Edition**.
+
+---
+
+## 2. Pasos de activación / configuración estándar
+
+> **No se registran pasos de activación.** Tras consultar el Initial Setup y la página AI Feature enlazados en *Resources*, no fue posible acceder a una página oficial SAP que describa un procedimiento de activación para este caso. No se han fabricado pasos.
+
+---
+
+## 3. Pasos adicionales de validación
+
+| # | Actividad | Consultor requerido | Tiempo estimado (h, Medium) |
+|---|---|---|---|
+| 1 | Prueba unitaria del caso de uso con datos reales en entorno de Quality | Consultor Funcional SAP S/4HANA (producto base) | 4 |
+| 2 | Documentación de la activación para el cliente (manual de usuario + manual de configuración) | Consultor Funcional SAP S/4HANA (producto base) | 4 |
+| 3 | Transferencia de conocimiento al equipo del cliente | Consultor Funcional SAP S/4HANA (producto base) | 3 |
+
+**Esfuerzo total estimado (validación + entrega): ~11 horas.**
+
+---
+
+## 4. Consideraciones especiales
+
+- Aplica a SAP S/4HANA Cloud **Public Edition**.
+- Disponibilidad indicada por SAP: **Beta**.
+
+---
+
+## Referencias oficiales
+
+- SAP Discovery Center — Detail Page: https://discovery-center.cloud.sap/ai-feature/540eb523-953a-43eb-8f93-525ee99d57fd/
+- SAP Help Portal — Initial Setup: No existe enlace en *Resources*
+- SAP Discovery Center — Pricing Details: No aplica
+
+---
+
+## Resumen ejecutivo de esfuerzo
+
+| Bloque | Horas |
+|---|---|
+| Activación / configuración | No aplica (sin pasos oficialmente documentados) |
+| Validación + documentación + KT | 11 |
+| **Total** | **11** |
 
 ---
 
@@ -2643,6 +3436,162 @@ Cada análisis describe, para un caso de uso identificado por su código
 
 ---
 
+## [J172] — 2D Hotspot Creation
+
+> Análisis construido **únicamente** a partir de las fuentes oficiales de SAP asociadas al AI Feature/Agent J172 en `processed/AI_Features_Data_Enriched.xlsx`. Los campos para los que SAP no publica información aparecen literalmente como "No aplica", "No existe en la fuente oficial" o "No documentado en la fuente oficial". **No se ha completado ningún dato con conocimiento general ni con inferencia desde casos similares.**
+
+**Fuentes oficiales consultadas:**
+- Detail Page (SAP Discovery Center): https://discovery-center.cloud.sap/ai-feature/c523c267-0a3d-4430-9cba-e75df8caac1b/
+- Initial Setup (SAP Help Portal): No existe enlace 'Initial Setup' en *Resources*.
+- Pricing Details (SAP Discovery Center): No aplica
+
+**Resumen del caso:** Permite a los usuarios de SAP Integrated Product Development crear automáticamente hotspots en planos 2D y asociarlos con datos de negocio del back-end, agilizando la transformación digital de los planos heredados (legacy).
+
+---
+
+## 1. Prerequisitos para la activación
+
+### 1.1 Producto / componente SAP requerido
+- **SAP Integrated Product Development**.
+
+### 1.2 Licenciamiento / entitlement / paquete
+- Capability **Base**.
+- No aplica un paquete Premium.
+
+### 1.3 Scope item relacionado
+- No aplica (el producto base no utiliza scope items de SAP S/4HANA).
+
+### 1.4 Aplicaciones / apps Fiori / servicios / componentes técnicos
+- No documentado en la fuente oficial.
+
+### 1.5 Datos maestros / transaccionales previos
+- No documentado en la fuente oficial.
+
+### 1.6 Restricciones funcionales / técnicas / idioma
+- No documentado en la fuente oficial.
+
+---
+
+## 2. Pasos de activación / configuración estándar
+
+> **No se registran pasos de activación.** Tras consultar el Initial Setup y la página AI Feature enlazados en *Resources*, no fue posible acceder a una página oficial SAP que describa un procedimiento de activación para este caso. No se han fabricado pasos.
+
+---
+
+## 3. Pasos adicionales de validación
+
+| # | Actividad | Consultor requerido | Tiempo estimado (h, Medium) |
+|---|---|---|---|
+| 1 | Prueba unitaria del caso de uso con datos reales en entorno de Quality | Consultor Funcional del producto base (producto base) | 4 |
+| 2 | Documentación de la activación para el cliente (manual de usuario + manual de configuración) | Consultor Funcional del producto base (producto base) | 4 |
+| 3 | Transferencia de conocimiento al equipo del cliente | Consultor Funcional del producto base (producto base) | 3 |
+
+**Esfuerzo total estimado (validación + entrega): ~11 horas.**
+
+---
+
+## 4. Consideraciones especiales
+
+- Disponibilidad indicada por SAP: **Beta**.
+
+---
+
+## Referencias oficiales
+
+- SAP Discovery Center — Detail Page: https://discovery-center.cloud.sap/ai-feature/c523c267-0a3d-4430-9cba-e75df8caac1b/
+- SAP Help Portal — Initial Setup: No existe enlace en *Resources*
+- SAP Discovery Center — Pricing Details: No aplica
+
+---
+
+## Resumen ejecutivo de esfuerzo
+
+| Bloque | Horas |
+|---|---|
+| Activación / configuración | No aplica (sin pasos oficialmente documentados) |
+| Validación + documentación + KT | 11 |
+| **Total** | **11** |
+
+---
+
+## [J173] — Declaration Image Analysis
+
+> Análisis construido **únicamente** a partir de las fuentes oficiales de SAP asociadas al AI Feature/Agent J173 en `processed/AI_Features_Data_Enriched.xlsx`. Los campos para los que SAP no publica información aparecen literalmente como "No aplica", "No existe en la fuente oficial" o "No documentado en la fuente oficial". **No se ha completado ningún dato con conocimiento general ni con inferencia desde casos similares.**
+
+**Fuentes oficiales consultadas:**
+- Detail Page (SAP Discovery Center): https://discovery-center.cloud.sap/ai-feature/ef9efdef-7300-4580-9c54-5664e1c99f95/
+- Initial Setup (SAP Help Portal): No existe enlace 'Initial Setup' en *Resources*.
+- Pricing Details (SAP Discovery Center): No aplica
+
+**Resumen del caso:** Extrae automáticamente información de declaraciones de distintos formatos sin interacción del usuario y contabiliza los datos de la transacción en SAP Green Token. Elimina la dependencia de mecanismos de extracción propios del cliente y extrae datos con precisión de tipos de documento diversos, donde la información requerida está bien definida pero la estructura y el formato no son uniformes.
+
+---
+
+## 1. Prerequisitos para la activación
+
+### 1.1 Producto / componente SAP requerido
+- **SAP Green Token**.
+
+### 1.2 Licenciamiento / entitlement / paquete
+- Capability **Base**.
+- No aplica un paquete Premium.
+
+### 1.3 Scope item relacionado
+- No aplica (el producto base no utiliza scope items de SAP S/4HANA).
+
+### 1.4 Aplicaciones / apps Fiori / servicios / componentes técnicos
+- No documentado en la fuente oficial.
+
+### 1.5 Datos maestros / transaccionales previos
+- No documentado en la fuente oficial.
+
+### 1.6 Restricciones funcionales / técnicas / idioma
+- No documentado en la fuente oficial.
+
+---
+
+## 2. Pasos de activación / configuración estándar
+
+> **No se registran pasos de activación.** Tras consultar el Initial Setup y la página AI Feature enlazados en *Resources*, no fue posible acceder a una página oficial SAP que describa un procedimiento de activación para este caso. No se han fabricado pasos.
+
+---
+
+## 3. Pasos adicionales de validación
+
+| # | Actividad | Consultor requerido | Tiempo estimado (h, Medium) |
+|---|---|---|---|
+| 1 | Prueba unitaria del caso de uso con datos reales en entorno de Quality | Consultor Funcional del producto base (producto base) | 4 |
+| 2 | Documentación de la activación para el cliente (manual de usuario + manual de configuración) | Consultor Funcional del producto base (producto base) | 4 |
+| 3 | Transferencia de conocimiento al equipo del cliente | Consultor Funcional del producto base (producto base) | 3 |
+
+**Esfuerzo total estimado (validación + entrega): ~11 horas.**
+
+---
+
+## 4. Consideraciones especiales
+
+- Disponibilidad indicada por SAP: **Beta**.
+
+---
+
+## Referencias oficiales
+
+- SAP Discovery Center — Detail Page: https://discovery-center.cloud.sap/ai-feature/ef9efdef-7300-4580-9c54-5664e1c99f95/
+- SAP Help Portal — Initial Setup: No existe enlace en *Resources*
+- SAP Discovery Center — Pricing Details: No aplica
+
+---
+
+## Resumen ejecutivo de esfuerzo
+
+| Bloque | Horas |
+|---|---|
+| Activación / configuración | No aplica (sin pasos oficialmente documentados) |
+| Validación + documentación + KT | 11 |
+| **Total** | **11** |
+
+---
+
 ## [J178] — Inventory Builder
 
 > Análisis construido **únicamente** a partir de las fuentes oficiales de SAP asociadas al AI Feature/Agent J178 en `processed/AI_Features_Data_Enriched.xlsx`. Los campos para los que SAP no publica información aparecen literalmente como "No aplica", "No existe en la fuente oficial" o "No documentado en la fuente oficial". **No se ha completado ningún dato con conocimiento general ni con inferencia desde casos similares.**
@@ -2809,6 +3758,85 @@ Cada análisis describe, para un caso de uso identificado por su código
 | Activación / configuración | 12 |
 | Validación + documentación + KT | 11 |
 | **Total** | **23** |
+
+---
+
+## [J181] — Smart Solution for Situations in My Home
+
+> Análisis construido **únicamente** a partir de las fuentes oficiales de SAP asociadas al AI Feature/Agent J181 en `processed/AI_Features_Data_Enriched.xlsx`. Los campos para los que SAP no publica información aparecen literalmente como "No aplica", "No existe en la fuente oficial" o "No documentado en la fuente oficial". **No se ha completado ningún dato con conocimiento general ni con inferencia desde casos similares.**
+
+**Fuentes oficiales consultadas:**
+- Detail Page (SAP Discovery Center): https://discovery-center.cloud.sap/ai-feature/5a6f7a49-1bbf-4e9b-b2e0-57aad5f2de6d/
+- Initial Setup (SAP Help Portal): No existe enlace 'Initial Setup' en *Resources*.
+- Pricing Details (SAP Discovery Center): No aplica
+
+**Resumen del caso:** Ahorra tiempo ayudando a los usuarios de negocio a identificar los elementos que requieren su atención inmediata desde su último inicio de sesión. Permite a los usuarios de SAP S/4HANA Cloud Public Edition gestionar y priorizar tareas e información de forma eficiente, ofreciendo en la página de entrada un resumen completo de los elementos y actualizaciones clave realizados desde la última sesión.
+
+---
+
+## 1. Prerequisitos para la activación
+
+### 1.1 Producto / componente SAP requerido
+- **SAP S/4HANA Cloud Public Edition**.
+
+### 1.2 Licenciamiento / entitlement / paquete
+- Capability **Base**.
+- No aplica un paquete Premium.
+
+### 1.3 Scope item relacionado
+- No documentado en la fuente oficial.
+
+### 1.4 Aplicaciones / apps Fiori / servicios / componentes técnicos
+- No documentado en la fuente oficial.
+
+### 1.5 Datos maestros / transaccionales previos
+- No documentado en la fuente oficial.
+
+### 1.6 Restricciones funcionales / técnicas / idioma
+- Disponible para SAP S/4HANA Cloud **Public Edition**.
+
+---
+
+## 2. Pasos de activación / configuración estándar
+
+> **No se registran pasos de activación.** Tras consultar el Initial Setup y la página AI Feature enlazados en *Resources*, no fue posible acceder a una página oficial SAP que describa un procedimiento de activación para este caso. No se han fabricado pasos.
+
+---
+
+## 3. Pasos adicionales de validación
+
+| # | Actividad | Consultor requerido | Tiempo estimado (h, Medium) |
+|---|---|---|---|
+| 1 | Prueba unitaria del caso de uso con datos reales en entorno de Quality | Consultor Funcional SAP S/4HANA (producto base) | 4 |
+| 2 | Documentación de la activación para el cliente (manual de usuario + manual de configuración) | Consultor Funcional SAP S/4HANA (producto base) | 4 |
+| 3 | Transferencia de conocimiento al equipo del cliente | Consultor Funcional SAP S/4HANA (producto base) | 3 |
+
+**Esfuerzo total estimado (validación + entrega): ~11 horas.**
+
+---
+
+## 4. Consideraciones especiales
+
+- Aplica a SAP S/4HANA Cloud **Public Edition**.
+- Disponibilidad indicada por SAP: **Beta**.
+
+---
+
+## Referencias oficiales
+
+- SAP Discovery Center — Detail Page: https://discovery-center.cloud.sap/ai-feature/5a6f7a49-1bbf-4e9b-b2e0-57aad5f2de6d/
+- SAP Help Portal — Initial Setup: No existe enlace en *Resources*
+- SAP Discovery Center — Pricing Details: No aplica
+
+---
+
+## Resumen ejecutivo de esfuerzo
+
+| Bloque | Horas |
+|---|---|
+| Activación / configuración | No aplica (sin pasos oficialmente documentados) |
+| Validación + documentación + KT | 11 |
+| **Total** | **11** |
 
 ---
 
@@ -4203,6 +5231,85 @@ Cada análisis describe, para un caso de uso identificado por su código
 
 ---
 
+## [J281] — Easy Fill
+
+> Análisis construido **únicamente** a partir de las fuentes oficiales de SAP asociadas al AI Feature/Agent J281 en `processed/AI_Features_Data_Enriched.xlsx`. Los campos para los que SAP no publica información aparecen literalmente como "No aplica", "No existe en la fuente oficial" o "No documentado en la fuente oficial". **No se ha completado ningún dato con conocimiento general ni con inferencia desde casos similares.**
+
+**Fuentes oficiales consultadas:**
+- Detail Page (SAP Discovery Center): https://discovery-center.cloud.sap/ai-feature/b054b110-d555-49ef-b233-e16be1a13eed/
+- Initial Setup (SAP Help Portal): No existe enlace 'Initial Setup' en *Resources*.
+- Pricing Details (SAP Discovery Center): No aplica
+
+**Resumen del caso:** Permite a los usuarios de SAP S/4HANA Cloud Public Edition poblar los campos de un objeto de negocio mediante entrada en lenguaje natural, agilizando la captura de datos y mejorando su exactitud, al permitir introducir actualizaciones en un formato relevante para el proceso de negocio y asegurando que los campos requeridos se completen.
+
+---
+
+## 1. Prerequisitos para la activación
+
+### 1.1 Producto / componente SAP requerido
+- **SAP S/4HANA Cloud Public Edition**.
+
+### 1.2 Licenciamiento / entitlement / paquete
+- Capability **Base**.
+- No aplica un paquete Premium.
+
+### 1.3 Scope item relacionado
+- No documentado en la fuente oficial.
+
+### 1.4 Aplicaciones / apps Fiori / servicios / componentes técnicos
+- No documentado en la fuente oficial.
+
+### 1.5 Datos maestros / transaccionales previos
+- No documentado en la fuente oficial.
+
+### 1.6 Restricciones funcionales / técnicas / idioma
+- Disponible para SAP S/4HANA Cloud **Public Edition**.
+
+---
+
+## 2. Pasos de activación / configuración estándar
+
+> **No se registran pasos de activación.** Tras consultar el Initial Setup y la página AI Feature enlazados en *Resources*, no fue posible acceder a una página oficial SAP que describa un procedimiento de activación para este caso. No se han fabricado pasos.
+
+---
+
+## 3. Pasos adicionales de validación
+
+| # | Actividad | Consultor requerido | Tiempo estimado (h, Medium) |
+|---|---|---|---|
+| 1 | Prueba unitaria del caso de uso con datos reales en entorno de Quality | Consultor Funcional SAP S/4HANA (producto base) | 4 |
+| 2 | Documentación de la activación para el cliente (manual de usuario + manual de configuración) | Consultor Funcional SAP S/4HANA (producto base) | 4 |
+| 3 | Transferencia de conocimiento al equipo del cliente | Consultor Funcional SAP S/4HANA (producto base) | 3 |
+
+**Esfuerzo total estimado (validación + entrega): ~11 horas.**
+
+---
+
+## 4. Consideraciones especiales
+
+- Aplica a SAP S/4HANA Cloud **Public Edition**.
+- Disponibilidad indicada por SAP: **Beta**.
+
+---
+
+## Referencias oficiales
+
+- SAP Discovery Center — Detail Page: https://discovery-center.cloud.sap/ai-feature/b054b110-d555-49ef-b233-e16be1a13eed/
+- SAP Help Portal — Initial Setup: No existe enlace en *Resources*
+- SAP Discovery Center — Pricing Details: No aplica
+
+---
+
+## Resumen ejecutivo de esfuerzo
+
+| Bloque | Horas |
+|---|---|
+| Activación / configuración | No aplica (sin pasos oficialmente documentados) |
+| Validación + documentación + KT | 11 |
+| **Total** | **11** |
+
+---
+
 ## [J284] — Joule with SAP LeanIX
 
 > Análisis construido **únicamente** a partir de las fuentes oficiales de SAP asociadas al AI Feature/Agent J284 en `processed/AI_Features_Data_Enriched.xlsx`. Los campos para los que SAP no publica información aparecen literalmente como "No aplica", "No existe en la fuente oficial" o "No documentado en la fuente oficial". **No se ha completado ningún dato con conocimiento general ni con inferencia desde casos similares.**
@@ -4450,6 +5557,92 @@ Cada análisis describe, para un caso de uso identificado por su código
 | Activación / configuración | No aplica (sin pasos oficialmente documentados) |
 | Validación + documentación + KT | 11 |
 | **Total** | **11** |
+
+---
+
+## [J291] — Joule with SAP Business Accelerator Hub
+
+> Análisis construido **únicamente** a partir de las fuentes oficiales de SAP asociadas al AI Feature/Agent J291 en `processed/AI_Features_Data_Enriched.xlsx`. Los campos para los que SAP no publica información aparecen literalmente como "No aplica", "No existe en la fuente oficial" o "No documentado en la fuente oficial". **No se ha completado ningún dato con conocimiento general ni con inferencia desde casos similares.**
+
+**Fuentes oficiales consultadas:**
+- Detail Page (SAP Discovery Center): https://discovery-center.cloud.sap/ai-feature/5b1c80e7-ae6a-45eb-89cf-cf7114bb00d4/
+- Initial Setup (SAP Help Portal): https://help.sap.com/docs/SAP_API_BUSINESS_HUB/e56a6c50d31541ea826021dc8e721a53/7adca3a5825947ad9bd76b996db24b1e.html?locale=en-US&state=PRODUCTION&version=Cloud&q=joule#loio72f316af64c941fe84ea908c070084b8
+- AI Feature (SAP Help Portal): https://help.sap.com/docs/business-accelerator-hub/sap-business-accelerator-hub/discover-and-explore-sap-business-accelerator-hub?locale=en-US#loio72f316af64c941fe84ea908c070084b8
+- Pricing Details (SAP Discovery Center): No aplica
+
+**Resumen del caso:** Ayuda a los usuarios a encontrar el contenido adecuado mediante búsqueda conversacional basada en contexto. El descubrimiento con Joule guía la búsqueda de distintos artefactos y su acceso según el contexto específico, acelerando el descubrimiento.
+
+---
+
+## 1. Prerequisitos para la activación
+
+### 1.1 Producto / componente SAP requerido
+- **SAP Business Accelerator Hub**.
+
+### 1.2 Licenciamiento / entitlement / paquete
+- Capability **Base**.
+- No aplica un paquete Premium.
+
+### 1.3 Scope item relacionado
+- No aplica (el producto base no utiliza scope items de SAP S/4HANA).
+
+### 1.4 Aplicaciones / apps Fiori / servicios / componentes técnicos
+- Según las fuentes oficiales abiertas (Initial Setup / AI Feature): An artifact type that defines how a message is to be processed on the tenant. An integration flow can be modeled as a graphical representation of how the integration content can be configured to enable the processing of messages between two or more participants using SAP Cloud Integration, to ensure successful communication. For more information, see Integration Flow Design Guidelines. To productively use integration content on SAP Business Accelerator Hub you need to use a workspace. For more information, see Workspaces. Mandatory: You have to use this input port to feed inputs into the data product. You need to log in to access Joule.
+
+### 1.5 Datos maestros / transaccionales previos
+- No documentado en la fuente oficial.
+
+### 1.6 Restricciones funcionales / técnicas / idioma
+- No documentado en la fuente oficial.
+
+---
+
+## 2. Pasos de activación / configuración estándar
+
+| # | Actividad estándar | Objeto de configuración | Tipo de configuración | Consultor requerido | Tiempo estimado (h, Medium) |
+|---|---|---|---|---|---|
+| 1 | Open this video in a new window | Configuración de SAP Business Accelerator Hub | General | Consultor Funcional del producto base | 3 |
+| 2 | Select a filter, and choose Apply Filters to refine your results. | Configuración de SAP Business Accelerator Hub | General | Consultor Funcional del producto base | 3 |
+| 3 | Select Feedback | Configuración de SAP Business Accelerator Hub | General | Consultor Funcional del producto base | 3 |
+
+**Esfuerzo total estimado (activación / configuración): ~9 horas.**
+
+---
+
+## 3. Pasos adicionales de validación
+
+| # | Actividad | Consultor requerido | Tiempo estimado (h, Medium) |
+|---|---|---|---|
+| 1 | Prueba unitaria del caso de uso con datos reales en entorno de Quality | Consultor Funcional del producto base | 4 |
+| 2 | Documentación de la activación para el cliente (manual de usuario + manual de configuración) | Consultor Funcional del producto base | 4 |
+| 3 | Transferencia de conocimiento al equipo del cliente | Consultor Funcional del producto base | 3 |
+
+**Esfuerzo total estimado (validación + entrega): ~11 horas.**
+
+---
+
+## 4. Consideraciones especiales
+
+- Disponibilidad indicada por SAP: **Beta**.
+
+---
+
+## Referencias oficiales
+
+- SAP Discovery Center — Detail Page: https://discovery-center.cloud.sap/ai-feature/5b1c80e7-ae6a-45eb-89cf-cf7114bb00d4/
+- SAP Help Portal — Initial Setup: https://help.sap.com/docs/SAP_API_BUSINESS_HUB/e56a6c50d31541ea826021dc8e721a53/7adca3a5825947ad9bd76b996db24b1e.html?locale=en-US&state=PRODUCTION&version=Cloud&q=joule#loio72f316af64c941fe84ea908c070084b8
+- SAP Help Portal — AI Feature: https://help.sap.com/docs/business-accelerator-hub/sap-business-accelerator-hub/discover-and-explore-sap-business-accelerator-hub?locale=en-US#loio72f316af64c941fe84ea908c070084b8
+- SAP Discovery Center — Pricing Details: No aplica
+
+---
+
+## Resumen ejecutivo de esfuerzo
+
+| Bloque | Horas |
+|---|---|
+| Activación / configuración | 9 |
+| Validación + documentación + KT | 11 |
+| **Total** | **20** |
 
 ---
 
@@ -5138,6 +6331,84 @@ Cada análisis describe, para un caso de uso identificado por su código
 
 ---
 
+## [J331] — Role-based Process Overview
+
+> Análisis construido **únicamente** a partir de las fuentes oficiales de SAP asociadas al AI Feature/Agent J331 en `processed/AI_Features_Data_Enriched.xlsx`. Los campos para los que SAP no publica información aparecen literalmente como "No aplica", "No existe en la fuente oficial" o "No documentado en la fuente oficial". **No se ha completado ningún dato con conocimiento general ni con inferencia desde casos similares.**
+
+**Fuentes oficiales consultadas:**
+- Detail Page (SAP Discovery Center): https://discovery-center.cloud.sap/ai-feature/e4b92ea3-f81d-4f95-9afd-368b563700ad/
+- Initial Setup (SAP Help Portal): No existe enlace 'Initial Setup' en *Resources*.
+- Pricing Details (SAP Discovery Center): No aplica
+
+**Resumen del caso:** “My Process Overview” ofrece a los usuarios una vista personalizada de procesos, contenido y herramientas relevantes para su rol, eliminando la búsqueda manual. Ayuda a usuarios sin experiencia profunda en procesos a construir conocimiento y entender sus responsabilidades; ideal para onboarding. Un asistente de configuración con IA adapta las recomendaciones según los detalles del puesto.
+
+---
+
+## 1. Prerequisitos para la activación
+
+### 1.1 Producto / componente SAP requerido
+- **SAP Signavio Process Collaboration Hub**.
+
+### 1.2 Licenciamiento / entitlement / paquete
+- Capability **Base**.
+- No aplica un paquete Premium.
+
+### 1.3 Scope item relacionado
+- No aplica (el producto base no utiliza scope items de SAP S/4HANA).
+
+### 1.4 Aplicaciones / apps Fiori / servicios / componentes técnicos
+- No documentado en la fuente oficial.
+
+### 1.5 Datos maestros / transaccionales previos
+- No documentado en la fuente oficial.
+
+### 1.6 Restricciones funcionales / técnicas / idioma
+- No documentado en la fuente oficial.
+
+---
+
+## 2. Pasos de activación / configuración estándar
+
+> **No se registran pasos de activación.** Tras consultar el Initial Setup y la página AI Feature enlazados en *Resources*, no fue posible acceder a una página oficial SAP que describa un procedimiento de activación para este caso. No se han fabricado pasos.
+
+---
+
+## 3. Pasos adicionales de validación
+
+| # | Actividad | Consultor requerido | Tiempo estimado (h, Medium) |
+|---|---|---|---|
+| 1 | Prueba unitaria del caso de uso con datos reales en entorno de Quality | Consultor SAP Signavio (producto base) | 4 |
+| 2 | Documentación de la activación para el cliente (manual de usuario + manual de configuración) | Consultor SAP Signavio (producto base) | 4 |
+| 3 | Transferencia de conocimiento al equipo del cliente | Consultor SAP Signavio (producto base) | 3 |
+
+**Esfuerzo total estimado (validación + entrega): ~11 horas.**
+
+---
+
+## 4. Consideraciones especiales
+
+- Disponibilidad indicada por SAP: **Beta**.
+
+---
+
+## Referencias oficiales
+
+- SAP Discovery Center — Detail Page: https://discovery-center.cloud.sap/ai-feature/e4b92ea3-f81d-4f95-9afd-368b563700ad/
+- SAP Help Portal — Initial Setup: No existe enlace en *Resources*
+- SAP Discovery Center — Pricing Details: No aplica
+
+---
+
+## Resumen ejecutivo de esfuerzo
+
+| Bloque | Horas |
+|---|---|
+| Activación / configuración | No aplica (sin pasos oficialmente documentados) |
+| Validación + documentación + KT | 11 |
+| **Total** | **11** |
+
+---
+
 ## [J336] — Error Resolution for Cost Accounting
 
 > Análisis construido **únicamente** a partir de las fuentes oficiales de SAP asociadas al AI Feature/Agent J336 en `processed/AI_Features_Data_Enriched.xlsx`. Los campos para los que SAP no publica información aparecen literalmente como "No aplica", "No existe en la fuente oficial" o "No documentado en la fuente oficial". **No se ha completado ningún dato con conocimiento general ni con inferencia desde casos similares.**
@@ -5304,6 +6575,164 @@ Cada análisis describe, para un caso de uso identificado por su código
 | Activación / configuración | 6 |
 | Validación + documentación + KT | 11 |
 | **Total** | **17** |
+
+---
+
+## [J344] — Permit Management
+
+> Análisis construido **únicamente** a partir de las fuentes oficiales de SAP asociadas al AI Feature/Agent J344 en `processed/AI_Features_Data_Enriched.xlsx`. Los campos para los que SAP no publica información aparecen literalmente como "No aplica", "No existe en la fuente oficial" o "No documentado en la fuente oficial". **No se ha completado ningún dato con conocimiento general ni con inferencia desde casos similares.**
+
+**Fuentes oficiales consultadas:**
+- Detail Page (SAP Discovery Center): https://discovery-center.cloud.sap/ai-feature/89944fea-d96d-453c-9684-fe2b2c9cbb51/
+- Initial Setup (SAP Help Portal): No existe enlace 'Initial Setup' en *Resources*.
+- Pricing Details (SAP Discovery Center): No aplica
+
+**Resumen del caso:** Extrae y configura automáticamente permisos de EHS (medio ambiente, salud y seguridad) a partir de documentos PDF que pueden tener desde pocas hasta cientos de páginas. No solo escanea y configura los datos de cabecera del permiso, sino que identifica todos los requisitos y configura las tareas correspondientes (simples, de aviso de mantenimiento, de reporte). El usuario ve en una vista lado a lado las tareas recomendadas mientras revisa las páginas del PDF.
+
+---
+
+## 1. Prerequisitos para la activación
+
+### 1.1 Producto / componente SAP requerido
+- **SAP S/4HANA Cloud Public Edition**.
+
+### 1.2 Licenciamiento / entitlement / paquete
+- Capability **Base**.
+- No aplica un paquete Premium.
+
+### 1.3 Scope item relacionado
+- No documentado en la fuente oficial.
+
+### 1.4 Aplicaciones / apps Fiori / servicios / componentes técnicos
+- No documentado en la fuente oficial.
+
+### 1.5 Datos maestros / transaccionales previos
+- No documentado en la fuente oficial.
+
+### 1.6 Restricciones funcionales / técnicas / idioma
+- Disponible para SAP S/4HANA Cloud **Public Edition**.
+
+---
+
+## 2. Pasos de activación / configuración estándar
+
+> **No se registran pasos de activación.** Tras consultar el Initial Setup y la página AI Feature enlazados en *Resources*, no fue posible acceder a una página oficial SAP que describa un procedimiento de activación para este caso. No se han fabricado pasos.
+
+---
+
+## 3. Pasos adicionales de validación
+
+| # | Actividad | Consultor requerido | Tiempo estimado (h, Medium) |
+|---|---|---|---|
+| 1 | Prueba unitaria del caso de uso con datos reales en entorno de Quality | Consultor Funcional SAP S/4HANA (producto base) | 4 |
+| 2 | Documentación de la activación para el cliente (manual de usuario + manual de configuración) | Consultor Funcional SAP S/4HANA (producto base) | 4 |
+| 3 | Transferencia de conocimiento al equipo del cliente | Consultor Funcional SAP S/4HANA (producto base) | 3 |
+
+**Esfuerzo total estimado (validación + entrega): ~11 horas.**
+
+---
+
+## 4. Consideraciones especiales
+
+- Aplica a SAP S/4HANA Cloud **Public Edition**.
+- Disponibilidad indicada por SAP: **Beta**.
+
+---
+
+## Referencias oficiales
+
+- SAP Discovery Center — Detail Page: https://discovery-center.cloud.sap/ai-feature/89944fea-d96d-453c-9684-fe2b2c9cbb51/
+- SAP Help Portal — Initial Setup: No existe enlace en *Resources*
+- SAP Discovery Center — Pricing Details: No aplica
+
+---
+
+## Resumen ejecutivo de esfuerzo
+
+| Bloque | Horas |
+|---|---|
+| Activación / configuración | No aplica (sin pasos oficialmente documentados) |
+| Validación + documentación + KT | 11 |
+| **Total** | **11** |
+
+---
+
+## [J345] — Compliance Information Processing
+
+> Análisis construido **únicamente** a partir de las fuentes oficiales de SAP asociadas al AI Feature/Agent J345 en `processed/AI_Features_Data_Enriched.xlsx`. Los campos para los que SAP no publica información aparecen literalmente como "No aplica", "No existe en la fuente oficial" o "No documentado en la fuente oficial". **No se ha completado ningún dato con conocimiento general ni con inferencia desde casos similares.**
+
+**Fuentes oficiales consultadas:**
+- Detail Page (SAP Discovery Center): https://discovery-center.cloud.sap/ai-feature/57f00cc9-d292-4fd6-baec-cb4a6336c70c/
+- Initial Setup (SAP Help Portal): No existe enlace 'Initial Setup' en *Resources*.
+- Pricing Details (SAP Discovery Center): No aplica
+
+**Resumen del caso:** Permite a los especialistas de datos maestros procesar automáticamente la información de cumplimiento (compliance) de proveedores —regulaciones, estado y datos de proveedores upstream— y mapearla a los requisitos de compliance en SAP S/4HANA Cloud Public Edition para product compliance, mejorando la eficiencia y precisión del análisis y reduciendo errores que afectan la seguridad y el cumplimiento.
+
+---
+
+## 1. Prerequisitos para la activación
+
+### 1.1 Producto / componente SAP requerido
+- **SAP S/4HANA Cloud Public Edition**.
+
+### 1.2 Licenciamiento / entitlement / paquete
+- Capability **Base**.
+- No aplica un paquete Premium.
+
+### 1.3 Scope item relacionado
+- No documentado en la fuente oficial.
+
+### 1.4 Aplicaciones / apps Fiori / servicios / componentes técnicos
+- No documentado en la fuente oficial.
+
+### 1.5 Datos maestros / transaccionales previos
+- No documentado en la fuente oficial.
+
+### 1.6 Restricciones funcionales / técnicas / idioma
+- Disponible para SAP S/4HANA Cloud **Public Edition**.
+
+---
+
+## 2. Pasos de activación / configuración estándar
+
+> **No se registran pasos de activación.** Tras consultar el Initial Setup y la página AI Feature enlazados en *Resources*, no fue posible acceder a una página oficial SAP que describa un procedimiento de activación para este caso. No se han fabricado pasos.
+
+---
+
+## 3. Pasos adicionales de validación
+
+| # | Actividad | Consultor requerido | Tiempo estimado (h, Medium) |
+|---|---|---|---|
+| 1 | Prueba unitaria del caso de uso con datos reales en entorno de Quality | Consultor Funcional SAP S/4HANA (producto base) | 4 |
+| 2 | Documentación de la activación para el cliente (manual de usuario + manual de configuración) | Consultor Funcional SAP S/4HANA (producto base) | 4 |
+| 3 | Transferencia de conocimiento al equipo del cliente | Consultor Funcional SAP S/4HANA (producto base) | 3 |
+
+**Esfuerzo total estimado (validación + entrega): ~11 horas.**
+
+---
+
+## 4. Consideraciones especiales
+
+- Aplica a SAP S/4HANA Cloud **Public Edition**.
+- Disponibilidad indicada por SAP: **Beta**.
+
+---
+
+## Referencias oficiales
+
+- SAP Discovery Center — Detail Page: https://discovery-center.cloud.sap/ai-feature/57f00cc9-d292-4fd6-baec-cb4a6336c70c/
+- SAP Help Portal — Initial Setup: No existe enlace en *Resources*
+- SAP Discovery Center — Pricing Details: No aplica
+
+---
+
+## Resumen ejecutivo de esfuerzo
+
+| Bloque | Horas |
+|---|---|
+| Activación / configuración | No aplica (sin pasos oficialmente documentados) |
+| Validación + documentación + KT | 11 |
+| **Total** | **11** |
 
 ---
 
@@ -5648,6 +7077,164 @@ Cada análisis describe, para un caso de uso identificado por su código
 
 ---
 
+## [J375] — Payment Exception Analysis
+
+> Análisis construido **únicamente** a partir de las fuentes oficiales de SAP asociadas al AI Feature/Agent J375 en `processed/AI_Features_Data_Enriched.xlsx`. Los campos para los que SAP no publica información aparecen literalmente como "No aplica", "No existe en la fuente oficial" o "No documentado en la fuente oficial". **No se ha completado ningún dato con conocimiento general ni con inferencia desde casos similares.**
+
+**Fuentes oficiales consultadas:**
+- Detail Page (SAP Discovery Center): https://discovery-center.cloud.sap/ai-feature/016c719c-5363-47ff-945f-cdddd5241871/
+- Initial Setup (SAP Help Portal): No existe enlace 'Initial Setup' en *Resources*.
+- Pricing Details (SAP Discovery Center): No aplica
+
+**Resumen del caso:** Proporciona a los contables de cuentas por pagar (AP) análisis asistido por IA de las excepciones de la propuesta de pago, con registros de log detallados y resoluciones sugeridas, ayudando a agilizar y acelerar el manejo de excepciones.
+
+---
+
+## 1. Prerequisitos para la activación
+
+### 1.1 Producto / componente SAP requerido
+- **SAP S/4HANA Cloud Public Edition**.
+
+### 1.2 Licenciamiento / entitlement / paquete
+- Capability **Base**.
+- No aplica un paquete Premium.
+
+### 1.3 Scope item relacionado
+- No documentado en la fuente oficial.
+
+### 1.4 Aplicaciones / apps Fiori / servicios / componentes técnicos
+- No documentado en la fuente oficial.
+
+### 1.5 Datos maestros / transaccionales previos
+- No documentado en la fuente oficial.
+
+### 1.6 Restricciones funcionales / técnicas / idioma
+- Disponible para SAP S/4HANA Cloud **Public Edition**.
+
+---
+
+## 2. Pasos de activación / configuración estándar
+
+> **No se registran pasos de activación.** Tras consultar el Initial Setup y la página AI Feature enlazados en *Resources*, no fue posible acceder a una página oficial SAP que describa un procedimiento de activación para este caso. No se han fabricado pasos.
+
+---
+
+## 3. Pasos adicionales de validación
+
+| # | Actividad | Consultor requerido | Tiempo estimado (h, Medium) |
+|---|---|---|---|
+| 1 | Prueba unitaria del caso de uso con datos reales en entorno de Quality | Consultor Funcional SAP S/4HANA (producto base) | 4 |
+| 2 | Documentación de la activación para el cliente (manual de usuario + manual de configuración) | Consultor Funcional SAP S/4HANA (producto base) | 4 |
+| 3 | Transferencia de conocimiento al equipo del cliente | Consultor Funcional SAP S/4HANA (producto base) | 3 |
+
+**Esfuerzo total estimado (validación + entrega): ~11 horas.**
+
+---
+
+## 4. Consideraciones especiales
+
+- Aplica a SAP S/4HANA Cloud **Public Edition**.
+- Disponibilidad indicada por SAP: **Beta**.
+
+---
+
+## Referencias oficiales
+
+- SAP Discovery Center — Detail Page: https://discovery-center.cloud.sap/ai-feature/016c719c-5363-47ff-945f-cdddd5241871/
+- SAP Help Portal — Initial Setup: No existe enlace en *Resources*
+- SAP Discovery Center — Pricing Details: No aplica
+
+---
+
+## Resumen ejecutivo de esfuerzo
+
+| Bloque | Horas |
+|---|---|
+| Activación / configuración | No aplica (sin pasos oficialmente documentados) |
+| Validación + documentación + KT | 11 |
+| **Total** | **11** |
+
+---
+
+## [J383] — Production Planning and Operations Agent
+
+> Análisis construido **únicamente** a partir de las fuentes oficiales de SAP asociadas al AI Feature/Agent J383 en `processed/AI_Features_Data_Enriched.xlsx`. Los campos para los que SAP no publica información aparecen literalmente como "No aplica", "No existe en la fuente oficial" o "No documentado en la fuente oficial". **No se ha completado ningún dato con conocimiento general ni con inferencia desde casos similares.**
+
+**Fuentes oficiales consultadas:**
+- Detail Page (SAP Discovery Center): https://discovery-center.cloud.sap/ai-feature/2bac78a3-811f-456f-b950-a4fb3e7d2ac5/
+- Initial Setup (SAP Help Portal): No existe enlace 'Initial Setup' en *Resources*.
+- Pricing Details (SAP Discovery Center): No aplica
+
+**Resumen del caso:** Acelera el order-to-delivery ahorrando a los planificadores el tiempo de liberación de órdenes. Automatiza las verificaciones previas para liberar órdenes de producción —disponibilidad de material, capacidad y programación—, marca faltantes de material y sugiere soluciones (componentes alternativos, ajustes de programación). Cuando se cumplen todos los criterios, el planificador aprueba y el agente completa la liberación de la orden.
+
+---
+
+## 1. Prerequisitos para la activación
+
+### 1.1 Producto / componente SAP requerido
+- **SAP S/4HANA Cloud Public Edition‚ Joule**.
+
+### 1.2 Licenciamiento / entitlement / paquete
+- Capability **Base**.
+- No aplica un paquete Premium.
+
+### 1.3 Scope item relacionado
+- No documentado en la fuente oficial.
+
+### 1.4 Aplicaciones / apps Fiori / servicios / componentes técnicos
+- No documentado en la fuente oficial.
+
+### 1.5 Datos maestros / transaccionales previos
+- No documentado en la fuente oficial.
+
+### 1.6 Restricciones funcionales / técnicas / idioma
+- Disponible para SAP S/4HANA Cloud **Public Edition**.
+
+---
+
+## 2. Pasos de activación / configuración estándar
+
+> **No se registran pasos de activación.** Tras consultar el Initial Setup y la página AI Feature enlazados en *Resources*, no fue posible acceder a una página oficial SAP que describa un procedimiento de activación para este caso. No se han fabricado pasos.
+
+---
+
+## 3. Pasos adicionales de validación
+
+| # | Actividad | Consultor requerido | Tiempo estimado (h, Medium) |
+|---|---|---|---|
+| 1 | Prueba unitaria del caso de uso con datos reales en entorno de Quality | Consultor Funcional SAP S/4HANA (producto base) | 4 |
+| 2 | Documentación de la activación para el cliente (manual de usuario + manual de configuración) | Consultor Funcional SAP S/4HANA (producto base) | 4 |
+| 3 | Transferencia de conocimiento al equipo del cliente | Consultor Funcional SAP S/4HANA (producto base) | 3 |
+
+**Esfuerzo total estimado (validación + entrega): ~11 horas.**
+
+---
+
+## 4. Consideraciones especiales
+
+- Aplica a SAP S/4HANA Cloud **Public Edition**.
+- Disponibilidad indicada por SAP: **Beta**.
+
+---
+
+## Referencias oficiales
+
+- SAP Discovery Center — Detail Page: https://discovery-center.cloud.sap/ai-feature/2bac78a3-811f-456f-b950-a4fb3e7d2ac5/
+- SAP Help Portal — Initial Setup: No existe enlace en *Resources*
+- SAP Discovery Center — Pricing Details: No aplica
+
+---
+
+## Resumen ejecutivo de esfuerzo
+
+| Bloque | Horas |
+|---|---|
+| Activación / configuración | No aplica (sin pasos oficialmente documentados) |
+| Validación + documentación + KT | 11 |
+| **Total** | **11** |
+
+---
+
 ## [J404] — Sales Order Creation from Unstructured Data
 
 > Análisis construido **únicamente** a partir de las fuentes oficiales de SAP asociadas al AI Feature/Agent J404 en `processed/AI_Features_Data_Enriched.xlsx`. Los campos para los que SAP no publica información aparecen literalmente como "No aplica", "No existe en la fuente oficial" o "No documentado en la fuente oficial". **No se ha completado ningún dato con conocimiento general ni con inferencia desde casos similares.**
@@ -5733,6 +7320,242 @@ Cada análisis describe, para un caso de uso identificado por su código
 | Activación / configuración | 9 |
 | Validación + documentación + KT | 11 |
 | **Total** | **20** |
+
+---
+
+## [J415] — Sourcing Agent
+
+> Análisis construido **únicamente** a partir de las fuentes oficiales de SAP asociadas al AI Feature/Agent J415 en `processed/AI_Features_Data_Enriched.xlsx`. Los campos para los que SAP no publica información aparecen literalmente como "No aplica", "No existe en la fuente oficial" o "No documentado en la fuente oficial". **No se ha completado ningún dato con conocimiento general ni con inferencia desde casos similares.**
+
+**Fuentes oficiales consultadas:**
+- Detail Page (SAP Discovery Center): https://discovery-center.cloud.sap/ai-feature/944d71fe-90ad-4ef9-894c-878a4a326893/
+- Initial Setup (SAP Help Portal): No existe enlace 'Initial Setup' en *Resources*.
+- Pricing Details (SAP Discovery Center): No aplica
+
+**Resumen del caso:** Run smarter sourcing events faster and with less effort.
+
+---
+
+## 1. Prerequisitos para la activación
+
+### 1.1 Producto / componente SAP requerido
+- **SAP Ariba Sourcing‚ Joule**.
+
+### 1.2 Licenciamiento / entitlement / paquete
+- Capability **Base**.
+- No aplica un paquete Premium.
+
+### 1.3 Scope item relacionado
+- No aplica (el producto base no utiliza scope items de SAP S/4HANA).
+
+### 1.4 Aplicaciones / apps Fiori / servicios / componentes técnicos
+- No documentado en la fuente oficial.
+
+### 1.5 Datos maestros / transaccionales previos
+- No documentado en la fuente oficial.
+
+### 1.6 Restricciones funcionales / técnicas / idioma
+- No documentado en la fuente oficial.
+
+---
+
+## 2. Pasos de activación / configuración estándar
+
+> **No se registran pasos de activación.** Tras consultar el Initial Setup y la página AI Feature enlazados en *Resources*, no fue posible acceder a una página oficial SAP que describa un procedimiento de activación para este caso. No se han fabricado pasos.
+
+---
+
+## 3. Pasos adicionales de validación
+
+| # | Actividad | Consultor requerido | Tiempo estimado (h, Medium) |
+|---|---|---|---|
+| 1 | Prueba unitaria del caso de uso con datos reales en entorno de Quality | Consultor SAP BTP + Funcional (producto base) | 4 |
+| 2 | Documentación de la activación para el cliente (manual de usuario + manual de configuración) | Consultor SAP BTP + Funcional (producto base) | 4 |
+| 3 | Transferencia de conocimiento al equipo del cliente | Consultor SAP BTP + Funcional (producto base) | 3 |
+
+**Esfuerzo total estimado (validación + entrega): ~11 horas.**
+
+---
+
+## 4. Consideraciones especiales
+
+- Disponibilidad indicada por SAP: **Beta**.
+
+---
+
+## Referencias oficiales
+
+- SAP Discovery Center — Detail Page: https://discovery-center.cloud.sap/ai-feature/944d71fe-90ad-4ef9-894c-878a4a326893/
+- SAP Help Portal — Initial Setup: No existe enlace en *Resources*
+- SAP Discovery Center — Pricing Details: No aplica
+
+---
+
+## Resumen ejecutivo de esfuerzo
+
+| Bloque | Horas |
+|---|---|
+| Activación / configuración | No aplica (sin pasos oficialmente documentados) |
+| Validación + documentación + KT | 11 |
+| **Total** | **11** |
+
+---
+
+## [J424] — Maintenance Event Planning Agent
+
+> Análisis construido **únicamente** a partir de las fuentes oficiales de SAP asociadas al AI Feature/Agent J424 en `processed/AI_Features_Data_Enriched.xlsx`. Los campos para los que SAP no publica información aparecen literalmente como "No aplica", "No existe en la fuente oficial" o "No documentado en la fuente oficial". **No se ha completado ningún dato con conocimiento general ni con inferencia desde casos similares.**
+
+**Fuentes oficiales consultadas:**
+- Detail Page (SAP Discovery Center): https://discovery-center.cloud.sap/ai-feature/8b3daa3f-7a07-4a62-8d23-20e13d00aea4/
+- Initial Setup (SAP Help Portal): No existe enlace 'Initial Setup' en *Resources*.
+- Pricing Details (SAP Discovery Center): No aplica
+
+**Resumen del caso:** Ayuda a los planificadores de mantenimiento a gestionar y priorizar una lista creciente de tareas asegurando la fiabilidad del equipo y minimizando el downtime. En colaboración con el planificador, el agente analiza continuamente datos en tiempo real y sugiere ajustes al programa de mantenimiento, repriorizando tareas y mejorando la salud de los activos.
+
+---
+
+## 1. Prerequisitos para la activación
+
+### 1.1 Producto / componente SAP requerido
+- **Joule‚ SAP S/4HANA Cloud Private Edition**.
+
+### 1.2 Licenciamiento / entitlement / paquete
+- Capability **Base**.
+- No aplica un paquete Premium.
+
+### 1.3 Scope item relacionado
+- No documentado en la fuente oficial.
+
+### 1.4 Aplicaciones / apps Fiori / servicios / componentes técnicos
+- No documentado en la fuente oficial.
+
+### 1.5 Datos maestros / transaccionales previos
+- No documentado en la fuente oficial.
+
+### 1.6 Restricciones funcionales / técnicas / idioma
+- Disponible para SAP S/4HANA Cloud **Private Edition**.
+
+---
+
+## 2. Pasos de activación / configuración estándar
+
+> **No se registran pasos de activación.** Tras consultar el Initial Setup y la página AI Feature enlazados en *Resources*, no fue posible acceder a una página oficial SAP que describa un procedimiento de activación para este caso. No se han fabricado pasos.
+
+---
+
+## 3. Pasos adicionales de validación
+
+| # | Actividad | Consultor requerido | Tiempo estimado (h, Medium) |
+|---|---|---|---|
+| 1 | Prueba unitaria del caso de uso con datos reales en entorno de Quality | Consultor Funcional SAP S/4HANA (producto base) | 4 |
+| 2 | Documentación de la activación para el cliente (manual de usuario + manual de configuración) | Consultor Funcional SAP S/4HANA (producto base) | 4 |
+| 3 | Transferencia de conocimiento al equipo del cliente | Consultor Funcional SAP S/4HANA (producto base) | 3 |
+
+**Esfuerzo total estimado (validación + entrega): ~11 horas.**
+
+---
+
+## 4. Consideraciones especiales
+
+- Restringido a SAP S/4HANA Cloud **Private Edition**.
+- Disponibilidad indicada por SAP: **Beta**.
+
+---
+
+## Referencias oficiales
+
+- SAP Discovery Center — Detail Page: https://discovery-center.cloud.sap/ai-feature/8b3daa3f-7a07-4a62-8d23-20e13d00aea4/
+- SAP Help Portal — Initial Setup: No existe enlace en *Resources*
+- SAP Discovery Center — Pricing Details: No aplica
+
+---
+
+## Resumen ejecutivo de esfuerzo
+
+| Bloque | Horas |
+|---|---|
+| Activación / configuración | No aplica (sin pasos oficialmente documentados) |
+| Validación + documentación + KT | 11 |
+| **Total** | **11** |
+
+---
+
+## [J425] — Cash Positioning Agent
+
+> Análisis construido **únicamente** a partir de las fuentes oficiales de SAP asociadas al AI Feature/Agent J425 en `processed/AI_Features_Data_Enriched.xlsx`. Los campos para los que SAP no publica información aparecen literalmente como "No aplica", "No existe en la fuente oficial" o "No documentado en la fuente oficial". **No se ha completado ningún dato con conocimiento general ni con inferencia desde casos similares.**
+
+**Fuentes oficiales consultadas:**
+- Detail Page (SAP Discovery Center): https://discovery-center.cloud.sap/ai-feature/61f9300e-11e0-4ca2-acee-ace35c44fae0/
+- Initial Setup (SAP Help Portal): No existe enlace 'Initial Setup' en *Resources*.
+- Pricing Details (SAP Discovery Center): No aplica
+
+**Resumen del caso:** Ayuda a los gestores de tesorería a ahorrar tiempo y aumentar el rendimiento de intereses mediante un agente que automatiza conciliaciones y propone optimizaciones de caja. Procesa con exactitud los extractos bancarios, agrega saldos iniciales y considera los flujos de caja esperados; propone transferencias para optimizar la caja operativa identificando déficits y superávits, que el gestor revisa y aprueba.
+
+---
+
+## 1. Prerequisitos para la activación
+
+### 1.1 Producto / componente SAP requerido
+- **Joule‚ SAP S/4HANA Cloud Private Edition**.
+
+### 1.2 Licenciamiento / entitlement / paquete
+- Capability **Base**.
+- No aplica un paquete Premium.
+
+### 1.3 Scope item relacionado
+- No documentado en la fuente oficial.
+
+### 1.4 Aplicaciones / apps Fiori / servicios / componentes técnicos
+- No documentado en la fuente oficial.
+
+### 1.5 Datos maestros / transaccionales previos
+- No documentado en la fuente oficial.
+
+### 1.6 Restricciones funcionales / técnicas / idioma
+- Disponible para SAP S/4HANA Cloud **Private Edition**.
+
+---
+
+## 2. Pasos de activación / configuración estándar
+
+> **No se registran pasos de activación.** Tras consultar el Initial Setup y la página AI Feature enlazados en *Resources*, no fue posible acceder a una página oficial SAP que describa un procedimiento de activación para este caso. No se han fabricado pasos.
+
+---
+
+## 3. Pasos adicionales de validación
+
+| # | Actividad | Consultor requerido | Tiempo estimado (h, Medium) |
+|---|---|---|---|
+| 1 | Prueba unitaria del caso de uso con datos reales en entorno de Quality | Consultor Funcional SAP S/4HANA (producto base) | 4 |
+| 2 | Documentación de la activación para el cliente (manual de usuario + manual de configuración) | Consultor Funcional SAP S/4HANA (producto base) | 4 |
+| 3 | Transferencia de conocimiento al equipo del cliente | Consultor Funcional SAP S/4HANA (producto base) | 3 |
+
+**Esfuerzo total estimado (validación + entrega): ~11 horas.**
+
+---
+
+## 4. Consideraciones especiales
+
+- Restringido a SAP S/4HANA Cloud **Private Edition**.
+- Disponibilidad indicada por SAP: **Beta**.
+
+---
+
+## Referencias oficiales
+
+- SAP Discovery Center — Detail Page: https://discovery-center.cloud.sap/ai-feature/61f9300e-11e0-4ca2-acee-ace35c44fae0/
+- SAP Help Portal — Initial Setup: No existe enlace en *Resources*
+- SAP Discovery Center — Pricing Details: No aplica
+
+---
+
+## Resumen ejecutivo de esfuerzo
+
+| Bloque | Horas |
+|---|---|
+| Activación / configuración | No aplica (sin pasos oficialmente documentados) |
+| Validación + documentación + KT | 11 |
+| **Total** | **11** |
 
 ---
 
@@ -5899,6 +7722,163 @@ Cada análisis describe, para un caso de uso identificado por su código
 | Activación / configuración | 3 |
 | Validación + documentación + KT | 11 |
 | **Total** | **14** |
+
+---
+
+## [J467] — Accounts Receivable Agent
+
+> Análisis construido **únicamente** a partir de las fuentes oficiales de SAP asociadas al AI Feature/Agent J467 en `processed/AI_Features_Data_Enriched.xlsx`. Los campos para los que SAP no publica información aparecen literalmente como "No aplica", "No existe en la fuente oficial" o "No documentado en la fuente oficial". **No se ha completado ningún dato con conocimiento general ni con inferencia desde casos similares.**
+
+**Fuentes oficiales consultadas:**
+- Detail Page (SAP Discovery Center): https://discovery-center.cloud.sap/ai-feature/ecd030e9-59b3-43b4-85cf-260d498912dd/
+- Initial Setup (SAP Help Portal): No existe enlace 'Initial Setup' en *Resources*.
+- Pricing Details (SAP Discovery Center): No aplica
+
+**Resumen del caso:** Transforma la gestión de cuentas por cobrar (AR) aportando inteligencia, automatización y foco estratégico. Automatiza el análisis de datos de cuentas por cobrar —saldos de clientes, historial de dunning y partidas en disputa— para ofrecer insights y recomendaciones basadas en datos. Ayuda a reducir el DSO priorizando el cierre de partidas abiertas y anticipando riesgos con próximas mejores acciones.
+
+---
+
+## 1. Prerequisitos para la activación
+
+### 1.1 Producto / componente SAP requerido
+- **Joule‚ SAP S/4HANA Cloud Private Edition**.
+
+### 1.2 Licenciamiento / entitlement / paquete
+- Capability **Base**.
+- No aplica un paquete Premium.
+
+### 1.3 Scope item relacionado
+- No documentado en la fuente oficial.
+
+### 1.4 Aplicaciones / apps Fiori / servicios / componentes técnicos
+- No documentado en la fuente oficial.
+
+### 1.5 Datos maestros / transaccionales previos
+- No documentado en la fuente oficial.
+
+### 1.6 Restricciones funcionales / técnicas / idioma
+- Disponible para SAP S/4HANA Cloud **Private Edition**.
+
+---
+
+## 2. Pasos de activación / configuración estándar
+
+> **No se registran pasos de activación.** Tras consultar el Initial Setup y la página AI Feature enlazados en *Resources*, no fue posible acceder a una página oficial SAP que describa un procedimiento de activación para este caso. No se han fabricado pasos.
+
+---
+
+## 3. Pasos adicionales de validación
+
+| # | Actividad | Consultor requerido | Tiempo estimado (h, Medium) |
+|---|---|---|---|
+| 1 | Prueba unitaria del caso de uso con datos reales en entorno de Quality | Consultor Funcional SAP S/4HANA (producto base) | 4 |
+| 2 | Documentación de la activación para el cliente (manual de usuario + manual de configuración) | Consultor Funcional SAP S/4HANA (producto base) | 4 |
+| 3 | Transferencia de conocimiento al equipo del cliente | Consultor Funcional SAP S/4HANA (producto base) | 3 |
+
+**Esfuerzo total estimado (validación + entrega): ~11 horas.**
+
+---
+
+## 4. Consideraciones especiales
+
+- Restringido a SAP S/4HANA Cloud **Private Edition**.
+- Disponibilidad indicada por SAP: **Beta**.
+
+---
+
+## Referencias oficiales
+
+- SAP Discovery Center — Detail Page: https://discovery-center.cloud.sap/ai-feature/ecd030e9-59b3-43b4-85cf-260d498912dd/
+- SAP Help Portal — Initial Setup: No existe enlace en *Resources*
+- SAP Discovery Center — Pricing Details: No aplica
+
+---
+
+## Resumen ejecutivo de esfuerzo
+
+| Bloque | Horas |
+|---|---|
+| Activación / configuración | No aplica (sin pasos oficialmente documentados) |
+| Validación + documentación + KT | 11 |
+| **Total** | **11** |
+
+---
+
+## [J468] — Field Service Dispatcher Agent
+
+> Análisis construido **únicamente** a partir de las fuentes oficiales de SAP asociadas al AI Feature/Agent J468 en `processed/AI_Features_Data_Enriched.xlsx`. Los campos para los que SAP no publica información aparecen literalmente como "No aplica", "No existe en la fuente oficial" o "No documentado en la fuente oficial". **No se ha completado ningún dato con conocimiento general ni con inferencia desde casos similares.**
+
+**Fuentes oficiales consultadas:**
+- Detail Page (SAP Discovery Center): https://discovery-center.cloud.sap/ai-feature/9c354ba9-b021-470a-b75d-b6e7bf4405de/
+- Initial Setup (SAP Help Portal): No existe enlace 'Initial Setup' en *Resources*.
+- Pricing Details (SAP Discovery Center): No aplica
+
+**Resumen del caso:** Permite a los dispatchers planificar y optimizar órdenes de servicio aprovechando datos en tiempo real, la disponibilidad de técnicos y recomendaciones inteligentes. Propone el técnico adecuado para el trabajo adecuado en el momento y lugar óptimos, reduciendo el esfuerzo manual; cada propuesta la verifica un dispatcher (human-in-the-loop), manteniendo el control humano y la confianza.
+
+---
+
+## 1. Prerequisitos para la activación
+
+### 1.1 Producto / componente SAP requerido
+- **SAP Field Service Management‚ Joule**.
+
+### 1.2 Licenciamiento / entitlement / paquete
+- Capability **Base**.
+- No aplica un paquete Premium.
+
+### 1.3 Scope item relacionado
+- No aplica (el producto base no utiliza scope items de SAP S/4HANA).
+
+### 1.4 Aplicaciones / apps Fiori / servicios / componentes técnicos
+- No documentado en la fuente oficial.
+
+### 1.5 Datos maestros / transaccionales previos
+- No documentado en la fuente oficial.
+
+### 1.6 Restricciones funcionales / técnicas / idioma
+- No documentado en la fuente oficial.
+
+---
+
+## 2. Pasos de activación / configuración estándar
+
+> **No se registran pasos de activación.** Tras consultar el Initial Setup y la página AI Feature enlazados en *Resources*, no fue posible acceder a una página oficial SAP que describa un procedimiento de activación para este caso. No se han fabricado pasos.
+
+---
+
+## 3. Pasos adicionales de validación
+
+| # | Actividad | Consultor requerido | Tiempo estimado (h, Medium) |
+|---|---|---|---|
+| 1 | Prueba unitaria del caso de uso con datos reales en entorno de Quality | Consultor SAP BTP + Funcional (producto base) | 4 |
+| 2 | Documentación de la activación para el cliente (manual de usuario + manual de configuración) | Consultor SAP BTP + Funcional (producto base) | 4 |
+| 3 | Transferencia de conocimiento al equipo del cliente | Consultor SAP BTP + Funcional (producto base) | 3 |
+
+**Esfuerzo total estimado (validación + entrega): ~11 horas.**
+
+---
+
+## 4. Consideraciones especiales
+
+- Disponibilidad indicada por SAP: **Beta**.
+
+---
+
+## Referencias oficiales
+
+- SAP Discovery Center — Detail Page: https://discovery-center.cloud.sap/ai-feature/9c354ba9-b021-470a-b75d-b6e7bf4405de/
+- SAP Help Portal — Initial Setup: No existe enlace en *Resources*
+- SAP Discovery Center — Pricing Details: No aplica
+
+---
+
+## Resumen ejecutivo de esfuerzo
+
+| Bloque | Horas |
+|---|---|
+| Activación / configuración | No aplica (sin pasos oficialmente documentados) |
+| Validación + documentación + KT | 11 |
+| **Total** | **11** |
 
 ---
 
@@ -6589,6 +8569,85 @@ Cada análisis describe, para un caso de uso identificado por su código
 
 ---
 
+## [J585] — Cash Positioning Agent
+
+> Análisis construido **únicamente** a partir de las fuentes oficiales de SAP asociadas al AI Feature/Agent J585 en `processed/AI_Features_Data_Enriched.xlsx`. Los campos para los que SAP no publica información aparecen literalmente como "No aplica", "No existe en la fuente oficial" o "No documentado en la fuente oficial". **No se ha completado ningún dato con conocimiento general ni con inferencia desde casos similares.**
+
+**Fuentes oficiales consultadas:**
+- Detail Page (SAP Discovery Center): https://discovery-center.cloud.sap/ai-feature/cd99c7b2-f716-46ab-8fe5-640f9aa02613/
+- Initial Setup (SAP Help Portal): No existe enlace 'Initial Setup' en *Resources*.
+- Pricing Details (SAP Discovery Center): No aplica
+
+**Resumen del caso:** Entrega a los gestores de tesorería una visión actualizada de la posición de caja en todas las cuentas bancarias: recopila saldos iniciales y flujos de caja esperados, calcula saldos finales esperados e identifica automáticamente déficits y superávits según la política de tesorería. Con base en ello, Joule propone asignaciones de caja eficientes mediante transferencias bancarias.
+
+---
+
+## 1. Prerequisitos para la activación
+
+### 1.1 Producto / componente SAP requerido
+- **SAP S/4HANA Cloud Public Edition‚ Joule**.
+
+### 1.2 Licenciamiento / entitlement / paquete
+- Capability **Base**.
+- No aplica un paquete Premium.
+
+### 1.3 Scope item relacionado
+- No documentado en la fuente oficial.
+
+### 1.4 Aplicaciones / apps Fiori / servicios / componentes técnicos
+- No documentado en la fuente oficial.
+
+### 1.5 Datos maestros / transaccionales previos
+- No documentado en la fuente oficial.
+
+### 1.6 Restricciones funcionales / técnicas / idioma
+- Disponible para SAP S/4HANA Cloud **Public Edition**.
+
+---
+
+## 2. Pasos de activación / configuración estándar
+
+> **No se registran pasos de activación.** Tras consultar el Initial Setup y la página AI Feature enlazados en *Resources*, no fue posible acceder a una página oficial SAP que describa un procedimiento de activación para este caso. No se han fabricado pasos.
+
+---
+
+## 3. Pasos adicionales de validación
+
+| # | Actividad | Consultor requerido | Tiempo estimado (h, Medium) |
+|---|---|---|---|
+| 1 | Prueba unitaria del caso de uso con datos reales en entorno de Quality | Consultor Funcional SAP S/4HANA (producto base) | 4 |
+| 2 | Documentación de la activación para el cliente (manual de usuario + manual de configuración) | Consultor Funcional SAP S/4HANA (producto base) | 4 |
+| 3 | Transferencia de conocimiento al equipo del cliente | Consultor Funcional SAP S/4HANA (producto base) | 3 |
+
+**Esfuerzo total estimado (validación + entrega): ~11 horas.**
+
+---
+
+## 4. Consideraciones especiales
+
+- Aplica a SAP S/4HANA Cloud **Public Edition**.
+- Disponibilidad indicada por SAP: **Beta**.
+
+---
+
+## Referencias oficiales
+
+- SAP Discovery Center — Detail Page: https://discovery-center.cloud.sap/ai-feature/cd99c7b2-f716-46ab-8fe5-640f9aa02613/
+- SAP Help Portal — Initial Setup: No existe enlace en *Resources*
+- SAP Discovery Center — Pricing Details: No aplica
+
+---
+
+## Resumen ejecutivo de esfuerzo
+
+| Bloque | Horas |
+|---|---|
+| Activación / configuración | No aplica (sin pasos oficialmente documentados) |
+| Validación + documentación + KT | 11 |
+| **Total** | **11** |
+
+---
+
 ## [J586] — Project Services
 
 > Análisis construido **únicamente** a partir de las fuentes oficiales de SAP asociadas al AI Feature/Agent J586 en `processed/AI_Features_Data_Enriched.xlsx`. Los campos para los que SAP no publica información aparecen literalmente como "No aplica", "No existe en la fuente oficial" o "No documentado en la fuente oficial". **No se ha completado ningún dato con conocimiento general ni con inferencia desde casos similares.**
@@ -6656,6 +8715,85 @@ Cada análisis describe, para un caso de uso identificado por su código
 - SAP Discovery Center — Detail Page: https://discovery-center.cloud.sap/ai-feature/bccabd59-564e-4a4d-84b3-67d6933348cd/
 - SAP Help Portal — Initial Setup: https://help.sap.com/docs/SAP_S4HANA_CLOUD/0f69f8fb28ac4bf48d2b57b9637e81fa/619518deb7284e6485b78383fa7a42b3.html
 - SAP Help Portal — AI Feature: https://help.sap.com/docs/joule/capabilities-guide/viewing-business-data
+- SAP Discovery Center — Pricing Details: No aplica
+
+---
+
+## Resumen ejecutivo de esfuerzo
+
+| Bloque | Horas |
+|---|---|
+| Activación / configuración | No aplica (sin pasos oficialmente documentados) |
+| Validación + documentación + KT | 11 |
+| **Total** | **11** |
+
+---
+
+## [J596] — Safety Observation Reporting
+
+> Análisis construido **únicamente** a partir de las fuentes oficiales de SAP asociadas al AI Feature/Agent J596 en `processed/AI_Features_Data_Enriched.xlsx`. Los campos para los que SAP no publica información aparecen literalmente como "No aplica", "No existe en la fuente oficial" o "No documentado en la fuente oficial". **No se ha completado ningún dato con conocimiento general ni con inferencia desde casos similares.**
+
+**Fuentes oficiales consultadas:**
+- Detail Page (SAP Discovery Center): https://discovery-center.cloud.sap/ai-feature/c3691d08-1455-4c6a-8cea-e524489e5b69/
+- Initial Setup (SAP Help Portal): No existe enlace 'Initial Setup' en *Resources*.
+- Pricing Details (SAP Discovery Center): No aplica
+
+**Resumen del caso:** Ayuda a operadores de producción e higienistas industriales a reportar observaciones de seguridad en lenguaje natural. El sistema procesa la entrada, detecta detalles críticos faltantes, guía al usuario con preguntas de seguimiento contextuales, y estructura y registra automáticamente los datos en un registro formal de observación de seguridad.
+
+---
+
+## 1. Prerequisitos para la activación
+
+### 1.1 Producto / componente SAP requerido
+- **SAP S/4HANA Cloud Public Edition**.
+
+### 1.2 Licenciamiento / entitlement / paquete
+- Capability **Base**.
+- No aplica un paquete Premium.
+
+### 1.3 Scope item relacionado
+- No documentado en la fuente oficial.
+
+### 1.4 Aplicaciones / apps Fiori / servicios / componentes técnicos
+- No documentado en la fuente oficial.
+
+### 1.5 Datos maestros / transaccionales previos
+- No documentado en la fuente oficial.
+
+### 1.6 Restricciones funcionales / técnicas / idioma
+- Disponible para SAP S/4HANA Cloud **Public Edition**.
+
+---
+
+## 2. Pasos de activación / configuración estándar
+
+> **No se registran pasos de activación.** Tras consultar el Initial Setup y la página AI Feature enlazados en *Resources*, no fue posible acceder a una página oficial SAP que describa un procedimiento de activación para este caso. No se han fabricado pasos.
+
+---
+
+## 3. Pasos adicionales de validación
+
+| # | Actividad | Consultor requerido | Tiempo estimado (h, Medium) |
+|---|---|---|---|
+| 1 | Prueba unitaria del caso de uso con datos reales en entorno de Quality | Consultor Funcional SAP S/4HANA (producto base) | 4 |
+| 2 | Documentación de la activación para el cliente (manual de usuario + manual de configuración) | Consultor Funcional SAP S/4HANA (producto base) | 4 |
+| 3 | Transferencia de conocimiento al equipo del cliente | Consultor Funcional SAP S/4HANA (producto base) | 3 |
+
+**Esfuerzo total estimado (validación + entrega): ~11 horas.**
+
+---
+
+## 4. Consideraciones especiales
+
+- Aplica a SAP S/4HANA Cloud **Public Edition**.
+- Disponibilidad indicada por SAP: **Beta**.
+
+---
+
+## Referencias oficiales
+
+- SAP Discovery Center — Detail Page: https://discovery-center.cloud.sap/ai-feature/c3691d08-1455-4c6a-8cea-e524489e5b69/
+- SAP Help Portal — Initial Setup: No existe enlace en *Resources*
 - SAP Discovery Center — Pricing Details: No aplica
 
 ---
@@ -7558,6 +9696,85 @@ Cada análisis describe, para un caso de uso identificado por su código
 
 ---
 
+## [J648] — International Trade Classification Agent
+
+> Análisis construido **únicamente** a partir de las fuentes oficiales de SAP asociadas al AI Feature/Agent J648 en `processed/AI_Features_Data_Enriched.xlsx`. Los campos para los que SAP no publica información aparecen literalmente como "No aplica", "No existe en la fuente oficial" o "No documentado en la fuente oficial". **No se ha completado ningún dato con conocimiento general ni con inferencia desde casos similares.**
+
+**Fuentes oficiales consultadas:**
+- Detail Page (SAP Discovery Center): https://discovery-center.cloud.sap/ai-feature/cb3aa823-c475-4f81-9730-d35d85bd55c7/
+- Initial Setup (SAP Help Portal): No existe enlace 'Initial Setup' en *Resources*.
+- Pricing Details (SAP Discovery Center): No aplica
+
+**Resumen del caso:** Ayuda a los especialistas de clasificación de productos a clasificar mercancías para envíos internacionales: razona sobre las características del producto y las regulaciones comerciales, recomienda números de arancel aduanero y commodity codes, y aporta la justificación para una revisión y aprobación sencillas, ayudando a asegurar el cumplimiento de las regulaciones de comercio global con un proceso auditable.
+
+---
+
+## 1. Prerequisitos para la activación
+
+### 1.1 Producto / componente SAP requerido
+- **SAP S/4HANA Cloud Public Edition**.
+
+### 1.2 Licenciamiento / entitlement / paquete
+- Capability **Base**.
+- No aplica un paquete Premium.
+
+### 1.3 Scope item relacionado
+- No documentado en la fuente oficial.
+
+### 1.4 Aplicaciones / apps Fiori / servicios / componentes técnicos
+- No documentado en la fuente oficial.
+
+### 1.5 Datos maestros / transaccionales previos
+- No documentado en la fuente oficial.
+
+### 1.6 Restricciones funcionales / técnicas / idioma
+- Disponible para SAP S/4HANA Cloud **Public Edition**.
+
+---
+
+## 2. Pasos de activación / configuración estándar
+
+> **No se registran pasos de activación.** Tras consultar el Initial Setup y la página AI Feature enlazados en *Resources*, no fue posible acceder a una página oficial SAP que describa un procedimiento de activación para este caso. No se han fabricado pasos.
+
+---
+
+## 3. Pasos adicionales de validación
+
+| # | Actividad | Consultor requerido | Tiempo estimado (h, Medium) |
+|---|---|---|---|
+| 1 | Prueba unitaria del caso de uso con datos reales en entorno de Quality | Consultor Funcional SAP S/4HANA (producto base) | 4 |
+| 2 | Documentación de la activación para el cliente (manual de usuario + manual de configuración) | Consultor Funcional SAP S/4HANA (producto base) | 4 |
+| 3 | Transferencia de conocimiento al equipo del cliente | Consultor Funcional SAP S/4HANA (producto base) | 3 |
+
+**Esfuerzo total estimado (validación + entrega): ~11 horas.**
+
+---
+
+## 4. Consideraciones especiales
+
+- Aplica a SAP S/4HANA Cloud **Public Edition**.
+- Disponibilidad indicada por SAP: **Beta**.
+
+---
+
+## Referencias oficiales
+
+- SAP Discovery Center — Detail Page: https://discovery-center.cloud.sap/ai-feature/cb3aa823-c475-4f81-9730-d35d85bd55c7/
+- SAP Help Portal — Initial Setup: No existe enlace en *Resources*
+- SAP Discovery Center — Pricing Details: No aplica
+
+---
+
+## Resumen ejecutivo de esfuerzo
+
+| Bloque | Horas |
+|---|---|
+| Activación / configuración | No aplica (sin pasos oficialmente documentados) |
+| Validación + documentación + KT | 11 |
+| **Total** | **11** |
+
+---
+
 ## [J650] — Booking Agent
 
 > Análisis construido **únicamente** a partir de las fuentes oficiales de SAP asociadas al AI Feature/Agent J650 en `processed/AI_Features_Data_Enriched.xlsx`. Los campos para los que SAP no publica información aparecen literalmente como "No aplica", "No existe en la fuente oficial" o "No documentado en la fuente oficial". **No se ha completado ningún dato con conocimiento general ni con inferencia desde casos similares.**
@@ -7883,6 +10100,95 @@ Cada análisis describe, para un caso de uso identificado por su código
 
 ---
 
+## [J741] — Catalog Optimization Agent
+
+> Análisis construido **únicamente** a partir de las fuentes oficiales de SAP asociadas al AI Feature/Agent J741 en `processed/AI_Features_Data_Enriched.xlsx`. Los campos para los que SAP no publica información aparecen literalmente como "No aplica", "No existe en la fuente oficial" o "No documentado en la fuente oficial". **No se ha completado ningún dato con conocimiento general ni con inferencia desde casos similares.**
+
+**Fuentes oficiales consultadas:**
+- Detail Page (SAP Discovery Center): https://discovery-center.cloud.sap/ai-feature/28593981-f647-4d1b-bb1f-709783df1fa6/
+- Initial Setup (SAP Help Portal): https://help.sap.com/docs/cx-ai-toolkit/user/create-catalog-optimization-agent
+- Pricing Details (SAP Discovery Center): No aplica
+
+**Resumen del caso:** Permite a los product managers de e-commerce optimizar su catálogo de SAP Commerce Cloud: revisa de forma continua descripciones, atributos y traducciones de producto contra los estándares de calidad de la empresa, detecta brechas de merchandising y ofrece recomendaciones accionables para mejorar la calidad del catálogo, la consistencia multilingüe y la descubribilidad del producto.
+
+---
+
+## 1. Prerequisitos para la activación
+
+### 1.1 Producto / componente SAP requerido
+- **SAP CX AI Toolkit**.
+
+### 1.2 Licenciamiento / entitlement / paquete
+- Capability **Base**.
+- No aplica un paquete Premium.
+
+### 1.3 Scope item relacionado
+- No aplica (el producto base no utiliza scope items de SAP S/4HANA).
+
+### 1.4 Aplicaciones / apps Fiori / servicios / componentes técnicos
+- Según las fuentes oficiales abiertas (Initial Setup / AI Feature): Ensure you have the following before you begin: You've mapped the SAP CX AI Toolkit tenant to the SAP Commerce Cloud tenant. This mapping allows the tool to recommend products from the catalog. For more information, see Integrations and Data Sources. The storefront can only be associated with the product catalog mapped for the SAP Commerce Cloud tenant, and only the online version of the catalog is supported. You've synchronized the product catalog from SAP Commerce Cloud with SAP CX AI Toolkit.
+
+### 1.5 Datos maestros / transaccionales previos
+- No documentado en la fuente oficial.
+
+### 1.6 Restricciones funcionales / técnicas / idioma
+- No documentado en la fuente oficial.
+
+---
+
+## 2. Pasos de activación / configuración estándar
+
+| # | Actividad estándar | Objeto de configuración | Tipo de configuración | Consultor requerido | Tiempo estimado (h, Medium) |
+|---|---|---|---|---|---|
+| 1 | Create a Service Classification AI Agent | Configuración de SAP CX AI Toolkit | General | Consultor Funcional del producto base | 3 |
+| 2 | Create a Knowledge Base Article Generation AI Agent | Configuración de SAP CX AI Toolkit | General | Consultor Funcional del producto base | 3 |
+| 3 | Create a Q&A AI Agent | Configuración de SAP CX AI Toolkit | General | Consultor Funcional del producto base | 3 |
+| 4 | Create a Quote Creation Agent | Configuración de SAP CX AI Toolkit | General | Consultor Funcional del producto base | 3 |
+| 5 | Create a Shopping Agent | Configuración de SAP CX AI Toolkit | General | Consultor Funcional del producto base | 3 |
+| 6 | Create a Digital Service Agent | Configuración de SAP CX AI Toolkit | General | Consultor Funcional del producto base | 3 |
+| 7 | Create a Custom AI Agent | Configuración de SAP CX AI Toolkit | General | Consultor Funcional del producto base | 3 |
+| 8 | Create a Catalog Optimization Agent to help maintain and optimize the content of your product catalog to enhance merchandising accuracy and responsiveness. | Configuración de SAP CX AI Toolkit | Particular (por usuario / rol) | Consultor Funcional del producto base | 3 |
+
+**Esfuerzo total estimado (activación / configuración): ~24 horas.**
+
+---
+
+## 3. Pasos adicionales de validación
+
+| # | Actividad | Consultor requerido | Tiempo estimado (h, Medium) |
+|---|---|---|---|
+| 1 | Prueba unitaria del caso de uso con datos reales en entorno de Quality | Consultor Funcional del producto base | 4 |
+| 2 | Documentación de la activación para el cliente (manual de usuario + manual de configuración) | Consultor Funcional del producto base | 4 |
+| 3 | Transferencia de conocimiento al equipo del cliente | Consultor Funcional del producto base | 3 |
+
+**Esfuerzo total estimado (validación + entrega): ~11 horas.**
+
+---
+
+## 4. Consideraciones especiales
+
+- Disponibilidad indicada por SAP: **Beta**.
+
+---
+
+## Referencias oficiales
+
+- SAP Discovery Center — Detail Page: https://discovery-center.cloud.sap/ai-feature/28593981-f647-4d1b-bb1f-709783df1fa6/
+- SAP Help Portal — Initial Setup: https://help.sap.com/docs/cx-ai-toolkit/user/create-catalog-optimization-agent
+- SAP Discovery Center — Pricing Details: No aplica
+
+---
+
+## Resumen ejecutivo de esfuerzo
+
+| Bloque | Horas |
+|---|---|
+| Activación / configuración | 24 |
+| Validación + documentación + KT | 11 |
+| **Total** | **35** |
+
+---
+
 ## [J74] — Joule with SAP S/4HANA Cloud Public Edition
 
 > Análisis construido **únicamente** a partir de las fuentes oficiales de SAP asociadas al AI Feature/Agent J74 en `processed/AI_Features_Data_Enriched.xlsx`. Los campos para los que SAP no publica información aparecen literalmente como "No aplica", "No existe en la fuente oficial" o "No documentado en la fuente oficial". **No se ha completado ningún dato con conocimiento general ni con inferencia desde casos similares.**
@@ -7972,6 +10278,85 @@ Cada análisis describe, para un caso de uso identificado por su código
 | Activación / configuración | 32 |
 | Validación + documentación + KT | 11 |
 | **Total** | **43** |
+
+---
+
+## [J756] — Safety Instruction Generation
+
+> Análisis construido **únicamente** a partir de las fuentes oficiales de SAP asociadas al AI Feature/Agent J756 en `processed/AI_Features_Data_Enriched.xlsx`. Los campos para los que SAP no publica información aparecen literalmente como "No aplica", "No existe en la fuente oficial" o "No documentado en la fuente oficial". **No se ha completado ningún dato con conocimiento general ni con inferencia desde casos similares.**
+
+**Fuentes oficiales consultadas:**
+- Detail Page (SAP Discovery Center): https://discovery-center.cloud.sap/ai-feature/76d64fc7-204e-4a1f-979c-2a75a7a4ce29/
+- Initial Setup (SAP Help Portal): No existe enlace 'Initial Setup' en *Resources*.
+- Pricing Details (SAP Discovery Center): No aplica
+
+**Resumen del caso:** Genera automáticamente instrucciones de seguridad claras, estructuradas y fáciles de entender, adaptadas a equipos específicos, directamente a partir de las últimas evaluaciones de riesgo y análisis de peligros del trabajo (JHA). Reduce drásticamente el tiempo y el esfuerzo manual transformando datos de evaluación complejos en guía precisa y actualizada, asegurando claridad, cumplimiento y consistencia.
+
+---
+
+## 1. Prerequisitos para la activación
+
+### 1.1 Producto / componente SAP requerido
+- **SAP S/4HANA Cloud Public Edition**.
+
+### 1.2 Licenciamiento / entitlement / paquete
+- Capability **Base**.
+- No aplica un paquete Premium.
+
+### 1.3 Scope item relacionado
+- No documentado en la fuente oficial.
+
+### 1.4 Aplicaciones / apps Fiori / servicios / componentes técnicos
+- No documentado en la fuente oficial.
+
+### 1.5 Datos maestros / transaccionales previos
+- No documentado en la fuente oficial.
+
+### 1.6 Restricciones funcionales / técnicas / idioma
+- Disponible para SAP S/4HANA Cloud **Public Edition**.
+
+---
+
+## 2. Pasos de activación / configuración estándar
+
+> **No se registran pasos de activación.** Tras consultar el Initial Setup y la página AI Feature enlazados en *Resources*, no fue posible acceder a una página oficial SAP que describa un procedimiento de activación para este caso. No se han fabricado pasos.
+
+---
+
+## 3. Pasos adicionales de validación
+
+| # | Actividad | Consultor requerido | Tiempo estimado (h, Medium) |
+|---|---|---|---|
+| 1 | Prueba unitaria del caso de uso con datos reales en entorno de Quality | Consultor Funcional SAP S/4HANA (producto base) | 4 |
+| 2 | Documentación de la activación para el cliente (manual de usuario + manual de configuración) | Consultor Funcional SAP S/4HANA (producto base) | 4 |
+| 3 | Transferencia de conocimiento al equipo del cliente | Consultor Funcional SAP S/4HANA (producto base) | 3 |
+
+**Esfuerzo total estimado (validación + entrega): ~11 horas.**
+
+---
+
+## 4. Consideraciones especiales
+
+- Aplica a SAP S/4HANA Cloud **Public Edition**.
+- Disponibilidad indicada por SAP: **Beta**.
+
+---
+
+## Referencias oficiales
+
+- SAP Discovery Center — Detail Page: https://discovery-center.cloud.sap/ai-feature/76d64fc7-204e-4a1f-979c-2a75a7a4ce29/
+- SAP Help Portal — Initial Setup: No existe enlace en *Resources*
+- SAP Discovery Center — Pricing Details: No aplica
+
+---
+
+## Resumen ejecutivo de esfuerzo
+
+| Bloque | Horas |
+|---|---|
+| Activación / configuración | No aplica (sin pasos oficialmente documentados) |
+| Validación + documentación + KT | 11 |
+| **Total** | **11** |
 
 ---
 
@@ -8388,6 +10773,244 @@ Cada análisis describe, para un caso de uso identificado por su código
 | Activación / configuración | 6 |
 | Validación + documentación + KT | 11 |
 | **Total** | **17** |
+
+---
+
+## [J779] — Content Search
+
+> Análisis construido **únicamente** a partir de las fuentes oficiales de SAP asociadas al AI Feature/Agent J779 en `processed/AI_Features_Data_Enriched.xlsx`. Los campos para los que SAP no publica información aparecen literalmente como "No aplica", "No existe en la fuente oficial" o "No documentado en la fuente oficial". **No se ha completado ningún dato con conocimiento general ni con inferencia desde casos similares.**
+
+**Fuentes oficiales consultadas:**
+- Detail Page (SAP Discovery Center): https://discovery-center.cloud.sap/ai-feature/31657cef-3bb1-4d61-b7b6-0d7b36a328be/
+- Initial Setup (SAP Help Portal): No existe enlace 'Initial Setup' en *Resources*.
+- AI Feature (SAP Help Portal): https://help.sap.com/docs/signavio-process-insights/user-guide/searching-for-content?locale=en-US
+- Pricing Details (SAP Discovery Center): No aplica
+
+**Resumen del caso:** SAP Signavio Process Insights ofrece miles de métricas, recomendaciones y guías de referencia; la búsqueda semántica basada en IA permite a los usuarios —especialmente a los expertos en procesos de negocio— descubrir contenido relevante de forma más intuitiva y eficiente. A diferencia de la búsqueda por palabras clave, entiende el contexto y el significado de los términos de búsqueda.
+
+---
+
+## 1. Prerequisitos para la activación
+
+### 1.1 Producto / componente SAP requerido
+- **SAP Signavio solutions**.
+
+### 1.2 Licenciamiento / entitlement / paquete
+- Capability **Base**.
+- No aplica un paquete Premium.
+
+### 1.3 Scope item relacionado
+- No aplica (el producto base no utiliza scope items de SAP S/4HANA).
+
+### 1.4 Aplicaciones / apps Fiori / servicios / componentes técnicos
+- Según las fuentes oficiales abiertas (Initial Setup / AI Feature): The search feature is a base AI capability that doesn't require AI units. However, before you can use it, your administrator must activate the feature after accepting SAP AI Terms.
+
+### 1.5 Datos maestros / transaccionales previos
+- No documentado en la fuente oficial.
+
+### 1.6 Restricciones funcionales / técnicas / idioma
+- No documentado en la fuente oficial.
+
+---
+
+## 2. Pasos de activación / configuración estándar
+
+> **No se registran pasos de activación.** Las fuentes oficiales SAP abiertas (Initial Setup y/o AI Feature) describen el uso de la capability pero no detallan un procedimiento de activación administrativo explícito. El caso de uso puede venir habilitado por defecto al cumplirse los prerequisitos del producto base.
+
+---
+
+## 3. Pasos adicionales de validación
+
+| # | Actividad | Consultor requerido | Tiempo estimado (h, Medium) |
+|---|---|---|---|
+| 1 | Prueba unitaria del caso de uso con datos reales en entorno de Quality | Consultor SAP Signavio | 4 |
+| 2 | Documentación de la activación para el cliente (manual de usuario + manual de configuración) | Consultor SAP Signavio | 4 |
+| 3 | Transferencia de conocimiento al equipo del cliente | Consultor SAP Signavio | 3 |
+
+**Esfuerzo total estimado (validación + entrega): ~11 horas.**
+
+---
+
+## 4. Consideraciones especiales
+
+- Disponibilidad indicada por SAP: **Beta**.
+
+---
+
+## Referencias oficiales
+
+- SAP Discovery Center — Detail Page: https://discovery-center.cloud.sap/ai-feature/31657cef-3bb1-4d61-b7b6-0d7b36a328be/
+- SAP Help Portal — Initial Setup: No existe enlace en *Resources*
+- SAP Help Portal — AI Feature: https://help.sap.com/docs/signavio-process-insights/user-guide/searching-for-content?locale=en-US
+- SAP Discovery Center — Pricing Details: No aplica
+
+---
+
+## Resumen ejecutivo de esfuerzo
+
+| Bloque | Horas |
+|---|---|
+| Activación / configuración | No aplica (sin pasos oficialmente documentados) |
+| Validación + documentación + KT | 11 |
+| **Total** | **11** |
+
+---
+
+## [J787] — Accounting Accruals Agent
+
+> Análisis construido **únicamente** a partir de las fuentes oficiales de SAP asociadas al AI Feature/Agent J787 en `processed/AI_Features_Data_Enriched.xlsx`. Los campos para los que SAP no publica información aparecen literalmente como "No aplica", "No existe en la fuente oficial" o "No documentado en la fuente oficial". **No se ha completado ningún dato con conocimiento general ni con inferencia desde casos similares.**
+
+**Fuentes oficiales consultadas:**
+- Detail Page (SAP Discovery Center): https://discovery-center.cloud.sap/ai-feature/2ba6ab3e-ff22-4cb6-b3b4-20613ae8f6e3/
+- Initial Setup (SAP Help Portal): No existe enlace 'Initial Setup' en *Resources*.
+- Pricing Details (SAP Discovery Center): No aplica
+
+**Resumen del caso:** Acelera el cierre de fin de periodo: el agente ayuda a los contadores a automatizar la preparación de asientos de devengos (accruals) analizando datos históricos y documentos de política contable. Calcula importes precisos y entrega una lista pre-poblada de asientos para revisión y confirmación, aumentando la productividad y asegurando un cierre mensual oportuno.
+
+---
+
+## 1. Prerequisitos para la activación
+
+### 1.1 Producto / componente SAP requerido
+- **SAP S/4HANA Cloud Public Edition**.
+
+### 1.2 Licenciamiento / entitlement / paquete
+- Capability **Base**.
+- No aplica un paquete Premium.
+
+### 1.3 Scope item relacionado
+- No documentado en la fuente oficial.
+
+### 1.4 Aplicaciones / apps Fiori / servicios / componentes técnicos
+- No documentado en la fuente oficial.
+
+### 1.5 Datos maestros / transaccionales previos
+- No documentado en la fuente oficial.
+
+### 1.6 Restricciones funcionales / técnicas / idioma
+- Disponible para SAP S/4HANA Cloud **Public Edition**.
+
+---
+
+## 2. Pasos de activación / configuración estándar
+
+> **No se registran pasos de activación.** Tras consultar el Initial Setup y la página AI Feature enlazados en *Resources*, no fue posible acceder a una página oficial SAP que describa un procedimiento de activación para este caso. No se han fabricado pasos.
+
+---
+
+## 3. Pasos adicionales de validación
+
+| # | Actividad | Consultor requerido | Tiempo estimado (h, Medium) |
+|---|---|---|---|
+| 1 | Prueba unitaria del caso de uso con datos reales en entorno de Quality | Consultor Funcional SAP S/4HANA (producto base) | 4 |
+| 2 | Documentación de la activación para el cliente (manual de usuario + manual de configuración) | Consultor Funcional SAP S/4HANA (producto base) | 4 |
+| 3 | Transferencia de conocimiento al equipo del cliente | Consultor Funcional SAP S/4HANA (producto base) | 3 |
+
+**Esfuerzo total estimado (validación + entrega): ~11 horas.**
+
+---
+
+## 4. Consideraciones especiales
+
+- Aplica a SAP S/4HANA Cloud **Public Edition**.
+- Disponibilidad indicada por SAP: **Beta**.
+
+---
+
+## Referencias oficiales
+
+- SAP Discovery Center — Detail Page: https://discovery-center.cloud.sap/ai-feature/2ba6ab3e-ff22-4cb6-b3b4-20613ae8f6e3/
+- SAP Help Portal — Initial Setup: No existe enlace en *Resources*
+- SAP Discovery Center — Pricing Details: No aplica
+
+---
+
+## Resumen ejecutivo de esfuerzo
+
+| Bloque | Horas |
+|---|---|
+| Activación / configuración | No aplica (sin pasos oficialmente documentados) |
+| Validación + documentación + KT | 11 |
+| **Total** | **11** |
+
+---
+
+## [J788] — Change Record Management Agent
+
+> Análisis construido **únicamente** a partir de las fuentes oficiales de SAP asociadas al AI Feature/Agent J788 en `processed/AI_Features_Data_Enriched.xlsx`. Los campos para los que SAP no publica información aparecen literalmente como "No aplica", "No existe en la fuente oficial" o "No documentado en la fuente oficial". **No se ha completado ningún dato con conocimiento general ni con inferencia desde casos similares.**
+
+**Fuentes oficiales consultadas:**
+- Detail Page (SAP Discovery Center): https://discovery-center.cloud.sap/ai-feature/905534ac-4ede-4c01-a815-476a1643ac7c/
+- Initial Setup (SAP Help Portal): No existe enlace 'Initial Setup' en *Resources*.
+- Pricing Details (SAP Discovery Center): No aplica
+
+**Resumen del caso:** Reduce costos y acelera el time-to-market: apoya a product managers e ingenieros de diseño encontrando change records similares que afectan al mismo producto y proponiendo la creación de un nuevo borrador de change record. Acelera decisiones e inicia el proceso de cambio, reduciendo retrasos por datos de cambio fragmentados y mejorando la gobernanza y la trazabilidad.
+
+---
+
+## 1. Prerequisitos para la activación
+
+### 1.1 Producto / componente SAP requerido
+- **Joule‚ SAP S/4HANA Cloud Private Edition**.
+
+### 1.2 Licenciamiento / entitlement / paquete
+- Capability **Base**.
+- No aplica un paquete Premium.
+
+### 1.3 Scope item relacionado
+- No documentado en la fuente oficial.
+
+### 1.4 Aplicaciones / apps Fiori / servicios / componentes técnicos
+- No documentado en la fuente oficial.
+
+### 1.5 Datos maestros / transaccionales previos
+- No documentado en la fuente oficial.
+
+### 1.6 Restricciones funcionales / técnicas / idioma
+- Disponible para SAP S/4HANA Cloud **Private Edition**.
+
+---
+
+## 2. Pasos de activación / configuración estándar
+
+> **No se registran pasos de activación.** Tras consultar el Initial Setup y la página AI Feature enlazados en *Resources*, no fue posible acceder a una página oficial SAP que describa un procedimiento de activación para este caso. No se han fabricado pasos.
+
+---
+
+## 3. Pasos adicionales de validación
+
+| # | Actividad | Consultor requerido | Tiempo estimado (h, Medium) |
+|---|---|---|---|
+| 1 | Prueba unitaria del caso de uso con datos reales en entorno de Quality | Consultor Funcional SAP S/4HANA (producto base) | 4 |
+| 2 | Documentación de la activación para el cliente (manual de usuario + manual de configuración) | Consultor Funcional SAP S/4HANA (producto base) | 4 |
+| 3 | Transferencia de conocimiento al equipo del cliente | Consultor Funcional SAP S/4HANA (producto base) | 3 |
+
+**Esfuerzo total estimado (validación + entrega): ~11 horas.**
+
+---
+
+## 4. Consideraciones especiales
+
+- Restringido a SAP S/4HANA Cloud **Private Edition**.
+- Disponibilidad indicada por SAP: **Beta**.
+
+---
+
+## Referencias oficiales
+
+- SAP Discovery Center — Detail Page: https://discovery-center.cloud.sap/ai-feature/905534ac-4ede-4c01-a815-476a1643ac7c/
+- SAP Help Portal — Initial Setup: No existe enlace en *Resources*
+- SAP Discovery Center — Pricing Details: No aplica
+
+---
+
+## Resumen ejecutivo de esfuerzo
+
+| Bloque | Horas |
+|---|---|
+| Activación / configuración | No aplica (sin pasos oficialmente documentados) |
+| Validación + documentación + KT | 11 |
+| **Total** | **11** |
 
 ---
 
@@ -9075,6 +11698,96 @@ Cada análisis describe, para un caso de uso identificado por su código
 
 ---
 
+## [J855] — Dispute Resolution Agent
+
+> Análisis construido **únicamente** a partir de las fuentes oficiales de SAP asociadas al AI Feature/Agent J855 en `processed/AI_Features_Data_Enriched.xlsx`. Los campos para los que SAP no publica información aparecen literalmente como "No aplica", "No existe en la fuente oficial" o "No documentado en la fuente oficial". **No se ha completado ningún dato con conocimiento general ni con inferencia desde casos similares.**
+
+**Fuentes oficiales consultadas:**
+- Detail Page (SAP Discovery Center): https://discovery-center.cloud.sap/ai-feature/bbf06e89-a47a-4a80-a619-97fa7ba6af92/
+- Initial Setup (SAP Help Portal): https://help.sap.com/docs/JOULE/82a14f108cfa4d4788244d81371e072b/9efcd97a276949cfbc027d4da13ff33d.html?locale=en-US
+- Pricing Details (SAP Discovery Center): No aplica
+
+**Resumen del caso:** Ayuda a los contables de contratos (Contract Accounting) a resolver casos de disputa —facturas incorrectas o pagos faltantes— para asegurar cobros oportunos y relaciones sólidas con clientes. Automatiza la identificación y resolución de disputas por facturas incorrectas: analiza detalles de factura y términos contractuales, detecta discrepancias y errores, y propone proactivamente cómo proceder (p. ej. crear una nota de crédito).
+
+---
+
+## 1. Prerequisitos para la activación
+
+### 1.1 Producto / componente SAP requerido
+- **Joule‚ SAP S/4HANA Cloud Private Edition**.
+
+### 1.2 Licenciamiento / entitlement / paquete
+- Capability **Base**.
+- No aplica un paquete Premium.
+
+### 1.3 Scope item relacionado
+- No documentado en la fuente oficial.
+
+### 1.4 Aplicaciones / apps Fiori / servicios / componentes técnicos
+- Según las fuentes oficiales abiertas (Initial Setup / AI Feature): Subscription Order Management Using resolution options, you can process the dispute case, create credits or payments and assign them to the dispute case. To proceed and to close the dispute case, you have to click on one of the resolution options. You must have the following business roles assigned: For all use cases: SAP_BR_APR_ACCOUNTANT_FICA SAP_BR_INVOICING_SPEC_CINV (to display credits and invoicing documents in Convergent Invoicing)
+
+### 1.5 Datos maestros / transaccionales previos
+- No documentado en la fuente oficial.
+
+### 1.6 Restricciones funcionales / técnicas / idioma
+- Disponible para SAP S/4HANA Cloud **Private Edition**.
+
+---
+
+## 2. Pasos de activación / configuración estándar
+
+| # | Actividad estándar | Objeto de configuración | Tipo de configuración | Consultor requerido | Tiempo estimado (h, Medium) |
+|---|---|---|---|---|---|
+| 1 | Review open credits in Contract Accounting | Configuración de Joule‚ SAP S/4HANA Cloud Private Edition | General | Consultor Funcional SAP S/4HANA | 3 |
+| 2 | Review open credits in Convergent Invoicing (CI) | Configuración de Joule‚ SAP S/4HANA Cloud Private Edition | General | Consultor Funcional SAP S/4HANA | 3 |
+| 3 | Review closed dispute cases | Configuración de Joule‚ SAP S/4HANA Cloud Private Edition | General | Consultor Funcional SAP S/4HANA | 3 |
+| 4 | Review contract accounts | Configuración de Joule‚ SAP S/4HANA Cloud Private Edition | General | Consultor Funcional SAP S/4HANA | 3 |
+| 5 | Create credit | Configuración de Joule‚ SAP S/4HANA Cloud Private Edition | General | Consultor Funcional SAP S/4HANA | 3 |
+| 6 | Assign credit to the dispute case | Configuración de Joule‚ SAP S/4HANA Cloud Private Edition | Particular (por usuario / rol) | Consultor Funcional SAP S/4HANA | 3 |
+| 7 | Review open credits in Convergent Invoicing | Configuración de Joule‚ SAP S/4HANA Cloud Private Edition | General | Consultor Funcional SAP S/4HANA | 3 |
+| 8 | Review business partner contract accounts | Configuración de Joule‚ SAP S/4HANA Cloud Private Edition | General | Consultor Funcional SAP S/4HANA | 3 |
+
+**Esfuerzo total estimado (activación / configuración): ~24 horas.**
+
+---
+
+## 3. Pasos adicionales de validación
+
+| # | Actividad | Consultor requerido | Tiempo estimado (h, Medium) |
+|---|---|---|---|
+| 1 | Prueba unitaria del caso de uso con datos reales en entorno de Quality | Consultor Funcional SAP S/4HANA | 4 |
+| 2 | Documentación de la activación para el cliente (manual de usuario + manual de configuración) | Consultor Funcional SAP S/4HANA | 4 |
+| 3 | Transferencia de conocimiento al equipo del cliente | Consultor Funcional SAP S/4HANA | 3 |
+
+**Esfuerzo total estimado (validación + entrega): ~11 horas.**
+
+---
+
+## 4. Consideraciones especiales
+
+- Restringido a SAP S/4HANA Cloud **Private Edition**.
+- Disponibilidad indicada por SAP: **Beta**.
+
+---
+
+## Referencias oficiales
+
+- SAP Discovery Center — Detail Page: https://discovery-center.cloud.sap/ai-feature/bbf06e89-a47a-4a80-a619-97fa7ba6af92/
+- SAP Help Portal — Initial Setup: https://help.sap.com/docs/JOULE/82a14f108cfa4d4788244d81371e072b/9efcd97a276949cfbc027d4da13ff33d.html?locale=en-US
+- SAP Discovery Center — Pricing Details: No aplica
+
+---
+
+## Resumen ejecutivo de esfuerzo
+
+| Bloque | Horas |
+|---|---|
+| Activación / configuración | 24 |
+| Validación + documentación + KT | 11 |
+| **Total** | **35** |
+
+---
+
 ## [J85] — Joule with Regulatory Change Manager
 
 > Análisis construido **únicamente** a partir de las fuentes oficiales de SAP asociadas al AI Feature/Agent J85 en `processed/AI_Features_Data_Enriched.xlsx`. Los campos para los que SAP no publica información aparecen literalmente como "No aplica", "No existe en la fuente oficial" o "No documentado en la fuente oficial". **No se ha completado ningún dato con conocimiento general ni con inferencia desde casos similares.**
@@ -9236,6 +11949,170 @@ Cada análisis describe, para un caso de uso identificado por su código
 | Activación / configuración | 6 |
 | Validación + documentación + KT | 11 |
 | **Total** | **17** |
+
+---
+
+## [J872] — Project Setup Agent
+
+> Análisis construido **únicamente** a partir de las fuentes oficiales de SAP asociadas al AI Feature/Agent J872 en `processed/AI_Features_Data_Enriched.xlsx`. Los campos para los que SAP no publica información aparecen literalmente como "No aplica", "No existe en la fuente oficial" o "No documentado en la fuente oficial". **No se ha completado ningún dato con conocimiento general ni con inferencia desde casos similares.**
+
+**Fuentes oficiales consultadas:**
+- Detail Page (SAP Discovery Center): https://discovery-center.cloud.sap/ai-feature/49c08b5c-583b-4108-ba23-401c3da051cf/
+- Initial Setup (SAP Help Portal): No existe enlace 'Initial Setup' en *Resources*.
+- Pricing Details (SAP Discovery Center): No aplica
+
+**Resumen del caso:** Permite a los project managers de front office crear proyectos rápidamente a partir de proyectos pasados similares, sin navegar interfaces complejas ni contactar al soporte PMO de back office. Facilita además la asignación rápida de los recursos clave para lanzar proyectos eficazmente, dedicando menos tiempo a la coordinación operativa y más a la rentabilidad y eficiencia del proyecto.
+
+---
+
+## 1. Prerequisitos para la activación
+
+### 1.1 Producto / componente SAP requerido
+- **SAP S/4HANA Cloud Public Edition‚ Joule**.
+
+### 1.2 Licenciamiento / entitlement / paquete
+- Capability **Base**.
+- No aplica un paquete Premium.
+
+### 1.3 Scope item relacionado
+- No documentado en la fuente oficial.
+
+### 1.4 Aplicaciones / apps Fiori / servicios / componentes técnicos
+- No documentado en la fuente oficial.
+
+### 1.5 Datos maestros / transaccionales previos
+- No documentado en la fuente oficial.
+
+### 1.6 Restricciones funcionales / técnicas / idioma
+- Disponible para SAP S/4HANA Cloud **Public Edition**.
+
+---
+
+## 2. Pasos de activación / configuración estándar
+
+> **No se registran pasos de activación.** Tras consultar el Initial Setup y la página AI Feature enlazados en *Resources*, no fue posible acceder a una página oficial SAP que describa un procedimiento de activación para este caso. No se han fabricado pasos.
+
+---
+
+## 3. Pasos adicionales de validación
+
+| # | Actividad | Consultor requerido | Tiempo estimado (h, Medium) |
+|---|---|---|---|
+| 1 | Prueba unitaria del caso de uso con datos reales en entorno de Quality | Consultor Funcional SAP S/4HANA (producto base) | 4 |
+| 2 | Documentación de la activación para el cliente (manual de usuario + manual de configuración) | Consultor Funcional SAP S/4HANA (producto base) | 4 |
+| 3 | Transferencia de conocimiento al equipo del cliente | Consultor Funcional SAP S/4HANA (producto base) | 3 |
+
+**Esfuerzo total estimado (validación + entrega): ~11 horas.**
+
+---
+
+## 4. Consideraciones especiales
+
+- Aplica a SAP S/4HANA Cloud **Public Edition**.
+- Disponibilidad indicada por SAP: **Beta**.
+
+---
+
+## Referencias oficiales
+
+- SAP Discovery Center — Detail Page: https://discovery-center.cloud.sap/ai-feature/49c08b5c-583b-4108-ba23-401c3da051cf/
+- SAP Help Portal — Initial Setup: No existe enlace en *Resources*
+- SAP Discovery Center — Pricing Details: No aplica
+
+---
+
+## Resumen ejecutivo de esfuerzo
+
+| Bloque | Horas |
+|---|---|
+| Activación / configuración | No aplica (sin pasos oficialmente documentados) |
+| Validación + documentación + KT | 11 |
+| **Total** | **11** |
+
+---
+
+## [J87] — Error Resolution
+
+> Análisis construido **únicamente** a partir de las fuentes oficiales de SAP asociadas al AI Feature/Agent J87 en `processed/AI_Features_Data_Enriched.xlsx`. Los campos para los que SAP no publica información aparecen literalmente como "No aplica", "No existe en la fuente oficial" o "No documentado en la fuente oficial". **No se ha completado ningún dato con conocimiento general ni con inferencia desde casos similares.**
+
+**Fuentes oficiales consultadas:**
+- Detail Page (SAP Discovery Center): https://discovery-center.cloud.sap/ai-feature/942e1e4b-32e0-480f-9f11-d31badf54186/
+- Initial Setup (SAP Help Portal): https://help.sap.com/docs/advanced-financial-closing/user-guide-restricted-availability/how-to-use-error-resolution-proposed-by-ai?locale=en-US
+- Pricing Details (SAP Discovery Center): No aplica
+
+**Resumen del caso:** Ayuda a controllers y contadores a entender las causas raíz de las incidencias que surgen durante el cierre financiero. Ofrece guía paso a paso para corregir el error y la opción de enviar automáticamente por correo la resolución al experto responsable.
+
+---
+
+## 1. Prerequisitos para la activación
+
+### 1.1 Producto / componente SAP requerido
+- **SAP Advanced Financial Closing**.
+
+### 1.2 Licenciamiento / entitlement / paquete
+- Capability **Base**.
+- No aplica un paquete Premium.
+
+### 1.3 Scope item relacionado
+- No aplica (el producto base no utiliza scope items de SAP S/4HANA).
+
+### 1.4 Aplicaciones / apps Fiori / servicios / componentes técnicos
+- Según las fuentes oficiales abiertas (Initial Setup / AI Feature): You've familiarized yourself with the information on the previous pages: You must be authorized to perform the following steps through one of the following options: Authorizations granted through user role assignment: Your user must have a user role assigned for the Task Processing scope with Process authorization. Authorization granted through direct user assignment: For more information, see Direct User Assignment.
+
+### 1.5 Datos maestros / transaccionales previos
+- No documentado en la fuente oficial.
+
+### 1.6 Restricciones funcionales / técnicas / idioma
+- No documentado en la fuente oficial.
+
+---
+
+## 2. Pasos de activación / configuración estándar
+
+| # | Actividad estándar | Objeto de configuración | Tipo de configuración | Consultor requerido | Tiempo estimado (h, Medium) |
+|---|---|---|---|---|---|
+| 1 | Open the task list from the table. This brings you to a new screen showing the tasks of the task list in a table. | Configuración de SAP Advanced Financial Closing | General | Consultor Funcional del producto base | 3 |
+| 2 | Open the task execution results from the Task Status column. | Configuración de SAP Advanced Financial Closing | General | Consultor Funcional del producto base | 3 |
+| 3 | Open the results for the task execution you want to check. | Configuración de SAP Advanced Financial Closing | General | Consultor Funcional del producto base | 3 |
+| 4 | Open a result that shows errors. | Configuración de SAP Advanced Financial Closing | General | Consultor Funcional del producto base | 3 |
+
+**Esfuerzo total estimado (activación / configuración): ~12 horas.**
+
+---
+
+## 3. Pasos adicionales de validación
+
+| # | Actividad | Consultor requerido | Tiempo estimado (h, Medium) |
+|---|---|---|---|
+| 1 | Prueba unitaria del caso de uso con datos reales en entorno de Quality | Consultor Funcional del producto base | 4 |
+| 2 | Documentación de la activación para el cliente (manual de usuario + manual de configuración) | Consultor Funcional del producto base | 4 |
+| 3 | Transferencia de conocimiento al equipo del cliente | Consultor Funcional del producto base | 3 |
+
+**Esfuerzo total estimado (validación + entrega): ~11 horas.**
+
+---
+
+## 4. Consideraciones especiales
+
+- Disponibilidad indicada por SAP: **Beta**.
+
+---
+
+## Referencias oficiales
+
+- SAP Discovery Center — Detail Page: https://discovery-center.cloud.sap/ai-feature/942e1e4b-32e0-480f-9f11-d31badf54186/
+- SAP Help Portal — Initial Setup: https://help.sap.com/docs/advanced-financial-closing/user-guide-restricted-availability/how-to-use-error-resolution-proposed-by-ai?locale=en-US
+- SAP Discovery Center — Pricing Details: No aplica
+
+---
+
+## Resumen ejecutivo de esfuerzo
+
+| Bloque | Horas |
+|---|---|
+| Activación / configuración | 12 |
+| Validación + documentación + KT | 11 |
+| **Total** | **23** |
 
 ---
 
@@ -10433,6 +13310,162 @@ Cada análisis describe, para un caso de uso identificado por su código
 | Activación / configuración | 9 |
 | Validación + documentación + KT | 11 |
 | **Total** | **20** |
+
+---
+
+## [J940] — Process Content Recommender Agent
+
+> Análisis construido **únicamente** a partir de las fuentes oficiales de SAP asociadas al AI Feature/Agent J940 en `processed/AI_Features_Data_Enriched.xlsx`. Los campos para los que SAP no publica información aparecen literalmente como "No aplica", "No existe en la fuente oficial" o "No documentado en la fuente oficial". **No se ha completado ningún dato con conocimiento general ni con inferencia desde casos similares.**
+
+**Fuentes oficiales consultadas:**
+- Detail Page (SAP Discovery Center): https://discovery-center.cloud.sap/ai-feature/aa94ac46-bbb3-405e-a7f9-1e14e9bc16db/
+- Initial Setup (SAP Help Portal): No existe enlace 'Initial Setup' en *Resources*.
+- Pricing Details (SAP Discovery Center): No aplica
+
+**Resumen del caso:** Acelera las transformaciones de procesos ofreciendo orientación a preguntas específicas de proceso. Guía a los arquitectos empresariales a tomar decisiones más rápidas y basadas en insights: razona sobre miles de mejores prácticas de procesos —de SAP y modelos propios— y responde preguntas con recomendaciones de contenido a medida (value accelerators, KPIs, etc.), entregando una lista estructurada y priorizada.
+
+---
+
+## 1. Prerequisitos para la activación
+
+### 1.1 Producto / componente SAP requerido
+- **Joule**.
+
+### 1.2 Licenciamiento / entitlement / paquete
+- Capability **Base**.
+- No aplica un paquete Premium.
+
+### 1.3 Scope item relacionado
+- No aplica (el producto base no utiliza scope items de SAP S/4HANA).
+
+### 1.4 Aplicaciones / apps Fiori / servicios / componentes técnicos
+- No documentado en la fuente oficial.
+
+### 1.5 Datos maestros / transaccionales previos
+- No documentado en la fuente oficial.
+
+### 1.6 Restricciones funcionales / técnicas / idioma
+- No documentado en la fuente oficial.
+
+---
+
+## 2. Pasos de activación / configuración estándar
+
+> **No se registran pasos de activación.** Tras consultar el Initial Setup y la página AI Feature enlazados en *Resources*, no fue posible acceder a una página oficial SAP que describa un procedimiento de activación para este caso. No se han fabricado pasos.
+
+---
+
+## 3. Pasos adicionales de validación
+
+| # | Actividad | Consultor requerido | Tiempo estimado (h, Medium) |
+|---|---|---|---|
+| 1 | Prueba unitaria del caso de uso con datos reales en entorno de Quality | Consultor SAP BTP + Funcional (producto base) | 4 |
+| 2 | Documentación de la activación para el cliente (manual de usuario + manual de configuración) | Consultor SAP BTP + Funcional (producto base) | 4 |
+| 3 | Transferencia de conocimiento al equipo del cliente | Consultor SAP BTP + Funcional (producto base) | 3 |
+
+**Esfuerzo total estimado (validación + entrega): ~11 horas.**
+
+---
+
+## 4. Consideraciones especiales
+
+- Disponibilidad indicada por SAP: **Beta**.
+
+---
+
+## Referencias oficiales
+
+- SAP Discovery Center — Detail Page: https://discovery-center.cloud.sap/ai-feature/aa94ac46-bbb3-405e-a7f9-1e14e9bc16db/
+- SAP Help Portal — Initial Setup: No existe enlace en *Resources*
+- SAP Discovery Center — Pricing Details: No aplica
+
+---
+
+## Resumen ejecutivo de esfuerzo
+
+| Bloque | Horas |
+|---|---|
+| Activación / configuración | No aplica (sin pasos oficialmente documentados) |
+| Validación + documentación + KT | 11 |
+| **Total** | **11** |
+
+---
+
+## [J955] — Order Reliability Agent
+
+> Análisis construido **únicamente** a partir de las fuentes oficiales de SAP asociadas al AI Feature/Agent J955 en `processed/AI_Features_Data_Enriched.xlsx`. Los campos para los que SAP no publica información aparecen literalmente como "No aplica", "No existe en la fuente oficial" o "No documentado en la fuente oficial". **No se ha completado ningún dato con conocimiento general ni con inferencia desde casos similares.**
+
+**Fuentes oficiales consultadas:**
+- Detail Page (SAP Discovery Center): https://discovery-center.cloud.sap/ai-feature/51d0ed9c-7588-45e5-891d-44ef3ac456f5/
+- Initial Setup (SAP Help Portal): No existe enlace 'Initial Setup' en *Resources*.
+- Pricing Details (SAP Discovery Center): No aplica
+
+**Resumen del caso:** Revoluciona la gestión de riesgos de pedidos (order jeopardy) en SAP Order Management Services con un agente que identifica, analiza y resuelve excepciones de pedidos manteniendo al humano en el bucle. Monitorea los flujos de pedidos en tiempo real, detecta anomalías como fallos o retrasos de cumplimiento, y ejecuta acciones correctivas o propone recomendaciones.
+
+---
+
+## 1. Prerequisitos para la activación
+
+### 1.1 Producto / componente SAP requerido
+- **Joule**.
+
+### 1.2 Licenciamiento / entitlement / paquete
+- Capability **Base**.
+- No aplica un paquete Premium.
+
+### 1.3 Scope item relacionado
+- No aplica (el producto base no utiliza scope items de SAP S/4HANA).
+
+### 1.4 Aplicaciones / apps Fiori / servicios / componentes técnicos
+- No documentado en la fuente oficial.
+
+### 1.5 Datos maestros / transaccionales previos
+- No documentado en la fuente oficial.
+
+### 1.6 Restricciones funcionales / técnicas / idioma
+- No documentado en la fuente oficial.
+
+---
+
+## 2. Pasos de activación / configuración estándar
+
+> **No se registran pasos de activación.** Tras consultar el Initial Setup y la página AI Feature enlazados en *Resources*, no fue posible acceder a una página oficial SAP que describa un procedimiento de activación para este caso. No se han fabricado pasos.
+
+---
+
+## 3. Pasos adicionales de validación
+
+| # | Actividad | Consultor requerido | Tiempo estimado (h, Medium) |
+|---|---|---|---|
+| 1 | Prueba unitaria del caso de uso con datos reales en entorno de Quality | Consultor SAP BTP + Funcional (producto base) | 4 |
+| 2 | Documentación de la activación para el cliente (manual de usuario + manual de configuración) | Consultor SAP BTP + Funcional (producto base) | 4 |
+| 3 | Transferencia de conocimiento al equipo del cliente | Consultor SAP BTP + Funcional (producto base) | 3 |
+
+**Esfuerzo total estimado (validación + entrega): ~11 horas.**
+
+---
+
+## 4. Consideraciones especiales
+
+- Disponibilidad indicada por SAP: **Beta**.
+
+---
+
+## Referencias oficiales
+
+- SAP Discovery Center — Detail Page: https://discovery-center.cloud.sap/ai-feature/51d0ed9c-7588-45e5-891d-44ef3ac456f5/
+- SAP Help Portal — Initial Setup: No existe enlace en *Resources*
+- SAP Discovery Center — Pricing Details: No aplica
+
+---
+
+## Resumen ejecutivo de esfuerzo
+
+| Bloque | Horas |
+|---|---|
+| Activación / configuración | No aplica (sin pasos oficialmente documentados) |
+| Validación + documentación + KT | 11 |
+| **Total** | **11** |
 
 ---
 

@@ -1,7 +1,7 @@
 # SAP Business AI — Fichas Descriptivas de AI Features (Corpus RAG)
 
-> **Última actualización:** 2026-06-05T17:27:54+00:00
-> **Fichas incluidas:** 123
+> **Última actualización:** 2026-06-11T15:45:47+00:00
+> **Fichas incluidas:** 161
 
 ## Qué contiene este documento
 
@@ -89,6 +89,56 @@ Funcionalidad de Joule para analistas de negocio y contadores de costos que perm
 
 ---
 
+## [J1043] — Dispute Resolution Agent
+
+## En una frase
+Automatiza el análisis de causa raíz y sugiere soluciones accionables: revisa rápidamente facturas, pedidos de venta, registros de entrega, acuerdos de precios, reglas de impuestos y datos históricos para identificar las causas de la disputa.
+
+## ¿Qué es?
+Automatiza el análisis de causa raíz y sugiere soluciones accionables: revisa rápidamente facturas, pedidos de venta, registros de entrega, acuerdos de precios, reglas de impuestos y datos históricos para identificar las causas de la disputa. Ofrece recomendaciones conformes y a medida, reduciendo el tiempo y el esfuerzo de resolución y avanzando hacia una gestión de disputas automatizada, más rápida y alineada con la regulación. Es una capacidad de IA **Base** de SAP S/4HANA Cloud Public Edition‚ Joule.
+
+## Beneficios
+- Escanea facturas y contratos en busca de errores automáticamente
+- detecta cargos incorrectos y sugiere correcciones como la creación de notas de crédito
+- mejora la confianza y las relaciones con resolución de disputas más rápida
+
+## Valor de negocio
+No publicado en la página Detail Page.
+
+## ¿Cómo funciona?
+1. **Conversación con Joule:** el usuario plantea su petición en lenguaje natural a Joule.
+2. **Comprensión y ejecución asistida por IA:** Joule interpreta la intención, consulta los datos del sistema y resuelve la tarea.
+3. **Resultado accionable:** Joule devuelve la información o ejecuta la acción en el flujo, sin navegar manualmente por las transacciones.
+
+## Casos de uso (ilustrativos)
+> Estos ejemplos son **ilustrativos**, redactados para facilitar la comprensión; no son escenarios oficiales de SAP.
+
+1. **Escenario:** Un usuario de negocio necesita resolver una tarea recurrente en SAP S/4HANA Cloud Public Edition‚ Joule sin recordar la transacción exacta. **Cómo ayuda la feature:** le plantea la petición a Joule en lenguaje natural y obtiene el resultado en segundos, evitando navegar por menús. Apoya en: _Escanea facturas y contratos en busca de errores automáticamente_.
+2. **Escenario:** Un colaborador nuevo aún no domina el sistema y debe responder una consulta operativa con rapidez. **Cómo ayuda la feature:** formula la pregunta a Joule y recibe la información o la acción ejecutada, acortando su curva de aprendizaje.
+
+## ¿Cuándo usarla?
+- Cuando la tarea que automatiza esta capacidad se realiza de forma **recurrente** dentro de SAP S/4HANA Cloud Public Edition‚ Joule y el trabajo manual es lento o propenso a errores.
+- Requiere el producto base **SAP S/4HANA Cloud Public Edition‚ Joule** correctamente habilitado; suele incluirse sin costo adicional de IA cuando aplica (ver *Datos clave*).
+- No reemplaza el criterio del especialista: acelera y asiste la tarea, pero la validación final permanece en el usuario.
+
+## Datos clave
+| Campo | Valor |
+|---|---|
+| Identificador | J1043 |
+| Producto | SAP S/4HANA Cloud Public Edition‚ Joule |
+| Tipo de IA | AI Agent |
+| Tipo comercial | Base |
+| Disponibilidad | Beta |
+| Support Component | FI-FIO-AR-TRA-2CL |
+| Industrias aplicables | Cross-Industry |
+| Pricing | This AI offering is currently in Beta and available at no cost. Pricing will be communicated once the AI offering becomes generally available. A separate subscription is required for use or testing. Learn more. |
+| Detail Page | https://discovery-center.cloud.sap/ai-feature/d3a94887-d357-4620-98d5-784a035f9e41/ |
+
+## Fuente
+- SAP Discovery Center — Detail Page: https://discovery-center.cloud.sap/ai-feature/d3a94887-d357-4620-98d5-784a035f9e41/
+
+---
+
 ## [J1047] — Sales Order Status Check
 
 ## En una frase
@@ -134,6 +184,57 @@ Aporta valor al reducir el tiempo de análisis manual del estado de pedidos y al
 
 ## Fuente
 - SAP Discovery Center — Detail Page: https://discovery-center.cloud.sap/ai-feature/8e12da05-b0e4-490f-9cf4-0cc2a9482f71/
+
+---
+
+## [J1088] — Joule with SAP Order Management Services
+
+## En una frase
+La integración de Joule con SAP Order Management Services permite a los operations managers acceder a los datos del servicio mediante consultas conversacionales, con guía operativa en tiempo real basada en rol, cubriendo múltiples dominios: procesamiento de pedidos, orquestación, sourcing, disponibilidad, devoluciones y flujos.
+
+## ¿Qué es?
+La integración de Joule con SAP Order Management Services permite a los operations managers acceder a los datos del servicio mediante consultas conversacionales, con guía operativa en tiempo real basada en rol, cubriendo múltiples dominios: procesamiento de pedidos, orquestación, sourcing, disponibilidad, devoluciones y flujos. Es una capacidad de IA **Base** de SAP Order Management Services.
+
+## Beneficios
+- Ahorra tiempo y dinero actuando antes de que ocurran los problemas
+- el acceso rápido a transacciones mejora la velocidad y la capacidad de respuesta
+- los insights en tiempo real previenen incidencias
+- datos instantáneos y precisos habilitan decisiones más inteligentes y rápidas
+
+## Valor de negocio
+No publicado en la página Detail Page.
+
+## ¿Cómo funciona?
+1. **Conversación con Joule:** el usuario plantea su petición en lenguaje natural a Joule dentro de SAP Order Management Services.
+2. **Comprensión y ejecución asistida por IA:** Joule interpreta la intención, consulta los datos del sistema y resuelve la tarea.
+3. **Resultado accionable:** Joule devuelve la información o ejecuta la acción en el flujo, sin navegar manualmente por las transacciones.
+
+## Casos de uso (ilustrativos)
+> Estos ejemplos son **ilustrativos**, redactados para facilitar la comprensión; no son escenarios oficiales de SAP.
+
+1. **Escenario:** Un usuario de negocio necesita resolver una tarea recurrente en SAP Order Management Services sin recordar la transacción exacta. **Cómo ayuda la feature:** le plantea la petición a Joule en lenguaje natural y obtiene el resultado en segundos, evitando navegar por menús. Apoya en: _Ahorra tiempo y dinero actuando antes de que ocurran los problemas_.
+2. **Escenario:** Un colaborador nuevo aún no domina el sistema y debe responder una consulta operativa con rapidez. **Cómo ayuda la feature:** formula la pregunta a Joule y recibe la información o la acción ejecutada, acortando su curva de aprendizaje.
+
+## ¿Cuándo usarla?
+- Cuando la tarea que automatiza esta capacidad se realiza de forma **recurrente** dentro de SAP Order Management Services y el trabajo manual es lento o propenso a errores.
+- Requiere el producto base **SAP Order Management Services** correctamente habilitado; suele incluirse sin costo adicional de IA cuando aplica (ver *Datos clave*).
+- No reemplaza el criterio del especialista: acelera y asiste la tarea, pero la validación final permanece en el usuario.
+
+## Datos clave
+| Campo | Valor |
+|---|---|
+| Identificador | J1088 |
+| Producto | SAP Order Management Services |
+| Tipo de IA | AI Feature |
+| Tipo comercial | Base |
+| Disponibilidad | Beta |
+| Support Component | CEC-BAF-DOM-JOULE |
+| Industrias aplicables | Retail |
+| Pricing | This AI offering is currently in Beta and available at no cost. Pricing will be communicated once the AI offering becomes generally available. A separate subscription is required for use or testing. Learn more. |
+| Detail Page | https://discovery-center.cloud.sap/ai-feature/b9498c45-6944-48e3-bb0e-902c71bef176/ |
+
+## Fuente
+- SAP Discovery Center — Detail Page: https://discovery-center.cloud.sap/ai-feature/b9498c45-6944-48e3-bb0e-902c71bef176/
 
 ---
 
@@ -281,6 +382,109 @@ Aporta eficiencia operativa en compras al reducir tiempos de procesamiento, dism
 
 ---
 
+## [J1122] — Process Analyzer‚ Automated Mapping
+
+## En una frase
+Con el mapeo automatizado, los analistas de procesos pueden vincular automáticamente actividades de modelos BPMN con eventos sin necesidad de coincidencias exactas de nombre.
+
+## ¿Qué es?
+Con el mapeo automatizado, los analistas de procesos pueden vincular automáticamente actividades de modelos BPMN con eventos sin necesidad de coincidencias exactas de nombre. Interpreta el contexto de forma inteligente, permitiendo mapear acciones —eventos, actividades, mejores prácticas, bloqueadores o acciones de texto libre— aunque aparezcan en distintos idiomas, contengan abreviaturas o errores tipográficos. Los mapeos se reutilizan en análisis futuros. Es una capacidad de IA **Base** de SAP Signavio Process Intelligence.
+
+## Beneficios
+- Mejora las tareas con verificación de conformidad
+- amplía las capacidades de mapeo más allá de los límites actuales del auto-mapeo
+- ahorra costos significativos
+- ofrece un servicio de mapeo universal aplicable en dashboards, generación de reglas y PCAI
+
+## Valor de negocio
+90% de reducción del tiempo de mapear event logs reales a un modelo BPMN.
+
+## ¿Cómo funciona?
+1. **Pregunta o disparador:** el usuario formula la consulta o activa el análisis en SAP Signavio Process Intelligence.
+2. **Procesamiento con IA:** el motor interpreta la petición y la ejecuta sobre los datos.
+3. **Insight accionable:** devuelve hallazgos claros (correlaciones, estados, predicciones) listos para informar una decisión de negocio.
+
+## Casos de uso (ilustrativos)
+> Estos ejemplos son **ilustrativos**, redactados para facilitar la comprensión; no son escenarios oficiales de SAP.
+
+1. **Escenario:** Un usuario de negocio necesita entender una situación en SAP Signavio Process Intelligence sin dominar las herramientas analíticas. **Cómo ayuda la feature:** ejecuta una consulta sencilla y obtiene el insight de inmediato, listo para decidir. Apoya en: _Mejora las tareas con verificación de conformidad_.
+2. **Escenario:** Surge una incidencia que requiere identificar rápidamente su causa o estado. **Cómo ayuda la feature:** el análisis asistido por IA revela el estado o los factores relevantes y orienta la acción correctiva.
+
+## ¿Cuándo usarla?
+- Cuando la tarea que automatiza esta capacidad se realiza de forma **recurrente** dentro de SAP Signavio Process Intelligence y el trabajo manual es lento o propenso a errores.
+- Requiere el producto base **SAP Signavio Process Intelligence** correctamente habilitado; suele incluirse sin costo adicional de IA cuando aplica (ver *Datos clave*).
+- No reemplaza el criterio del especialista: acelera y asiste la tarea, pero la validación final permanece en el usuario.
+
+## Datos clave
+| Campo | Valor |
+|---|---|
+| Identificador | J1122 |
+| Producto | SAP Signavio Process Intelligence |
+| Tipo de IA | AI Feature |
+| Tipo comercial | Base |
+| Disponibilidad | Beta |
+| Support Component | BPI-SIC-CA-AI |
+| Industrias aplicables | Cross-Industry |
+| Pricing | This AI offering is currently in Beta and available at no cost. Pricing will be communicated once the AI offering becomes generally available. A separate subscription is required for use or testing. Learn more. |
+| Detail Page | https://discovery-center.cloud.sap/ai-feature/6c6eb8d1-764c-4727-b8d5-4911607f89b8/ |
+
+## Fuente
+- SAP Discovery Center — Detail Page: https://discovery-center.cloud.sap/ai-feature/6c6eb8d1-764c-4727-b8d5-4911607f89b8/
+
+---
+
+## [J1129] — Workspace Administration Agent
+
+## En una frase
+Automatiza el onboarding de usuarios y la gestión del workspace, permitiendo a expertos de proceso y usuarios de negocio empezar a usar SAP Signavio el doble de rápido.
+
+## ¿Qué es?
+Automatiza el onboarding de usuarios y la gestión del workspace, permitiendo a expertos de proceso y usuarios de negocio empezar a usar SAP Signavio el doble de rápido. Agiliza la inscripción para modelado y minería de procesos creando múltiples usuarios, asignando los roles, licencias y derechos de acceso correctos, e inscribiéndolos en los procesos relevantes, asegurando que cada nuevo usuario tenga los permisos adecuados desde el primer día. Es una capacidad de IA **Base** de SAP Signavio Process Collaboration Hub‚ Joule.
+
+## Beneficios
+- Automatiza el onboarding masivo de usuarios con roles y licencias
+- habilita acceso inmediato a dashboards y análisis
+- asegura gobernanza y cumplimiento consistentes
+- reduce el esfuerzo administrativo repetitivo
+- acelera la adopción de usuarios de process mining
+
+## Valor de negocio
+90% de reducción del tiempo de otorgar derechos de acceso a usuarios de SAP Signavio.
+
+## ¿Cómo funciona?
+1. **Conversación con Joule:** el usuario plantea su petición en lenguaje natural a Joule.
+2. **Comprensión y ejecución asistida por IA:** Joule interpreta la intención, consulta los datos del sistema y resuelve la tarea.
+3. **Resultado accionable:** Joule devuelve la información o ejecuta la acción en el flujo, sin navegar manualmente por las transacciones.
+
+## Casos de uso (ilustrativos)
+> Estos ejemplos son **ilustrativos**, redactados para facilitar la comprensión; no son escenarios oficiales de SAP.
+
+1. **Escenario:** Un usuario de negocio necesita resolver una tarea recurrente en SAP Signavio Process Collaboration Hub‚ Joule sin recordar la transacción exacta. **Cómo ayuda la feature:** le plantea la petición a Joule en lenguaje natural y obtiene el resultado en segundos, evitando navegar por menús. Apoya en: _Automatiza el onboarding masivo de usuarios con roles y licencias_.
+2. **Escenario:** Un colaborador nuevo aún no domina el sistema y debe responder una consulta operativa con rapidez. **Cómo ayuda la feature:** formula la pregunta a Joule y recibe la información o la acción ejecutada, acortando su curva de aprendizaje.
+
+## ¿Cuándo usarla?
+- Cuando la tarea que automatiza esta capacidad se realiza de forma **recurrente** dentro de SAP Signavio Process Collaboration Hub‚ Joule y el trabajo manual es lento o propenso a errores.
+- Requiere el producto base **SAP Signavio Process Collaboration Hub‚ Joule** correctamente habilitado; suele incluirse sin costo adicional de IA cuando aplica (ver *Datos clave*).
+- No reemplaza el criterio del especialista: acelera y asiste la tarea, pero la validación final permanece en el usuario.
+
+## Datos clave
+| Campo | Valor |
+|---|---|
+| Identificador | J1129 |
+| Producto | SAP Signavio Process Collaboration Hub‚ Joule |
+| Tipo de IA | AI Agent |
+| Tipo comercial | Base |
+| Disponibilidad | Beta |
+| Support Component | BPI-SIG-CA-AI |
+| Industrias aplicables | Cross-Industry |
+| Pricing | This AI offering is currently in Beta and available at no cost. Pricing will be communicated once the AI offering becomes generally available. A separate subscription is required for use or testing. Learn more. |
+| Detail Page | https://discovery-center.cloud.sap/ai-feature/d8e34c50-6983-4129-aa44-3356bf2fb4bf/ |
+
+## Fuente
+- SAP Discovery Center — Detail Page: https://discovery-center.cloud.sap/ai-feature/d8e34c50-6983-4129-aa44-3356bf2fb4bf/
+
+---
+
 ## [J112] — Process Analyzer, Text to Insight
 
 ## En una frase
@@ -330,6 +534,162 @@ Es una capacidad **Base** de **SAP Signavio solutions** que democratiza el proce
 
 ## Fuente
 - SAP Discovery Center — Detail Page: https://discovery-center.cloud.sap/ai-feature/a6dde1d9-6da4-443f-874a-e6eb183e2bd5/
+
+---
+
+## [J1130] — Screen Guide Agent
+
+## En una frase
+Transforma pantallas complejas y ricas en funciones en comprensión clara y accionable: reconoce dinámicamente la pantalla que ve el usuario, explica su propósito, guía sobre las acciones disponibles y resalta los datos y controles más relevantes.
+
+## ¿Qué es?
+Transforma pantallas complejas y ricas en funciones en comprensión clara y accionable: reconoce dinámicamente la pantalla que ve el usuario, explica su propósito, guía sobre las acciones disponibles y resalta los datos y controles más relevantes. Integrado en SAP Signavio, entrega explicaciones en lenguaje natural, resaltados visuales y tips por rol. Es una capacidad de IA **Base** de SAP Signavio Process Collaboration Hub‚ Joule.
+
+## Beneficios
+- Simplifica pantallas complejas con explicaciones claras y accionables
+- resalta secciones, métricas y controles clave
+- contextualiza funciones para mostrar propósito y relevancia
+- ofrece insights guiados en lenguaje natural y recomendaciones del siguiente paso
+- acelera el onboarding y el uso confiado de la plataforma
+
+## Valor de negocio
+30% de reducción del tiempo de interpretar una página de SAP Signavio; 50% de reducción del costo de onboarding y formación de nuevos usuarios.
+
+## ¿Cómo funciona?
+1. **Conversación con Joule:** el usuario plantea su petición en lenguaje natural a Joule.
+2. **Comprensión y ejecución asistida por IA:** Joule interpreta la intención, consulta los datos del sistema y resuelve la tarea.
+3. **Resultado accionable:** Joule devuelve la información o ejecuta la acción en el flujo, sin navegar manualmente por las transacciones.
+
+## Casos de uso (ilustrativos)
+> Estos ejemplos son **ilustrativos**, redactados para facilitar la comprensión; no son escenarios oficiales de SAP.
+
+1. **Escenario:** Un usuario de negocio necesita resolver una tarea recurrente en SAP Signavio Process Collaboration Hub‚ Joule sin recordar la transacción exacta. **Cómo ayuda la feature:** le plantea la petición a Joule en lenguaje natural y obtiene el resultado en segundos, evitando navegar por menús. Apoya en: _Simplifica pantallas complejas con explicaciones claras y accionables_.
+2. **Escenario:** Un colaborador nuevo aún no domina el sistema y debe responder una consulta operativa con rapidez. **Cómo ayuda la feature:** formula la pregunta a Joule y recibe la información o la acción ejecutada, acortando su curva de aprendizaje.
+
+## ¿Cuándo usarla?
+- Cuando la tarea que automatiza esta capacidad se realiza de forma **recurrente** dentro de SAP Signavio Process Collaboration Hub‚ Joule y el trabajo manual es lento o propenso a errores.
+- Requiere el producto base **SAP Signavio Process Collaboration Hub‚ Joule** correctamente habilitado; suele incluirse sin costo adicional de IA cuando aplica (ver *Datos clave*).
+- No reemplaza el criterio del especialista: acelera y asiste la tarea, pero la validación final permanece en el usuario.
+
+## Datos clave
+| Campo | Valor |
+|---|---|
+| Identificador | J1130 |
+| Producto | SAP Signavio Process Collaboration Hub‚ Joule |
+| Tipo de IA | AI Agent |
+| Tipo comercial | Base |
+| Disponibilidad | Beta |
+| Support Component | BPI-SIG-CA-AI |
+| Industrias aplicables | Cross-Industry |
+| Pricing | This AI offering is currently in Beta and available at no cost. Pricing will be communicated once the AI offering becomes generally available. A separate subscription is required for use or testing. Learn more. |
+| Detail Page | https://discovery-center.cloud.sap/ai-feature/1be89884-5087-4293-9b9e-da35987fe9bc/ |
+
+## Fuente
+- SAP Discovery Center — Detail Page: https://discovery-center.cloud.sap/ai-feature/1be89884-5087-4293-9b9e-da35987fe9bc/
+
+---
+
+## [J1131] — Value Case Creation Agent
+
+## En una frase
+Ayuda a las organizaciones a traducir insights de procesos en valor de negocio tangible: identifica automáticamente ineficiencias (retrabajos, demoras) y las vincula con oportunidades de mejora (automatización, estandarización).
+
+## ¿Qué es?
+Ayuda a las organizaciones a traducir insights de procesos en valor de negocio tangible: identifica automáticamente ineficiencias (retrabajos, demoras) y las vincula con oportunidades de mejora (automatización, estandarización). Estimando el impacto financiero potencial con parámetros configurables de costo y esfuerzo, permite crear value cases basados en datos sin requerir experiencia analítica profunda. Entrega borradores editables (resumen del problema, causas raíz, beneficios esperados). Es una capacidad de IA **Base** de SAP Signavio Process Intelligence‚ Joule.
+
+## Beneficios
+- Identifica automáticamente ineficiencias de proceso y cuantifica el impacto financiero
+- genera value cases basados en datos al instante desde insights de process mining
+- sugiere iniciativas de mejora dirigidas a maximizar el ROI
+- habilita decisiones basadas en evidencia
+- simplifica la colaboración con borradores editables generados por IA
+
+## Valor de negocio
+70% de reducción del tiempo de crear un value case centrado en procesos; 5% de reducción de la erosión de valor por inacción ante ineficiencias de proceso.
+
+## ¿Cómo funciona?
+1. **Conversación con Joule:** el usuario plantea su petición en lenguaje natural a Joule.
+2. **Comprensión y ejecución asistida por IA:** Joule interpreta la intención, consulta los datos del sistema y resuelve la tarea.
+3. **Resultado accionable:** Joule devuelve la información o ejecuta la acción en el flujo, sin navegar manualmente por las transacciones.
+
+## Casos de uso (ilustrativos)
+> Estos ejemplos son **ilustrativos**, redactados para facilitar la comprensión; no son escenarios oficiales de SAP.
+
+1. **Escenario:** Un usuario de negocio necesita resolver una tarea recurrente en SAP Signavio Process Intelligence‚ Joule sin recordar la transacción exacta. **Cómo ayuda la feature:** le plantea la petición a Joule en lenguaje natural y obtiene el resultado en segundos, evitando navegar por menús. Apoya en: _Identifica automáticamente ineficiencias de proceso y cuantifica el impacto financiero_.
+2. **Escenario:** Un colaborador nuevo aún no domina el sistema y debe responder una consulta operativa con rapidez. **Cómo ayuda la feature:** formula la pregunta a Joule y recibe la información o la acción ejecutada, acortando su curva de aprendizaje.
+
+## ¿Cuándo usarla?
+- Cuando la tarea que automatiza esta capacidad se realiza de forma **recurrente** dentro de SAP Signavio Process Intelligence‚ Joule y el trabajo manual es lento o propenso a errores.
+- Requiere el producto base **SAP Signavio Process Intelligence‚ Joule** correctamente habilitado; suele incluirse sin costo adicional de IA cuando aplica (ver *Datos clave*).
+- No reemplaza el criterio del especialista: acelera y asiste la tarea, pero la validación final permanece en el usuario.
+
+## Datos clave
+| Campo | Valor |
+|---|---|
+| Identificador | J1131 |
+| Producto | SAP Signavio Process Intelligence‚ Joule |
+| Tipo de IA | AI Agent |
+| Tipo comercial | Base |
+| Disponibilidad | Beta |
+| Support Component | BPI-SIG-CA-AI |
+| Industrias aplicables | Cross-Industry |
+| Pricing | This AI offering is currently in Beta and available at no cost. Pricing will be communicated once the AI offering becomes generally available. A separate subscription is required for use or testing. Learn more. |
+| Detail Page | https://discovery-center.cloud.sap/ai-feature/e5f8f643-4dc9-46d4-96e6-15d73187869a/ |
+
+## Fuente
+- SAP Discovery Center — Detail Page: https://discovery-center.cloud.sap/ai-feature/e5f8f643-4dc9-46d4-96e6-15d73187869a/
+
+---
+
+## [J1132] — Dashboard Analyzer Agent
+
+## En una frase
+Transforma datos complejos de process mining en insights claros y accionables: interpreta de forma autónoma event logs y KPIs, identifica ineficiencias y desviaciones, y recomienda próximas mejores acciones, convirtiendo dashboards estáticos en herramientas prescriptivas.
+
+## ¿Qué es?
+Transforma datos complejos de process mining en insights claros y accionables: interpreta de forma autónoma event logs y KPIs, identifica ineficiencias y desviaciones, y recomienda próximas mejores acciones, convirtiendo dashboards estáticos en herramientas prescriptivas. Integrado en SAP Signavio, entrega resúmenes en lenguaje natural que explican qué ocurre, por qué importa y cómo mejorar. Es una capacidad de IA **Base** de SAP Signavio Process Intelligence‚ Joule.
+
+## Beneficios
+- Simplifica dashboards y KPIs con explicaciones claras y accionables
+- detecta ineficiencias, anomalías y desviaciones de rendimiento
+- contextualiza y correlaciona KPIs para revelar causas raíz
+- genera recomendaciones prescriptivas e insights en lenguaje natural
+- acelera decisiones basadas en datos
+
+## Valor de negocio
+80% de reducción del tiempo para acceder a insights de process mining; 5% de reducción de la erosión de valor por mala interpretación de los insights.
+
+## ¿Cómo funciona?
+1. **Conversación con Joule:** el usuario plantea su petición en lenguaje natural a Joule.
+2. **Comprensión y ejecución asistida por IA:** Joule interpreta la intención, consulta los datos del sistema y resuelve la tarea.
+3. **Resultado accionable:** Joule devuelve la información o ejecuta la acción en el flujo, sin navegar manualmente por las transacciones.
+
+## Casos de uso (ilustrativos)
+> Estos ejemplos son **ilustrativos**, redactados para facilitar la comprensión; no son escenarios oficiales de SAP.
+
+1. **Escenario:** Un usuario de negocio necesita resolver una tarea recurrente en SAP Signavio Process Intelligence‚ Joule sin recordar la transacción exacta. **Cómo ayuda la feature:** le plantea la petición a Joule en lenguaje natural y obtiene el resultado en segundos, evitando navegar por menús. Apoya en: _Simplifica dashboards y KPIs con explicaciones claras y accionables_.
+2. **Escenario:** Un colaborador nuevo aún no domina el sistema y debe responder una consulta operativa con rapidez. **Cómo ayuda la feature:** formula la pregunta a Joule y recibe la información o la acción ejecutada, acortando su curva de aprendizaje.
+
+## ¿Cuándo usarla?
+- Cuando la tarea que automatiza esta capacidad se realiza de forma **recurrente** dentro de SAP Signavio Process Intelligence‚ Joule y el trabajo manual es lento o propenso a errores.
+- Requiere el producto base **SAP Signavio Process Intelligence‚ Joule** correctamente habilitado; suele incluirse sin costo adicional de IA cuando aplica (ver *Datos clave*).
+- No reemplaza el criterio del especialista: acelera y asiste la tarea, pero la validación final permanece en el usuario.
+
+## Datos clave
+| Campo | Valor |
+|---|---|
+| Identificador | J1132 |
+| Producto | SAP Signavio Process Intelligence‚ Joule |
+| Tipo de IA | AI Agent |
+| Tipo comercial | Base |
+| Disponibilidad | Beta |
+| Support Component | BPI-SIG-CA-AI |
+| Industrias aplicables | Cross-Industry |
+| Pricing | This AI offering is currently in Beta and available at no cost. Pricing will be communicated once the AI offering becomes generally available. A separate subscription is required for use or testing. Learn more. |
+| Detail Page | https://discovery-center.cloud.sap/ai-feature/251eb6f4-4565-4ac7-8e6c-f5eb6df7d210/ |
+
+## Fuente
+- SAP Discovery Center — Detail Page: https://discovery-center.cloud.sap/ai-feature/251eb6f4-4565-4ac7-8e6c-f5eb6df7d210/
 
 ---
 
@@ -533,6 +893,57 @@ SAP indica una reducción de 30% en costos de desarrollo de aplicaciones. El val
 
 ---
 
+## [J1164] — Task Automation
+
+## En una frase
+La automatización de tareas asistida por IA permite a los usuarios de negocio crear procesos automatizados en apps SAP Fiori de SAP Cloud ERP.
+
+## ¿Qué es?
+La automatización de tareas asistida por IA permite a los usuarios de negocio crear procesos automatizados en apps SAP Fiori de SAP Cloud ERP. Los expertos de proceso los crean mediante instrucciones en lenguaje natural y documentos de grounding opcionales; la IA los analiza y mapea a las aplicaciones y herramientas requeridas, que el usuario revisa y aprueba. Los procesos se inician desde My Home o una app dedicada, con monitoreo y aprobación de cambios. Es una capacidad de IA **Base** de SAP S/4HANA Cloud Public Edition.
+
+## Beneficios
+- Automatiza tareas repetitivas en apps SAP Fiori de SAP Cloud ERP manteniendo al usuario en control
+- permite a los expertos de negocio crear automatización con simples instrucciones en lenguaje natural, sin programar
+- soporta toda la funcionalidad de UI
+- escala la automatización con despliegue controlado por TI
+
+## Valor de negocio
+5% de reducción del tiempo medio de analizar, diseñar, modelar y monitorear un proceso (en días); 93% de reducción del tiempo medio de aprobar un reporte (en minutos); 5% de reducción de costos de calidad de datos.
+
+## ¿Cómo funciona?
+1. **Ingesta del documento:** la solución recibe el documento (carga directa o lectura desde un canal como un buzón de correo).
+2. **Procesamiento con IA:** extrae y estructura la información relevante según el esquema/modelo definido.
+3. **Integración y entrega:** el resultado se inyecta en el proceso destino dentro de SAP S/4HANA Cloud Public Edition, reduciendo la captura y validación manual.
+
+## Casos de uso (ilustrativos)
+> Estos ejemplos son **ilustrativos**, redactados para facilitar la comprensión; no son escenarios oficiales de SAP.
+
+1. **Escenario:** El equipo recibe un alto volumen de documentos que alimentan procesos en SAP S/4HANA Cloud Public Edition y la captura manual es un cuello de botella. **Cómo ayuda la feature:** la capacidad lee, extrae y estructura los datos automáticamente y los entrega al proceso destino, reduciendo errores y tiempos. Apoya en: _Automatiza tareas repetitivas en apps SAP Fiori de SAP Cloud ERP manteniendo al usuario en control_.
+2. **Escenario:** Llega un lote de documentos con formatos heterogéneos que debe procesarse antes de una fecha límite. **Cómo ayuda la feature:** el procesamiento inteligente extrae la información clave y la enruta al sistema, liberando al equipo de la transcripción.
+
+## ¿Cuándo usarla?
+- Cuando la tarea que automatiza esta capacidad se realiza de forma **recurrente** dentro de SAP S/4HANA Cloud Public Edition y el trabajo manual es lento o propenso a errores.
+- Requiere el producto base **SAP S/4HANA Cloud Public Edition** correctamente habilitado; suele incluirse sin costo adicional de IA cuando aplica (ver *Datos clave*).
+- No reemplaza el criterio del especialista: acelera y asiste la tarea, pero la validación final permanece en el usuario.
+
+## Datos clave
+| Campo | Valor |
+|---|---|
+| Identificador | J1164 |
+| Producto | SAP S/4HANA Cloud Public Edition |
+| Tipo de IA | AI Feature |
+| Tipo comercial | Base |
+| Disponibilidad | Beta |
+| Support Component | CA-FLP-EXT-IAU |
+| Industrias aplicables | Cross-Industry |
+| Pricing | This AI offering is currently in Beta and available at no cost. Pricing will be communicated once the AI offering becomes generally available. A separate subscription is required for use or testing. Learn more. |
+| Detail Page | https://discovery-center.cloud.sap/ai-feature/0d089203-038a-4f68-a7e0-79078e26eae4/ |
+
+## Fuente
+- SAP Discovery Center — Detail Page: https://discovery-center.cloud.sap/ai-feature/0d089203-038a-4f68-a7e0-79078e26eae4/
+
+---
+
 ## [J116] — Generation of SAP HANA Applications
 
 ## En una frase
@@ -582,6 +993,56 @@ SAP indica una reducción de 30% en costos de desarrollo de aplicaciones. El val
 
 ## Fuente
 - SAP Discovery Center — Detail Page: https://discovery-center.cloud.sap/ai-feature/7ee277ac-20af-4458-bb5a-8836d6a51899/
+
+---
+
+## [J1173] — Deep Research Capability
+
+## En una frase
+La capacidad de deep research en Joule permite a los usuarios buscar, preguntar y acceder al conocimiento e insights que necesitan dentro de su flujo de trabajo.
+
+## ¿Qué es?
+La capacidad de deep research en Joule permite a los usuarios buscar, preguntar y acceder al conocimiento e insights que necesitan dentro de su flujo de trabajo. Accediendo a recursos internos y a conocimiento externo —estructurado o no estructurado— Joule entrega información relevante y accionable, asegurando cumplimiento y maximizando la productividad. Es una capacidad de IA **Base** de Joule.
+
+## Beneficios
+- Reduce el tiempo dedicado manualmente a tareas intensivas en investigación
+- evita salir del flujo de trabajo para investigar
+- las preguntas aclaratorias mejoran el prompting y los resultados de la investigación
+
+## Valor de negocio
+No publicado en la página Detail Page.
+
+## ¿Cómo funciona?
+1. **Conversación con Joule:** el usuario plantea su petición en lenguaje natural a Joule.
+2. **Comprensión y ejecución asistida por IA:** Joule interpreta la intención, consulta los datos del sistema y resuelve la tarea.
+3. **Resultado accionable:** Joule devuelve la información o ejecuta la acción en el flujo, sin navegar manualmente por las transacciones.
+
+## Casos de uso (ilustrativos)
+> Estos ejemplos son **ilustrativos**, redactados para facilitar la comprensión; no son escenarios oficiales de SAP.
+
+1. **Escenario:** Un usuario de negocio necesita resolver una tarea recurrente en Joule sin recordar la transacción exacta. **Cómo ayuda la feature:** le plantea la petición a Joule en lenguaje natural y obtiene el resultado en segundos, evitando navegar por menús. Apoya en: _Reduce el tiempo dedicado manualmente a tareas intensivas en investigación_.
+2. **Escenario:** Un colaborador nuevo aún no domina el sistema y debe responder una consulta operativa con rapidez. **Cómo ayuda la feature:** formula la pregunta a Joule y recibe la información o la acción ejecutada, acortando su curva de aprendizaje.
+
+## ¿Cuándo usarla?
+- Cuando la tarea que automatiza esta capacidad se realiza de forma **recurrente** dentro de Joule y el trabajo manual es lento o propenso a errores.
+- Requiere el producto base **Joule** correctamente habilitado; suele incluirse sin costo adicional de IA cuando aplica (ver *Datos clave*).
+- No reemplaza el criterio del especialista: acelera y asiste la tarea, pero la validación final permanece en el usuario.
+
+## Datos clave
+| Campo | Valor |
+|---|---|
+| Identificador | J1173 |
+| Producto | Joule |
+| Tipo de IA | AI Feature |
+| Tipo comercial | Base |
+| Disponibilidad | Beta |
+| Support Component | CA-JDR |
+| Industrias aplicables | Cross-Industry |
+| Pricing | This AI offering is currently in Beta and available at no cost. Pricing will be communicated once the AI offering becomes generally available. A separate subscription is required for use or testing. Learn more. |
+| Detail Page | https://discovery-center.cloud.sap/ai-feature/0cbab727-02fe-47d3-9bf1-ff96d6c2ae62/ |
+
+## Fuente
+- SAP Discovery Center — Detail Page: https://discovery-center.cloud.sap/ai-feature/0cbab727-02fe-47d3-9bf1-ff96d6c2ae62/
 
 ---
 
@@ -972,6 +1433,57 @@ Aporta valor al disminuir retrasos en aprobaciones de compra, reducir seguimient
 
 ## Fuente
 - SAP Discovery Center — Detail Page: https://discovery-center.cloud.sap/ai-feature/13b68daa-1ba2-4bfa-b7d3-4f65f4900d07/
+
+---
+
+## [J1325] — Project Billing Price Verification Agent
+
+## En una frase
+En la app Manage Project Billing de SAP S/4HANA Cloud Public Edition, ayuda a los especialistas de facturación a identificar rápidamente discrepancias entre precios acordados y montos facturados.
+
+## ¿Qué es?
+En la app Manage Project Billing de SAP S/4HANA Cloud Public Edition, ayuda a los especialistas de facturación a identificar rápidamente discrepancias entre precios acordados y montos facturados. Identifica los contratos y Statements of Work (SoW) del proyecto del cliente, extrae datos clave de precios y los compara con los valores de la Project Billing Request, resaltando discrepancias, aportando contexto y sugiriendo acciones correctivas. Es una capacidad de IA **Base** de SAP S/4HANA Cloud Public Edition.
+
+## Beneficios
+- Mejora la exactitud de la facturación
+- mejora la productividad reduciendo la revisión manual de datos de precio
+- mejora la transparencia (si no existe contrato, el especialista decide si facturar)
+- reduce demoras en la facturación
+
+## Valor de negocio
+75% de reducción del tiempo de resolver discrepancias de precio; 75% de reducción de la fuga de ingresos por facturación incorrecta no detectada; mejor flujo de caja y menor DSO por menos demoras en el ciclo de facturación.
+
+## ¿Cómo funciona?
+1. **Disparador:** el usuario inicia la tarea dentro de SAP S/4HANA Cloud Public Edition.
+2. **Asistencia con IA:** la capacidad procesa el contexto y automatiza o asiste el paso correspondiente.
+3. **Resultado:** entrega la salida en el flujo de trabajo, reduciendo el esfuerzo manual.
+
+## Casos de uso (ilustrativos)
+> Estos ejemplos son **ilustrativos**, redactados para facilitar la comprensión; no son escenarios oficiales de SAP.
+
+1. **Escenario:** Un usuario realiza de forma recurrente una tarea manual en SAP S/4HANA Cloud Public Edition con esfuerzo elevado. **Cómo ayuda la feature:** la capacidad automatiza o asiste el paso y reduce el tiempo y los errores asociados. Apoya en: _Mejora la exactitud de la facturación_.
+2. **Escenario:** El proceso depende de pasos repetitivos que ralentizan al equipo. **Cómo ayuda la feature:** la asistencia con IA acelera el flujo y libera tiempo para actividades de mayor valor.
+
+## ¿Cuándo usarla?
+- Cuando la tarea que automatiza esta capacidad se realiza de forma **recurrente** dentro de SAP S/4HANA Cloud Public Edition y el trabajo manual es lento o propenso a errores.
+- Requiere el producto base **SAP S/4HANA Cloud Public Edition** correctamente habilitado; suele incluirse sin costo adicional de IA cuando aplica (ver *Datos clave*).
+- No reemplaza el criterio del especialista: acelera y asiste la tarea, pero la validación final permanece en el usuario.
+
+## Datos clave
+| Campo | Valor |
+|---|---|
+| Identificador | J1325 |
+| Producto | SAP S/4HANA Cloud Public Edition |
+| Tipo de IA | AI Agent |
+| Tipo comercial | Base |
+| Disponibilidad | Beta |
+| Support Component | PPM-SCL-BIL-FIO |
+| Industrias aplicables | Professional Services |
+| Pricing | This AI offering is currently in Beta and available at no cost. Pricing will be communicated once the AI offering becomes generally available. A separate subscription is required for use or testing. Learn more. |
+| Detail Page | https://discovery-center.cloud.sap/ai-feature/540eb523-953a-43eb-8f93-525ee99d57fd/ |
+
+## Fuente
+- SAP Discovery Center — Detail Page: https://discovery-center.cloud.sap/ai-feature/540eb523-953a-43eb-8f93-525ee99d57fd/
 
 ---
 
@@ -1515,6 +2027,104 @@ La página destaca un 30% más de productividad del personal en consultas de ped
 
 ---
 
+## [J172] — 2D Hotspot Creation
+
+## En una frase
+Permite a los usuarios de SAP Integrated Product Development crear automáticamente hotspots en planos 2D y asociarlos con datos de negocio del back-end, agilizando la transformación digital de los planos heredados (legacy).
+
+## ¿Qué es?
+Permite a los usuarios de SAP Integrated Product Development crear automáticamente hotspots en planos 2D y asociarlos con datos de negocio del back-end, agilizando la transformación digital de los planos heredados (legacy). Es una capacidad de IA **Base** de SAP Integrated Product Development.
+
+## Beneficios
+- Mejora significativamente la eficiencia de la creación de hotspots y el mapeo de datos de negocio
+- reduce errores humanos del proceso manual
+- permite aprovechar planos digitalizados para catálogos interactivos de repuestos o gestión de activos
+
+## Valor de negocio
+2% de aumento en la tasa de resolución a la primera; 1% de reducción de downtime no planificado; 10% de mejora en la productividad del técnico de servicio de campo; digitalización acelerada de planos de producto heredados.
+
+## ¿Cómo funciona?
+1. **Especificación de la entrada:** el usuario describe en lenguaje natural (y/o con artefactos de apoyo) lo que necesita en SAP Integrated Product Development.
+2. **Generación con IA generativa:** la capacidad produce el artefacto a partir de esa entrada, aplicando las buenas prácticas del producto.
+3. **Revisión y ajuste:** el usuario obtiene un resultado listo para refinar, concentrando el esfuerzo en lo específico en vez del trabajo repetitivo.
+
+## Casos de uso (ilustrativos)
+> Estos ejemplos son **ilustrativos**, redactados para facilitar la comprensión; no son escenarios oficiales de SAP.
+
+1. **Escenario:** Un equipo necesita producir rápidamente un primer entregable en SAP Integrated Product Development para una demo o validación temprana. **Cómo ayuda la feature:** describe el requisito en lenguaje natural y la IA genera el artefacto, eliminando el trabajo de andamiaje inicial. Apoya en: _Mejora significativamente la eficiencia de la creación de hotspots y el mapeo de datos de negocio_.
+2. **Escenario:** Un perfil con poca experiencia técnica debe entregar un artefacto estándar. **Cómo ayuda la feature:** lo especifica en lenguaje natural y obtiene el resultado generado, enfocándose solo en ajustar lo específico.
+
+## ¿Cuándo usarla?
+- Cuando la tarea que automatiza esta capacidad se realiza de forma **recurrente** dentro de SAP Integrated Product Development y el trabajo manual es lento o propenso a errores.
+- Requiere el producto base **SAP Integrated Product Development** correctamente habilitado; suele incluirse sin costo adicional de IA cuando aplica (ver *Datos clave*).
+- No reemplaza el criterio del especialista: acelera y asiste la tarea, pero la validación final permanece en el usuario.
+
+## Datos clave
+| Campo | Valor |
+|---|---|
+| Identificador | J172 |
+| Producto | SAP Integrated Product Development |
+| Tipo de IA | AI Feature |
+| Tipo comercial | Base |
+| Disponibilidad | Beta |
+| Industrias aplicables | Cross-Industry |
+| Pricing | This AI offering is currently in Beta and available at no cost. Pricing will be communicated once the AI offering becomes generally available. A separate subscription is required for use or testing. Learn more. |
+| Detail Page | https://discovery-center.cloud.sap/ai-feature/c523c267-0a3d-4430-9cba-e75df8caac1b/ |
+
+## Fuente
+- SAP Discovery Center — Detail Page: https://discovery-center.cloud.sap/ai-feature/c523c267-0a3d-4430-9cba-e75df8caac1b/
+
+---
+
+## [J173] — Declaration Image Analysis
+
+## En una frase
+Extrae automáticamente información de declaraciones de distintos formatos sin interacción del usuario y contabiliza los datos de la transacción en SAP Green Token.
+
+## ¿Qué es?
+Extrae automáticamente información de declaraciones de distintos formatos sin interacción del usuario y contabiliza los datos de la transacción en SAP Green Token. Elimina la dependencia de mecanismos de extracción propios del cliente y extrae datos con precisión de tipos de documento diversos, donde la información requerida está bien definida pero la estructura y el formato no son uniformes. Es una capacidad de IA **Base** de SAP Green Token.
+
+## Beneficios
+- Reduce el esfuerzo manual de extracción de datos
+- reduce el esfuerzo y costo de mantener mecanismos de extracción internos a medida
+
+## Valor de negocio
+100% de reducción del costo de la herramienta de extracción de datos; 93% de reducción del tiempo de revisar, interpretar y contabilizar datos en SAP Green Token; 100% de reducción del tiempo de búsqueda de declaraciones.
+
+## ¿Cómo funciona?
+1. **Ingesta del documento:** la solución recibe el documento (carga directa o lectura desde un canal como un buzón de correo).
+2. **Procesamiento con IA:** extrae y estructura la información relevante según el esquema/modelo definido.
+3. **Integración y entrega:** el resultado se inyecta en el proceso destino dentro de SAP Green Token, reduciendo la captura y validación manual.
+
+## Casos de uso (ilustrativos)
+> Estos ejemplos son **ilustrativos**, redactados para facilitar la comprensión; no son escenarios oficiales de SAP.
+
+1. **Escenario:** El equipo recibe un alto volumen de documentos que alimentan procesos en SAP Green Token y la captura manual es un cuello de botella. **Cómo ayuda la feature:** la capacidad lee, extrae y estructura los datos automáticamente y los entrega al proceso destino, reduciendo errores y tiempos. Apoya en: _Reduce el esfuerzo manual de extracción de datos_.
+2. **Escenario:** Llega un lote de documentos con formatos heterogéneos que debe procesarse antes de una fecha límite. **Cómo ayuda la feature:** el procesamiento inteligente extrae la información clave y la enruta al sistema, liberando al equipo de la transcripción.
+
+## ¿Cuándo usarla?
+- Cuando la tarea que automatiza esta capacidad se realiza de forma **recurrente** dentro de SAP Green Token y el trabajo manual es lento o propenso a errores.
+- Requiere el producto base **SAP Green Token** correctamente habilitado; suele incluirse sin costo adicional de IA cuando aplica (ver *Datos clave*).
+- No reemplaza el criterio del especialista: acelera y asiste la tarea, pero la validación final permanece en el usuario.
+
+## Datos clave
+| Campo | Valor |
+|---|---|
+| Identificador | J173 |
+| Producto | SAP Green Token |
+| Tipo de IA | AI Feature |
+| Tipo comercial | Base |
+| Disponibilidad | Beta |
+| Support Component | SUS-GT |
+| Industrias aplicables | Cross-Industry |
+| Pricing | This AI offering is currently in Beta and available at no cost. Pricing will be communicated once the AI offering becomes generally available. A separate subscription is required for use or testing. Learn more. |
+| Detail Page | https://discovery-center.cloud.sap/ai-feature/ef9efdef-7300-4580-9c54-5664e1c99f95/ |
+
+## Fuente
+- SAP Discovery Center — Detail Page: https://discovery-center.cloud.sap/ai-feature/ef9efdef-7300-4580-9c54-5664e1c99f95/
+
+---
+
 ## [J178] — Inventory Builder
 
 ## En una frase
@@ -1609,6 +2219,57 @@ El valor se centra en acelerar la modernización técnica de aplicaciones SAP HA
 
 ## Fuente
 - SAP Discovery Center — Detail Page: https://discovery-center.cloud.sap/ai-feature/14bbef6b-5d85-4221-bd0e-342f569ef628/
+
+---
+
+## [J181] — Smart Solution for Situations in My Home
+
+## En una frase
+Ahorra tiempo ayudando a los usuarios de negocio a identificar los elementos que requieren su atención inmediata desde su último inicio de sesión.
+
+## ¿Qué es?
+Ahorra tiempo ayudando a los usuarios de negocio a identificar los elementos que requieren su atención inmediata desde su último inicio de sesión. Permite a los usuarios de SAP S/4HANA Cloud Public Edition gestionar y priorizar tareas e información de forma eficiente, ofreciendo en la página de entrada un resumen completo de los elementos y actualizaciones clave realizados desde la última sesión. Es una capacidad de IA **Base** de SAP S/4HANA Cloud Public Edition.
+
+## Beneficios
+- Permite enfocarse en lo importante identificando y actuando rápidamente sobre elementos de alta prioridad
+- acelera el acceso a insights esenciales y accionables sin visitar múltiples fuentes
+- aumenta la productividad mostrando la información que más importa
+- logra ahorros de tiempo significativos simplificando las tareas diarias
+
+## Valor de negocio
+46% de reducción del tiempo de resolver situaciones.
+
+## ¿Cómo funciona?
+1. **Análisis del contexto:** la IA evalúa los datos relevantes del proceso en SAP S/4HANA Cloud Public Edition.
+2. **Generación de la propuesta:** produce la recomendación o propuesta con su justificación.
+3. **Decisión humana:** el usuario revisa, ajusta y confirma; la IA acelera la decisión sin reemplazar el criterio del responsable.
+
+## Casos de uso (ilustrativos)
+> Estos ejemplos son **ilustrativos**, redactados para facilitar la comprensión; no son escenarios oficiales de SAP.
+
+1. **Escenario:** Un especialista enfrenta una decisión repetitiva en SAP S/4HANA Cloud Public Edition que consume tiempo de análisis manual. **Cómo ayuda la feature:** la IA le propone una opción con su justificación y el especialista solo valida y confirma. Apoya en: _Permite enfocarse en lo importante identificando y actuando rápidamente sobre elementos de alta prioridad_.
+2. **Escenario:** Existe un backlog de casos pendientes que frena el proceso. **Cómo ayuda la feature:** las propuestas asistidas aceleran la resolución y reducen el tiempo de ciclo, manteniendo el control humano.
+
+## ¿Cuándo usarla?
+- Cuando la tarea que automatiza esta capacidad se realiza de forma **recurrente** dentro de SAP S/4HANA Cloud Public Edition y el trabajo manual es lento o propenso a errores.
+- Requiere el producto base **SAP S/4HANA Cloud Public Edition** correctamente habilitado; suele incluirse sin costo adicional de IA cuando aplica (ver *Datos clave*).
+- No reemplaza el criterio del especialista: acelera y asiste la tarea, pero la validación final permanece en el usuario.
+
+## Datos clave
+| Campo | Valor |
+|---|---|
+| Identificador | J181 |
+| Producto | SAP S/4HANA Cloud Public Edition |
+| Tipo de IA | AI Feature |
+| Tipo comercial | Base |
+| Disponibilidad | Beta |
+| Support Component | CA-UX-MY |
+| Industrias aplicables | Cross-Industry |
+| Pricing | This AI offering is currently in Beta and available at no cost. Pricing will be communicated once the AI offering becomes generally available. A separate subscription is required for use or testing. Learn more. |
+| Detail Page | https://discovery-center.cloud.sap/ai-feature/5a6f7a49-1bbf-4e9b-b2e0-57aad5f2de6d/ |
+
+## Fuente
+- SAP Discovery Center — Detail Page: https://discovery-center.cloud.sap/ai-feature/5a6f7a49-1bbf-4e9b-b2e0-57aad5f2de6d/
 
 ---
 
@@ -2409,6 +3070,55 @@ SAP indica una reducción del 80% en el tiempo para reformular comentarios, del 
 
 ---
 
+## [J281] — Easy Fill
+
+## En una frase
+Permite a los usuarios de SAP S/4HANA Cloud Public Edition poblar los campos de un objeto de negocio mediante entrada en lenguaje natural, agilizando la captura de datos y mejorando su exactitud, al permitir introducir actualizaciones en un formato relevante para el proceso de negocio y asegurando que los campos requeridos se completen.
+
+## ¿Qué es?
+Permite a los usuarios de SAP S/4HANA Cloud Public Edition poblar los campos de un objeto de negocio mediante entrada en lenguaje natural, agilizando la captura de datos y mejorando su exactitud, al permitir introducir actualizaciones en un formato relevante para el proceso de negocio y asegurando que los campos requeridos se completen. Es una capacidad de IA **Base** de SAP S/4HANA Cloud Public Edition.
+
+## Beneficios
+- Mayor exactitud de datos al consolidar las entradas del usuario en un único campo unificado
+- menor complejidad del proceso de negocio y menor tiempo de formación
+
+## Valor de negocio
+83% de reducción del tiempo de captura de entradas en la aplicación.
+
+## ¿Cómo funciona?
+1. **Disparador:** el usuario inicia la tarea dentro de SAP S/4HANA Cloud Public Edition.
+2. **Asistencia con IA:** la capacidad procesa el contexto y automatiza o asiste el paso correspondiente.
+3. **Resultado:** entrega la salida en el flujo de trabajo, reduciendo el esfuerzo manual.
+
+## Casos de uso (ilustrativos)
+> Estos ejemplos son **ilustrativos**, redactados para facilitar la comprensión; no son escenarios oficiales de SAP.
+
+1. **Escenario:** Un usuario realiza de forma recurrente una tarea manual en SAP S/4HANA Cloud Public Edition con esfuerzo elevado. **Cómo ayuda la feature:** la capacidad automatiza o asiste el paso y reduce el tiempo y los errores asociados. Apoya en: _Mayor exactitud de datos al consolidar las entradas del usuario en un único campo unificado_.
+2. **Escenario:** El proceso depende de pasos repetitivos que ralentizan al equipo. **Cómo ayuda la feature:** la asistencia con IA acelera el flujo y libera tiempo para actividades de mayor valor.
+
+## ¿Cuándo usarla?
+- Cuando la tarea que automatiza esta capacidad se realiza de forma **recurrente** dentro de SAP S/4HANA Cloud Public Edition y el trabajo manual es lento o propenso a errores.
+- Requiere el producto base **SAP S/4HANA Cloud Public Edition** correctamente habilitado; suele incluirse sin costo adicional de IA cuando aplica (ver *Datos clave*).
+- No reemplaza el criterio del especialista: acelera y asiste la tarea, pero la validación final permanece en el usuario.
+
+## Datos clave
+| Campo | Valor |
+|---|---|
+| Identificador | J281 |
+| Producto | SAP S/4HANA Cloud Public Edition |
+| Tipo de IA | AI Feature |
+| Tipo comercial | Base |
+| Disponibilidad | Beta |
+| Support Component | BC-SRV-APS-AI-UIS |
+| Industrias aplicables | Cross-Industry |
+| Pricing | This AI offering is currently in Beta and available at no cost. Pricing will be communicated once the AI offering becomes generally available. A separate subscription is required for use or testing. Learn more. |
+| Detail Page | https://discovery-center.cloud.sap/ai-feature/b054b110-d555-49ef-b233-e16be1a13eed/ |
+
+## Fuente
+- SAP Discovery Center — Detail Page: https://discovery-center.cloud.sap/ai-feature/b054b110-d555-49ef-b233-e16be1a13eed/
+
+---
+
 ## [J284] — Joule with SAP LeanIX
 
 ## En una frase
@@ -2557,6 +3267,56 @@ El valor está en reducir trabajo manual y errores durante la recepción de merc
 
 ## Fuente
 - SAP Discovery Center — Detail Page: https://discovery-center.cloud.sap/ai-feature/8d54e237-4ae9-427d-859a-c3e1cd694127/
+
+---
+
+## [J291] — Joule with SAP Business Accelerator Hub
+
+## En una frase
+Ayuda a los usuarios a encontrar el contenido adecuado mediante búsqueda conversacional basada en contexto.
+
+## ¿Qué es?
+Ayuda a los usuarios a encontrar el contenido adecuado mediante búsqueda conversacional basada en contexto. El descubrimiento con Joule guía la búsqueda de distintos artefactos y su acceso según el contexto específico, acelerando el descubrimiento. Es una capacidad de IA **Base** de SAP Business Accelerator Hub.
+
+## Beneficios
+- Mejor descubrimiento de contenido
+- menor time-to-productivity
+- experiencia de usuario atractiva
+
+## Valor de negocio
+No publicado en la página Detail Page.
+
+## ¿Cómo funciona?
+1. **Conversación con Joule:** el usuario plantea su petición en lenguaje natural a Joule dentro de SAP Business Accelerator Hub.
+2. **Comprensión y ejecución asistida por IA:** Joule interpreta la intención, consulta los datos del sistema y resuelve la tarea.
+3. **Resultado accionable:** Joule devuelve la información o ejecuta la acción en el flujo, sin navegar manualmente por las transacciones.
+
+## Casos de uso (ilustrativos)
+> Estos ejemplos son **ilustrativos**, redactados para facilitar la comprensión; no son escenarios oficiales de SAP.
+
+1. **Escenario:** Un usuario de negocio necesita resolver una tarea recurrente en SAP Business Accelerator Hub sin recordar la transacción exacta. **Cómo ayuda la feature:** le plantea la petición a Joule en lenguaje natural y obtiene el resultado en segundos, evitando navegar por menús. Apoya en: _Mejor descubrimiento de contenido_.
+2. **Escenario:** Un colaborador nuevo aún no domina el sistema y debe responder una consulta operativa con rapidez. **Cómo ayuda la feature:** formula la pregunta a Joule y recibe la información o la acción ejecutada, acortando su curva de aprendizaje.
+
+## ¿Cuándo usarla?
+- Cuando la tarea que automatiza esta capacidad se realiza de forma **recurrente** dentro de SAP Business Accelerator Hub y el trabajo manual es lento o propenso a errores.
+- Requiere el producto base **SAP Business Accelerator Hub** correctamente habilitado; suele incluirse sin costo adicional de IA cuando aplica (ver *Datos clave*).
+- No reemplaza el criterio del especialista: acelera y asiste la tarea, pero la validación final permanece en el usuario.
+
+## Datos clave
+| Campo | Valor |
+|---|---|
+| Identificador | J291 |
+| Producto | SAP Business Accelerator Hub |
+| Tipo de IA | AI Feature |
+| Tipo comercial | Base |
+| Disponibilidad | Beta |
+| Support Component | LOD-CHB-CNT |
+| Industrias aplicables | Cross-Industry |
+| Pricing | This AI offering is currently in Beta and available at no cost. Pricing will be communicated once the AI offering becomes generally available. A separate subscription is required for use or testing. Learn more. |
+| Detail Page | https://discovery-center.cloud.sap/ai-feature/5b1c80e7-ae6a-45eb-89cf-cf7114bb00d4/ |
+
+## Fuente
+- SAP Discovery Center — Detail Page: https://discovery-center.cloud.sap/ai-feature/5b1c80e7-ae6a-45eb-89cf-cf7114bb00d4/
 
 ---
 
@@ -2958,6 +3718,54 @@ Menor esfuerzo para crear modelos semánticos en SAP Datasphere, mayor velocidad
 
 ---
 
+## [J331] — Role-based Process Overview
+
+## En una frase
+“My Process Overview” ofrece a los usuarios una vista personalizada de procesos, contenido y herramientas relevantes para su rol, eliminando la búsqueda manual.
+
+## ¿Qué es?
+“My Process Overview” ofrece a los usuarios una vista personalizada de procesos, contenido y herramientas relevantes para su rol, eliminando la búsqueda manual. Ayuda a usuarios sin experiencia profunda en procesos a construir conocimiento y entender sus responsabilidades; ideal para onboarding. Un asistente de configuración con IA adapta las recomendaciones según los detalles del puesto. Es una capacidad de IA **Base** de SAP Signavio Process Collaboration Hub.
+
+## Beneficios
+- Permite ver contenido adaptado a su rol sin buscar ni filtrar manualmente
+- reduce la carga administrativa con menos configuración manual de vistas y rutas de acceso por rol
+
+## Valor de negocio
+No publicado en la página Detail Page.
+
+## ¿Cómo funciona?
+1. **Disparador:** el usuario inicia la tarea dentro de SAP Signavio Process Collaboration Hub.
+2. **Asistencia con IA:** la capacidad procesa el contexto y automatiza o asiste el paso correspondiente.
+3. **Resultado:** entrega la salida en el flujo de trabajo, reduciendo el esfuerzo manual.
+
+## Casos de uso (ilustrativos)
+> Estos ejemplos son **ilustrativos**, redactados para facilitar la comprensión; no son escenarios oficiales de SAP.
+
+1. **Escenario:** Un usuario realiza de forma recurrente una tarea manual en SAP Signavio Process Collaboration Hub con esfuerzo elevado. **Cómo ayuda la feature:** la capacidad automatiza o asiste el paso y reduce el tiempo y los errores asociados. Apoya en: _Permite ver contenido adaptado a su rol sin buscar ni filtrar manualmente_.
+2. **Escenario:** El proceso depende de pasos repetitivos que ralentizan al equipo. **Cómo ayuda la feature:** la asistencia con IA acelera el flujo y libera tiempo para actividades de mayor valor.
+
+## ¿Cuándo usarla?
+- Cuando la tarea que automatiza esta capacidad se realiza de forma **recurrente** dentro de SAP Signavio Process Collaboration Hub y el trabajo manual es lento o propenso a errores.
+- Requiere el producto base **SAP Signavio Process Collaboration Hub** correctamente habilitado; suele incluirse sin costo adicional de IA cuando aplica (ver *Datos clave*).
+- No reemplaza el criterio del especialista: acelera y asiste la tarea, pero la validación final permanece en el usuario.
+
+## Datos clave
+| Campo | Valor |
+|---|---|
+| Identificador | J331 |
+| Producto | SAP Signavio Process Collaboration Hub |
+| Tipo de IA | AI Feature |
+| Tipo comercial | Base |
+| Disponibilidad | Beta |
+| Industrias aplicables | Cross-Industry |
+| Pricing | This AI offering is currently in Beta and available at no cost. Pricing will be communicated once the AI offering becomes generally available. A separate subscription is required for use or testing. Learn more. |
+| Detail Page | https://discovery-center.cloud.sap/ai-feature/e4b92ea3-f81d-4f95-9afd-368b563700ad/ |
+
+## Fuente
+- SAP Discovery Center — Detail Page: https://discovery-center.cloud.sap/ai-feature/e4b92ea3-f81d-4f95-9afd-368b563700ad/
+
+---
+
 ## [J336] — Error Resolution for Cost Accounting
 
 ## En una frase
@@ -3056,6 +3864,105 @@ Es la capacidad **Premium** "embedded edition" de **SAP Document AI**. Optimiza 
 
 ## Fuente
 - SAP Discovery Center — Detail Page: https://discovery-center.cloud.sap/ai-feature/f9000cc5-4a1a-4c59-9dcd-a343c167d75d/
+
+---
+
+## [J344] — Permit Management
+
+## En una frase
+Extrae y configura automáticamente permisos de EHS (medio ambiente, salud y seguridad) a partir de documentos PDF que pueden tener desde pocas hasta cientos de páginas.
+
+## ¿Qué es?
+Extrae y configura automáticamente permisos de EHS (medio ambiente, salud y seguridad) a partir de documentos PDF que pueden tener desde pocas hasta cientos de páginas. No solo escanea y configura los datos de cabecera del permiso, sino que identifica todos los requisitos y configura las tareas correspondientes (simples, de aviso de mantenimiento, de reporte). El usuario ve en una vista lado a lado las tareas recomendadas mientras revisa las páginas del PDF. Es una capacidad de IA **Base** de SAP S/4HANA Cloud Public Edition.
+
+## Beneficios
+- Reduce el esfuerzo manual de extracción de datos
+- aumenta la eficiencia con tareas propuestas
+- ahorra tiempo buscando datos relevantes en el documento
+- mejora la auditabilidad
+- mejora la usabilidad con vista lado a lado
+
+## Valor de negocio
+65% de reducción del costo de gestión de permisos ambientales; 80% de reducción de sanciones y multas de gestión ambiental; 100% de evitación de costo de una solución de OCR.
+
+## ¿Cómo funciona?
+1. **Ingesta del documento:** la solución recibe el documento (carga directa o lectura desde un canal como un buzón de correo).
+2. **Procesamiento con IA:** extrae y estructura la información relevante según el esquema/modelo definido.
+3. **Integración y entrega:** el resultado se inyecta en el proceso destino dentro de SAP S/4HANA Cloud Public Edition, reduciendo la captura y validación manual.
+
+## Casos de uso (ilustrativos)
+> Estos ejemplos son **ilustrativos**, redactados para facilitar la comprensión; no son escenarios oficiales de SAP.
+
+1. **Escenario:** El equipo recibe un alto volumen de documentos que alimentan procesos en SAP S/4HANA Cloud Public Edition y la captura manual es un cuello de botella. **Cómo ayuda la feature:** la capacidad lee, extrae y estructura los datos automáticamente y los entrega al proceso destino, reduciendo errores y tiempos. Apoya en: _Reduce el esfuerzo manual de extracción de datos_.
+2. **Escenario:** Llega un lote de documentos con formatos heterogéneos que debe procesarse antes de una fecha límite. **Cómo ayuda la feature:** el procesamiento inteligente extrae la información clave y la enruta al sistema, liberando al equipo de la transcripción.
+
+## ¿Cuándo usarla?
+- Cuando la tarea que automatiza esta capacidad se realiza de forma **recurrente** dentro de SAP S/4HANA Cloud Public Edition y el trabajo manual es lento o propenso a errores.
+- Requiere el producto base **SAP S/4HANA Cloud Public Edition** correctamente habilitado; suele incluirse sin costo adicional de IA cuando aplica (ver *Datos clave*).
+- No reemplaza el criterio del especialista: acelera y asiste la tarea, pero la validación final permanece en el usuario.
+
+## Datos clave
+| Campo | Valor |
+|---|---|
+| Identificador | J344 |
+| Producto | SAP S/4HANA Cloud Public Edition |
+| Tipo de IA | AI Feature |
+| Tipo comercial | Base |
+| Disponibilidad | Beta |
+| Industrias aplicables | Show More |
+| Pricing | AI Units are not currently required to use this AI offering in the underlying Cloud Service. This is subject to change. |
+| Detail Page | https://discovery-center.cloud.sap/ai-feature/89944fea-d96d-453c-9684-fe2b2c9cbb51/ |
+
+## Fuente
+- SAP Discovery Center — Detail Page: https://discovery-center.cloud.sap/ai-feature/89944fea-d96d-453c-9684-fe2b2c9cbb51/
+
+---
+
+## [J345] — Compliance Information Processing
+
+## En una frase
+Permite a los especialistas de datos maestros procesar automáticamente la información de cumplimiento (compliance) de proveedores —regulaciones, estado y datos de proveedores upstream— y mapearla a los requisitos de compliance en SAP S/4HANA Cloud Public Edition para product compliance, mejorando la eficiencia y precisión del análisis y reduciendo errores que afectan la seguridad y el cumplimiento.
+
+## ¿Qué es?
+Permite a los especialistas de datos maestros procesar automáticamente la información de cumplimiento (compliance) de proveedores —regulaciones, estado y datos de proveedores upstream— y mapearla a los requisitos de compliance en SAP S/4HANA Cloud Public Edition para product compliance, mejorando la eficiencia y precisión del análisis y reduciendo errores que afectan la seguridad y el cumplimiento. Es una capacidad de IA **Base** de SAP S/4HANA Cloud Public Edition.
+
+## Beneficios
+- Automatiza el procesamiento y análisis de las divulgaciones de compliance en el sistema y su mapeo a los requisitos de cumplimiento
+- mejora la precisión para minimizar errores que pueden derivar en multas y sanciones
+
+## Valor de negocio
+No publicado en la página Detail Page.
+
+## ¿Cómo funciona?
+1. **Disparador:** el usuario inicia la tarea dentro de SAP S/4HANA Cloud Public Edition.
+2. **Asistencia con IA:** la capacidad procesa el contexto y automatiza o asiste el paso correspondiente.
+3. **Resultado:** entrega la salida en el flujo de trabajo, reduciendo el esfuerzo manual.
+
+## Casos de uso (ilustrativos)
+> Estos ejemplos son **ilustrativos**, redactados para facilitar la comprensión; no son escenarios oficiales de SAP.
+
+1. **Escenario:** Un usuario realiza de forma recurrente una tarea manual en SAP S/4HANA Cloud Public Edition con esfuerzo elevado. **Cómo ayuda la feature:** la capacidad automatiza o asiste el paso y reduce el tiempo y los errores asociados. Apoya en: _Automatiza el procesamiento y análisis de las divulgaciones de compliance en el sistema y su mapeo a los requisitos de cumplimiento_.
+2. **Escenario:** El proceso depende de pasos repetitivos que ralentizan al equipo. **Cómo ayuda la feature:** la asistencia con IA acelera el flujo y libera tiempo para actividades de mayor valor.
+
+## ¿Cuándo usarla?
+- Cuando la tarea que automatiza esta capacidad se realiza de forma **recurrente** dentro de SAP S/4HANA Cloud Public Edition y el trabajo manual es lento o propenso a errores.
+- Requiere el producto base **SAP S/4HANA Cloud Public Edition** correctamente habilitado; suele incluirse sin costo adicional de IA cuando aplica (ver *Datos clave*).
+- No reemplaza el criterio del especialista: acelera y asiste la tarea, pero la validación final permanece en el usuario.
+
+## Datos clave
+| Campo | Valor |
+|---|---|
+| Identificador | J345 |
+| Producto | SAP S/4HANA Cloud Public Edition |
+| Tipo de IA | AI Feature |
+| Tipo comercial | Base |
+| Disponibilidad | Beta |
+| Industrias aplicables | Show More |
+| Pricing | AI Units are not currently required to use this AI offering in the underlying Cloud Service. This is subject to change. |
+| Detail Page | https://discovery-center.cloud.sap/ai-feature/57f00cc9-d292-4fd6-baec-cb4a6336c70c/ |
+
+## Fuente
+- SAP Discovery Center — Detail Page: https://discovery-center.cloud.sap/ai-feature/57f00cc9-d292-4fd6-baec-cb4a6336c70c/
 
 ---
 
@@ -3258,6 +4165,106 @@ SAP indica una reducción de 30% en costos de desarrollo de aplicaciones. El val
 
 ---
 
+## [J375] — Payment Exception Analysis
+
+## En una frase
+Proporciona a los contables de cuentas por pagar (AP) análisis asistido por IA de las excepciones de la propuesta de pago, con registros de log detallados y resoluciones sugeridas, ayudando a agilizar y acelerar el manejo de excepciones.
+
+## ¿Qué es?
+Proporciona a los contables de cuentas por pagar (AP) análisis asistido por IA de las excepciones de la propuesta de pago, con registros de log detallados y resoluciones sugeridas, ayudando a agilizar y acelerar el manejo de excepciones. Es una capacidad de IA **Base** de SAP S/4HANA Cloud Public Edition.
+
+## Beneficios
+- Aumenta la tasa media de pagos puntuales
+- mejora la identificación de la causa raíz de la excepción buscando partidas abiertas en el log y analizando el contexto de logs adicionales
+- aumenta la transparencia con un historial de cambios en las propuestas de pago para usuarios y auditores
+
+## Valor de negocio
+No publicado en la página Detail Page.
+
+## ¿Cómo funciona?
+1. **Análisis del contexto:** la IA evalúa los datos relevantes del proceso en SAP S/4HANA Cloud Public Edition.
+2. **Generación de la propuesta:** produce la recomendación o propuesta con su justificación.
+3. **Decisión humana:** el usuario revisa, ajusta y confirma; la IA acelera la decisión sin reemplazar el criterio del responsable.
+
+## Casos de uso (ilustrativos)
+> Estos ejemplos son **ilustrativos**, redactados para facilitar la comprensión; no son escenarios oficiales de SAP.
+
+1. **Escenario:** Un especialista enfrenta una decisión repetitiva en SAP S/4HANA Cloud Public Edition que consume tiempo de análisis manual. **Cómo ayuda la feature:** la IA le propone una opción con su justificación y el especialista solo valida y confirma. Apoya en: _Aumenta la tasa media de pagos puntuales_.
+2. **Escenario:** Existe un backlog de casos pendientes que frena el proceso. **Cómo ayuda la feature:** las propuestas asistidas aceleran la resolución y reducen el tiempo de ciclo, manteniendo el control humano.
+
+## ¿Cuándo usarla?
+- Cuando la tarea que automatiza esta capacidad se realiza de forma **recurrente** dentro de SAP S/4HANA Cloud Public Edition y el trabajo manual es lento o propenso a errores.
+- Requiere el producto base **SAP S/4HANA Cloud Public Edition** correctamente habilitado; suele incluirse sin costo adicional de IA cuando aplica (ver *Datos clave*).
+- No reemplaza el criterio del especialista: acelera y asiste la tarea, pero la validación final permanece en el usuario.
+
+## Datos clave
+| Campo | Valor |
+|---|---|
+| Identificador | J375 |
+| Producto | SAP S/4HANA Cloud Public Edition |
+| Tipo de IA | AI Feature |
+| Tipo comercial | Base |
+| Disponibilidad | Beta |
+| Support Component | FI-FIO-AP-PAY-2CL |
+| Industrias aplicables | Cross-Industry |
+| Pricing | This AI offering is currently in Beta and available at no cost. Pricing will be communicated once the AI offering becomes generally available. A separate subscription is required for use or testing. Learn more. |
+| Detail Page | https://discovery-center.cloud.sap/ai-feature/016c719c-5363-47ff-945f-cdddd5241871/ |
+
+## Fuente
+- SAP Discovery Center — Detail Page: https://discovery-center.cloud.sap/ai-feature/016c719c-5363-47ff-945f-cdddd5241871/
+
+---
+
+## [J383] — Production Planning and Operations Agent
+
+## En una frase
+Acelera el order-to-delivery ahorrando a los planificadores el tiempo de liberación de órdenes.
+
+## ¿Qué es?
+Acelera el order-to-delivery ahorrando a los planificadores el tiempo de liberación de órdenes. Automatiza las verificaciones previas para liberar órdenes de producción —disponibilidad de material, capacidad y programación—, marca faltantes de material y sugiere soluciones (componentes alternativos, ajustes de programación). Cuando se cumplen todos los criterios, el planificador aprueba y el agente completa la liberación de la orden. Es una capacidad de IA **Base** de SAP S/4HANA Cloud Public Edition‚ Joule.
+
+## Beneficios
+- Reduce el trabajo manual con validación automática de disponibilidad de material, capacidad y programación
+- mantiene la producción en marcha con soluciones recomendadas ante conflictos de material y programación
+- aumenta el throughput reduciendo demoras de procesamiento de órdenes
+
+## Valor de negocio
+50% de mayor productividad del supervisor de producción al buscar información de liberación de órdenes; 2% de menores pérdidas por downtime de producción.
+
+## ¿Cómo funciona?
+1. **Conversación con Joule:** el usuario plantea su petición en lenguaje natural a Joule.
+2. **Comprensión y ejecución asistida por IA:** Joule interpreta la intención, consulta los datos del sistema y resuelve la tarea.
+3. **Resultado accionable:** Joule devuelve la información o ejecuta la acción en el flujo, sin navegar manualmente por las transacciones.
+
+## Casos de uso (ilustrativos)
+> Estos ejemplos son **ilustrativos**, redactados para facilitar la comprensión; no son escenarios oficiales de SAP.
+
+1. **Escenario:** Un usuario de negocio necesita resolver una tarea recurrente en SAP S/4HANA Cloud Public Edition‚ Joule sin recordar la transacción exacta. **Cómo ayuda la feature:** le plantea la petición a Joule en lenguaje natural y obtiene el resultado en segundos, evitando navegar por menús. Apoya en: _Reduce el trabajo manual con validación automática de disponibilidad de material_.
+2. **Escenario:** Un colaborador nuevo aún no domina el sistema y debe responder una consulta operativa con rapidez. **Cómo ayuda la feature:** formula la pregunta a Joule y recibe la información o la acción ejecutada, acortando su curva de aprendizaje.
+
+## ¿Cuándo usarla?
+- Cuando la tarea que automatiza esta capacidad se realiza de forma **recurrente** dentro de SAP S/4HANA Cloud Public Edition‚ Joule y el trabajo manual es lento o propenso a errores.
+- Requiere el producto base **SAP S/4HANA Cloud Public Edition‚ Joule** correctamente habilitado; suele incluirse sin costo adicional de IA cuando aplica (ver *Datos clave*).
+- No reemplaza el criterio del especialista: acelera y asiste la tarea, pero la validación final permanece en el usuario.
+
+## Datos clave
+| Campo | Valor |
+|---|---|
+| Identificador | J383 |
+| Producto | SAP S/4HANA Cloud Public Edition‚ Joule |
+| Tipo de IA | AI Agent |
+| Tipo comercial | Base |
+| Disponibilidad | Beta |
+| Support Component | PP-FIO-SFC-2CL |
+| Industrias aplicables | Cross-Industry |
+| Pricing | This AI offering is currently in Beta and available at no cost. Pricing will be communicated once the AI offering becomes generally available. A separate subscription is required for use or testing. Learn more. |
+| Detail Page | https://discovery-center.cloud.sap/ai-feature/2bac78a3-811f-456f-b950-a4fb3e7d2ac5/ |
+
+## Fuente
+- SAP Discovery Center — Detail Page: https://discovery-center.cloud.sap/ai-feature/2bac78a3-811f-456f-b950-a4fb3e7d2ac5/
+
+---
+
 ## [J404] — Sales Order Creation from Unstructured Data
 
 ## En una frase
@@ -3302,6 +4309,152 @@ La página indica una reducción del 33% en el esfuerzo manual para crear pedido
 
 ## Fuente
 - SAP Discovery Center — Detail Page: https://discovery-center.cloud.sap/ai-feature/ffd1d0b2-76fc-4e1f-b1fd-523ec82bae54/
+
+---
+
+## [J415] — Sourcing Agent
+
+## En una frase
+Run smarter sourcing events faster and with less effort.
+
+## ¿Qué es?
+Run smarter sourcing events faster and with less effort. Es una capacidad de IA **Base** de SAP Ariba Sourcing‚ Joule.
+
+## Beneficios
+- No disponible en la página Detail Page
+
+## Valor de negocio
+No disponible en la página Detail Page.
+
+## ¿Cómo funciona?
+1. **Conversación con Joule:** el usuario plantea su petición en lenguaje natural a Joule.
+2. **Comprensión y ejecución asistida por IA:** Joule interpreta la intención, consulta los datos del sistema y resuelve la tarea.
+3. **Resultado accionable:** Joule devuelve la información o ejecuta la acción en el flujo, sin navegar manualmente por las transacciones.
+
+## Casos de uso (ilustrativos)
+> Estos ejemplos son **ilustrativos**, redactados para facilitar la comprensión; no son escenarios oficiales de SAP.
+
+1. **Escenario:** Un usuario de negocio necesita resolver una tarea recurrente en SAP Ariba Sourcing‚ Joule sin recordar la transacción exacta. **Cómo ayuda la feature:** le plantea la petición a Joule en lenguaje natural y obtiene el resultado en segundos, evitando navegar por menús. Apoya en: _No disponible en la página Detail Page_.
+2. **Escenario:** Un colaborador nuevo aún no domina el sistema y debe responder una consulta operativa con rapidez. **Cómo ayuda la feature:** formula la pregunta a Joule y recibe la información o la acción ejecutada, acortando su curva de aprendizaje.
+
+## ¿Cuándo usarla?
+- Cuando la tarea que automatiza esta capacidad se realiza de forma **recurrente** dentro de SAP Ariba Sourcing‚ Joule y el trabajo manual es lento o propenso a errores.
+- Requiere el producto base **SAP Ariba Sourcing‚ Joule** correctamente habilitado; suele incluirse sin costo adicional de IA cuando aplica (ver *Datos clave*).
+- No reemplaza el criterio del especialista: acelera y asiste la tarea, pero la validación final permanece en el usuario.
+
+## Datos clave
+| Campo | Valor |
+|---|---|
+| Identificador | J415 |
+| Producto | SAP Ariba Sourcing‚ Joule |
+| Tipo de IA | AI Agent |
+| Tipo comercial | Base |
+| Disponibilidad | Beta |
+| Industrias aplicables | Cross-Industry |
+| Pricing | This AI offering is currently in Beta and available at no cost. Pricing will be communicated once the AI offering becomes generally available. A separate subscription is required for use or testing. Learn more. |
+| Detail Page | https://discovery-center.cloud.sap/ai-feature/944d71fe-90ad-4ef9-894c-878a4a326893/ |
+
+## Fuente
+- SAP Discovery Center — Detail Page: https://discovery-center.cloud.sap/ai-feature/944d71fe-90ad-4ef9-894c-878a4a326893/
+
+---
+
+## [J424] — Maintenance Event Planning Agent
+
+## En una frase
+Ayuda a los planificadores de mantenimiento a gestionar y priorizar una lista creciente de tareas asegurando la fiabilidad del equipo y minimizando el downtime.
+
+## ¿Qué es?
+Ayuda a los planificadores de mantenimiento a gestionar y priorizar una lista creciente de tareas asegurando la fiabilidad del equipo y minimizando el downtime. En colaboración con el planificador, el agente analiza continuamente datos en tiempo real y sugiere ajustes al programa de mantenimiento, repriorizando tareas y mejorando la salud de los activos. Es una capacidad de IA **Base** de Joule‚ SAP S/4HANA Cloud Private Edition.
+
+## Beneficios
+- Genera backlogs de eventos de mantenimiento de forma más rápida y eficiente
+- agiliza los backlogs reduciendo el downtime al permitir identificar y atender incidencias de mantenimiento rápidamente
+
+## Valor de negocio
+40% de aumento de la productividad del planificador de mantenimiento; 1% de reducción del downtime no planificado.
+
+## ¿Cómo funciona?
+1. **Conversación con Joule:** el usuario plantea su petición en lenguaje natural a Joule.
+2. **Comprensión y ejecución asistida por IA:** Joule interpreta la intención, consulta los datos del sistema y resuelve la tarea.
+3. **Resultado accionable:** Joule devuelve la información o ejecuta la acción en el flujo, sin navegar manualmente por las transacciones.
+
+## Casos de uso (ilustrativos)
+> Estos ejemplos son **ilustrativos**, redactados para facilitar la comprensión; no son escenarios oficiales de SAP.
+
+1. **Escenario:** Un usuario de negocio necesita resolver una tarea recurrente en Joule‚ SAP S/4HANA Cloud Private Edition sin recordar la transacción exacta. **Cómo ayuda la feature:** le plantea la petición a Joule en lenguaje natural y obtiene el resultado en segundos, evitando navegar por menús. Apoya en: _Genera backlogs de eventos de mantenimiento de forma más rápida y eficiente_.
+2. **Escenario:** Un colaborador nuevo aún no domina el sistema y debe responder una consulta operativa con rapidez. **Cómo ayuda la feature:** formula la pregunta a Joule y recibe la información o la acción ejecutada, acortando su curva de aprendizaje.
+
+## ¿Cuándo usarla?
+- Cuando la tarea que automatiza esta capacidad se realiza de forma **recurrente** dentro de Joule‚ SAP S/4HANA Cloud Private Edition y el trabajo manual es lento o propenso a errores.
+- Requiere el producto base **Joule‚ SAP S/4HANA Cloud Private Edition** correctamente habilitado; suele incluirse sin costo adicional de IA cuando aplica (ver *Datos clave*).
+- No reemplaza el criterio del especialista: acelera y asiste la tarea, pero la validación final permanece en el usuario.
+
+## Datos clave
+| Campo | Valor |
+|---|---|
+| Identificador | J424 |
+| Producto | Joule‚ SAP S/4HANA Cloud Private Edition |
+| Tipo de IA | AI Agent |
+| Tipo comercial | Base |
+| Disponibilidad | Beta |
+| Support Component | CA-FLP-EXT-PCE-JOU |
+| Industrias aplicables | Cross-Industry |
+| Pricing | This AI offering is currently in Beta and available at no cost. Pricing will be communicated once the AI offering becomes generally available. A separate subscription is required for use or testing. Learn more. |
+| Detail Page | https://discovery-center.cloud.sap/ai-feature/8b3daa3f-7a07-4a62-8d23-20e13d00aea4/ |
+
+## Fuente
+- SAP Discovery Center — Detail Page: https://discovery-center.cloud.sap/ai-feature/8b3daa3f-7a07-4a62-8d23-20e13d00aea4/
+
+---
+
+## [J425] — Cash Positioning Agent
+
+## En una frase
+Ayuda a los gestores de tesorería a ahorrar tiempo y aumentar el rendimiento de intereses mediante un agente que automatiza conciliaciones y propone optimizaciones de caja.
+
+## ¿Qué es?
+Ayuda a los gestores de tesorería a ahorrar tiempo y aumentar el rendimiento de intereses mediante un agente que automatiza conciliaciones y propone optimizaciones de caja. Procesa con exactitud los extractos bancarios, agrega saldos iniciales y considera los flujos de caja esperados; propone transferencias para optimizar la caja operativa identificando déficits y superávits, que el gestor revisa y aprueba. Es una capacidad de IA **Base** de Joule‚ SAP S/4HANA Cloud Private Edition.
+
+## Beneficios
+- Asegura exactitud al procesar y conciliar extractos y saldos bancarios diarios
+- optimiza el flujo de caja con identificación automática de déficits y superávits
+- mejora el rendimiento de intereses con recomendaciones de transferencia accionables
+
+## Valor de negocio
+70% de reducción del esfuerzo de gestión de caja.
+
+## ¿Cómo funciona?
+1. **Conversación con Joule:** el usuario plantea su petición en lenguaje natural a Joule.
+2. **Comprensión y ejecución asistida por IA:** Joule interpreta la intención, consulta los datos del sistema y resuelve la tarea.
+3. **Resultado accionable:** Joule devuelve la información o ejecuta la acción en el flujo, sin navegar manualmente por las transacciones.
+
+## Casos de uso (ilustrativos)
+> Estos ejemplos son **ilustrativos**, redactados para facilitar la comprensión; no son escenarios oficiales de SAP.
+
+1. **Escenario:** Un usuario de negocio necesita resolver una tarea recurrente en Joule‚ SAP S/4HANA Cloud Private Edition sin recordar la transacción exacta. **Cómo ayuda la feature:** le plantea la petición a Joule en lenguaje natural y obtiene el resultado en segundos, evitando navegar por menús. Apoya en: _Asegura exactitud al procesar y conciliar extractos y saldos bancarios diarios_.
+2. **Escenario:** Un colaborador nuevo aún no domina el sistema y debe responder una consulta operativa con rapidez. **Cómo ayuda la feature:** formula la pregunta a Joule y recibe la información o la acción ejecutada, acortando su curva de aprendizaje.
+
+## ¿Cuándo usarla?
+- Cuando la tarea que automatiza esta capacidad se realiza de forma **recurrente** dentro de Joule‚ SAP S/4HANA Cloud Private Edition y el trabajo manual es lento o propenso a errores.
+- Requiere el producto base **Joule‚ SAP S/4HANA Cloud Private Edition** correctamente habilitado; suele incluirse sin costo adicional de IA cuando aplica (ver *Datos clave*).
+- No reemplaza el criterio del especialista: acelera y asiste la tarea, pero la validación final permanece en el usuario.
+
+## Datos clave
+| Campo | Valor |
+|---|---|
+| Identificador | J425 |
+| Producto | Joule‚ SAP S/4HANA Cloud Private Edition |
+| Tipo de IA | AI Agent |
+| Tipo comercial | Base |
+| Disponibilidad | Beta |
+| Support Component | FIN-FSCM-CLM |
+| Industrias aplicables | Cross-Industry |
+| Pricing | This AI offering is currently in Beta and available at no cost. Pricing will be communicated once the AI offering becomes generally available. A separate subscription is required for use or testing. Learn more. |
+| Detail Page | https://discovery-center.cloud.sap/ai-feature/61f9300e-11e0-4ca2-acee-ace35c44fae0/ |
+
+## Fuente
+- SAP Discovery Center — Detail Page: https://discovery-center.cloud.sap/ai-feature/61f9300e-11e0-4ca2-acee-ace35c44fae0/
 
 ---
 
@@ -3401,6 +4554,105 @@ SAP indica 90% de reducción del tiempo para generar insights de artefactos del 
 
 ## Fuente
 - SAP Discovery Center — Detail Page: https://discovery-center.cloud.sap/ai-feature/e3e00a83-6fc7-4ec4-9763-5d62f942e193/
+
+---
+
+## [J467] — Accounts Receivable Agent
+
+## En una frase
+Transforma la gestión de cuentas por cobrar (AR) aportando inteligencia, automatización y foco estratégico.
+
+## ¿Qué es?
+Transforma la gestión de cuentas por cobrar (AR) aportando inteligencia, automatización y foco estratégico. Automatiza el análisis de datos de cuentas por cobrar —saldos de clientes, historial de dunning y partidas en disputa— para ofrecer insights y recomendaciones basadas en datos. Ayuda a reducir el DSO priorizando el cierre de partidas abiertas y anticipando riesgos con próximas mejores acciones. Es una capacidad de IA **Base** de Joule‚ SAP S/4HANA Cloud Private Edition.
+
+## Beneficios
+- Reduce el tiempo de conciliación y gestión de cuentas por cobrar automatizando la agregación de datos y priorizando lo importante
+- reduce el DSO (Days Sales Outstanding) con priorización inteligente
+- disminuye los castigos por incobrables al dar visibilidad temprana de disputas o cuentas en riesgo
+
+## Valor de negocio
+75% de reducción del esfuerzo de análisis y conciliación de partidas AR abiertas; 1% de reducción del DSO; 2% de reducción de castigos por incobrables.
+
+## ¿Cómo funciona?
+1. **Conversación con Joule:** el usuario plantea su petición en lenguaje natural a Joule.
+2. **Comprensión y ejecución asistida por IA:** Joule interpreta la intención, consulta los datos del sistema y resuelve la tarea.
+3. **Resultado accionable:** Joule devuelve la información o ejecuta la acción en el flujo, sin navegar manualmente por las transacciones.
+
+## Casos de uso (ilustrativos)
+> Estos ejemplos son **ilustrativos**, redactados para facilitar la comprensión; no son escenarios oficiales de SAP.
+
+1. **Escenario:** Un usuario de negocio necesita resolver una tarea recurrente en Joule‚ SAP S/4HANA Cloud Private Edition sin recordar la transacción exacta. **Cómo ayuda la feature:** le plantea la petición a Joule en lenguaje natural y obtiene el resultado en segundos, evitando navegar por menús. Apoya en: _Reduce el tiempo de conciliación y gestión de cuentas por cobrar automatizando la agregación de datos y priorizando lo importante_.
+2. **Escenario:** Un colaborador nuevo aún no domina el sistema y debe responder una consulta operativa con rapidez. **Cómo ayuda la feature:** formula la pregunta a Joule y recibe la información o la acción ejecutada, acortando su curva de aprendizaje.
+
+## ¿Cuándo usarla?
+- Cuando la tarea que automatiza esta capacidad se realiza de forma **recurrente** dentro de Joule‚ SAP S/4HANA Cloud Private Edition y el trabajo manual es lento o propenso a errores.
+- Requiere el producto base **Joule‚ SAP S/4HANA Cloud Private Edition** correctamente habilitado; suele incluirse sin costo adicional de IA cuando aplica (ver *Datos clave*).
+- No reemplaza el criterio del especialista: acelera y asiste la tarea, pero la validación final permanece en el usuario.
+
+## Datos clave
+| Campo | Valor |
+|---|---|
+| Identificador | J467 |
+| Producto | Joule‚ SAP S/4HANA Cloud Private Edition |
+| Tipo de IA | AI Agent |
+| Tipo comercial | Base |
+| Disponibilidad | Beta |
+| Support Component | FLP-EXT-PCE-JOULE |
+| Industrias aplicables | Cross-Industry |
+| Pricing | This AI offering is currently in Beta and available at no cost. Pricing will be communicated once the AI offering becomes generally available. A separate subscription is required for use or testing. Learn more. |
+| Detail Page | https://discovery-center.cloud.sap/ai-feature/ecd030e9-59b3-43b4-85cf-260d498912dd/ |
+
+## Fuente
+- SAP Discovery Center — Detail Page: https://discovery-center.cloud.sap/ai-feature/ecd030e9-59b3-43b4-85cf-260d498912dd/
+
+---
+
+## [J468] — Field Service Dispatcher Agent
+
+## En una frase
+Permite a los dispatchers planificar y optimizar órdenes de servicio aprovechando datos en tiempo real, la disponibilidad de técnicos y recomendaciones inteligentes.
+
+## ¿Qué es?
+Permite a los dispatchers planificar y optimizar órdenes de servicio aprovechando datos en tiempo real, la disponibilidad de técnicos y recomendaciones inteligentes. Propone el técnico adecuado para el trabajo adecuado en el momento y lugar óptimos, reduciendo el esfuerzo manual; cada propuesta la verifica un dispatcher (human-in-the-loop), manteniendo el control humano y la confianza. Es una capacidad de IA **Base** de SAP Field Service Management‚ Joule.
+
+## Beneficios
+- Aumenta la productividad del dispatcher reduciendo tareas manuales, minimizando errores y permitiendo decisiones más rápidas y eficientes
+- optimiza la asignación de recursos analizando datos en tiempo real y reduciendo asignaciones erróneas
+
+## Valor de negocio
+50% de aumento de la productividad del dispatcher de servicio de campo; 8% de reducción de asignaciones erróneas de recursos de servicio.
+
+## ¿Cómo funciona?
+1. **Conversación con Joule:** el usuario plantea su petición en lenguaje natural a Joule.
+2. **Comprensión y ejecución asistida por IA:** Joule interpreta la intención, consulta los datos del sistema y resuelve la tarea.
+3. **Resultado accionable:** Joule devuelve la información o ejecuta la acción en el flujo, sin navegar manualmente por las transacciones.
+
+## Casos de uso (ilustrativos)
+> Estos ejemplos son **ilustrativos**, redactados para facilitar la comprensión; no son escenarios oficiales de SAP.
+
+1. **Escenario:** Un usuario de negocio necesita resolver una tarea recurrente en SAP Field Service Management‚ Joule sin recordar la transacción exacta. **Cómo ayuda la feature:** le plantea la petición a Joule en lenguaje natural y obtiene el resultado en segundos, evitando navegar por menús. Apoya en: _Aumenta la productividad del dispatcher reduciendo tareas manuales_.
+2. **Escenario:** Un colaborador nuevo aún no domina el sistema y debe responder una consulta operativa con rapidez. **Cómo ayuda la feature:** formula la pregunta a Joule y recibe la información o la acción ejecutada, acortando su curva de aprendizaje.
+
+## ¿Cuándo usarla?
+- Cuando la tarea que automatiza esta capacidad se realiza de forma **recurrente** dentro de SAP Field Service Management‚ Joule y el trabajo manual es lento o propenso a errores.
+- Requiere el producto base **SAP Field Service Management‚ Joule** correctamente habilitado; suele incluirse sin costo adicional de IA cuando aplica (ver *Datos clave*).
+- No reemplaza el criterio del especialista: acelera y asiste la tarea, pero la validación final permanece en el usuario.
+
+## Datos clave
+| Campo | Valor |
+|---|---|
+| Identificador | J468 |
+| Producto | SAP Field Service Management‚ Joule |
+| Tipo de IA | AI Agent |
+| Tipo comercial | Base |
+| Disponibilidad | Beta |
+| Support Component | CEC-SRV-FSM-AI |
+| Industrias aplicables | Cross-Industry |
+| Pricing | This AI offering is currently in Beta and available at no cost. Pricing will be communicated once the AI offering becomes generally available. A separate subscription is required for use or testing. Learn more. |
+| Detail Page | https://discovery-center.cloud.sap/ai-feature/9c354ba9-b021-470a-b75d-b6e7bf4405de/ |
+
+## Fuente
+- SAP Discovery Center — Detail Page: https://discovery-center.cloud.sap/ai-feature/9c354ba9-b021-470a-b75d-b6e7bf4405de/
 
 ---
 
@@ -3797,6 +5049,55 @@ No se identificó una métrica cuantitativa explícita en la página de detalle 
 
 ---
 
+## [J585] — Cash Positioning Agent
+
+## En una frase
+Entrega a los gestores de tesorería una visión actualizada de la posición de caja en todas las cuentas bancarias: recopila saldos iniciales y flujos de caja esperados, calcula saldos finales esperados e identifica automáticamente déficits y superávits según la política de tesorería.
+
+## ¿Qué es?
+Entrega a los gestores de tesorería una visión actualizada de la posición de caja en todas las cuentas bancarias: recopila saldos iniciales y flujos de caja esperados, calcula saldos finales esperados e identifica automáticamente déficits y superávits según la política de tesorería. Con base en ello, Joule propone asignaciones de caja eficientes mediante transferencias bancarias. Es una capacidad de IA **Base** de SAP S/4HANA Cloud Public Edition‚ Joule.
+
+## Beneficios
+- Optimiza el flujo de caja con identificación automática de déficits y superávits
+- mejora la liquidez con recomendaciones y propuestas de transferencia accionables
+
+## Valor de negocio
+70% de reducción del esfuerzo de gestión de caja.
+
+## ¿Cómo funciona?
+1. **Conversación con Joule:** el usuario plantea su petición en lenguaje natural a Joule.
+2. **Comprensión y ejecución asistida por IA:** Joule interpreta la intención, consulta los datos del sistema y resuelve la tarea.
+3. **Resultado accionable:** Joule devuelve la información o ejecuta la acción en el flujo, sin navegar manualmente por las transacciones.
+
+## Casos de uso (ilustrativos)
+> Estos ejemplos son **ilustrativos**, redactados para facilitar la comprensión; no son escenarios oficiales de SAP.
+
+1. **Escenario:** Un usuario de negocio necesita resolver una tarea recurrente en SAP S/4HANA Cloud Public Edition‚ Joule sin recordar la transacción exacta. **Cómo ayuda la feature:** le plantea la petición a Joule en lenguaje natural y obtiene el resultado en segundos, evitando navegar por menús. Apoya en: _Optimiza el flujo de caja con identificación automática de déficits y superávits_.
+2. **Escenario:** Un colaborador nuevo aún no domina el sistema y debe responder una consulta operativa con rapidez. **Cómo ayuda la feature:** formula la pregunta a Joule y recibe la información o la acción ejecutada, acortando su curva de aprendizaje.
+
+## ¿Cuándo usarla?
+- Cuando la tarea que automatiza esta capacidad se realiza de forma **recurrente** dentro de SAP S/4HANA Cloud Public Edition‚ Joule y el trabajo manual es lento o propenso a errores.
+- Requiere el producto base **SAP S/4HANA Cloud Public Edition‚ Joule** correctamente habilitado; suele incluirse sin costo adicional de IA cuando aplica (ver *Datos clave*).
+- No reemplaza el criterio del especialista: acelera y asiste la tarea, pero la validación final permanece en el usuario.
+
+## Datos clave
+| Campo | Valor |
+|---|---|
+| Identificador | J585 |
+| Producto | SAP S/4HANA Cloud Public Edition‚ Joule |
+| Tipo de IA | AI Agent |
+| Tipo comercial | Base |
+| Disponibilidad | Beta |
+| Support Component | FIN-FSCM-CLM-COP-2CL |
+| Industrias aplicables | Cross-Industry |
+| Pricing | This AI offering is currently in Beta and available at no cost. Pricing will be communicated once the AI offering becomes generally available. A separate subscription is required for use or testing. Learn more. |
+| Detail Page | https://discovery-center.cloud.sap/ai-feature/cd99c7b2-f716-46ab-8fe5-640f9aa02613/ |
+
+## Fuente
+- SAP Discovery Center — Detail Page: https://discovery-center.cloud.sap/ai-feature/cd99c7b2-f716-46ab-8fe5-640f9aa02613/
+
+---
+
 ## [J586] — Project Services
 
 ## En una frase
@@ -3842,6 +5143,55 @@ La página posiciona la capacidad con una reducción del 60% en esfuerzos de adm
 
 ## Fuente
 - SAP Discovery Center — Detail Page: https://discovery-center.cloud.sap/ai-feature/bccabd59-564e-4a4d-84b3-67d6933348cd/
+
+---
+
+## [J596] — Safety Observation Reporting
+
+## En una frase
+Ayuda a operadores de producción e higienistas industriales a reportar observaciones de seguridad en lenguaje natural.
+
+## ¿Qué es?
+Ayuda a operadores de producción e higienistas industriales a reportar observaciones de seguridad en lenguaje natural. El sistema procesa la entrada, detecta detalles críticos faltantes, guía al usuario con preguntas de seguimiento contextuales, y estructura y registra automáticamente los datos en un registro formal de observación de seguridad. Es una capacidad de IA **Base** de SAP S/4HANA Cloud Public Edition.
+
+## Beneficios
+- Permite a los operadores reportar peligros en segundos con guía intuitiva, sin romper el flujo de trabajo ni llenar formularios
+- permite al higienista industrial capturar datos de observación estandarizados y accionables de los trabajadores de primera línea, acelerando la priorización de riesgos y la acción preventiva
+
+## Valor de negocio
+71% de reducción del costo de reporte de observaciones de seguridad; 5% de evitación de costo por pérdida de tiempo debida a incidentes.
+
+## ¿Cómo funciona?
+1. **Disparador:** el usuario inicia la tarea dentro de SAP S/4HANA Cloud Public Edition.
+2. **Asistencia con IA:** la capacidad procesa el contexto y automatiza o asiste el paso correspondiente.
+3. **Resultado:** entrega la salida en el flujo de trabajo, reduciendo el esfuerzo manual.
+
+## Casos de uso (ilustrativos)
+> Estos ejemplos son **ilustrativos**, redactados para facilitar la comprensión; no son escenarios oficiales de SAP.
+
+1. **Escenario:** Un usuario realiza de forma recurrente una tarea manual en SAP S/4HANA Cloud Public Edition con esfuerzo elevado. **Cómo ayuda la feature:** la capacidad automatiza o asiste el paso y reduce el tiempo y los errores asociados. Apoya en: _Permite a los operadores reportar peligros en segundos con guía intuitiva_.
+2. **Escenario:** El proceso depende de pasos repetitivos que ralentizan al equipo. **Cómo ayuda la feature:** la asistencia con IA acelera el flujo y libera tiempo para actividades de mayor valor.
+
+## ¿Cuándo usarla?
+- Cuando la tarea que automatiza esta capacidad se realiza de forma **recurrente** dentro de SAP S/4HANA Cloud Public Edition y el trabajo manual es lento o propenso a errores.
+- Requiere el producto base **SAP S/4HANA Cloud Public Edition** correctamente habilitado; suele incluirse sin costo adicional de IA cuando aplica (ver *Datos clave*).
+- No reemplaza el criterio del especialista: acelera y asiste la tarea, pero la validación final permanece en el usuario.
+
+## Datos clave
+| Campo | Valor |
+|---|---|
+| Identificador | J596 |
+| Producto | SAP S/4HANA Cloud Public Edition |
+| Tipo de IA | AI Feature |
+| Tipo comercial | Base |
+| Disponibilidad | Beta |
+| Support Component | EHS-SUS-IM |
+| Industrias aplicables | Cross-Industry |
+| Pricing | This AI offering is currently in Beta and available at no cost. Pricing will be communicated once the AI offering becomes generally available. A separate subscription is required for use or testing. Learn more. |
+| Detail Page | https://discovery-center.cloud.sap/ai-feature/c3691d08-1455-4c6a-8cea-e524489e5b69/ |
+
+## Fuente
+- SAP Discovery Center — Detail Page: https://discovery-center.cloud.sap/ai-feature/c3691d08-1455-4c6a-8cea-e524489e5b69/
 
 ---
 
@@ -4336,6 +5686,56 @@ Permite generar código JavaScript ejecutable mediante lenguaje natural dentro d
 
 ---
 
+## [J648] — International Trade Classification Agent
+
+## En una frase
+Ayuda a los especialistas de clasificación de productos a clasificar mercancías para envíos internacionales: razona sobre las características del producto y las regulaciones comerciales, recomienda números de arancel aduanero y commodity codes, y aporta la justificación para una revisión y aprobación sencillas, ayudando a asegurar el cumplimiento de las regulaciones de comercio global con un proceso auditable.
+
+## ¿Qué es?
+Ayuda a los especialistas de clasificación de productos a clasificar mercancías para envíos internacionales: razona sobre las características del producto y las regulaciones comerciales, recomienda números de arancel aduanero y commodity codes, y aporta la justificación para una revisión y aprobación sencillas, ayudando a asegurar el cumplimiento de las regulaciones de comercio global con un proceso auditable. Es una capacidad de IA **Base** de SAP S/4HANA Cloud Public Edition.
+
+## Beneficios
+- Ahorra tiempo con la clasificación automática de mercancías para envío internacional
+- asegura el cumplimiento con recomendaciones razonadas desde características del producto y regulaciones
+- reduce el riesgo eliminando errores manuales con un proceso de decisión auditable
+
+## Valor de negocio
+50% de reducción del esfuerzo de clasificar productos de comercio internacional.
+
+## ¿Cómo funciona?
+1. **Disparador:** el usuario inicia la tarea dentro de SAP S/4HANA Cloud Public Edition.
+2. **Asistencia con IA:** la capacidad procesa el contexto y automatiza o asiste el paso correspondiente.
+3. **Resultado:** entrega la salida en el flujo de trabajo, reduciendo el esfuerzo manual.
+
+## Casos de uso (ilustrativos)
+> Estos ejemplos son **ilustrativos**, redactados para facilitar la comprensión; no son escenarios oficiales de SAP.
+
+1. **Escenario:** Un usuario realiza de forma recurrente una tarea manual en SAP S/4HANA Cloud Public Edition con esfuerzo elevado. **Cómo ayuda la feature:** la capacidad automatiza o asiste el paso y reduce el tiempo y los errores asociados. Apoya en: _Ahorra tiempo con la clasificación automática de mercancías para envío internacional_.
+2. **Escenario:** El proceso depende de pasos repetitivos que ralentizan al equipo. **Cómo ayuda la feature:** la asistencia con IA acelera el flujo y libera tiempo para actividades de mayor valor.
+
+## ¿Cuándo usarla?
+- Cuando la tarea que automatiza esta capacidad se realiza de forma **recurrente** dentro de SAP S/4HANA Cloud Public Edition y el trabajo manual es lento o propenso a errores.
+- Requiere el producto base **SAP S/4HANA Cloud Public Edition** correctamente habilitado; suele incluirse sin costo adicional de IA cuando aplica (ver *Datos clave*).
+- No reemplaza el criterio del especialista: acelera y asiste la tarea, pero la validación final permanece en el usuario.
+
+## Datos clave
+| Campo | Valor |
+|---|---|
+| Identificador | J648 |
+| Producto | SAP S/4HANA Cloud Public Edition |
+| Tipo de IA | AI Agent |
+| Tipo comercial | Base |
+| Disponibilidad | Beta |
+| Support Component | FT-ITR-CLS |
+| Industrias aplicables | Cross-Industry |
+| Pricing | This AI offering is currently in Beta and available at no cost. Pricing will be communicated once the AI offering becomes generally available. A separate subscription is required for use or testing. Learn more. |
+| Detail Page | https://discovery-center.cloud.sap/ai-feature/cb3aa823-c475-4f81-9730-d35d85bd55c7/ |
+
+## Fuente
+- SAP Discovery Center — Detail Page: https://discovery-center.cloud.sap/ai-feature/cb3aa823-c475-4f81-9730-d35d85bd55c7/
+
+---
+
 ## [J650] — Booking Agent
 
 ## En una frase
@@ -4536,6 +5936,56 @@ El Performance Preparation Agent automatiza la recopilación de datos, genera ta
 
 ---
 
+## [J741] — Catalog Optimization Agent
+
+## En una frase
+Permite a los product managers de e-commerce optimizar su catálogo de SAP Commerce Cloud: revisa de forma continua descripciones, atributos y traducciones de producto contra los estándares de calidad de la empresa, detecta brechas de merchandising y ofrece recomendaciones accionables para mejorar la calidad del catálogo, la consistencia multilingüe y la descubribilidad del producto.
+
+## ¿Qué es?
+Permite a los product managers de e-commerce optimizar su catálogo de SAP Commerce Cloud: revisa de forma continua descripciones, atributos y traducciones de producto contra los estándares de calidad de la empresa, detecta brechas de merchandising y ofrece recomendaciones accionables para mejorar la calidad del catálogo, la consistencia multilingüe y la descubribilidad del producto. Es una capacidad de IA **Base** de SAP CX AI Toolkit.
+
+## Beneficios
+- Mantiene altos estándares de merchandising
+- mejora la calidad del catálogo y la descubribilidad del producto
+- impulsa mayores tasas de conversión con información de producto profesional y completa
+
+## Valor de negocio
+70% de reducción del tiempo de traducir datos del catálogo; 5% de reducción del costo de calidad de datos; 65% de reducción del tiempo de añadir descripción por activo del catálogo.
+
+## ¿Cómo funciona?
+1. **Disparador:** el usuario inicia la tarea dentro de SAP CX AI Toolkit.
+2. **Asistencia con IA:** la capacidad procesa el contexto y automatiza o asiste el paso correspondiente.
+3. **Resultado:** entrega la salida en el flujo de trabajo, reduciendo el esfuerzo manual.
+
+## Casos de uso (ilustrativos)
+> Estos ejemplos son **ilustrativos**, redactados para facilitar la comprensión; no son escenarios oficiales de SAP.
+
+1. **Escenario:** Un usuario realiza de forma recurrente una tarea manual en SAP CX AI Toolkit con esfuerzo elevado. **Cómo ayuda la feature:** la capacidad automatiza o asiste el paso y reduce el tiempo y los errores asociados. Apoya en: _Mantiene altos estándares de merchandising_.
+2. **Escenario:** El proceso depende de pasos repetitivos que ralentizan al equipo. **Cómo ayuda la feature:** la asistencia con IA acelera el flujo y libera tiempo para actividades de mayor valor.
+
+## ¿Cuándo usarla?
+- Cuando la tarea que automatiza esta capacidad se realiza de forma **recurrente** dentro de SAP CX AI Toolkit y el trabajo manual es lento o propenso a errores.
+- Requiere el producto base **SAP CX AI Toolkit** correctamente habilitado; suele incluirse sin costo adicional de IA cuando aplica (ver *Datos clave*).
+- No reemplaza el criterio del especialista: acelera y asiste la tarea, pero la validación final permanece en el usuario.
+
+## Datos clave
+| Campo | Valor |
+|---|---|
+| Identificador | J741 |
+| Producto | SAP CX AI Toolkit |
+| Tipo de IA | AI Agent |
+| Tipo comercial | Base |
+| Disponibilidad | Beta |
+| Support Component | CEC-AIT-HCS |
+| Industrias aplicables | Consumer Products |
+| Pricing | This AI offering is currently in Beta and available at no cost. Pricing will be communicated once the AI offering becomes generally available. A separate subscription is required for use or testing. Learn more. |
+| Detail Page | https://discovery-center.cloud.sap/ai-feature/28593981-f647-4d1b-bb1f-709783df1fa6/ |
+
+## Fuente
+- SAP Discovery Center — Detail Page: https://discovery-center.cloud.sap/ai-feature/28593981-f647-4d1b-bb1f-709783df1fa6/
+
+---
+
 ## [J74] — Joule with SAP S/4HANA Cloud Public Edition
 
 ## En una frase
@@ -4583,6 +6033,57 @@ No se identificó una métrica cuantitativa explícita en la página de detalle 
 
 ## Fuente
 - SAP Discovery Center — Detail Page: https://discovery-center.cloud.sap/ai-feature/59d61974-9d59-4e32-9026-189462bbf54f/
+
+---
+
+## [J756] — Safety Instruction Generation
+
+## En una frase
+Genera automáticamente instrucciones de seguridad claras, estructuradas y fáciles de entender, adaptadas a equipos específicos, directamente a partir de las últimas evaluaciones de riesgo y análisis de peligros del trabajo (JHA).
+
+## ¿Qué es?
+Genera automáticamente instrucciones de seguridad claras, estructuradas y fáciles de entender, adaptadas a equipos específicos, directamente a partir de las últimas evaluaciones de riesgo y análisis de peligros del trabajo (JHA). Reduce drásticamente el tiempo y el esfuerzo manual transformando datos de evaluación complejos en guía precisa y actualizada, asegurando claridad, cumplimiento y consistencia. Es una capacidad de IA **Base** de SAP S/4HANA Cloud Public Edition.
+
+## Beneficios
+- Reduce el tiempo y esfuerzo manual de revisar la evaluación de riesgo o JHA para preparar instrucciones de seguridad
+- auto-propone pautas estructuradas y fáciles de entender
+- adaptadas a equipos específicos
+- protege a los trabajadores y mantiene las operaciones seguras
+
+## Valor de negocio
+No publicado en la página Detail Page.
+
+## ¿Cómo funciona?
+1. **Especificación de la entrada:** el usuario describe en lenguaje natural (y/o con artefactos de apoyo) lo que necesita en SAP S/4HANA Cloud Public Edition.
+2. **Generación con IA generativa:** la capacidad produce el artefacto a partir de esa entrada, aplicando las buenas prácticas del producto.
+3. **Revisión y ajuste:** el usuario obtiene un resultado listo para refinar, concentrando el esfuerzo en lo específico en vez del trabajo repetitivo.
+
+## Casos de uso (ilustrativos)
+> Estos ejemplos son **ilustrativos**, redactados para facilitar la comprensión; no son escenarios oficiales de SAP.
+
+1. **Escenario:** Un equipo necesita producir rápidamente un primer entregable en SAP S/4HANA Cloud Public Edition para una demo o validación temprana. **Cómo ayuda la feature:** describe el requisito en lenguaje natural y la IA genera el artefacto, eliminando el trabajo de andamiaje inicial. Apoya en: _Reduce el tiempo y esfuerzo manual de revisar la evaluación de riesgo o JHA para preparar instrucciones de seguridad_.
+2. **Escenario:** Un perfil con poca experiencia técnica debe entregar un artefacto estándar. **Cómo ayuda la feature:** lo especifica en lenguaje natural y obtiene el resultado generado, enfocándose solo en ajustar lo específico.
+
+## ¿Cuándo usarla?
+- Cuando la tarea que automatiza esta capacidad se realiza de forma **recurrente** dentro de SAP S/4HANA Cloud Public Edition y el trabajo manual es lento o propenso a errores.
+- Requiere el producto base **SAP S/4HANA Cloud Public Edition** correctamente habilitado; suele incluirse sin costo adicional de IA cuando aplica (ver *Datos clave*).
+- No reemplaza el criterio del especialista: acelera y asiste la tarea, pero la validación final permanece en el usuario.
+
+## Datos clave
+| Campo | Valor |
+|---|---|
+| Identificador | J756 |
+| Producto | SAP S/4HANA Cloud Public Edition |
+| Tipo de IA | AI Feature |
+| Tipo comercial | Base |
+| Disponibilidad | Beta |
+| Support Component | EHS-SUS-HS |
+| Industrias aplicables | Cross-Industry |
+| Pricing | This AI offering is currently in Beta and available at no cost. Pricing will be communicated once the AI offering becomes generally available. A separate subscription is required for use or testing. Learn more. |
+| Detail Page | https://discovery-center.cloud.sap/ai-feature/76d64fc7-204e-4a1f-979c-2a75a7a4ce29/ |
+
+## Fuente
+- SAP Discovery Center — Detail Page: https://discovery-center.cloud.sap/ai-feature/76d64fc7-204e-4a1f-979c-2a75a7a4ce29/
 
 ---
 
@@ -4827,6 +6328,155 @@ El valor se centra en acelerar workshops Fit-to-Standard, aumentar la calidad de
 
 ## Fuente
 - SAP Discovery Center — Detail Page: https://discovery-center.cloud.sap/ai-feature/e5701d25-2615-49ad-acf3-4f2a6363a206/
+
+---
+
+## [J779] — Content Search
+
+## En una frase
+SAP Signavio Process Insights ofrece miles de métricas, recomendaciones y guías de referencia; la búsqueda semántica basada en IA permite a los usuarios —especialmente a los expertos en procesos de negocio— descubrir contenido relevante de forma más intuitiva y eficiente.
+
+## ¿Qué es?
+SAP Signavio Process Insights ofrece miles de métricas, recomendaciones y guías de referencia; la búsqueda semántica basada en IA permite a los usuarios —especialmente a los expertos en procesos de negocio— descubrir contenido relevante de forma más intuitiva y eficiente. A diferencia de la búsqueda por palabras clave, entiende el contexto y el significado de los términos de búsqueda. Es una capacidad de IA **Base** de SAP Signavio solutions.
+
+## Beneficios
+- Ahorra tiempo aclarando preguntas específicas con resultados de búsqueda precisos
+- localiza contenido y páginas relevantes sin esfuerzo en las tareas diarias y en el análisis de procesos
+- descubre áreas adicionales de investigación con sugerencias más amplias y contextualmente relevantes
+
+## Valor de negocio
+82% de reducción del tiempo para obtener insights; 40% de aumento en la adopción de usuarios internos.
+
+## ¿Cómo funciona?
+1. **Pregunta o disparador:** el usuario formula la consulta o activa el análisis en SAP Signavio solutions.
+2. **Procesamiento con IA:** el motor interpreta la petición y la ejecuta sobre los datos.
+3. **Insight accionable:** devuelve hallazgos claros (correlaciones, estados, predicciones) listos para informar una decisión de negocio.
+
+## Casos de uso (ilustrativos)
+> Estos ejemplos son **ilustrativos**, redactados para facilitar la comprensión; no son escenarios oficiales de SAP.
+
+1. **Escenario:** Un usuario de negocio necesita entender una situación en SAP Signavio solutions sin dominar las herramientas analíticas. **Cómo ayuda la feature:** ejecuta una consulta sencilla y obtiene el insight de inmediato, listo para decidir. Apoya en: _Ahorra tiempo aclarando preguntas específicas con resultados de búsqueda precisos_.
+2. **Escenario:** Surge una incidencia que requiere identificar rápidamente su causa o estado. **Cómo ayuda la feature:** el análisis asistido por IA revela el estado o los factores relevantes y orienta la acción correctiva.
+
+## ¿Cuándo usarla?
+- Cuando la tarea que automatiza esta capacidad se realiza de forma **recurrente** dentro de SAP Signavio solutions y el trabajo manual es lento o propenso a errores.
+- Requiere el producto base **SAP Signavio solutions** correctamente habilitado; suele incluirse sin costo adicional de IA cuando aplica (ver *Datos clave*).
+- No reemplaza el criterio del especialista: acelera y asiste la tarea, pero la validación final permanece en el usuario.
+
+## Datos clave
+| Campo | Valor |
+|---|---|
+| Identificador | J779 |
+| Producto | SAP Signavio solutions |
+| Tipo de IA | AI Feature |
+| Tipo comercial | Base |
+| Disponibilidad | Beta |
+| Support Component | BPI-PI |
+| Industrias aplicables | Cross-Industry |
+| Pricing | This AI offering is currently in Beta and available at no cost. Pricing will be communicated once the AI offering becomes generally available. A separate subscription is required for use or testing. Learn more. |
+| Detail Page | https://discovery-center.cloud.sap/ai-feature/31657cef-3bb1-4d61-b7b6-0d7b36a328be/ |
+
+## Fuente
+- SAP Discovery Center — Detail Page: https://discovery-center.cloud.sap/ai-feature/31657cef-3bb1-4d61-b7b6-0d7b36a328be/
+
+---
+
+## [J787] — Accounting Accruals Agent
+
+## En una frase
+Acelera el cierre de fin de periodo: el agente ayuda a los contadores a automatizar la preparación de asientos de devengos (accruals) analizando datos históricos y documentos de política contable.
+
+## ¿Qué es?
+Acelera el cierre de fin de periodo: el agente ayuda a los contadores a automatizar la preparación de asientos de devengos (accruals) analizando datos históricos y documentos de política contable. Calcula importes precisos y entrega una lista pre-poblada de asientos para revisión y confirmación, aumentando la productividad y asegurando un cierre mensual oportuno. Es una capacidad de IA **Base** de SAP S/4HANA Cloud Public Edition.
+
+## Beneficios
+- Reduce el trabajo manual con preparación automática de asientos de devengo
+- aumenta la precisión con análisis de datos históricos y patrones financieros mediante IA
+- acelera el cierre de periodo y libera tiempo para actividades de mayor valor
+
+## Valor de negocio
+80% de reducción del tiempo de cálculo de importes de devengos/diferimientos; 50% de reducción del tiempo de revisión y contabilización de asientos; menor tiempo de cierre de libros.
+
+## ¿Cómo funciona?
+1. **Ingesta del documento:** la solución recibe el documento (carga directa o lectura desde un canal como un buzón de correo).
+2. **Procesamiento con IA:** extrae y estructura la información relevante según el esquema/modelo definido.
+3. **Integración y entrega:** el resultado se inyecta en el proceso destino dentro de SAP S/4HANA Cloud Public Edition, reduciendo la captura y validación manual.
+
+## Casos de uso (ilustrativos)
+> Estos ejemplos son **ilustrativos**, redactados para facilitar la comprensión; no son escenarios oficiales de SAP.
+
+1. **Escenario:** El equipo recibe un alto volumen de documentos que alimentan procesos en SAP S/4HANA Cloud Public Edition y la captura manual es un cuello de botella. **Cómo ayuda la feature:** la capacidad lee, extrae y estructura los datos automáticamente y los entrega al proceso destino, reduciendo errores y tiempos. Apoya en: _Reduce el trabajo manual con preparación automática de asientos de devengo_.
+2. **Escenario:** Llega un lote de documentos con formatos heterogéneos que debe procesarse antes de una fecha límite. **Cómo ayuda la feature:** el procesamiento inteligente extrae la información clave y la enruta al sistema, liberando al equipo de la transcripción.
+
+## ¿Cuándo usarla?
+- Cuando la tarea que automatiza esta capacidad se realiza de forma **recurrente** dentro de SAP S/4HANA Cloud Public Edition y el trabajo manual es lento o propenso a errores.
+- Requiere el producto base **SAP S/4HANA Cloud Public Edition** correctamente habilitado; suele incluirse sin costo adicional de IA cuando aplica (ver *Datos clave*).
+- No reemplaza el criterio del especialista: acelera y asiste la tarea, pero la validación final permanece en el usuario.
+
+## Datos clave
+| Campo | Valor |
+|---|---|
+| Identificador | J787 |
+| Producto | SAP S/4HANA Cloud Public Edition |
+| Tipo de IA | AI Agent |
+| Tipo comercial | Base |
+| Disponibilidad | Beta |
+| Support Component | FI-FIO-GL-TRA-2CL |
+| Industrias aplicables | Cross-Industry |
+| Pricing | This AI offering is currently in Beta and available at no cost. Pricing will be communicated once the AI offering becomes generally available. A separate subscription is required for use or testing. Learn more. |
+| Detail Page | https://discovery-center.cloud.sap/ai-feature/2ba6ab3e-ff22-4cb6-b3b4-20613ae8f6e3/ |
+
+## Fuente
+- SAP Discovery Center — Detail Page: https://discovery-center.cloud.sap/ai-feature/2ba6ab3e-ff22-4cb6-b3b4-20613ae8f6e3/
+
+---
+
+## [J788] — Change Record Management Agent
+
+## En una frase
+Reduce costos y acelera el time-to-market: apoya a product managers e ingenieros de diseño encontrando change records similares que afectan al mismo producto y proponiendo la creación de un nuevo borrador de change record.
+
+## ¿Qué es?
+Reduce costos y acelera el time-to-market: apoya a product managers e ingenieros de diseño encontrando change records similares que afectan al mismo producto y proponiendo la creación de un nuevo borrador de change record. Acelera decisiones e inicia el proceso de cambio, reduciendo retrasos por datos de cambio fragmentados y mejorando la gobernanza y la trazabilidad. Es una capacidad de IA **Base** de Joule‚ SAP S/4HANA Cloud Private Edition.
+
+## Beneficios
+- Reduce el trabajo manual de verificar change records similares, evitando solapamientos y apoyando la decisión de crear uno nuevo o reutilizar el existente
+- acelera decisiones entre equipos de ingeniería y manufactura con el siguiente paso recomendado
+
+## Valor de negocio
+20% de reducción del tiempo de creación de change requests; 1% de reducción del time-to-market de nuevos productos; 2% de reducción del costo de cambios de ingeniería.
+
+## ¿Cómo funciona?
+1. **Conversación con Joule:** el usuario plantea su petición en lenguaje natural a Joule.
+2. **Comprensión y ejecución asistida por IA:** Joule interpreta la intención, consulta los datos del sistema y resuelve la tarea.
+3. **Resultado accionable:** Joule devuelve la información o ejecuta la acción en el flujo, sin navegar manualmente por las transacciones.
+
+## Casos de uso (ilustrativos)
+> Estos ejemplos son **ilustrativos**, redactados para facilitar la comprensión; no son escenarios oficiales de SAP.
+
+1. **Escenario:** Un usuario de negocio necesita resolver una tarea recurrente en Joule‚ SAP S/4HANA Cloud Private Edition sin recordar la transacción exacta. **Cómo ayuda la feature:** le plantea la petición a Joule en lenguaje natural y obtiene el resultado en segundos, evitando navegar por menús. Apoya en: _Reduce el trabajo manual de verificar change records similares_.
+2. **Escenario:** Un colaborador nuevo aún no domina el sistema y debe responder una consulta operativa con rapidez. **Cómo ayuda la feature:** formula la pregunta a Joule y recibe la información o la acción ejecutada, acortando su curva de aprendizaje.
+
+## ¿Cuándo usarla?
+- Cuando la tarea que automatiza esta capacidad se realiza de forma **recurrente** dentro de Joule‚ SAP S/4HANA Cloud Private Edition y el trabajo manual es lento o propenso a errores.
+- Requiere el producto base **Joule‚ SAP S/4HANA Cloud Private Edition** correctamente habilitado; suele incluirse sin costo adicional de IA cuando aplica (ver *Datos clave*).
+- No reemplaza el criterio del especialista: acelera y asiste la tarea, pero la validación final permanece en el usuario.
+
+## Datos clave
+| Campo | Valor |
+|---|---|
+| Identificador | J788 |
+| Producto | Joule‚ SAP S/4HANA Cloud Private Edition |
+| Tipo de IA | AI Agent |
+| Tipo comercial | Base |
+| Disponibilidad | Beta |
+| Support Component | CA-JOULE |
+| Industrias aplicables | Cross-Industry |
+| Pricing | This AI offering is currently in Beta and available at no cost. Pricing will be communicated once the AI offering becomes generally available. A separate subscription is required for use or testing. Learn more. |
+| Detail Page | https://discovery-center.cloud.sap/ai-feature/905534ac-4ede-4c01-a815-476a1643ac7c/ |
+
+## Fuente
+- SAP Discovery Center — Detail Page: https://discovery-center.cloud.sap/ai-feature/905534ac-4ede-4c01-a815-476a1643ac7c/
 
 ---
 
@@ -5211,6 +6861,56 @@ Incrementa la confiabilidad del abastecimiento, mejora la planeación de materia
 
 ---
 
+## [J855] — Dispute Resolution Agent
+
+## En una frase
+Ayuda a los contables de contratos (Contract Accounting) a resolver casos de disputa —facturas incorrectas o pagos faltantes— para asegurar cobros oportunos y relaciones sólidas con clientes.
+
+## ¿Qué es?
+Ayuda a los contables de contratos (Contract Accounting) a resolver casos de disputa —facturas incorrectas o pagos faltantes— para asegurar cobros oportunos y relaciones sólidas con clientes. Automatiza la identificación y resolución de disputas por facturas incorrectas: analiza detalles de factura y términos contractuales, detecta discrepancias y errores, y propone proactivamente cómo proceder (p. ej. crear una nota de crédito). Es una capacidad de IA **Base** de Joule‚ SAP S/4HANA Cloud Private Edition.
+
+## Beneficios
+- Escanea facturas y contratos en busca de errores automáticamente
+- detecta cargos incorrectos y sugiere correcciones como la creación de notas de crédito
+- mejora la confianza y las relaciones con resolución de disputas más rápida
+
+## Valor de negocio
+30% de reducción del costo de gestión de disputas; 5% de reducción de la pérdida de clientes atribuible a disputas de factura; 0,50% de reducción del DSO.
+
+## ¿Cómo funciona?
+1. **Conversación con Joule:** el usuario plantea su petición en lenguaje natural a Joule.
+2. **Comprensión y ejecución asistida por IA:** Joule interpreta la intención, consulta los datos del sistema y resuelve la tarea.
+3. **Resultado accionable:** Joule devuelve la información o ejecuta la acción en el flujo, sin navegar manualmente por las transacciones.
+
+## Casos de uso (ilustrativos)
+> Estos ejemplos son **ilustrativos**, redactados para facilitar la comprensión; no son escenarios oficiales de SAP.
+
+1. **Escenario:** Un usuario de negocio necesita resolver una tarea recurrente en Joule‚ SAP S/4HANA Cloud Private Edition sin recordar la transacción exacta. **Cómo ayuda la feature:** le plantea la petición a Joule en lenguaje natural y obtiene el resultado en segundos, evitando navegar por menús. Apoya en: _Escanea facturas y contratos en busca de errores automáticamente_.
+2. **Escenario:** Un colaborador nuevo aún no domina el sistema y debe responder una consulta operativa con rapidez. **Cómo ayuda la feature:** formula la pregunta a Joule y recibe la información o la acción ejecutada, acortando su curva de aprendizaje.
+
+## ¿Cuándo usarla?
+- Cuando la tarea que automatiza esta capacidad se realiza de forma **recurrente** dentro de Joule‚ SAP S/4HANA Cloud Private Edition y el trabajo manual es lento o propenso a errores.
+- Requiere el producto base **Joule‚ SAP S/4HANA Cloud Private Edition** correctamente habilitado; suele incluirse sin costo adicional de IA cuando aplica (ver *Datos clave*).
+- No reemplaza el criterio del especialista: acelera y asiste la tarea, pero la validación final permanece en el usuario.
+
+## Datos clave
+| Campo | Valor |
+|---|---|
+| Identificador | J855 |
+| Producto | Joule‚ SAP S/4HANA Cloud Private Edition |
+| Tipo de IA | AI Agent |
+| Tipo comercial | Base |
+| Disponibilidad | Beta |
+| Support Component | CA-FLP-EXT-PCE-JOULE |
+| Industrias aplicables | Cross-Industry |
+| Pricing | This AI offering is currently in Beta and available at no cost. Pricing will be communicated once the AI offering becomes generally available. A separate subscription is required for use or testing. Learn more. |
+| Detail Page | https://discovery-center.cloud.sap/ai-feature/bbf06e89-a47a-4a80-a619-97fa7ba6af92/ |
+
+## Fuente
+- SAP Discovery Center — Detail Page: https://discovery-center.cloud.sap/ai-feature/bbf06e89-a47a-4a80-a619-97fa7ba6af92/
+
+---
+
 ## [J85] — Joule with Regulatory Change Manager
 
 ## En una frase
@@ -5307,6 +7007,105 @@ Reducción estimada del 75% en el esfuerzo para especificar claves de depreciaci
 
 ## Fuente
 - SAP Discovery Center — Detail Page: https://discovery-center.cloud.sap/ai-feature/15f5b518-2786-4908-953f-801172d7972a/
+
+---
+
+## [J872] — Project Setup Agent
+
+## En una frase
+Permite a los project managers de front office crear proyectos rápidamente a partir de proyectos pasados similares, sin navegar interfaces complejas ni contactar al soporte PMO de back office.
+
+## ¿Qué es?
+Permite a los project managers de front office crear proyectos rápidamente a partir de proyectos pasados similares, sin navegar interfaces complejas ni contactar al soporte PMO de back office. Facilita además la asignación rápida de los recursos clave para lanzar proyectos eficazmente, dedicando menos tiempo a la coordinación operativa y más a la rentabilidad y eficiencia del proyecto. Es una capacidad de IA **Base** de SAP S/4HANA Cloud Public Edition‚ Joule.
+
+## Beneficios
+- Aprovecha proyectos pasados similares para configurar nuevos proyectos
+- asigna recursos clave rápidamente
+
+## Valor de negocio
+10% de reducción del tiempo de crear un proyecto; 16% de reducción del tiempo de asignación de recursos; 30% de reducción del tiempo de retrabajo de proyectos creados desde plantillas incorrectas.
+
+## ¿Cómo funciona?
+1. **Conversación con Joule:** el usuario plantea su petición en lenguaje natural a Joule.
+2. **Comprensión y ejecución asistida por IA:** Joule interpreta la intención, consulta los datos del sistema y resuelve la tarea.
+3. **Resultado accionable:** Joule devuelve la información o ejecuta la acción en el flujo, sin navegar manualmente por las transacciones.
+
+## Casos de uso (ilustrativos)
+> Estos ejemplos son **ilustrativos**, redactados para facilitar la comprensión; no son escenarios oficiales de SAP.
+
+1. **Escenario:** Un usuario de negocio necesita resolver una tarea recurrente en SAP S/4HANA Cloud Public Edition‚ Joule sin recordar la transacción exacta. **Cómo ayuda la feature:** le plantea la petición a Joule en lenguaje natural y obtiene el resultado en segundos, evitando navegar por menús. Apoya en: _Aprovecha proyectos pasados similares para configurar nuevos proyectos_.
+2. **Escenario:** Un colaborador nuevo aún no domina el sistema y debe responder una consulta operativa con rapidez. **Cómo ayuda la feature:** formula la pregunta a Joule y recibe la información o la acción ejecutada, acortando su curva de aprendizaje.
+
+## ¿Cuándo usarla?
+- Cuando la tarea que automatiza esta capacidad se realiza de forma **recurrente** dentro de SAP S/4HANA Cloud Public Edition‚ Joule y el trabajo manual es lento o propenso a errores.
+- Requiere el producto base **SAP S/4HANA Cloud Public Edition‚ Joule** correctamente habilitado; suele incluirse sin costo adicional de IA cuando aplica (ver *Datos clave*).
+- No reemplaza el criterio del especialista: acelera y asiste la tarea, pero la validación final permanece en el usuario.
+
+## Datos clave
+| Campo | Valor |
+|---|---|
+| Identificador | J872 |
+| Producto | SAP S/4HANA Cloud Public Edition‚ Joule |
+| Tipo de IA | AI Agent |
+| Tipo comercial | Base |
+| Disponibilidad | Beta |
+| Support Component | PPM-SCL-STR |
+| Industrias aplicables | Cross-Industry |
+| Pricing | This AI offering is currently in Beta and available at no cost. Pricing will be communicated once the AI offering becomes generally available. A separate subscription is required for use or testing. Learn more. |
+| Detail Page | https://discovery-center.cloud.sap/ai-feature/49c08b5c-583b-4108-ba23-401c3da051cf/ |
+
+## Fuente
+- SAP Discovery Center — Detail Page: https://discovery-center.cloud.sap/ai-feature/49c08b5c-583b-4108-ba23-401c3da051cf/
+
+---
+
+## [J87] — Error Resolution
+
+## En una frase
+Ayuda a controllers y contadores a entender las causas raíz de las incidencias que surgen durante el cierre financiero.
+
+## ¿Qué es?
+Ayuda a controllers y contadores a entender las causas raíz de las incidencias que surgen durante el cierre financiero. Ofrece guía paso a paso para corregir el error y la opción de enviar automáticamente por correo la resolución al experto responsable. Es una capacidad de IA **Base** de SAP Advanced Financial Closing.
+
+## Beneficios
+- Remedia errores que impiden el cierre identificándolos y analizando sus causas raíz más rápido
+- reduce el esfuerzo de remediación para un cierre financiero más rápido
+- reduce costos de soporte y cumplimiento al habilitar el autoservicio de los usuarios de negocio
+
+## Valor de negocio
+90% de reducción del esfuerzo de investigar y remediar errores en tareas de cierre automatizadas; ciclos de cierre más rápidos.
+
+## ¿Cómo funciona?
+1. **Disparador:** el usuario inicia la tarea dentro de SAP Advanced Financial Closing.
+2. **Asistencia con IA:** la capacidad procesa el contexto y automatiza o asiste el paso correspondiente.
+3. **Resultado:** entrega la salida en el flujo de trabajo, reduciendo el esfuerzo manual.
+
+## Casos de uso (ilustrativos)
+> Estos ejemplos son **ilustrativos**, redactados para facilitar la comprensión; no son escenarios oficiales de SAP.
+
+1. **Escenario:** Un usuario realiza de forma recurrente una tarea manual en SAP Advanced Financial Closing con esfuerzo elevado. **Cómo ayuda la feature:** la capacidad automatiza o asiste el paso y reduce el tiempo y los errores asociados. Apoya en: _Remedia errores que impiden el cierre identificándolos y analizando sus causas raíz más rápido_.
+2. **Escenario:** El proceso depende de pasos repetitivos que ralentizan al equipo. **Cómo ayuda la feature:** la asistencia con IA acelera el flujo y libera tiempo para actividades de mayor valor.
+
+## ¿Cuándo usarla?
+- Cuando la tarea que automatiza esta capacidad se realiza de forma **recurrente** dentro de SAP Advanced Financial Closing y el trabajo manual es lento o propenso a errores.
+- Requiere el producto base **SAP Advanced Financial Closing** correctamente habilitado; suele incluirse sin costo adicional de IA cuando aplica (ver *Datos clave*).
+- No reemplaza el criterio del especialista: acelera y asiste la tarea, pero la validación final permanece en el usuario.
+
+## Datos clave
+| Campo | Valor |
+|---|---|
+| Identificador | J87 |
+| Producto | SAP Advanced Financial Closing |
+| Tipo de IA | AI Feature |
+| Tipo comercial | Base |
+| Disponibilidad | Beta |
+| Support Component | FIN-FIO-FCC |
+| Industrias aplicables | Cross-Industry |
+| Pricing | This AI offering is currently in Beta and available at no cost. Pricing will be communicated once the AI offering becomes generally available. A separate subscription is required for use or testing. Learn more. |
+| Detail Page | https://discovery-center.cloud.sap/ai-feature/942e1e4b-32e0-480f-9f11-d31badf54186/ |
+
+## Fuente
+- SAP Discovery Center — Detail Page: https://discovery-center.cloud.sap/ai-feature/942e1e4b-32e0-480f-9f11-d31badf54186/
 
 ---
 
@@ -6003,6 +7802,109 @@ Ayuda a encontrar aplicaciones relevantes para una tarea mediante lenguaje natur
 
 ## Fuente
 - SAP Discovery Center — Detail Page: https://discovery-center.cloud.sap/ai-feature/2b5df257-bdfd-4396-a48b-a8362b2e02f7/
+
+---
+
+## [J940] — Process Content Recommender Agent
+
+## En una frase
+Acelera las transformaciones de procesos ofreciendo orientación a preguntas específicas de proceso.
+
+## ¿Qué es?
+Acelera las transformaciones de procesos ofreciendo orientación a preguntas específicas de proceso. Guía a los arquitectos empresariales a tomar decisiones más rápidas y basadas en insights: razona sobre miles de mejores prácticas de procesos —de SAP y modelos propios— y responde preguntas con recomendaciones de contenido a medida (value accelerators, KPIs, etc.), entregando una lista estructurada y priorizada. Es una capacidad de IA **Base** de Joule.
+
+## Beneficios
+- Entrega el contenido de proceso adecuado al instante, eliminando la búsqueda manual
+- adapta recomendaciones a la intención del usuario con guía contextual
+- conecta a los usuarios con mejores prácticas, KPIs y value accelerators
+- incluye modelos SAP y propios para relevancia personalizada
+- acelera la mejora de procesos
+
+## Valor de negocio
+5% de mejora de la productividad de los recursos de BPM; 50% de reducción del tiempo de búsqueda de contenido; experiencia de usuario mejorada.
+
+## ¿Cómo funciona?
+1. **Conversación con Joule:** el usuario plantea su petición en lenguaje natural a Joule.
+2. **Comprensión y ejecución asistida por IA:** Joule interpreta la intención, consulta los datos del sistema y resuelve la tarea.
+3. **Resultado accionable:** Joule devuelve la información o ejecuta la acción en el flujo, sin navegar manualmente por las transacciones.
+
+## Casos de uso (ilustrativos)
+> Estos ejemplos son **ilustrativos**, redactados para facilitar la comprensión; no son escenarios oficiales de SAP.
+
+1. **Escenario:** Un usuario de negocio necesita resolver una tarea recurrente en Joule sin recordar la transacción exacta. **Cómo ayuda la feature:** le plantea la petición a Joule en lenguaje natural y obtiene el resultado en segundos, evitando navegar por menús. Apoya en: _Entrega el contenido de proceso adecuado al instante_.
+2. **Escenario:** Un colaborador nuevo aún no domina el sistema y debe responder una consulta operativa con rapidez. **Cómo ayuda la feature:** formula la pregunta a Joule y recibe la información o la acción ejecutada, acortando su curva de aprendizaje.
+
+## ¿Cuándo usarla?
+- Cuando la tarea que automatiza esta capacidad se realiza de forma **recurrente** dentro de Joule y el trabajo manual es lento o propenso a errores.
+- Requiere el producto base **Joule** correctamente habilitado; suele incluirse sin costo adicional de IA cuando aplica (ver *Datos clave*).
+- No reemplaza el criterio del especialista: acelera y asiste la tarea, pero la validación final permanece en el usuario.
+
+## Datos clave
+| Campo | Valor |
+|---|---|
+| Identificador | J940 |
+| Producto | Joule |
+| Tipo de IA | AI Agent |
+| Tipo comercial | Base |
+| Disponibilidad | Beta |
+| Support Component | BPI-SIG-CA-AI |
+| Industrias aplicables | Cross-Industry |
+| Pricing | This AI offering is currently in Beta and available at no cost. Pricing will be communicated once the AI offering becomes generally available. A separate subscription is required for use or testing. Learn more. |
+| Detail Page | https://discovery-center.cloud.sap/ai-feature/aa94ac46-bbb3-405e-a7f9-1e14e9bc16db/ |
+
+## Fuente
+- SAP Discovery Center — Detail Page: https://discovery-center.cloud.sap/ai-feature/aa94ac46-bbb3-405e-a7f9-1e14e9bc16db/
+
+---
+
+## [J955] — Order Reliability Agent
+
+## En una frase
+Revoluciona la gestión de riesgos de pedidos (order jeopardy) en SAP Order Management Services con un agente que identifica, analiza y resuelve excepciones de pedidos manteniendo al humano en el bucle.
+
+## ¿Qué es?
+Revoluciona la gestión de riesgos de pedidos (order jeopardy) en SAP Order Management Services con un agente que identifica, analiza y resuelve excepciones de pedidos manteniendo al humano en el bucle. Monitorea los flujos de pedidos en tiempo real, detecta anomalías como fallos o retrasos de cumplimiento, y ejecuta acciones correctivas o propone recomendaciones. Es una capacidad de IA **Base** de Joule.
+
+## Beneficios
+- Minimiza la gestión manual de excepciones, liberando a los equipos para actividades estratégicas
+- acelera la velocidad de procesamiento y mejora la exactitud del cumplimiento en todos los canales
+- mejora la satisfacción y retención de clientes
+- reduce gastos operativos por churn e intervenciones manuales
+
+## Valor de negocio
+50% de mejora de la productividad del equipo de order management al analizar pedidos erróneos; 50% de reducción del tiempo dedicado a gestionar pedidos excepcionales; 20% de reducción del churn de clientes por problemas de cumplimiento de pedidos.
+
+## ¿Cómo funciona?
+1. **Conversación con Joule:** el usuario plantea su petición en lenguaje natural a Joule.
+2. **Comprensión y ejecución asistida por IA:** Joule interpreta la intención, consulta los datos del sistema y resuelve la tarea.
+3. **Resultado accionable:** Joule devuelve la información o ejecuta la acción en el flujo, sin navegar manualmente por las transacciones.
+
+## Casos de uso (ilustrativos)
+> Estos ejemplos son **ilustrativos**, redactados para facilitar la comprensión; no son escenarios oficiales de SAP.
+
+1. **Escenario:** Un usuario de negocio necesita resolver una tarea recurrente en Joule sin recordar la transacción exacta. **Cómo ayuda la feature:** le plantea la petición a Joule en lenguaje natural y obtiene el resultado en segundos, evitando navegar por menús. Apoya en: _Minimiza la gestión manual de excepciones_.
+2. **Escenario:** Un colaborador nuevo aún no domina el sistema y debe responder una consulta operativa con rapidez. **Cómo ayuda la feature:** formula la pregunta a Joule y recibe la información o la acción ejecutada, acortando su curva de aprendizaje.
+
+## ¿Cuándo usarla?
+- Cuando la tarea que automatiza esta capacidad se realiza de forma **recurrente** dentro de Joule y el trabajo manual es lento o propenso a errores.
+- Requiere el producto base **Joule** correctamente habilitado; suele incluirse sin costo adicional de IA cuando aplica (ver *Datos clave*).
+- No reemplaza el criterio del especialista: acelera y asiste la tarea, pero la validación final permanece en el usuario.
+
+## Datos clave
+| Campo | Valor |
+|---|---|
+| Identificador | J955 |
+| Producto | Joule |
+| Tipo de IA | AI Agent |
+| Tipo comercial | Base |
+| Disponibilidad | Beta |
+| Support Component | CEC-BAF-DOM-JOULE |
+| Industrias aplicables | Retail |
+| Pricing | This AI offering is currently in Beta and available at no cost. Pricing will be communicated once the AI offering becomes generally available. A separate subscription is required for use or testing. Learn more. |
+| Detail Page | https://discovery-center.cloud.sap/ai-feature/51d0ed9c-7588-45e5-891d-44ef3ac456f5/ |
+
+## Fuente
+- SAP Discovery Center — Detail Page: https://discovery-center.cloud.sap/ai-feature/51d0ed9c-7588-45e5-891d-44ef3ac456f5/
 
 ---
 
